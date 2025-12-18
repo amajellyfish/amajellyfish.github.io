@@ -1,0 +1,2792 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>Interaction &middot; David Thomas</title>
+    <meta name="title" content="Interaction &middot; David Thomas">
+  
+
+  
+  
+    <meta name="description" content="Basic Commands and Directory Structure">
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/tech-notes/rhcsa/interaction/">
+  
+
+  
+  
+    <meta name="author" content="David Thomas">
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/tech-notes/rhcsa/interaction/">
+  <meta property="og:site_name" content="David Thomas">
+  <meta property="og:title" content="Interaction">
+  <meta property="og:description" content="Basic Commands and Directory Structure">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech-notes">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Interaction">
+  <meta name="twitter:description" content="Basic Commands and Directory Structure">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.c5c4ab59b36e3a06d6dff38478af5d2c18b2d7a3603611d7fc5647b02111f989bd5957610b6bed4d10718428186bc7c38590e84c77c0d50f401da78f4fbb5384.css"
+    integrity="sha512-xcSrWbNuOgbW3/OEeK9dLBiy16NgNhHX/FZHsCER&#43;Ym9WVdhC2vtTRBxhCgYa8fDhZDoTHfA1Q9AHaePT7tThA==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js"
+      integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP&#43;pSqMXxm6JPOUeAg=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "Interaction",
+    "headline": "Interaction",
+    "description": "Basic Commands and Directory Structure",
+    "abstract": "\u003cp\u003eLooking to get started using Fedora or Red Hat operating systems?\u003c\/p\u003e\n\u003cp\u003eThis guide with get you started with the RHEL Graphical environment, file system, and essential commands to get started using Fedora, Red Hat, or other RHEL based systems.\u003c\/p\u003e",
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/tech-notes/rhcsa/interaction/",
+    "author" : {
+      "@type": "Person",
+      "name": "David Thomas"
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "3047"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc",
+      authDomain: "davidwrites-89dd7.firebaseapp.com",
+      projectId: "davidwrites-89dd7",
+      storageBucket: "davidwrites-89dd7.firebasestorage.app",
+      messagingSenderId: "433139099634",
+      appId: "1:433139099634:web:c14275555bd7171e6c6d6b",
+      measurementId: "G-XX5507B82W"
+    };
+
+        var app = firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        var auth = firebase.auth();
+
+      </script>
+    
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium">
+          David Thomas
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/tech-notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Tech Notes"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      Tech Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Notes"
+  title="Book Notes &amp; Reviews">
+  
+  
+    <p class="text-base font-medium">
+      Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/articles/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Articles"
+  title="Articles">
+  
+  
+    <p class="text-base font-medium">
+      Articles
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/now/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Now"
+  title="Now">
+  
+  
+    <p class="text-base font-medium">
+      Now
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  
+  title="">
+  
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/tech-notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Tech Notes"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        Tech Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Notes"
+    title="Book Notes &amp; Reviews">
+    
+    
+      <p class="text-bg font-bg">
+        Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/articles/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Articles"
+    title="Articles">
+    
+    
+      <p class="text-bg font-bg">
+        Articles
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/now/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Now"
+    title="Now">
+    
+    
+      <p class="text-bg font-bg">
+        Now
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    
+    title="">
+    
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
+    })();
+  </script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Interaction
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="views_tech notes/RHCSA/Interaction.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="views"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></span>
+</span>
+<span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="likes_tech notes/RHCSA/Interaction.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span></span>
+</span>
+<span class="px-2 text-primary-500">&middot;</span><span>
+  <button
+    id="button_likes"
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    <span id="button_likes_heart" class="inline-block align-text-bottom hidden"
+      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span>
+    </span>
+    <span id="button_likes_emtpty_heart" class="inline-block align-text-bottom"
+      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg></span></span
+    >
+    <span id="button_likes_text">&nbsp;Like</span>
+  </button>
+</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#redhat-rhel9-graphical-environment-wayland">RedHat (RHEL9) Graphical Environment (Wayland)</a></li>
+    <li><a href="#file-system-and-directory-hierarchy">File System and Directory Hierarchy</a>
+      <ul>
+        <li><a href="#key-directories-in-">Key Directories in /</a>
+          <ul>
+            <li><a href="#etc-extended-text-configuration">/etc (extended text configuration)</a></li>
+            <li><a href="#root">/root</a></li>
+            <li><a href="#mnt">/mnt</a></li>
+            <li><a href="#boot-disk-based">/boot (Disk-Based)</a></li>
+            <li><a href="#home">/home</a></li>
+            <li><a href="#opt-optional">/opt (Optional)</a></li>
+            <li><a href="#usr-unix-system-resources">/usr (UNIX System Resources)</a></li>
+            <li><a href="#variable-directory-var">Variable Directory (/var)</a></li>
+            <li><a href="#tmp-temporary">/tmp (Temporary)</a></li>
+            <li><a href="#dev-devices">/dev (Devices)</a></li>
+            <li><a href="#character-devices">Character devices</a></li>
+            <li><a href="#block-devices">Block devices</a></li>
+          </ul>
+        </li>
+        <li><a href="#procfs-file-system-proc">Procfs File System (/proc)</a></li>
+        <li><a href="#runtime-file-system-run">Runtime File System (/run)</a></li>
+        <li><a href="#the-system-file-system-sys">The System File System (/sys)</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#tree-command">tree command</a></li>
+      </ul>
+    </li>
+    <li><a href="#labs">Labs</a>
+      <ul>
+        <li><a href="#list-only-the-directories--d-in-the-root-users-home-directory-root">List only the directories (-d) in the root user’s home directory (/root).</a></li>
+        <li><a href="#list-files-in-the-etcsysconfig-directory-along-with-their-permissions-sizes-in-human-readable-format-and-full-path">List files in the /etc/sysconfig directory along with their permissions, sizes in human-readable format, and full path.</a></li>
+        <li><a href="#view-tree-man-pages">View tree man pages.</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#listing-files-and-directories">Listing Files and Directories</a></li>
+    <li><a href="#ls">ls</a>
+      <ul>
+        <li><a href="#labs-1">labs:</a>
+          <ul>
+            <li><a href="#show-the-long-listing-of-only-usr-without-showing-its-contents">Show the long listing of only /usr without showing its contents.</a></li>
+            <li><a href="#display-all-files-in-the-current-directory-with-their-sizes-in-human-friendly-format">Display all files in the current directory with their sizes in human-friendly format.</a></li>
+            <li><a href="#list-all-files-including-the-hidden-files-in-the-current-directory-with-detailed-information">List all files, including the hidden files, in the current directory with detailed information.</a></li>
+            <li><a href="#sort-output-by-date-and-time-with-the-newest-file-first">Sort output by date and time with the newest file first.</a></li>
+            <li><a href="#list-contents-of-the-etc-directory-recursively">List contents of the /etc directory recursively.</a></li>
+            <li><a href="#list-directory-info-and-the-contents-of-a-directory-recursively">List directory info and the contents of a directory recursively.</a></li>
+            <li><a href="#view-ls-manpage">View ls manpage.</a></li>
+          </ul>
+        </li>
+        <li><a href="#printing-working-directory-pwd-command">Printing Working Directory (pwd) command</a></li>
+      </ul>
+    </li>
+    <li><a href="#navigating-directories">Navigating Directories</a>
+      <ul>
+        <li><a href="#labs-2">Labs:</a>
+          <ul>
+            <li><a href="#go-one-level-up-into-the-parent-directory-using-the-relative-path">Go one level up into the parent directory using the relative path</a></li>
+            <li><a href="#cd-into-etcsysconfig-using-the-absolute-path-etcsysconfig-or-the-relative-path-etcsysconfig">cd into /etc/sysconfig using the absolute path (/etc/sysconfig), or the relative path (etc/sysconfig)</a></li>
+            <li><a href="#change-into-the-usrbin-directory-from-etcsysconfig-using-relative-or-absolute-path">Change into the /usr/bin directory from /etc/sysconfig using relative or absolute path</a></li>
+            <li><a href="#return-to-your-home-directory">Return to your home directory</a></li>
+            <li><a href="#use-the-absolute-path-to-change-into-the-home-directory-of-the-root-user-from-etcsysconfig">Use the absolute path to change into the home directory of the root user from /etc/sysconfig</a></li>
+            <li><a href="#switch-between-the-current-and-previous-directories">Switch between the current and previous directories</a></li>
+            <li><a href="#use-the-cd-command-to-print-the-home-directory-of-the-current-user">use the cd command to print the home directory of the current user</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#tty-command">tty command</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#uptime-command"><code>uptime</code> command</a>
+      <ul>
+        <li><a href="#clear-command">clear command</a></li>
+      </ul>
+    </li>
+    <li><a href="#determining-command-path">Determining Command Path</a></li>
+    <li><a href="#which-command"><code>which</code> command</a></li>
+    <li><a href="#whereis-command"><code>whereis</code> command</a></li>
+    <li><a href="#type-command"><code>type</code> command</a></li>
+    <li><a href="#viewing-system-information">Viewing System Information</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#uname-command"><code>uname</code> command</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#viewing-cpu-specs">Viewing CPU Specs</a></li>
+    <li><a href="#lscpu-command"><code>lscpu</code> command</a></li>
+    <li><a href="#getting-help">Getting Help</a>
+      <ul>
+        <li><a href="#manual-pages">Manual pages</a>
+          <ul>
+            <li><a href="#man-command"><code>man</code> command</a></li>
+            <li><a href="#commands-to-find-informationhelp-about-programs">Commands to find information/help about programs.</a></li>
+          </ul>
+        </li>
+        <li><a href="#man-page-navigation">Man page navigation</a></li>
+      </ul>
+    </li>
+    <li><a href="#headings-in-the-manual">Headings in the Manual</a></li>
+    <li><a href="#manual-sections">Manual Sections</a></li>
+    <li><a href="#searching-by-keyword">Searching by Keyword</a></li>
+    <li><a href="#apropos-command"><code>apropos</code> command</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#mandb-command"><code>mandb</code> command</a></li>
+            <li><a href="#lab-find-a-forgotten-xfs-administration-command">Lab: Find a forgotten XFS administration command.</a></li>
+            <li><a href="#lab-show-a-brief-list-of-options-and-a-description">Lab: Show a brief list of options and a description.</a></li>
+            <li><a href="#whatis-command"><code>whatis</code> command</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#info-and-pinfo-commands"><code>info</code> and <code>pinfo</code> Commands</a>
+      <ul>
+        <li><a href="#info-page-navigation">info page Navigation</a></li>
+      </ul>
+    </li>
+    <li><a href="#documentation-in--usrsharedoc">Documentation in  /usr/share/doc/</a></li>
+    <li><a href="#online-rhel-documentation">Online RHEL Documentation</a></li>
+    <li><a href="#labs-3">Labs</a>
+      <ul>
+        <li><a href="#lab-2-navigate-linux-directory-tree">Lab 2: Navigate Linux Directory Tree</a></li>
+        <li><a href="#lab-miscellaneous-tasks">Lab: Miscellaneous Tasks</a></li>
+        <li><a href="#lab-identify-system-and-kernel-information">Lab: Identify System and Kernel Information</a></li>
+        <li><a href="#lab-man">Lab: Man</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#redhat-rhel9-graphical-environment-wayland">RedHat (RHEL9) Graphical Environment (Wayland)</a></li>
+    <li><a href="#file-system-and-directory-hierarchy">File System and Directory Hierarchy</a>
+      <ul>
+        <li><a href="#key-directories-in-">Key Directories in /</a>
+          <ul>
+            <li><a href="#etc-extended-text-configuration">/etc (extended text configuration)</a></li>
+            <li><a href="#root">/root</a></li>
+            <li><a href="#mnt">/mnt</a></li>
+            <li><a href="#boot-disk-based">/boot (Disk-Based)</a></li>
+            <li><a href="#home">/home</a></li>
+            <li><a href="#opt-optional">/opt (Optional)</a></li>
+            <li><a href="#usr-unix-system-resources">/usr (UNIX System Resources)</a></li>
+            <li><a href="#variable-directory-var">Variable Directory (/var)</a></li>
+            <li><a href="#tmp-temporary">/tmp (Temporary)</a></li>
+            <li><a href="#dev-devices">/dev (Devices)</a></li>
+            <li><a href="#character-devices">Character devices</a></li>
+            <li><a href="#block-devices">Block devices</a></li>
+          </ul>
+        </li>
+        <li><a href="#procfs-file-system-proc">Procfs File System (/proc)</a></li>
+        <li><a href="#runtime-file-system-run">Runtime File System (/run)</a></li>
+        <li><a href="#the-system-file-system-sys">The System File System (/sys)</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#tree-command">tree command</a></li>
+      </ul>
+    </li>
+    <li><a href="#labs">Labs</a>
+      <ul>
+        <li><a href="#list-only-the-directories--d-in-the-root-users-home-directory-root">List only the directories (-d) in the root user’s home directory (/root).</a></li>
+        <li><a href="#list-files-in-the-etcsysconfig-directory-along-with-their-permissions-sizes-in-human-readable-format-and-full-path">List files in the /etc/sysconfig directory along with their permissions, sizes in human-readable format, and full path.</a></li>
+        <li><a href="#view-tree-man-pages">View tree man pages.</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#listing-files-and-directories">Listing Files and Directories</a></li>
+    <li><a href="#ls">ls</a>
+      <ul>
+        <li><a href="#labs-1">labs:</a>
+          <ul>
+            <li><a href="#show-the-long-listing-of-only-usr-without-showing-its-contents">Show the long listing of only /usr without showing its contents.</a></li>
+            <li><a href="#display-all-files-in-the-current-directory-with-their-sizes-in-human-friendly-format">Display all files in the current directory with their sizes in human-friendly format.</a></li>
+            <li><a href="#list-all-files-including-the-hidden-files-in-the-current-directory-with-detailed-information">List all files, including the hidden files, in the current directory with detailed information.</a></li>
+            <li><a href="#sort-output-by-date-and-time-with-the-newest-file-first">Sort output by date and time with the newest file first.</a></li>
+            <li><a href="#list-contents-of-the-etc-directory-recursively">List contents of the /etc directory recursively.</a></li>
+            <li><a href="#list-directory-info-and-the-contents-of-a-directory-recursively">List directory info and the contents of a directory recursively.</a></li>
+            <li><a href="#view-ls-manpage">View ls manpage.</a></li>
+          </ul>
+        </li>
+        <li><a href="#printing-working-directory-pwd-command">Printing Working Directory (pwd) command</a></li>
+      </ul>
+    </li>
+    <li><a href="#navigating-directories">Navigating Directories</a>
+      <ul>
+        <li><a href="#labs-2">Labs:</a>
+          <ul>
+            <li><a href="#go-one-level-up-into-the-parent-directory-using-the-relative-path">Go one level up into the parent directory using the relative path</a></li>
+            <li><a href="#cd-into-etcsysconfig-using-the-absolute-path-etcsysconfig-or-the-relative-path-etcsysconfig">cd into /etc/sysconfig using the absolute path (/etc/sysconfig), or the relative path (etc/sysconfig)</a></li>
+            <li><a href="#change-into-the-usrbin-directory-from-etcsysconfig-using-relative-or-absolute-path">Change into the /usr/bin directory from /etc/sysconfig using relative or absolute path</a></li>
+            <li><a href="#return-to-your-home-directory">Return to your home directory</a></li>
+            <li><a href="#use-the-absolute-path-to-change-into-the-home-directory-of-the-root-user-from-etcsysconfig">Use the absolute path to change into the home directory of the root user from /etc/sysconfig</a></li>
+            <li><a href="#switch-between-the-current-and-previous-directories">Switch between the current and previous directories</a></li>
+            <li><a href="#use-the-cd-command-to-print-the-home-directory-of-the-current-user">use the cd command to print the home directory of the current user</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#tty-command">tty command</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#uptime-command"><code>uptime</code> command</a>
+      <ul>
+        <li><a href="#clear-command">clear command</a></li>
+      </ul>
+    </li>
+    <li><a href="#determining-command-path">Determining Command Path</a></li>
+    <li><a href="#which-command"><code>which</code> command</a></li>
+    <li><a href="#whereis-command"><code>whereis</code> command</a></li>
+    <li><a href="#type-command"><code>type</code> command</a></li>
+    <li><a href="#viewing-system-information">Viewing System Information</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#uname-command"><code>uname</code> command</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#viewing-cpu-specs">Viewing CPU Specs</a></li>
+    <li><a href="#lscpu-command"><code>lscpu</code> command</a></li>
+    <li><a href="#getting-help">Getting Help</a>
+      <ul>
+        <li><a href="#manual-pages">Manual pages</a>
+          <ul>
+            <li><a href="#man-command"><code>man</code> command</a></li>
+            <li><a href="#commands-to-find-informationhelp-about-programs">Commands to find information/help about programs.</a></li>
+          </ul>
+        </li>
+        <li><a href="#man-page-navigation">Man page navigation</a></li>
+      </ul>
+    </li>
+    <li><a href="#headings-in-the-manual">Headings in the Manual</a></li>
+    <li><a href="#manual-sections">Manual Sections</a></li>
+    <li><a href="#searching-by-keyword">Searching by Keyword</a></li>
+    <li><a href="#apropos-command"><code>apropos</code> command</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#mandb-command"><code>mandb</code> command</a></li>
+            <li><a href="#lab-find-a-forgotten-xfs-administration-command">Lab: Find a forgotten XFS administration command.</a></li>
+            <li><a href="#lab-show-a-brief-list-of-options-and-a-description">Lab: Show a brief list of options and a description.</a></li>
+            <li><a href="#whatis-command"><code>whatis</code> command</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#info-and-pinfo-commands"><code>info</code> and <code>pinfo</code> Commands</a>
+      <ul>
+        <li><a href="#info-page-navigation">info page Navigation</a></li>
+      </ul>
+    </li>
+    <li><a href="#documentation-in--usrsharedoc">Documentation in  /usr/share/doc/</a></li>
+    <li><a href="#online-rhel-documentation">Online RHEL Documentation</a></li>
+    <li><a href="#labs-3">Labs</a>
+      <ul>
+        <li><a href="#lab-2-navigate-linux-directory-tree">Lab 2: Navigate Linux Directory Tree</a></li>
+        <li><a href="#lab-miscellaneous-tasks">Lab: Miscellaneous Tasks</a></li>
+        <li><a href="#lab-identify-system-and-kernel-information">Lab: Identify System and Kernel Information</a></li>
+        <li><a href="#lab-man">Lab: Man</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>Looking to get started using Fedora or Red Hat operating systems?</p>
+<p>This guide with get you started with the RHEL Graphical environment, file system, and essential commands to get started using Fedora, Red Hat, or other RHEL based systems.</p>
+
+<h2 class="relative group">RedHat (RHEL9) Graphical Environment (Wayland)
+    <div id="redhat-rhel9-graphical-environment-wayland" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#redhat-rhel9-graphical-environment-wayland" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Redhat runs a graphical environment called Wayland. This is the foundation for running GUI apps. Wayland is a client/server display protocol. Which just means that the user (the client) requests a resource and the display manager (the server) serves those resources.</p>
+<p>Wayland is slowly replaced and older display protocol called &ldquo;X&rdquo;. And has better graphics capabilities, features, and performance than X. And consists of a Display or Login manager and a Desktop environment.</p>
+<p>The Display/ Login manager presents the login screen for users to log in. Once you log in, you get to the pre-configured desktop manager or Desktop Environment (DE). The GNOME Display Manager. (GDM)</p>
+
+<h2 class="relative group">File System and Directory Hierarchy
+    <div id="file-system-and-directory-hierarchy" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#file-system-and-directory-hierarchy" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>The standard for the Linux filesystem is the Filesystem Hierarchy Standard (FHS). Which describes locations, names, and permissions for a variety of file types and directories.</p>
+<p>The directory structure starts at the root. Which is notated by a &ldquo;/&rdquo;. The top levels of the directory can be viewed by running the <code>ls</code> command on the root of the directory tree.</p>
+<p>Size of the root file system is automatically determined by the installer program based on the available disk space when you select the default partitioning (it may be altered). Here is a listing of the contents of /:</p>
+<pre tabindex="0"><code>$ ls /
+afs  bin  boot  dev  etc  home  lib  lib64  lost+found  media  mnt  opt  proc  root  run  sbin  snap  srv  sys  tmp  usr  var
+</code></pre><p>Some of these directories hold static data such as commands, configuration files, kernel and device files, etc. And some hold dynamic data such as log and status files.</p>
+<p>There are three major categories of file systems. They are:</p>
+<ol>
+<li>disk-based</li>
+<li>network-based</li>
+<li>memory-based</li>
+</ol>
+<p><strong>Disk-based</strong> files systems are physical media such as a hard drive or a USB flash drive and store information persistently. The root and boot file systems and both disk-based and created automatically when you select the default partitioning.</p>
+<p><strong>Network-Based</strong> file systems are disk-based file systems that are shared over the network for remote access. (Also stored persistently)</p>
+<p><strong>Memory-Based</strong> filesystems are virtual. And are created automatically at system startup and destroyed when the system goes down.</p>
+
+<h3 class="relative group">Key Directories in /
+    <div id="key-directories-in-" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#key-directories-in-" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<h4 class="relative group">/etc (extended text configuration)
+    <div id="etc-extended-text-configuration" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#etc-extended-text-configuration" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>This directory contains system configuration files for systemd, LVM, and user shell startup template files.</p>
+<pre tabindex="0"><code>david@fedora:$ ls /etc
+abrt                    dhcp                        gshadow-       locale.conf               openldap            request-key.d          sysctl.conf
+adjtime                 DIR_COLORS                  gss            localtime                 opensc.conf         resolv.conf            sysctl.d
+aliases                 DIR_COLORS.lightbgcolor     gssproxy       login.defs                opensc-x86_64.conf  rpc                    systemd
+alsa                    dleyna-server-service.conf  host.conf      logrotate.conf            openvpn             rpm                    system-release
+alternatives            dnf                         hostname       logrotate.d               opt                 rpmdevtools            system-release-cpe
+anaconda                dnsmasq.conf                hosts          lvm                       os-release          rpmlint                tcsd.conf
+anthy-unicode.conf      dnsmasq.d                   hp             machine-id                ostree              rsyncd.conf            terminfo
+apk                     dracut.conf                 httpd          magic                     PackageKit          rwtab.d                thermald
+appstream.conf          dracut.conf.d               idmapd.conf    mailcap                   pam.d               rygel.conf             timidity++.cfg
+asound.conf             egl                         ImageMagick-7  makedumpfile.conf.sample  paperspecs          samba                  tmpfiles.d
+audit                   environment                 init.d         man_db.conf               passwd              sane.d                 tpm2-tss
+authselect              ethertypes                  inittab        mcelog                    passwd-             sasl2                  Trolltech.conf
+avahi                   exports                     inputrc        mdevctl.d                 passwdqc.conf       security               trusted-key.key
+bash_completion.d       exports.d                   ipp-usb        mercurial                 pinforc             selinux                ts.conf
+bashrc                  favicon.png                 iproute2       mime.types                pkcs11              services               udev
+bindresvport.blacklist  fedora-release              iscsi          mke2fs.conf               pkgconfig           sestatus.conf          udisks2
+binfmt.d                filesystems                 issue          modprobe.d                pki                 sgml                   unbound
+bluetooth               firefox                     issue.d        modules-load.d            plymouth            shadow                 updatedb.conf
+brlapi.key              firewalld                   issue.net      mono                      pm                  shadow-                UPower
+brltty                  flatpak                     java           motd                      polkit-1            shells                 uresourced.conf
+brltty.conf             fonts                       jvm            motd.d                    popt.d              skel                   usb_modeswitch.conf
+ceph                    fprintd.conf                jvm-common     mtab                      ppp                 sos                    vconsole.conf
+chkconfig.d             fstab                       kdump          mtools.conf               printcap            speech-dispatcher      vdpau_wrapper.cfg
+chromium                fuse.conf                   kdump.conf     my.cnf                    profile             ssh                    vimrc
+chrony.conf             fwupd                       kernel         my.cnf.d                  profile.d           ssl                    virc
+cifs-utils              gcrypt                      keys           nanorc                    protocols           sssd                   vmware-tools
+containers              gdbinit                     keyutils       ndctl                     pulse               statetab.d             vpl
+credstore               gdbinit.d                   krb5.conf      ndctl.conf.d              qemu                subgid                 vpnc
+credstore.encrypted     gdm                         krb5.conf.d    netconfig                 qemu-ga             subgid-                vulkan
+crypto-policies         geoclue                     ld.so.cache    NetworkManager            rc0.d               subuid                 wgetrc
+crypttab                glvnd                       ld.so.conf     networks                  rc1.d               subuid-                whois.conf
+csh.cshrc               gnupg                       ld.so.conf.d   nfs.conf                  rc2.d               subversion             wireplumber
+csh.login               GREP_COLORS                 libaudit.conf  nfsmount.conf             rc3.d               sudo.conf              wpa_supplicant
+cups                    groff                       libblockdev    nftables                  rc4.d               sudoers                X11
+cupshelpers             group                       libibverbs.d   nilfs_cleanerd.conf       rc5.d               sudoers.d              xattr.conf
+dbus-1                  group-                      libnl          npmrc                     rc6.d               swid                   xdg
+dconf                   grub2.cfg                   libreport      nsswitch.conf             rc.d                swtpm-localca.conf     xml
+debuginfod              grub2-efi.cfg               libssh         nvme                      reader.conf.d       swtpm-localca.options  yum.repos.d
+default                 grub.d                      libuser.conf   odbc.ini                  redhat-release      swtpm_setup.conf       zfs-fuse
+depmod.d                gshadow                     libvirt        odbcinst.ini              request-key.conf    sysconfig
+</code></pre><p>As you can see, there is a lot of stuff here.</p>
+
+<h4 class="relative group">/root
+    <div id="root" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#root" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>This is the default home directory for the root user.</p>
+
+<h4 class="relative group">/mnt
+    <div id="mnt" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#mnt" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>/mnt is used to temporarily mount a file system.</p>
+
+<h4 class="relative group">/boot (Disk-Based)
+    <div id="boot-disk-based" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#boot-disk-based" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>This directory contains the Linux Kernel, as well as boot support and configuration files.</p>
+<p>The size of /boot is determined by the installer program based on the available disk space when you select the default partitioning. It may be set to a different size during or after the installation.</p>
+
+<h4 class="relative group">/home
+    <div id="home" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#home" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>This is used to store user home directories and other user contents.</p>
+
+<h4 class="relative group">/opt (Optional)
+    <div id="opt-optional" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#opt-optional" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>This directory holds additional software that may need to be installed on the system. A sub directory is created for each installed software.</p>
+
+<h4 class="relative group">/usr (UNIX System Resources)
+    <div id="usr-unix-system-resources" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#usr-unix-system-resources" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Holds most of the system files such as:</p>
+
+<h5 class="relative group">/usr/bin
+    <div id="usrbin" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#usrbin" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>Binary directory for user executable commands</p>
+
+<h5 class="relative group">/usr/sbin
+    <div id="usrsbin" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#usrsbin" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>System binaries required at boot and system administration commands not intended for execution by normal users. This directory is not included in the default search path for normal users.</p>
+
+<h5 class="relative group">/usr/lib and /usr/lib64
+    <div id="usrlib-and-usrlib64" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#usrlib-and-usrlib64" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>Contain shared library routines required by many commands/programs located in /usr/bin and /usr/sbin. These are used by kernel and other applications and programs for their successful installation and operation.</p>
+<p>/usr/lib directory also stores system initialization and service management programs. /usr/lib64 contains 64-bit shared library routines.</p>
+
+<h5 class="relative group">/usr/include
+    <div id="usrinclude" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#usrinclude" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>Contains header files for the C programming language.</p>
+
+<h5 class="relative group">/usr/local:
+    <div id="usrlocal" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#usrlocal" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>This is a system administrator repository for storing commands and tools. These commands not generally included with the original Linux distribution.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Directory</th>
+          <th>Contains</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>/usr/local/bin</td>
+          <td>ecutables</td>
+      </tr>
+      <tr>
+          <td>/usr/local/etc</td>
+          <td>configuration files</td>
+      </tr>
+      <tr>
+          <td>/usr/local/lib and /usr/local/lib64</td>
+          <td>library routines</td>
+      </tr>
+      <tr>
+          <td>/usr/share</td>
+          <td>manual pages, documentation, sample templates, configuration files</td>
+      </tr>
+  </tbody>
+</table>
+
+<h5 class="relative group">/usr/src:
+    <div id="usrsrc" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#usrsrc" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>This directory is used to store source code.</p>
+
+<h4 class="relative group">Variable Directory (/var)
+    <div id="variable-directory-var" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#variable-directory-var" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>For data that frequently changes while the system is operational. Such as log, status, spool, lock, etc.</p>
+<p>Common sub directories in /var:</p>
+
+<h5 class="relative group">/var/log
+    <div id="varlog" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#varlog" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>Contains most system log files. Such as boot logs, user logs, failed user logs, installation logs, cron logs, mail logs, etc.</p>
+
+<h5 class="relative group">/var/opt
+    <div id="varopt" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#varopt" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>Log, status, etc. for software installed in /opt.</p>
+
+<h5 class="relative group">/var/spool
+    <div id="varspool" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#varspool" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>Queued files such as print jobs, cron jobs, mail messages, etc.</p>
+
+<h5 class="relative group">/var/tmp
+    <div id="vartmp" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#vartmp" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>For large or longer term temporary files that need to survive system reboots. These are deleted if they are not accessed for a period of 30 days.</p>
+
+<h4 class="relative group">/tmp (Temporary)
+    <div id="tmp-temporary" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#tmp-temporary" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Temporary files that survive system reboots. These are deleted after 10 days if they are not accessed. Programs may need to create temporary files in order to run.</p>
+
+<h4 class="relative group">/dev (Devices)
+    <div id="dev-devices" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#dev-devices" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Contains Device nodes for physical and virtual devices. Linux kernel talks to devices through these nodes. Device nodes are automatically created and deleted by the udevd service. Which dynamically manages devices.</p>
+<p>The two types of device files are character (or raw) and block.</p>
+
+<h4 class="relative group">Character devices
+    <div id="character-devices" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#character-devices" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<ul>
+<li>Accessed serially.</li>
+<li>Console, serial printers, mice, keyboards, terminals, etc.</li>
+</ul>
+
+<h4 class="relative group">Block devices
+    <div id="block-devices" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#block-devices" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<ul>
+<li>Accessed in a parallel fashion with data exchanged in blocks.</li>
+<li>Data on block devices is accessed randomly.</li>
+<li>Hard disk drives, optical drives, parallel printers, etc.</li>
+</ul>
+
+<h3 class="relative group">Procfs File System (/proc)
+    <div id="procfs-file-system-proc" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#procfs-file-system-proc" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Config and status info on:
+<ul>
+<li>Kernel, CPU, memory, disks, partitioning, file systems, networking, running processes, etc.</li>
+</ul>
+</li>
+<li>Zero-length pseudo files point to data maintained by the kernel in the memory.</li>
+<li>Interface to interact with kernel-maintained information.</li>
+<li>Contents created in memory at system boot time, updated during runtime, and destroyed at system shutdown.</li>
+</ul>
+
+<h3 class="relative group">Runtime File System (/run)
+    <div id="runtime-file-system-run" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#runtime-file-system-run" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Data for processes running on the system.
+<ul>
+<li>/run/media</li>
+</ul>
+</li>
+<li>Used to automatically mount external file systems (CD, DVD, flash USB.)</li>
+<li>Contents deleted at shutdown.</li>
+</ul>
+
+<h3 class="relative group">The System File System (/sys)
+    <div id="the-system-file-system-sys" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#the-system-file-system-sys" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Info about hardware devices, drivers, and some kernel features.</li>
+<li>Used by the kernel to load necessary support for devices, create device nodes in /dev, and configure devices.</li>
+<li>Auto-maintained.</li>
+</ul>
+
+<h1 class="relative group">Essential System Commands
+    <div id="essential-system-commands" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#essential-system-commands" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+
+<h3 class="relative group">tree command
+    <div id="tree-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#tree-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>List hierarchy of directories and files.</li>
+<li>Column 2
+<ul>
+<li>Size.</li>
+</ul>
+</li>
+<li>Column 3
+<ul>
+<li>Full path.</li>
+</ul>
+</li>
+</ul>
+<p>Options.
+tree -a :: Include hidden files in the output.
+tree -d :: Exclude files from the output.
+tree -h :: Displays file sizes in human-friendly format.
+tree -f :: Prints the full path for each file.
+tree -p :: Includes file permissions in the output</p>
+
+<h2 class="relative group">Labs
+    <div id="labs" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#labs" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">List only the directories (-d) in the root user’s home directory (/root).
+    <div id="list-only-the-directories--d-in-the-root-users-home-directory-root" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#list-only-the-directories--d-in-the-root-users-home-directory-root" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<pre tabindex="0"><code>tree -d /root
+</code></pre>
+<h3 class="relative group">List files in the /etc/sysconfig directory along with their permissions, sizes in human-readable format, and full path.
+    <div id="list-files-in-the-etcsysconfig-directory-along-with-their-permissions-sizes-in-human-readable-format-and-full-path" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#list-files-in-the-etcsysconfig-directory-along-with-their-permissions-sizes-in-human-readable-format-and-full-path" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<pre tabindex="0"><code>tree -phf /etc/sysconfig
+</code></pre>
+<h3 class="relative group">View tree man pages.
+    <div id="view-tree-man-pages" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#view-tree-man-pages" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<pre tabindex="0"><code>man tree
+</code></pre>
+<h1 class="relative group">Prompt Symbols
+    <div id="prompt-symbols" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#prompt-symbols" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<ul>
+<li>Hash sign (#) for root user.</li>
+<li>Dollar sign ($) for normal users.</li>
+</ul>
+
+<h1 class="relative group">Linux Commands
+    <div id="linux-commands" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#linux-commands" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Two types of commands:</p>
+<ol>
+<li>User
+<ul>
+<li>General purpose.</li>
+<li>For any user.</li>
+</ul>
+</li>
+<li>System Management
+<ul>
+<li>Superuser.</li>
+<li>Require elevated privileges.</li>
+</ul>
+</li>
+</ol>
+
+<h1 class="relative group">Command Mechanics
+    <div id="command-mechanics" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#command-mechanics" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>Basic Syntax</p>
+<ul>
+<li>command option(s) argument(s)</li>
+<li>Many commands have preconfigured default options and arguments.</li>
+</ul>
+<p>An option that starts with a single hyphen character (-la, for instance) ::: Short-option format.</p>
+<ul>
+<li>Two hyphen characters (&ndash;all, for instance)  ::: Long-option format.</li>
+</ul>
+
+<h2 class="relative group">Listing Files and Directories
+    <div id="listing-files-and-directories" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#listing-files-and-directories" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h2 class="relative group">ls
+    <div id="ls" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#ls" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>ll :: shortcut for ls -l</li>
+</ul>
+<p>Flags
+ls -l ::: View long listing format.
+ls -d ::: View info on the specified directory.
+ls -h ::: Human readable format.
+ls -a ::: List all files, including the hidden files.
+ls -t ::: Sort output by date and time with the newest file first.
+ls -R ::: List contents recursively.
+ls -i ::: View inode information.</p>
+
+<h3 class="relative group">labs:
+    <div id="labs-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#labs-1" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<h4 class="relative group">Show the long listing of only /usr without showing its contents.
+    <div id="show-the-long-listing-of-only-usr-without-showing-its-contents" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#show-the-long-listing-of-only-usr-without-showing-its-contents" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>ls -ld /usr
+</code></pre>
+<h4 class="relative group">Display all files in the current directory with their sizes in human-friendly format.
+    <div id="display-all-files-in-the-current-directory-with-their-sizes-in-human-friendly-format" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#display-all-files-in-the-current-directory-with-their-sizes-in-human-friendly-format" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>ls -lh
+</code></pre>
+<h4 class="relative group">List all files, including the hidden files, in the current directory with detailed information.
+    <div id="list-all-files-including-the-hidden-files-in-the-current-directory-with-detailed-information" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#list-all-files-including-the-hidden-files-in-the-current-directory-with-detailed-information" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>ls -la
+</code></pre>
+<h4 class="relative group">Sort output by date and time with the newest file first.
+    <div id="sort-output-by-date-and-time-with-the-newest-file-first" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#sort-output-by-date-and-time-with-the-newest-file-first" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>ls -lt
+</code></pre>
+<h4 class="relative group">List contents of the /etc directory recursively.
+    <div id="list-contents-of-the-etc-directory-recursively" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#list-contents-of-the-etc-directory-recursively" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>ls -R /etc
+</code></pre>
+<h4 class="relative group">List directory info and the contents of a directory recursively.
+    <div id="list-directory-info-and-the-contents-of-a-directory-recursively" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#list-directory-info-and-the-contents-of-a-directory-recursively" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>ls -lR /etc
+</code></pre>
+<h4 class="relative group">View ls manpage.
+    <div id="view-ls-manpage" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#view-ls-manpage" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>man ls
+</code></pre>
+<h3 class="relative group">Printing Working Directory (pwd) command
+    <div id="printing-working-directory-pwd-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#printing-working-directory-pwd-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Returns the absolute path to a file or directory.</li>
+</ul>
+
+<h2 class="relative group">Navigating Directories
+    <div id="navigating-directories" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#navigating-directories" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Absolute path (full path or a fully qualified pathname) :: Points to a file or directory in relation to the top of the directory tree. It always starts with the forward slash (/).</p>
+<p>Relative path :: Points to a file or directory in relation to your current location.</p>
+
+<h3 class="relative group">Labs:
+    <div id="labs-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#labs-2" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<h4 class="relative group">Go one level up into the parent directory using the relative path
+    <div id="go-one-level-up-into-the-parent-directory-using-the-relative-path" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#go-one-level-up-into-the-parent-directory-using-the-relative-path" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>cd ..
+</code></pre>
+<h4 class="relative group">cd into /etc/sysconfig using the absolute path (/etc/sysconfig), or the relative path (etc/sysconfig)
+    <div id="cd-into-etcsysconfig-using-the-absolute-path-etcsysconfig-or-the-relative-path-etcsysconfig" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#cd-into-etcsysconfig-using-the-absolute-path-etcsysconfig-or-the-relative-path-etcsysconfig" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>cd /etc/sysconfig
+cd /
+cd etc/sysconfig
+</code></pre>
+<h4 class="relative group">Change into the /usr/bin directory from /etc/sysconfig using relative or absolute path
+    <div id="change-into-the-usrbin-directory-from-etcsysconfig-using-relative-or-absolute-path" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#change-into-the-usrbin-directory-from-etcsysconfig-using-relative-or-absolute-path" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>cd /usr/bin
+</code></pre><p>or</p>
+<pre tabindex="0"><code>cd ../usr/bin
+</code></pre>
+<h4 class="relative group">Return to your home directory
+    <div id="return-to-your-home-directory" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#return-to-your-home-directory" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>cd
+</code></pre><p>or</p>
+<pre tabindex="0"><code>cd ~
+</code></pre>
+<h4 class="relative group">Use the absolute path to change into the home directory of the root user from /etc/sysconfig
+    <div id="use-the-absolute-path-to-change-into-the-home-directory-of-the-root-user-from-etcsysconfig" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#use-the-absolute-path-to-change-into-the-home-directory-of-the-root-user-from-etcsysconfig" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>cd ../../root
+</code></pre>
+<h4 class="relative group">Switch between the current and previous directories
+    <div id="switch-between-the-current-and-previous-directories" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#switch-between-the-current-and-previous-directories" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>cd ..
+</code></pre>
+<h4 class="relative group">use the cd command to print the home directory of the current user
+    <div id="use-the-cd-command-to-print-the-home-directory-of-the-current-user" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#use-the-cd-command-to-print-the-home-directory-of-the-current-user" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>cd -
+</code></pre>
+<h1 class="relative group">Terminal Device Files
+    <div id="terminal-device-files" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#terminal-device-files" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<ul>
+<li>Unique pseudo (or virtual) numbered device files that represent terminal sessions opened by users.</li>
+<li>Used to communicate with individual sessions.</li>
+<li>Stored in the /dev/pts/ (pseudo terminal session).</li>
+<li>Created  when a user opens a new terminal session.</li>
+<li>Removed when a session closes.</li>
+</ul>
+
+<h2 class="relative group">tty command
+    <div id="tty-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#tty-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>Identify current terminal session.</li>
+<li>Displays filename and location.</li>
+<li>Example: /dev/pts/0</li>
+</ul>
+
+<h1 class="relative group">Inspecting System’s Uptime and Processor Load
+    <div id="inspecting-systems-uptime-and-processor-load" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#inspecting-systems-uptime-and-processor-load" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+
+<h2 class="relative group"><code>uptime</code> command
+    <div id="uptime-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#uptime-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>Displays:
+<ul>
+<li>System’s current time.</li>
+<li>System up time.</li>
+<li>Number of users currently logged in.</li>
+<li>Average % CPU load over the past 1, 5, and 15 minutes.
+<ul>
+<li>0.00 and 1.00 represent no load and full load.</li>
+<li>Greater than 1.00 signifies excess load (over 100%).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h3 class="relative group">clear command
+    <div id="clear-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#clear-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Clears the terminal screen and places the cursor at the top left of the screen.</li>
+<li>Can also use Ctrl+l for this command.</li>
+</ul>
+<pre tabindex="0"><code>clear
+</code></pre>
+<h2 class="relative group">Determining Command Path
+    <div id="determining-command-path" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#determining-command-path" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Tools for identifying the absolute path of the command that will be executed when you run it without specifying its full path.</p>
+<p><code>which</code>, <code>whereis</code>, and <code>type</code></p>
+<p>show the full location of the ls command:</p>
+
+<h2 class="relative group"><code>which</code> command
+    <div id="which-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#which-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>Show command aliases and location.</li>
+</ul>
+<pre tabindex="0"><code>[root@server1 bin]# which ls
+alias ls=&#39;ls --color=auto&#39;
+        /usr/bin/ls
+</code></pre>
+<h2 class="relative group"><code>whereis</code> command
+    <div id="whereis-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#whereis-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>Locates binary, source, and manual files for specified command name.</li>
+</ul>
+<pre tabindex="0"><code>[root@server1 bin]# whereis ls
+ls: /usr/bin/ls /usr/share/man/man1/ls.1.gz /usr/share/man/man1p/ls.1p.gz&gt;)
+</code></pre>
+<h2 class="relative group"><code>type</code> command
+    <div id="type-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#type-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>Find whether the given command is an alias, shell built-in, file, function, or keyword.</li>
+</ul>
+<pre tabindex="0"><code>type ls
+</code></pre>
+<h2 class="relative group">Viewing System Information
+    <div id="viewing-system-information" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#viewing-system-information" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h4 class="relative group"><code>uname</code> command
+    <div id="uname-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#uname-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<ul>
+<li>Show system operating system name.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@server1 bin<span class="o">]</span><span class="c1"># uname</span>
+</span></span><span class="line"><span class="cl">Linux
+</span></span></code></pre></div><p>Flags
+uname -s ::: Show kernel name.
+uname -n ::: Show hostname.
+uname -r ::: Show kernel release.
+uname -v ::: Show kernel build date.
+uname -m ::: Show machine hardware name.
+uname -p ::: Show processor type.
+uname -i ::: Show hardware platform.
+uname -o ::: Show OS name.
+uname -a ::: Show kernel name, nodename, release, version, machine, and os.</p>
+<pre tabindex="0"><code>uname
+</code></pre><pre tabindex="0"><code>uname -a
+</code></pre><pre><code>Linux = Kernel name
+server1.example.com = Hostname of the system
+4.18.0-80.el8.x86_64 = Kernel release
+#1 SMP Wed Mar 13 12:02:46 UTC 2019 = Date and time of the kernel built
+x86_64 = Machine hardware name
+x86_64 = Processor type
+x86_64 = Hardware platform
+GNU/Linux = Operating system name
+</code></pre>
+
+<h2 class="relative group">Viewing CPU Specs
+    <div id="viewing-cpu-specs" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#viewing-cpu-specs" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h2 class="relative group"><code>lscpu</code> command
+    <div id="lscpu-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lscpu-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>Shows CPU:
+<ul>
+<li>Architecture.</li>
+<li>Operating modes.</li>
+<li>Vendor.</li>
+<li>Family.</li>
+<li>Model.</li>
+<li>Speed.</li>
+<li>Cache memory.</li>
+<li>Virtualization support type.</li>
+</ul>
+</li>
+</ul>
+<pre tabindex="0"><code>lscpu
+</code></pre><pre><code>architecture of the CPU (x86_64)
+supported modes of operation (32-bit and 64-bit)
+sequence number of the CPU on this system (1)
+threads per core (1)
+cores per socket (1)
+number of sockets (1)
+vendor ID (GenuineIntel)
+CPU model (58) model name (Intel …)
+speed (2294.784 MHz)
+amount and levels of cache memory (L1d, L1i, L2, and L3)
+</code></pre>
+
+<h2 class="relative group">Getting Help
+    <div id="getting-help" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#getting-help" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">Manual pages
+    <div id="manual-pages" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#manual-pages" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Informational pages stored in /usr/share/man for each program.</li>
+</ul>
+<p>See <a
+  href="../../../personal/tech-public/Using%20Man%20Pages.md">Using Man Pages</a> for more.</p>
+
+<h4 class="relative group"><code>man</code> command
+    <div id="man-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#man-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Flags:
+-k</p>
+<ul>
+<li>Perform a keyword search on manual pages.</li>
+<li>Must build the database with <code>mandb</code> first.</li>
+</ul>
+<p>-f</p>
+<ul>
+<li>Equivalent to whatis.</li>
+</ul>
+
+<h4 class="relative group">Commands to find information/help about programs.
+    <div id="commands-to-find-informationhelp-about-programs" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#commands-to-find-informationhelp-about-programs" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<ul>
+<li><code>apropos </code></li>
+<li><code>whatis</code></li>
+<li><code>info</code></li>
+<li><code>pinfo</code></li>
+</ul>
+<p><em>/usr/share/doc/</em></p>
+<ul>
+<li>Directory with additional program documentation.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">man passwd
+</span></span></code></pre></div><p>line at the bottom indicates the line number of the manual page.</p>
+
+<h3 class="relative group">Man page navigation
+    <div id="man-page-navigation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#man-page-navigation" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>h ::: Help on navigation.
+q ::: Quit the man page.
+Up arrow key ::: Scroll up one line.
+Enter or Down arrow key ::: Scroll down one line.
+f / Spacebar / Page down ::: Move forward one page.
+b / Page up ::: Move backward one page.
+d / u ::: Move down/up half a page.
+g / G ::: Move to the beginning / end of the man pages.
+:f ::: Display line number and bytes being viewed.
+/pattern ::: Searches forward for the specified pattern.
+?pattern ::: Searches backward for the specified pattern.
+n / N ::: Find the next / previous occurrence of a pattern.</p>
+
+<h2 class="relative group">Headings in the Manual
+    <div id="headings-in-the-manual" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#headings-in-the-manual" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p><strong>NAME</strong></p>
+<ul>
+<li>Name of the command or file with a short description.
+<strong>SYNOPSIS</strong></li>
+<li>Syntax summary.
+<strong>DESCRIPTION</strong></li>
+<li>Overview of the command or file.
+<strong>OPTIONS</strong></li>
+<li>Options available for use.
+<strong>EXAMPLES</strong></li>
+<li>Some examples to explain the usage.
+<strong>FILES</strong></li>
+<li>A list of related files.
+<strong>SEE ALSO</strong></li>
+<li>Reference to other manual pages or topics.
+<strong>BUGS</strong></li>
+<li>Any reported bugs or issues.
+<strong>AUTHOR</strong></li>
+<li>Contributor information.</li>
+</ul>
+
+<h2 class="relative group">Manual Sections
+    <div id="manual-sections" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#manual-sections" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>Manual information is split into nine sections for organization and clarity.</li>
+<li>Man searches through each section until it finds a match.
+<ul>
+<li>Starts at section 1, then section 2, etc.</li>
+</ul>
+</li>
+<li>Some commands in Linux also have a configuration file with an identical name.
+<ul>
+<li>Ex: <code>passwd</code> command in /usr/bin and the passwd file in /etc.</li>
+</ul>
+</li>
+<li>Specify the section to find that page only.
+<ul>
+<li>Ex: <code>man 5 passwd</code></li>
+</ul>
+</li>
+<li>Section number is located at the top (header) of the page.</li>
+</ul>
+<p><strong>Section 1</strong></p>
+<ul>
+<li>Refers to user commands.
+<strong>Section 4</strong></li>
+<li>Contains special files.
+<strong>Section 5</strong></li>
+<li>Describes file formats for many system configuration files.
+<strong>Section 8</strong></li>
+<li>Documents system administration and privileged commands designed for the root user.</li>
+</ul>
+<p>Run <code>man man</code> for more details.</p>
+
+<h2 class="relative group">Searching by Keyword
+    <div id="searching-by-keyword" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#searching-by-keyword" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h2 class="relative group"><code>apropos</code> command
+    <div id="apropos-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#apropos-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>Search all sections of the manual pages and show a list of all entries matching the specified keyword in their names or descriptions.</li>
+<li>Must <code>mandb</code> command in order to build an indexed database of the manual pages prior to using.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">mandb
+</span></span></code></pre></div>
+<h4 class="relative group"><code>mandb</code> command
+    <div id="mandb-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#mandb-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<ul>
+<li>Build an indexed database of the manual pages.</li>
+</ul>
+
+<h4 class="relative group">Lab: Find a forgotten XFS administration command.
+    <div id="lab-find-a-forgotten-xfs-administration-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-find-a-forgotten-xfs-administration-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>man -k xfs
+or
+apropos xfs
+</code></pre>
+<h4 class="relative group">Lab: Show a brief list of options and a description.
+    <div id="lab-show-a-brief-list-of-options-and-a-description" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-show-a-brief-list-of-options-and-a-description" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>passwd --help
+or
+passwd -?
+</code></pre>
+<h4 class="relative group"><code>whatis</code> command
+    <div id="whatis-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#whatis-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<ul>
+<li>Same output as <code>man -f</code></li>
+<li>Display one-line manual page descriptions.</li>
+</ul>
+
+<h2 class="relative group"><code>info</code> and <code>pinfo</code> Commands
+    <div id="info-and-pinfo-commands" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#info-and-pinfo-commands" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>Display command detailed documentation.</li>
+<li>Divided into sections called nodes.</li>
+<li>Header:
+<ul>
+<li>Name of the file being displayed.</li>
+<li>Names of the current, next, and previous nodes.</li>
+</ul>
+</li>
+<li>Almost identical to each other.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">info ls
+</span></span></code></pre></div><p>u navigate efficiently.</p>
+
+<h3 class="relative group">info page Navigation
+    <div id="info-page-navigation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#info-page-navigation" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Down / Up arrows</p>
+<ul>
+<li>Move forward / backward one line.
+Spacebar / Del</li>
+<li>Move forward / backward one page.
+q</li>
+<li>Quit the info page.
+t</li>
+<li>Go to the top node of the document.
+s</li>
+<li>Search</li>
+</ul>
+
+<h2 class="relative group">Documentation in  /usr/share/doc/
+    <div id="documentation-in--usrsharedoc" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#documentation-in--usrsharedoc" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p><em>/usr/share/doc/</em></p>
+<ul>
+<li>Stores general documentation for installed packages under subdirectories that match their names.</li>
+</ul>
+<pre tabindex="0"><code>ls -l /usr/share/doc/gzip
+</code></pre>
+<h2 class="relative group">Online RHEL Documentation
+    <div id="online-rhel-documentation" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#online-rhel-documentation" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>docs.redhat.com</li>
+<li>Release notes and guides on planning, installation, administration, security, storage management, virtualization, etc.</li>
+<li>access.redhat.com</li>
+</ul>
+
+<h2 class="relative group">Labs
+    <div id="labs-3" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#labs-3" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">Lab 2: Navigate Linux Directory Tree
+    <div id="lab-2-navigate-linux-directory-tree" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-2-navigate-linux-directory-tree" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Check your location in the directory tree.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">pwd</span>
+</span></span></code></pre></div><p>Show file permissions in the current directory including the hidden files.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ls -la
+</span></span></code></pre></div><p>Change directory into /etc and confirm the directory change.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> /etc
+</span></span><span class="line"><span class="cl"><span class="nb">pwd</span>
+</span></span></code></pre></div><p>Switch back to the directory where you were before, and run pwd again to verify.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> -
+</span></span><span class="line"><span class="cl"><span class="nb">pwd</span>
+</span></span></code></pre></div>
+<h3 class="relative group">Lab: Miscellaneous Tasks
+    <div id="lab-miscellaneous-tasks" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-miscellaneous-tasks" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Identify the terminal device file.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tty
+</span></span></code></pre></div><p>Open a couple of terminal sessions. Compare the terminal numbers.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tty
+</span></span><span class="line"><span class="cl">/dev/pts/1
+</span></span></code></pre></div><p>Execute the uptime command and analyze the system uptime and processor load information.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">uptime
+</span></span></code></pre></div><p>Use three commands to identify the location of the vgs command.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">which vgs
+</span></span><span class="line"><span class="cl">whereis vgs
+</span></span><span class="line"><span class="cl"><span class="nb">type</span> vgs
+</span></span></code></pre></div>
+<h3 class="relative group">Lab: Identify System and Kernel Information
+    <div id="lab-identify-system-and-kernel-information" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-identify-system-and-kernel-information" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ol>
+<li>Analyze the basic information about the system and kernel reported.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">uname -a
+</span></span></code></pre></div><p>Examine the key items relevant to the processor.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">lscpu
+</span></span></code></pre></div>
+<h3 class="relative group">Lab: Man
+    <div id="lab-man" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-man" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>View man page for uname.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">man uname
+</span></span></code></pre></div><p>View the 5 man page section for the shadow.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">man <span class="m">5</span> shadow
+</span></span></code></pre></div>
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_tech notes/RHCSA/Interaction.md"
+          data-oid-likes="likes_tech notes/RHCSA/Interaction.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+      
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 overflow-x-auto py-2">
+        <ul class="flex list-none flex-row">
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 me-4">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href=""
+                title="">
+                
+                
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          David Thomas
+      </p>
+    
+
+    
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

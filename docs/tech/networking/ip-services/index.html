@@ -1,0 +1,1321 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>IP Services &middot; </title>
+    <meta name="title" content="IP Services &middot; ">
+  
+
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/tech/networking/ip-services/">
+  
+
+  
+  
+    <meta name="author" content="David Thomas">
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/tech/networking/ip-services/">
+  <meta property="og:title" content="IP Services">
+  <meta property="og:description" content="All hosts act like they always have, with one default router setting that never has to change.
+The default routers share a virtual IP address in the subnet, defined by the FHRP.
+Hosts use the FHRP virtual IP address as their default router address.
+The routers exchange FHRP protocol messages so that both agree as to which router does what work at any point in time.
+When a router fails or has some other problem, the routers use the FHRP to choose which router
+takes over responsibilities from the failed router.
+The Three Solutions for First-Hop Redundancy
+First Hop Redundancy Protocol does not name any one protocol. Instead, it names a family of
+protocols that fill the same role">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="IP Services">
+  <meta name="twitter:description" content="All hosts act like they always have, with one default router setting that never has to change.
+The default routers share a virtual IP address in the subnet, defined by the FHRP.
+Hosts use the FHRP virtual IP address as their default router address.
+The routers exchange FHRP protocol messages so that both agree as to which router does what work at any point in time.
+When a router fails or has some other problem, the routers use the FHRP to choose which router
+takes over responsibilities from the failed router.
+The Three Solutions for First-Hop Redundancy
+First Hop Redundancy Protocol does not name any one protocol. Instead, it names a family of
+protocols that fill the same role">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.278a55d3e0b39215730b0c642c7c22cc020054272d3850d92c957cddf6209cf18e0ed01f082db397c8c048c30e727b44ca408c350384ca92d5f37c62d008cbd8.css"
+    integrity="sha512-J4pV0&#43;CzkhVzCwxkLHwizAIAVCctOFDZLJV83fYgnPGODtAfCC2zl8jASMMOcntEykCMNQOEypLV83xi0AjL2A==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js"
+      integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP&#43;pSqMXxm6JPOUeAg=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "IP Services",
+    "headline": "IP Services",
+    
+    "abstract": "\u003cp\u003eAll hosts act like they always have, with one default router setting that never has to change.\u003cbr\u003e\nThe default routers share a virtual IP address in the subnet, defined by the FHRP.\u003cbr\u003e\nHosts use the FHRP virtual IP address as their default router address.\u003cbr\u003e\nThe routers exchange FHRP protocol messages so that both agree as to which router does what work at any point in time.\u003cbr\u003e\nWhen a router fails or has some other problem, the routers use the FHRP to choose which router\u003cbr\u003e\ntakes over responsibilities from the failed router.\u003cbr\u003e\nThe Three Solutions for First-Hop Redundancy\u003cbr\u003e\nFirst Hop Redundancy Protocol does not name any one protocol. Instead, it names a family of\u003cbr\u003e\nprotocols that fill the same role\u003c\/p\u003e",
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/tech/networking/ip-services/",
+    "author" : {
+      "@type": "Person",
+      "name": "David Thomas"
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2587"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc",
+      authDomain: "davidwrites-89dd7.firebaseapp.com",
+      projectId: "davidwrites-89dd7",
+      storageBucket: "davidwrites-89dd7.firebasestorage.app",
+      messagingSenderId: "433139099634",
+      appId: "1:433139099634:web:c14275555bd7171e6c6d6b",
+      measurementId: "G-XX5507B82W"
+    };
+
+        var app = firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        var auth = firebase.auth();
+
+      </script>
+    
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+      <div>
+        <a href="/" class="flex">
+          <span class="sr-only"></span>
+          
+            <img
+              src="/img/logo.png"
+              width="200"
+              height="37"
+              class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
+              alt="">
+          
+        </a>
+      </div>
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/tech/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Tech"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      Tech
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Notes"
+  title="Book Notes &amp; Reviews">
+  
+  
+    <p class="text-base font-medium">
+      Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/articles/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Articles"
+  title="Articles">
+  
+  
+    <p class="text-base font-medium">
+      Articles
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/now/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Now"
+  title="Now">
+  
+  
+    <p class="text-base font-medium">
+      Now
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  
+  title="">
+  
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/tech/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Tech"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        Tech
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Notes"
+    title="Book Notes &amp; Reviews">
+    
+    
+      <p class="text-bg font-bg">
+        Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/articles/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Articles"
+    title="Articles">
+    
+    
+      <p class="text-bg font-bg">
+        Articles
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/now/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Now"
+    title="Now">
+    
+    
+      <p class="text-bg font-bg">
+        Now
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    
+    title="">
+    
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
+    })();
+  </script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        IP Services
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#simple-network-management-protocol">Simple Network Management Protocol</a></li>
+            <li><a href="#ftp-and-tftp">FTP and TFTP</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#simple-network-management-protocol">Simple Network Management Protocol</a></li>
+            <li><a href="#ftp-and-tftp">FTP and TFTP</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>All hosts act like they always have, with one default router setting that never has to change.<br>
+The default routers share a virtual IP address in the subnet, defined by the FHRP.<br>
+Hosts use the FHRP virtual IP address as their default router address.<br>
+The routers exchange FHRP protocol messages so that both agree as to which router does what work at any point in time.<br>
+When a router fails or has some other problem, the routers use the FHRP to choose which router<br>
+takes over responsibilities from the failed router.<br>
+The Three Solutions for First-Hop Redundancy<br>
+First Hop Redundancy Protocol does not name any one protocol. Instead, it names a family of<br>
+protocols that fill the same role</p>
+<p>HSRP Concepts<br>
+operates with an active/standby model(also more generally called active/passive<br>
+allows two (or more) routers to cooperate</p>
+<p>HSRP Failover</p>
+<pre tabindex="0"><code>To make the switches change their MAC address table entries for VMAC1, R2 sends an Ethernet frame with VMAC1 as the source MAC address.
+he frame is also a LAN broadcast, so all the switches learn a MAC table entry for VMAC1 that leads toward R2.
+</code></pre><p>HSRP Load Balancing<br>
+you canconfigure multiple instances of HSRP in the same subnet (called multiple HSRP groups),<br>
+preferring one router to be active in one group and the other router to be preferred as active in another.</p>
+<pre tabindex="0"><code>FHRPs are needed on any device that acts as a default router,
+includes both traditional routers and Layer 3 switches.
+</code></pre>
+<h4 class="relative group">Simple Network Management Protocol
+    <div id="simple-network-management-protocol" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#simple-network-management-protocol" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>SNMPv2c and SNMPv3
+</code></pre><p>application layer protocol<br>
+provides a message format for communication between what are termed managers and agents<br>
+manager<br>
+a network management application running on a PC or server<br>
+typically being called a Network Management Station (NMS)<br>
+uses SNMP protocols to communicate with each SNMP agent.<br>
+Cisco Primeseries of management products (<a
+  href="https://www.cisco.com/go/prime"
+    target="_blank"
+  >www.cisco.com/go/prime</a>) use SNMP (and<br>
+other protocols) to manage networks.<br>
+agents<br>
+exist in the network, one per device that is managed.<br>
+software running inside each device (router, switch, and so on), with knowledge of all the<br>
+variables on that device that describe the device’s configuration, status, and counters.<br>
+keeps a operations of the device.database of variables that make up the parameters, status, and counters for the This database, called the Management Information Base (MIB)<br>
+IOS on routers and switches include an SNMP agent, with builtwith the configuration shown later -in MIB, that can be enabled</p>
+<p>SNMP Variable Reading and Writing: SNMP Get and Set<br>
+NMS typically polls the SNMP agent on each device<br>
+NMS can notify the human user in front of the PC or send emails, texts, and so on to notify<br>
+the network operations staff of any issues identified by the data found by polling the devices. You can even reconfigure the device through these SNMP variables in the MIB if<br>
+you permit this level of control.<br>
+NMS uses the SNMPGet messages)to ask for information from an agent.Get, GetNext, and GetBulk messages(together referenced simply as<br>
+NMS sends an SNMP Set message to write variables on the SNMP agent as a means to change the configuration of the device.</p>
+<pre tabindex="0"><code>change the configuration of the device.
+messages come in pairs, with, for instance, a Get Request asking the agent for the contents of a variable, and the Get Response supplying that information
+</code></pre><pre tabindex="0"><code>NMS can analyze various statistical facts such as averages, minimums, and maximums
+NMS can set thresholds for certain key variables, telling the NMS to send a notification (email, text, and so on) when a threshold is passed.
+</code></pre><p>SNMP Notifications: Traps and Informs<br>
+SNMP agents can initiate communications to the NMS.<br>
+generally called notifications, use two specific SNMP messages: Trap and Inform<br>
+SNMP agents MIB variables when those variables reach a certain state.send a Trap or Inform SNMP message to the NMS to list the state of certain</p>
+<pre tabindex="0"><code>SNMP Traps and Inform messages have the exact same purpose but differ in the protocol mechanisms
+trap
+The SNMP agent transport protocol as with all SNMP messages,sends the Trap to the IP address of the NMS, with UDP as the
+less overhead than inform
+Inform
+</code></pre><pre tabindex="0"><code>Like Trap messages but with reliability added
+Added to the protocol with SNMP Version 2 (SNMPv2),
+use UDP but add application layer reliability
+NMS must acknowledge receipt of the Inform with an SNMP Response message, or the SNMP agent will time out and resend the Inform.
+</code></pre><p>The Management Information Base<br>
+Every SNMP agent has its own Management Information Base<br>
+defines variables whose values are set and updated by the agent<br>
+enable the management software to monitor/control the network device.<br>
+defineseach variable as an object ID (OID)<br>
+organizes the OIDs based in part on RFC standards, and in part with vendor-proprietary<br>
+variables<br>
+organizes all the variables into a hierarchy of OIDs, usually shown as a tree<br>
+Each node in the tree can be described based on the tree structure sequence, either by name or by number.</p>
+<p>you could use an SNMP manager and type MIB variable 1.3.6.1.4.1.9.2.1.58.0 and click a<br>
+button to get that variable, to see the current CPU usage percentage from a Cisco router<br>
+Securing SNMP</p>
+<p>Securing SNMP<br>
+use ACLs to limit SNMP messages to those from known servers only.<br>
+can configure an IPv4 ACL to filter incoming SNMP messages that arrive in IPv4 packets and an IPv6 ACL to filter SNMP messages that arrive in IPv6 packets.<br>
+all versions of SNMP support a basic clear-text password mechanism,<br>
+SNMPv1 defined clear-text passwords called SNMP communities.<br>
+SNMP agent and the SNMP manager need prior knowledge of the same SNMP community value (called a community string)<br>
+Get messages and the Set message include the appropriate community string value, in clear text.<br>
+NMS sends a Get or Set with the correct community string, as configured on the<br>
+SNMP agent, the agent processes the message.<br>
+SNMPv1 defines both a read-only community and a read-write community.<br>
+read-only (RO) community allows Get messages, and the read-write (RW)<br>
+community allows both reads and writes (Gets and Sets).</p>
+<pre tabindex="0"><code>SNMPv2, and the related Community-based SNMP Version 2 (SNMPv2c)
+The original specifications for SNMPv2 did not include SNMPv1 communities
+SNMPv3
+security had arrived with the powerful network management protocol. away with communities and replaces them with the following features:SNMPv3 does
+Message integrity:This mechanism, applied to all SNMPv3 messages, confirms
+whether or not each message has been changed during transit.
+Authentication:and password,withThis optional feature the password never sent as clear text. Instead, it uses a adds authentication with both a username
+hashing method like many other modern authentication processes.
+Encryption (privacy): This optional feature encrypts the contents of SNMPv3
+messages so that attackers who intercept the messages cannot read their contents.
+</code></pre>
+<h4 class="relative group">FTP and TFTP
+    <div id="ftp-and-tftp" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#ftp-and-tftp" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<pre tabindex="0"><code>Opaque:and commandsTo represent logical internal file systems for the convenience of internal functions
+Network: To represent external file systems found on different types of servers for the
+convenience of reference in different IOS commands
+Disk: For flash
+Usbflash: For USB flash
+NVRAM: A special type for NVRAM memory, the default location of the startup-config file
+the command more flash0:/wotemp/fred woulddisplay the contents of file fred in directory
+/wotemp in the first flash memory slot in the router.
+many commands use a keyword that indirectly refers to a formal filename, to reduce typing.For
+example:
+</code></pre><p>example:<br>
+<strong>show running-config</strong> command:Refers to file system:running-config<br>
+<strong>show startup-config</strong> command: Refers to file nvram:startup-config<br>
+<strong>show flash</strong> command: Refers to default flash IFS (usually flash0:)</p>
+
+<h6 class="relative group">Upgrading IOS Images
+    <div id="upgrading-ios-images" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#upgrading-ios-images" aria-label="Anchor">#</a>
+    </span>
+    
+</h6>
+<pre tabindex="0"><code>process to upgrade an IOS image into flash memory, using the following steps:
+Step 1.Obtain the IOS image from Cisco, usually by downloading the IOS image from
+Cisco.com using HTTP or FTP.
+Step 2. Place the IOS image someplace that the router can reach. Locations include
+TFTP or FTP servers in the network or a USB flash drive that is then inserted into the router.
+Step 3. Issue the copy command from the router, copying the file into the flash
+memory that usually remains with the router on a permanent basis. (Routers usually cannot boot from the IOS image in a USB flash drive.)
+</code></pre><pre tabindex="0"><code>Copying a New IOS Image to a Local IOS File System Using TFTP
+</code></pre><pre tabindex="0"><code>copy command
+</code></pre><p>copy command<br>
+works through these kinds of questions:<br>
+What is the IP address or host name of the TFTP server?<br>
+What is the name of the file?<br>
+Ask the server to learn the size of the file, and then check the local router’s flash<br>
+to ask whether enough space is available for this file in flash memory.<br>
+Does the server actually have a file by that name?<br>
+Do you want the router to erase any old files in flash?<br>
+Afterward<br>
+verifies that the checksum for the file shows that no errors occurred<br>
+view the contents of the flash file system<br>
+<strong>show flash</strong><br>
+shows the files in the default flash file system (flash0:)</p>
+<pre tabindex="0"><code>dir flash0 : commandlists the contents of that same file system, with similar
+information.IFS.) (You can use the dircommand to display the contents of any local
+</code></pre><pre tabindex="0"><code>show flash(bytes used plus bytes free).lists the bytes used, whereas the know which command lists which particular total.dir command lists the total bytes
+</code></pre><p>Verifying IOS Code Integrity with MD5<br>
+when Cisco builds a new IOS image, it calculates and publishes an MD5 hash value for<br>
+that specific IOS file.<br>
+IOS <strong>verify</strong> command.<br>
+will list the MD5 hash as recalculated on your router. If both MD5 hashes are<br>
+equal, the file has not changed.</p>
+<pre tabindex="0"><code>verify /md5 commandgenerates the MD5 hash on your router,
+you can include the hash value computed by Cisco as the last parameter (as
+shown in the example), or leave it offlocally computed value matches what you copied into the command. If you. If you include it, IOS will tell you if the
+leave it out, the verify command lists the locally computed MD5 hash, and you
+</code></pre><pre tabindex="0"><code>leave it out, the verify command lists the locally computed MD5 hash, and you have to do the picky character-by-character check of the values yourself.
+</code></pre><p>Copying Images with FTP</p>
+<pre tabindex="0"><code>copy ftp flash
+</code></pre><pre tabindex="0"><code>can configure the FTP username and password on the router so that you do not
+have to include them in the copy command. For instance, the global
+</code></pre><p>have to include them in the configuration commands <strong>ip ftp username wendellcopy</strong> command. For instance, the global and <strong>ip ftp password odom</strong><br>
+would have configured those values.<br>
+The FTP and TFTP Protocols<br>
+copycommand, when using the tftp or ftp keyword, makes the command act as a client<br>
+FTP ProtocolBasics<br>
+uses TCP<br>
+TCP port 21 and in some cases also well-known port 20.<br>
+FTP uses a client/server model for file transfer</p>
+<pre tabindex="0"><code>FTP control connection—define the kinds of functions supported by FTP
+allow the client to navigate around the directory structures of the server, list files, and
+then transfer files from the server (FTP GET) or to the server (FTP PUT).
+summary of some of the FTP actions:
+Navigate directories : List the current directory, change the current directory to
+a new directory, go back to the home directory, all on both the server and client side of the connection.
+Add/remove directories: Create new directories and remove existing
+directories on both the client and server.
+List files : List files on both the client and server.
+File transfer: Get (client gets a copy of the file from the server), Put (client takes
+a file that exists on the client and puts a copy of the FTP server).
+FTP Active and Passive Modes
+may impact whether the TCP client can or cannot connect to the server and
+perform normal functions
+user at the FTP client can choose which mode to use
+FTP passive mode may be the more likely option to work.
+FTP uses two types of TCP connections:
+</code></pre><p>FTP uses two types of TCP connections:<br>
+Control Connection: Used to exchange FTP commands<br>
+Data Connection: Used for sending and receiving data, both for file transfers and for output to display to a user</p>
+<p>when a client connects to an FTP server, the client first creates the FTP control connection</p>
+<p>server listens for new control connections on its well-known port 21<br>
+client allocates any new dynamic port (49222 in this case) and creates a TCP connection to the server</p>
+<pre tabindex="0"><code>The FTP client allocates a currently unused dynamic port and starts
+listening on that port.
+The client identifies that port (and its IP address) to the FTP server by
+sending an FTP PORT command to the server.
+The server, because it also operates in active mode, expects the PORT command; the server reacts and initiates the FTP data connection to the
+client’s address (192.168.1.102) and port (49333).
+</code></pre><p>Passive mode helps solve the firewall restrictions by having the FTP client<br>
+initiate the FTP data connection to the server.<br>
+passive mode does not simply cause the FTP client to connect to a well-known<br>
+port on the server;<br>
+The FTP client changes to use FTP passive mode, notifying the server using the FTP PASV command.<br>
+The server chooses a port to listen on for the upcoming new TCP</p>
+<pre tabindex="0"><code>The server chooses a port to listen on for the upcoming new TCP connection, in this case TCP port 49444.
+The FTP notifies the FTP client of its IP address and chosen port with the
+FTP PORT command.
+The FTP client opens the TCP data connection to the IP address and port
+learned at the previous step.
+</code></pre><p>FTP over TLS (FTP Secure)<br>
+FTPS encrypts both the control and data connections with TLS, including the exchange of the usernames and passwords<br>
+<strong>FTPS explicit mode process:</strong><br>
+The client creates the FTP control TCP connection to server well-known port 21.<br>
+The client initiates the use of TLS in the control connection with the FTP AUTH command.<br>
+When the user takes an action that requires an FTP data connection, the client<br>
+creates an FTP data TCP connection to server well-known port 21.<br>
+The client initiates the use of TLS in the data connection with the FTP AUTH<br>
+command.</p>
+<pre tabindex="0"><code>implicit mode process
+begins with a required TLS connection, with no need for an FTP AUTH
+command, using wellthe data connection).-known ports 990 (for the control connection) and 989 (for
+SFTP
+uses SSH to encrypt file transfers over an SSH connection. However, the acronym SFTP does not refer to a secure version of FTP.
+</code></pre><p><strong>TFTP Protocol Basics</strong><br>
+Trivial File Transfer Protocol uses UDP well-known port 69. Because it uses UDP, TFTP adds a<br>
+feature to check each file for transmission errors by using a checksum process on each file after the transfer completes.<br>
+the code requires less space to install, which can be useful for devices with limited memory.<br>
+can Get and Put files, but it includes no commands to change directories, create/remove directories, or even to list files on the server.<br>
+does not support even simple clearit should accept requests from any TFTP client.-text authentication. In effect, if a TFTP server is running,</p>
+<pre tabindex="0"><code>1.2 Describe characteristics of network topology architectures
+1.2.a 2 tier
+1.2.b 3 tier
+1.2.e Small office/home office (SOHO)
+1.3 Compare physical interface and cabling types
+1.3.c Concepts of PoE
+</code></pre><pre tabindex="0"><code>Two-Tier Campus Design (Collapsed Core)
+access, distribution, and core.
+</code></pre><pre tabindex="0"><code>Access switches connect directly to end users,
+Distribution switches provide a path through which the access switches can forward traffic to
+each other
+each of the access switches connects to at least one distribution switch, typically to two
+distribution switches for redundancy.
+most designs use at least two uplinks to two different distribution switches (as shown in Figure 13 - 1) for redundancy.
+Provides a place to connect end-user devices (the access layer, with access switches)
+Connects the switches with a reasonable number of cables and switch ports by connecting all 40 access switches to two distribution switches
+</code></pre>
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_tech/networking/IP Services.md"
+          data-oid-likes="likes_tech/networking/IP Services.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+      
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 overflow-x-auto py-2">
+        <ul class="flex list-none flex-row">
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 me-4">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href=""
+                title="">
+                
+                
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          David Thomas
+      </p>
+    
+
+    
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

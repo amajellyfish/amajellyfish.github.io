@@ -1,0 +1,2348 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title> &middot; David Thomas</title>
+    <meta name="title" content=" &middot; David Thomas">
+  
+
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/tech/ansible/ansible4devops/chapter-11---automating-your-automation---ansible-tower-and-cicd/">
+  
+
+  
+  
+    <meta name="author" content="David Thomas">
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/tech/ansible/ansible4devops/chapter-11---automating-your-automation---ansible-tower-and-cicd/">
+  <meta property="og:site_name" content="David Thomas">
+  <meta property="og:title" content="David Thomas">
+  <meta property="og:description" content="Chapter 11 - Automating Your Automation - Ansible Tower and CICD # At this point, you should be able to convert almost any bit of your infrastructure’s configuration into Ansible playbooks, roles, and inventories. And before deploying any infrastructure changes, you should test the changes in a non-production environment (just like you would with application releases). Manually running a playbook that configures your entire infrastructure, then making sure it does what you expect, is a good start towards order and stability.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="David Thomas">
+  <meta name="twitter:description" content="Chapter 11 - Automating Your Automation - Ansible Tower and CICD # At this point, you should be able to convert almost any bit of your infrastructure’s configuration into Ansible playbooks, roles, and inventories. And before deploying any infrastructure changes, you should test the changes in a non-production environment (just like you would with application releases). Manually running a playbook that configures your entire infrastructure, then making sure it does what you expect, is a good start towards order and stability.">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.c5c4ab59b36e3a06d6dff38478af5d2c18b2d7a3603611d7fc5647b02111f989bd5957610b6bed4d10718428186bc7c38590e84c77c0d50f401da78f4fbb5384.css"
+    integrity="sha512-xcSrWbNuOgbW3/OEeK9dLBiy16NgNhHX/FZHsCER&#43;Ym9WVdhC2vtTRBxhCgYa8fDhZDoTHfA1Q9AHaePT7tThA==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js"
+      integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP&#43;pSqMXxm6JPOUeAg=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "",
+    "headline": "",
+    
+    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003eChapter 11 - Automating Your Automation - Ansible Tower and CICD\n    \u003cdiv id=\u0022chapter-11---automating-your-automation---ansible-tower-and-cicd\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#chapter-11---automating-your-automation---ansible-tower-and-cicd\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h2\u003e\n\u003cp\u003eAt this point, you should be able to convert almost any bit of your\ninfrastructure\u0026rsquo;s configuration into Ansible playbooks, roles, and\ninventories. And before deploying any infrastructure changes, you should\ntest the changes in a non-production environment (just like you would\nwith application releases). Manually running a playbook that configures\nyour entire infrastructure, then making sure it does what you expect, is\na good start towards order and stability.\u003c\/p\u003e",
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/tech/ansible/ansible4devops/chapter-11---automating-your-automation---ansible-tower-and-cicd/",
+    "author" : {
+      "@type": "Person",
+      "name": "David Thomas"
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "5728"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc",
+      authDomain: "davidwrites-89dd7.firebaseapp.com",
+      projectId: "davidwrites-89dd7",
+      storageBucket: "davidwrites-89dd7.firebasestorage.app",
+      messagingSenderId: "433139099634",
+      appId: "1:433139099634:web:c14275555bd7171e6c6d6b",
+      measurementId: "G-XX5507B82W"
+    };
+
+        var app = firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        var auth = firebase.auth();
+
+      </script>
+    
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium">
+          David Thomas
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <div>
+  <div class="cursor-pointer flex items-center nested-menu">
+    
+    <a
+      
+      aria-label="Tech"
+      class="text-base font-medium hover:text-primary-600 dark:hover:text-primary-400"
+      title="">
+      <p>
+        Tech
+      </p>
+    </a>
+    <span>
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </div>
+  <div class="absolute menuhide">
+    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+      <div class="flex flex-col space-y-3">
+        
+          <a
+            href="/tech/networking/"
+            
+            aria-label="Networking"
+            class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+            
+            <p class="text-sm font-sm" title="">
+              Networking
+            </p>
+          </a>
+        
+          <a
+            href="/tech/linux/"
+            
+            aria-label="Linux"
+            class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+            
+            <p class="text-sm font-sm" title="">
+              Linux
+            </p>
+          </a>
+        
+          <a
+            href="/tech/ansible/"
+            
+            aria-label="Ansible"
+            class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+            
+            <p class="text-sm font-sm" title="Ansible">
+              Ansible
+            </p>
+          </a>
+        
+          <a
+            href="/tech/podman/"
+            
+            aria-label="Podman"
+            class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+            
+            <p class="text-sm font-sm" title="">
+              Podman
+            </p>
+          </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      
+        
+  <a
+  href="/notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Notes"
+  title="Book Notes &amp; Reviews">
+  
+  
+    <p class="text-base font-medium">
+      Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/articles/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Articles"
+  title="Articles">
+  
+  
+    <p class="text-base font-medium">
+      Articles
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/now/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Now"
+  title="Now">
+  
+  
+    <p class="text-base font-medium">
+      Now
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  
+  title="">
+  
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    aria-label="Tech"
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      Tech
+    </p>
+    <span>
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </a>
+</li>
+
+  <li class="mt-1">
+    <a
+      href="/tech/networking/"
+      
+      aria-label="Networking"
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+      
+      <p class="text-sm font-small" title="">
+        Networking
+      </p>
+    </a>
+  </li>
+
+  <li class="mt-1">
+    <a
+      href="/tech/linux/"
+      
+      aria-label="Linux"
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+      
+      <p class="text-sm font-small" title="">
+        Linux
+      </p>
+    </a>
+  </li>
+
+  <li class="mt-1">
+    <a
+      href="/tech/ansible/"
+      
+      aria-label="Ansible"
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+      
+      <p class="text-sm font-small" title="Ansible">
+        Ansible
+      </p>
+    </a>
+  </li>
+
+  <li class="mt-1">
+    <a
+      href="/tech/podman/"
+      
+      aria-label="Podman"
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+      
+      <p class="text-sm font-small" title="">
+        Podman
+      </p>
+    </a>
+  </li>
+
+<li class="mb-2"></li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Notes"
+    title="Book Notes &amp; Reviews">
+    
+    
+      <p class="text-bg font-bg">
+        Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/articles/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Articles"
+    title="Articles">
+    
+    
+      <p class="text-bg font-bg">
+        Articles
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/now/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Now"
+    title="Now">
+    
+    
+      <p class="text-bg font-bg">
+        Now
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    
+    title="">
+    
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
+    })();
+  </script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#chapter-11---automating-your-automation---ansible-tower-and-cicd">Chapter 11 - Automating Your Automation - Ansible Tower and CICD</a>
+      <ul>
+        <li><a href="#chap13.xhtml_leanpub-auto-ansible-tower">Ansible Tower</a>
+          <ul>
+            <li><a href="#chap13.xhtml_leanpub-auto-getting-and-installing-ansible-tower">Getting and Installing Ansible Tower</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-using-ansible-tower">Using Ansible Tower</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-other-tower-features-of-note">Other Tower Features of Note</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-tower-alternatives">Tower Alternatives</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap13.xhtml_leanpub-auto-jenkins-ci">Jenkins CI</a>
+          <ul>
+            <li><a href="#chap13.xhtml_leanpub-auto-build-a-local-jenkins-server-with-ansible">Build a local Jenkins server with Ansible</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-create-an-ansible-playbook-on-the-jenkins-server">Create an Ansible playbook on the Jenkins server</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-create-a-jenkins-job-to-run-an-ansible-playbook">Create a Jenkins job to run an Ansible Playbook</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap13.xhtml_leanpub-auto-unit-integration-and-functional-testing">Unit, Integration, and Functional Testing</a>
+          <ul>
+            <li><a href="#chap13.xhtml_leanpub-auto-debugging-and-asserting">Debugging and Asserting</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-checking-syntax-and-performing-dry-runs">Checking syntax and performing dry runs</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-automated-testing-on-github-using-travis-ci">Automated testing on GitHub using Travis CI</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-functional-testing-using-serverspec">Functional testing using serverspec</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap13.xhtml_leanpub-auto-summary-13">Summary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#chapter-11---automating-your-automation---ansible-tower-and-cicd">Chapter 11 - Automating Your Automation - Ansible Tower and CICD</a>
+      <ul>
+        <li><a href="#chap13.xhtml_leanpub-auto-ansible-tower">Ansible Tower</a>
+          <ul>
+            <li><a href="#chap13.xhtml_leanpub-auto-getting-and-installing-ansible-tower">Getting and Installing Ansible Tower</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-using-ansible-tower">Using Ansible Tower</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-other-tower-features-of-note">Other Tower Features of Note</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-tower-alternatives">Tower Alternatives</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap13.xhtml_leanpub-auto-jenkins-ci">Jenkins CI</a>
+          <ul>
+            <li><a href="#chap13.xhtml_leanpub-auto-build-a-local-jenkins-server-with-ansible">Build a local Jenkins server with Ansible</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-create-an-ansible-playbook-on-the-jenkins-server">Create an Ansible playbook on the Jenkins server</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-create-a-jenkins-job-to-run-an-ansible-playbook">Create a Jenkins job to run an Ansible Playbook</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap13.xhtml_leanpub-auto-unit-integration-and-functional-testing">Unit, Integration, and Functional Testing</a>
+          <ul>
+            <li><a href="#chap13.xhtml_leanpub-auto-debugging-and-asserting">Debugging and Asserting</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-checking-syntax-and-performing-dry-runs">Checking syntax and performing dry runs</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-automated-testing-on-github-using-travis-ci">Automated testing on GitHub using Travis CI</a></li>
+            <li><a href="#chap13.xhtml_leanpub-auto-functional-testing-using-serverspec">Functional testing using serverspec</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap13.xhtml_leanpub-auto-summary-13">Summary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h2 class="relative group">Chapter 11 - Automating Your Automation - Ansible Tower and CICD
+    <div id="chapter-11---automating-your-automation---ansible-tower-and-cicd" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chapter-11---automating-your-automation---ansible-tower-and-cicd" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>At this point, you should be able to convert almost any bit of your
+infrastructure&rsquo;s configuration into Ansible playbooks, roles, and
+inventories. And before deploying any infrastructure changes, you should
+test the changes in a non-production environment (just like you would
+with application releases). Manually running a playbook that configures
+your entire infrastructure, then making sure it does what you expect, is
+a good start towards order and stability.</p>
+<p>Since all your infrastructure is defined in code, you can start
+automating all the aspects of infrastructure deployment, and even run
+unit, functional, and integration tests on your infrastructure, just
+like you do for your applications.</p>
+<p>This section will cover different levels of infrastructure automation
+and testing, and highlight tools and techniques you can use to automate
+and streamline infrastructure operations.</p>
+
+<h3 class="relative group">Ansible Tower
+    <div id="chap13xhtml_leanpub-auto-ansible-tower" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-ansible-tower" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>All the examples in this book use Ansible&rsquo;s CLI to run playbooks and
+report back the results. For smaller teams, especially when everyone on
+the team is well-versed in how to use Ansible, YAML syntax, and security
+best practices, using the CLI is a sustainable approach.</p>
+<p>But for many organizations, basic CLI use is inadequate:</p>
+<ul>
+<li>The business needs detailed reporting of infrastructure deployments
+and failures, especially for audit purposes.</li>
+<li>Team-based infrastructure management requires varying levels of
+involvement in playbook management, inventory management, and key and
+password access.</li>
+<li>A thorough visual overview of the current and historical playbook runs
+and server health helps identify potential issues before they affect
+the bottom line.</li>
+<li>Playbook scheduling ensures infrastructure remains in a known state.</li>
+</ul>
+<p>Ansible Tower checks off these items&mdash;and many more&mdash;and provides a
+great mechanism for team-based Ansible usage. The product is currently
+free for teams managing ten or fewer servers (it&rsquo;s basically an
+&lsquo;unlimited trial&rsquo; mode), and has flexible pricing for teams managing
+dozens to thousands of servers.</p>
+<p>While this book includes a brief overview of Tower, it is highly
+recommended you read through Ansible, Inc&rsquo;s extensive <a
+  href="http://releases.ansible.com/ansible-tower/docs/tower_user_guide-latest.pdf"
+    target="_blank"
+  >Tower User
+Guide</a>,
+which includes details this book won&rsquo;t be covering such as LDAP
+integration and multiple-team playbook management workflows.</p>
+
+<h4 class="relative group">Getting and Installing Ansible Tower
+    <div id="chap13xhtml_leanpub-auto-getting-and-installing-ansible-tower" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-getting-and-installing-ansible-tower" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Ansible has a very thorough <a
+  href="http://releases.ansible.com/ansible-tower/docs/tower_user_guide-latest.pdf"
+    target="_blank"
+  >Ansible Tower User
+Guide</a>,
+which details the installation and configuration of Ansible Tower. For
+the purposes of this chapter, since we just want to download and try out
+Tower locally, we are going to use Ansible&rsquo;s official Vagrant box to
+quickly build an Ansible Tower VM.</p>
+<p>Make sure you have <a
+  href="https://www.vagrantup.com/downloads.html"
+    target="_blank"
+  >Vagrant</a>
+and <a
+  href="https://www.virtualbox.org/wiki/Downloads"
+    target="_blank"
+  >VirtualBox</a> installed,
+then create a directory (e.g. <code>tower</code>) and do the following within the
+directory:</p>
+<ol>
+<li><code>vagrant init tower http://vms.ansible.com/ansible-tower-2.1.4-virtualbox.box</code>
+(Create a new Vagrantfile using the Tower base box from Ansible).</li>
+<li><code>vagrant up</code> (Build the Tower VM).</li>
+<li><code>vagrant ssh</code> (Log into the VM, and Tower will display a message
+with connection information).</li>
+</ol>
+<aside class="information blurb">
+<p>The above installation instructions and Vagrant box come from a blog
+post on Ansible&rsquo;s official blog, <a
+  href="http://www.ansible.com/blog/ansible-vagrant"
+    target="_blank"
+  >Ansible Tower and
+Vagrant</a>.</p>
+</aside>
+<p>Visit the URL provided by the login welcome message (something like
+<code>https://10.42.0.42/</code>), and after confirming a security exception for
+the Ansible Tower certificate, login with the credentials from step 3.</p>
+<p>At this point, you will need to register a free trial license of Ansible
+Tower following the instructions on the screen. The free trial allows
+you to use all of Tower&rsquo;s features for up to 10 servers, and is great
+for experimenting and seeing how Tower fits into your workflow. After
+you get the license (it&rsquo;s a block of JSON which you paste into the
+license field), you should get to Tower&rsquo;s default dashboard page:</p>
+<figure class="image center" style="width: 80%;">
+<img src="images/11-ansible-tower-dashboard.png"
+style="width: 100%;" alt="Ansible Tower&#39;s Dashboard" />
+<figcaption>Ansible Tower’s Dashboard</figcaption>
+</figure>
+
+<h4 class="relative group">Using Ansible Tower
+    <div id="chap13xhtml_leanpub-auto-using-ansible-tower" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-using-ansible-tower" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Ansible Tower is centered around the idea of organizing <em>Projects</em>
+(which run your playbooks via <em>Jobs</em>) and <em>Inventories</em> (which describe
+the servers on which your playbooks should be run) inside of
+<em>Organizations</em>. <em>Organizations</em> are then set up with different levels
+of access based on <em>Users</em> and <em>Credentials</em> grouped in different
+<em>Teams</em>. It&rsquo;s a little overwhelming at first, but once the initial
+structure is configured, you&rsquo;ll see the power and flexibility Tower&rsquo;s
+Project workflow affords.</p>
+<p>Let&rsquo;s get started with our first project!</p>
+<p>The first step is to make sure you have a test playbook you can run
+using Ansible Tower. Generally, your playbooks should be stored in a
+source code repository (e.g. Git or Subversion), with Tower configured
+to check out the latest version of the playbook from the repository and
+run it. For this example, however, we will create a playbook in Tower&rsquo;s
+default <code>projects</code> directory located in <code>/var/lib/awx/projects</code>:</p>
+<ol>
+<li>Log into the Tower VM: <code>vagrant ssh</code></li>
+<li>Switch to the <code>awx</code> user: <code>sudo su - awx</code></li>
+<li>Go to Tower&rsquo;s default <code>projects</code> directory:
+<code>cd /var/lib/awx/projects</code></li>
+<li>Create a new project directory:
+<code>mkdir ansible-for-devops &amp;&amp; cd ansible-for-devops</code></li>
+<li>Create a new playbook file, <code>main.yml</code>, within the new directory,
+with the following contents:</li>
+</ol>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 ---
+2 - hosts: all
+3   gather_facts: no
+4   connection: local
+5 
+6   tasks:
+7     - name: Check the date on the server.
+8       command: date</code></pre>
+</div>
+</figure>
+<p>Switch back to your web browser and get everything set up to run the
+test playbook inside Ansible Tower&rsquo;s web UI:</p>
+<ol>
+<li>Create a new <em>Organization</em>, called &lsquo;Ansible for DevOps&rsquo;.</li>
+<li>Add a new User to the Organization, named John Doe, with the
+username <code>johndoe</code> and password <code>johndoe1234</code>.</li>
+<li>Create a new <em>Team</em>, called &lsquo;DevOps Engineers&rsquo;, in the &lsquo;Ansible for
+DevOps&rsquo; Organization.</li>
+<li>Under the Team&rsquo;s Credentials section, add in SSH credentials by
+selecting &lsquo;Machine&rsquo; for the Credential type, and setting &lsquo;Name&rsquo; to
+<code>Vagrant</code>, &lsquo;Type&rsquo; to <code>Machine</code>, &lsquo;SSH Username&rsquo; to <code>vagrant</code>, and
+&lsquo;SSH Password&rsquo; to <code>vagrant</code>.</li>
+<li>Under the Team&rsquo;s Projects section, add a new <em>Project</em>. Set the
+&lsquo;Name&rsquo; to <code>Tower Test</code>, &lsquo;Organization&rsquo; to <code>Ansible for DevOps</code>, &lsquo;SCM
+Type&rsquo; to <code>Manual</code>, and &lsquo;Playbook Directory&rsquo; to <code>ansible-for-devops</code>
+(Tower automatically detects all folders placed inside
+<code>/var/lib/awx/projects</code>, but you could also use an alternate Project
+Base Path if you want to store projects elsewhere).</li>
+<li>Under the Inventories section, add an <em>Inventory</em>. Set the &lsquo;Name&rsquo; to
+<code>Tower Local</code>, and &lsquo;Organization&rsquo; set to <code>Ansible for DevOps</code>. Once
+the inventory is saved: 1. Add a &lsquo;Group&rsquo; with the Name <code>localhost</code>.
+Click on the group once it&rsquo;s saved. 2. Add a &lsquo;Host&rsquo; with the Host
+Name <code>127.0.0.1</code>.</li>
+</ol>
+<aside class="tip blurb">
+<p>New <em>Credentials</em> have a somewhat dizzying array of options, and offer
+login and API key support for a variety of services, like SSH, AWS,
+Rackspace, VMWare vCenter, and SCM systems. If you can login to a
+system, Tower likely supports the login mechanism!</p>
+</aside>
+<p>Now that we have all the structure for running playbooks configured, we
+need only create a <em>Job Template</em> to run the playbook on the localhost
+and see whether we&rsquo;ve succeeded. Click on &lsquo;Job Templates&rsquo;, and create a
+new Job Template with the following configuration:</p>
+<ul>
+<li>Name: <code>Tower Test</code></li>
+<li>Inventory: <code>Tower Local</code></li>
+<li>Project: <code>Tower Test</code></li>
+<li>Playbook: <code>main.yml</code></li>
+<li>Machine Credential: <code>Vagrant</code></li>
+</ul>
+<p>Save the Job Template, then click the small Rocketship button to start a
+job using the template. You&rsquo;ll be redirected to a Job status page, which
+provides live updates of the job status, and then a summary of the
+playbook run when complete:</p>
+<figure class="image center" style="width: 80%;">
+<img src="images/11-ansible-tower-job-complete.png"
+style="width: 100%;" alt="Tower Test job completed successfully!" />
+<figcaption aria-hidden="true">Tower Test job completed
+successfully!</figcaption>
+</figure>
+<p>You can view the playbook run&rsquo;s standard output in real-time (or review
+it after the fact) with the &lsquo;View standard out&rsquo; button. You can also
+stop a running job, delete a job&rsquo;s record, or relaunch a job with the
+same parameters using the respective buttons on the job&rsquo;s page.</p>
+<p>The job&rsquo;s dashboard page is very useful for giving an overview of how
+many hosts were successful, how many tasks resulted in changes, and the
+timing of the different parts of the playbook run.</p>
+
+<h4 class="relative group">Other Tower Features of Note
+    <div id="chap13xhtml_leanpub-auto-other-tower-features-of-note" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-other-tower-features-of-note" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>In our walkthrough above, we used Tower to run a playbook on the local
+server; setting up Tower to run playbooks on real-world infastructure or
+other local VMs is just as easy, and the tools Ansible Tower provides
+are very handy, especially when working in larger team environments.</p>
+<p>This book won&rsquo;t walk through the entirety of Ansible Tower&rsquo;s
+documentation, but a few other features you should try out include:</p>
+<ul>
+<li>Setting up scheduled Job runs (especially with the &lsquo;Check&rsquo; option
+instead of &lsquo;Run&rsquo;) for CI/CD.</li>
+<li>Integrating user accounts and Teams with LDAP users and groups for
+automatic team-based project management.</li>
+<li>Setting different levels of permissions for Users and Teams so certain
+users can only edit, run, or view certain jobs within an Organization.</li>
+<li>Configuring Ansible Vault credentials to easily and automatically use
+Vault-protected variables in your playbooks.</li>
+<li>Setting up Provisioning Callbacks so newly-provisioned servers can
+self-provision via a URL per Job Template.</li>
+<li>Surveys, which allow users to add extra information based on a
+&lsquo;Survey&rsquo; of questions per job run.</li>
+<li>Inventory Scripts, which allow you to build inventory dynamically.</li>
+<li>Built-in Munin monitoring (to monitor the Tower server), available
+with the same admin credentials at <code>https://[tower-hostname]/munin</code>.</li>
+</ul>
+<p>Ansible Tower continues to improve rapidly, and is one of the best ways
+to run Ansible Playbooks from a central CI/CD-style server with
+team-based access and extremely detailed live and historical status
+reporting.</p>
+
+<h4 class="relative group">Tower Alternatives
+    <div id="chap13xhtml_leanpub-auto-tower-alternatives" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-tower-alternatives" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Ansible Tower is purpose-built for use with Ansible playbooks, but there
+are many other ways to run playbooks on your servers with a solid
+workflow. If price is a major concern, and you don&rsquo;t need all the bells
+and whistles Tower provides, you can use other popular tools like
+<a
+  href="http://jenkins-ci.org/"
+    target="_blank"
+  >Jenkins</a>, <a
+  href="http://rundeck.org/"
+    target="_blank"
+  >Rundeck</a>, or
+<a
+  href="http://www.go.cd/"
+    target="_blank"
+  >Go CI</a>.</p>
+<p>All these tools provide flexiblity and security for running Ansible
+Playbooks, and each one requires a different amount of setup and
+configuration before it will work well for common usage scenarios. One
+of the most popular and long-standing CI tools is Jenkins, so we&rsquo;ll
+explore how to configure a similar Playbook run in Jenkins next.</p>
+
+<h3 class="relative group">Jenkins CI
+    <div id="chap13xhtml_leanpub-auto-jenkins-ci" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-jenkins-ci" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Jenkins is a Java-based open source continuous integration tool. It was
+forked from the Hudson project in 2011, but has a long history as a
+robust build tool for most any software project.</p>
+<p>Jenkins is easy to install and configure, with the Java SDK as its only
+requirement. Jenkins runs on any modern OS, but for the purposes of this
+demonstration, we&rsquo;ll build a local VM using Vagrant, install Jenkins
+inside the VM using Ansible, then use Jenkins to run an Ansible
+playbook.</p>
+
+<h4 class="relative group">Build a local Jenkins server with Ansible
+    <div id="chap13xhtml_leanpub-auto-build-a-local-jenkins-server-with-ansible" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-build-a-local-jenkins-server-with-ansible" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Create a new directory for the Jenkins VM named <code>jenkins</code>. Inside the
+directory, create a <code>Vagrantfile</code> to describe the machine and the
+Ansible provisioning to Vagrant, with the following contents:</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code> 1 VAGRANTFILE_API_VERSION = &quot;2&quot;
+ 2 
+ 3 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+ 4   config.vm.box = &quot;geerlingguy/centos7&quot;
+ 5   config.vm.hostname = &quot;jenkins.dev&quot;
+ 6   config.vm.network :private_network, ip: &quot;192.168.76.76&quot;
+ 7   config.ssh.insert_key = false
+ 8 
+ 9   config.vm.provider :virtualbox do |vb|
+10     vb.customize [&quot;modifyvm&quot;, :id, &quot;--memory&quot;, &quot;512&quot;]
+11   end
+12 
+13   # Ansible provisioning.
+14   config.vm.provision &quot;ansible&quot; do |ansible|
+15     ansible.playbook = &quot;provision.yml&quot;
+16     ansible.sudo = true
+17   end
+18 end</code></pre>
+</div>
+</figure>
+<p>This Vagrantfile will create a new VM running CentOS 7, with the IP
+address <code>192.168.76.76</code> and the hostname <code>jenkins.dev</code>. Go ahead and add
+an entry for <code>192.168.76.76 jenkins.dev</code> to your hosts file, and then
+create a new <code>provision.yml</code> playbook so Vagrant can run it with Ansible
+(as described in the <code>config.vm.provision</code> block in the Vagrantfile).
+Put the following in the <code>provision.yml</code> file:</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code> 1 ---
+ 2 - hosts: all
+ 3 
+ 4   vars:
+ 5     firewall_allowed_tcp_ports:
+ 6       - &quot;22&quot;
+ 7       - &quot;8080&quot;
+ 8     jenkins_plugins:
+ 9       - ansicolor
+10 
+11   roles:
+12     - geerlingguy.firewall
+13     - geerlingguy.ansible
+14     - geerlingguy.java
+15     - geerlingguy.jenkins</code></pre>
+</div>
+</figure>
+<p>This playbook uses a set of roles from Ansible Galaxy to install all the
+required components for our Jenkins CI server. To make sure you have all
+the required roles installed on your host machine, add a
+<code>requirements.yml</code> file in the <code>jenkins</code> folder, containing all the
+roles being used in the playbook:</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 ---
+2 - src: geerlingguy.firewall
+3 - src: geerlingguy.ansible
+4 - src: geerlingguy.java
+5 - src: geerlingguy.jenkins</code></pre>
+</div>
+</figure>
+<p>The <code>geerlingguy.ansible</code> role installs Ansible on the VM, so Jenkins
+can run Ansible playbooks and ad-hoc commands. The <code>geerlingguy.java</code>
+role is a dependency of <code>geerlingguy.jenkins</code>, and the
+<code>geerlingguy.firewall</code> role configures a firewall to limit access on
+ports besides 22 (for SSH) and 8080 (Jenkins&rsquo; default port).</p>
+<p>Finally, we tell the <code>geerlingguy.jenkins</code> role a set of plugins to
+install through the <code>jenkins_plugins</code> variable; in this case, we just
+want the <code>ansicolor</code> plugin, which gives us full color display in
+Jenkins&rsquo; console logs (so our Ansible playbook output is easier to
+read).</p>
+<aside class="tip blurb">
+<p>There is an official <a
+  href="https://wiki.jenkins-ci.org/display/JENKINS/Ansible&#43;Plugin"
+    target="_blank"
+  >Ansible plugin for
+Jenkins</a>
+which can be used to run Ansible Ad-Hoc tasks and Playbooks, and may
+help you integrate Ansible and Jenkins more easily.</p>
+</aside>
+<p>To build the VM and run the playbook, do the following (inside the
+<code>jenkins</code> folder):</p>
+<ol>
+<li>Run <code>ansible-galaxy install -r requirements.yml</code> to install the
+required roles.</li>
+<li>Run <code>vagrant up</code> to build the VM and install and configure Jenkins.</li>
+</ol>
+<p>After a few minutes, the provisioning should complete, and you should be
+able to access Jenkins at <code>http://jenkins.dev:8080/</code> (if you configured
+the hostname in your hosts file).</p>
+
+<h4 class="relative group">Create an Ansible playbook on the Jenkins server
+    <div id="chap13xhtml_leanpub-auto-create-an-ansible-playbook-on-the-jenkins-server" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-create-an-ansible-playbook-on-the-jenkins-server" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>It&rsquo;s preferred to keep your playbooks and server configuration in a code
+repository (e.g. Git or SVN), but for simplicity&rsquo;s sake, this example
+requires a playbook stored locally on the Jenkins server, similar to the
+earlier Ansible Tower example.</p>
+<ol>
+<li>Log into the Jenkins VM: <code>vagrant ssh</code></li>
+<li>Go to the <code>/opt</code> directory: <code>cd /opt</code></li>
+<li>Create a new project directory:
+<code>sudo mkdir ansible-for-devops &amp;&amp; cd ansible-for-devops</code></li>
+<li>Create a new playbook file, <code>main.yml</code>, within the new directory,
+with the following contents (use sudo to create the file, e.g.
+<code>sudo vi main.yml</code>):</li>
+</ol>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code> 1 {lang=text}
+ 2 ~~~
+ 3 ---
+ 4 - hosts: 127.0.0.1
+ 5   gather_facts: no
+ 6   connection: local
+ 7 
+ 8   tasks:
+ 9     - name: Check the date on the server.
+10       command: date
+11 ~~~</code></pre>
+</div>
+</figure>
+<p>After you create the playbook, you will head over to the Jenkins UI to
+create a job to run the playbook. But if you want, test the playbook
+while you&rsquo;re logged in: <code>ansible-playbook main.yml</code>.</p>
+
+<h4 class="relative group">Create a Jenkins job to run an Ansible Playbook
+    <div id="chap13xhtml_leanpub-auto-create-a-jenkins-job-to-run-an-ansible-playbook" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-create-a-jenkins-job-to-run-an-ansible-playbook" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>With Jenkins running, configure a Jenkins job to run a playbook on the
+local server with Ansible. Visit <code>http://jenkins.dev:8080/</code>, and once
+the page loads, click the &lsquo;New Item&rsquo; link to create a new &lsquo;Freestyle
+project&rsquo; with a title &lsquo;ansible-local-test&rsquo;. Click &lsquo;OK&rsquo; and when
+configuring the job, and set the following configuration:</p>
+<ul>
+<li>Under &lsquo;Build Environment&rsquo;, check the &lsquo;Color ANSI Console Output&rsquo;
+option. This allows Ansible&rsquo;s helpful colored output to pass through
+the Jenkins console, so it is easier to read during and after the run.</li>
+<li>Under &lsquo;Build&rsquo;, click &lsquo;Add Build Step&rsquo;, then choose &lsquo;Execute shell&rsquo;. In
+the &lsquo;Command&rsquo; field, add the following code, which will run the local
+Ansible playbook:
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 # Force Ansible to output jobs with color.
+2 export ANSIBLE_FORCE_COLOR=true
+3     
+4 # Run the local test playbook.
+5 ansible-playbook /opt/ansible-for-devops/main.yml</code></pre>
+</div>
+</figure>
+</li>
+</ul>
+<p>Click &lsquo;Save&rsquo; to save the &lsquo;Ansible Local Test&rsquo; job, and on the project&rsquo;s
+page, click the &lsquo;Build Now&rsquo; link to start a build. After a few seconds,
+you should see a new item in the &lsquo;Build History&rsquo; block. Click on the
+(hopefully) blue circle to the left of &lsquo;#1&rsquo;, and it will take you to the
+console output of the job. It should look something like this:</p>
+<figure class="image center" style="width: 80%;">
+<img src="images/11-jenkins-job-console-output.png"
+style="width: 100%;" alt="Jenkins job completed successfully!" />
+<figcaption aria-hidden="true">Jenkins job completed
+successfully!</figcaption>
+</figure>
+<p>This is a basic example, but hopefully it&rsquo;s enough to show you how easy
+it is to get at least some of your baseline CI/CD automation done using
+a free and open source tool. Most of the more difficult aspects of
+managing infrastructure through Jenkins surrounds the ability to manage
+SSH keys, certificates, and other credentials through Jenkins, but there
+is already plenty of documentation surrounding these things elsewhere
+online and in Jenkins documentation, so this will be left as an exercise
+for the reader.</p>
+<p>The rest of this chapter focuses on ways to test and debug your
+playbooks and your infrastructure as a whole, and while many examples
+use Travis CI or plain command line options, anything you see can be
+automated with Jenkins jobs!</p>
+
+<h3 class="relative group">Unit, Integration, and Functional Testing
+    <div id="chap13xhtml_leanpub-auto-unit-integration-and-functional-testing" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-unit-integration-and-functional-testing" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>When determining how you should test your infrastructure, you need to
+understand the different kinds of testing, and then determine the kinds
+of testing on which you should focus more effort.</p>
+<p><em>Unit</em> testing, when applied to applications, is testing of the smallest
+units of code (usually functions or class methods). In Ansible, unit
+testing would typically apply to individual playbooks. You could run
+individual playbooks in an isolated environment, but it&rsquo;s often not
+worth the effort. What <em>is</em> worth your effort is at least checking the
+playbook syntax, to make sure you didn&rsquo;t just commit a YAML file that
+will break an entire deployment because of a missing quotation mark, or
+a whitespace issue!</p>
+<p><em>Integration</em> testing, which is definitely more valuable when it comes
+to Ansible, is the testing of small groupings of individual units of
+code, to make sure they work correctly together. Breaking your
+infrastructure definition into many task-specific roles and playbooks
+allows you to do this; if you&rsquo;ve structured your playbooks so they have
+no or limited dependencies, you could test each role individually in a
+fresh virtual machine, before you use the role as part of a full
+infrastructure deployment.</p>
+<p><em>Functional</em> testing involves the whole shebang. Basically, you set up a
+complete infrastructure environment, and then run tests against it to
+make sure <em>everything</em> was successfully installed, deployed, and
+configured. Ansible&rsquo;s own reporting is helpful in this kind of testing,
+and there are external tools available to test infrastructure even more
+deeply.</p>
+<p>It is often possible to perform all the testing you need on your own
+local workstation, using Virtual Machines (as demonstrated in earlier
+chapters), using tools like VirtualBox or VMWare. And with most cloud
+services providing robust control APIs and hourly billing, it&rsquo;s
+inexpensive and just as fast to test directly on cloud instances
+mirroring your production infrastructure!</p>
+<p>We&rsquo;ll begin with the most basic tests using Ansible, along with common
+debugging techniques, then progress to full-fledged functional testing
+methods with an automated process.</p>
+
+<h4 class="relative group">Debugging and Asserting
+    <div id="chap13xhtml_leanpub-auto-debugging-and-asserting" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-debugging-and-asserting" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>For most playbooks, testing configuration changes and the result of
+commands being run as you go is all the testing you need. And having
+tests run <em>during your playbook runs</em> using some of Ansible&rsquo;s built-in
+utility modules means you have immediate assurance the system is in the
+state you want.</p>
+<p>If at all possible, you should try to bake all simple test cases (e.g.
+comparison and state checks) into your playbooks directly. Ansible has
+three modules that simplify this process.</p>
+
+<h5 class="relative group">The <code>debug</code> module
+    <div id="chap13xhtml_leanpub-auto-the-debug-module" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-the-debug-module" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>When actively developing an Ansible playbook, or even for historical
+logging purposes (e.g. if you&rsquo;re running Ansible playbooks using Tower
+or another CI system), it&rsquo;s often handy to print values of variables or
+output of certain commands during the playbook run.</p>
+<p>For this purpose, Ansible has a <code>debug</code> module, which prints variables
+or messages during playbook execution.</p>
+<p>As an extremely basic example, here are two of the ways I normally use
+debug while building a playbook:</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code> 1 - hosts: 127.0.0.1
+ 2   gather_facts: no
+ 3   connection: local
+ 4 
+ 5   tasks:
+ 6     - name: Register the output of the &#39;uptime&#39; command.
+ 7       command: uptime
+ 8       register: system_uptime
+ 9 
+10     - name: Print the registered output of the &#39;uptime&#39; command.
+11       debug: var=system_uptime.stdout
+12 
+13     - name: Print a simple message if a command resulted in a change.
+14       debug: msg=&quot;Command resulted in a change!&quot;
+15       when: system_uptime.changed</code></pre>
+</div>
+</figure>
+<p>Running this playbook gives the following output:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible-playbook debug.yml
+<p>PLAY [127.0.0.1] ******************************************************</p>
+<p>TASK: [Register the output of the 'uptime' command.] ******************
+changed: [127.0.0.1]</p>
+<p>TASK: [Print the registered output of the 'uptime' command.] **********
+ok: [127.0.0.1] =&gt; {
+&quot;var&quot;: {
+&quot;system_uptime.stdout&quot;:
+&quot;15:01  up 15:18, 2 users, load averages: 1.23 1.33 1.42&quot;
+}
+}</p>
+<p>TASK: [Print a simple message if a command resulted in a change.] *****
+ok: [127.0.0.1] =&gt; {
+&quot;msg&quot;: &quot;Command resulted in a change!&quot;
+}</p>
+<p>PLAY RECAP ************************************************************
+127.0.0.1          : ok=3    changed=1    unreachable=0    failed=0</code></pre></p>
+</div>
+</figure>
+<p>Debug messages are helpful when actively debugging a playbook or when
+you need extra verbosity in the playbook&rsquo;s output, but if you need to
+perform an explicit test on some variable, or bail out of a playbook for
+some reason, Ansible provides the <code>fail</code> module, and its more terse
+cousin, <code>assert</code>.</p>
+
+<h5 class="relative group">The <code>fail</code> and <code>assert</code> modules
+    <div id="chap13xhtml_leanpub-auto-the-fail-and-assert-modules" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-the-fail-and-assert-modules" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>Both <code>fail</code> and <code>assert</code>, when triggered, will abort the playbook run,
+and the only difference is in the simplicity of their usage. To
+illustrate, let&rsquo;s look at an example:</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code> 1 - hosts: 127.0.0.1
+ 2   gather_facts: no
+ 3   connection: local
+ 4 
+ 5   vars:
+ 6     should_fail_via_fail: true
+ 7     should_fail_via_assert: false
+ 8     should_fail_via_complex_assert: false
+ 9 
+10   tasks:
+11     - name: Fail if conditions warrant a failure.
+12       fail: msg=&quot;There was an epic failure.&quot;
+13       when: should_fail_via_fail
+14 
+15     - name: Stop playbook if an assertion isn&#39;t validated.
+16       assert: that=&quot;should_fail_via_assert != true&quot;
+17 
+18     - name: Assertions can have contain conditions.
+19       assert:
+20         that:
+21           - should_fail_via_fail != true
+22           - should_fail_via_assert != true
+23           - should_fail_via_complex_assert != true</code></pre>
+</div>
+</figure>
+<p>Switch the boolean values of <code>should_fail_via_fail</code>,
+<code>should_fail_via_assert</code>, and <code>should_fail_via_complex_assert</code> to
+trigger each of the three <code>fail</code>/<code>assert</code> tasks, to see how they work.</p>
+<p>For most test cases, <code>debug</code>, <code>fail</code>, and <code>assert</code> are all you need to
+ensure your infrastructure is in the correct state during a playbook
+run.</p>
+
+<h4 class="relative group">Checking syntax and performing dry runs
+    <div id="chap13xhtml_leanpub-auto-checking-syntax-and-performing-dry-runs" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-checking-syntax-and-performing-dry-runs" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Two checks you should include in an automated playbook testing workflow
+are <code>--syntax-check</code> (which checks the playbook syntax to find quoting,
+formatting, or whitespace errors) and <code>--check</code> (which will run your
+entire playbook in <code>check</code> mode.</p>
+<p>Syntax checking is extremely straightforward, and only requires a few
+seconds for even larger, more complex playbooks with dozens or hundreds
+of includes. You should include an
+<code>ansible-playbook my-playbook.yml --syntax-check</code> in your basic CI
+tests, and it&rsquo;s best practice to run a syntax check in a pre-commit hook
+when developing playbooks.</p>
+<p>Running a playbook in <code>check</code> mode is more involved, since Ansible runs
+the entire playbook on your live infrastructure, but without performing
+any changes. Instead, Ansible highlights tasks that <em>would&rsquo;ve</em> resulted
+in a change to show what will happen when you <em>actually</em> run the
+playbook later.</p>
+<p>This is helpful for two purposes:</p>
+<ol>
+<li>To prevent &lsquo;configuration drift&rsquo;, where a server configuration may
+have drifted away from your coded configuration. This could happen
+due to human intervention or other factors. But it&rsquo;s good to
+discover configuration drift without forcefully changing it.</li>
+<li>To make sure changes you make to a playbook that shouldn&rsquo;t break
+idempotency <em>don&rsquo;t</em>, in fact, break idempotency. For example, if
+you&rsquo;re changing a configuration file&rsquo;s structure, but with the goal
+of maintaining the same resulting file, running the playbook with
+<code>--check</code> alerts you when you might accidentally change the live
+file as a result of the playbook changes. Time to fix your playbook!</li>
+</ol>
+<p>When using <code>--check</code> mode, certain tasks may need to always run to
+ensure the playbook completes successfully (e.g. <code>command</code> tasks that
+register variables used in later tasks). The <code>always_run</code> option
+indicates such tasks:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>- name: A task that runs all the time, even in check mode.
+  command: mytask --option1 --option2
+  register: my_var
+  always_run: true</code></pre>
+</div>
+</figure>
+<p>For even more detailed information about what changes would occur, add
+the <code>--diff</code> option, and Ansible will output changes that <em>would&rsquo;ve</em>
+been made to your servers line-by-line. This option produces a lot of
+output if <code>check</code> mode makes a lot of changes, so use it conservatively
+unless you want to scroll through a lot of text!</p>
+<p>In addition to Ansible&rsquo;s <code>--syntax-check</code> and <code>--check</code> modes, you might
+be interested in also running <a
+  href="https://github.com/willthames/ansible-lint"
+    target="_blank"
+  >Ansible
+Lint</a> on your playbooks.
+Ansible Lint allows you to check for deprecated syntax or inefficient
+task structures, and is highly configurable so you can set up the
+linting to follow the playbook standards you and your team choose.</p>
+
+<h4 class="relative group">Automated testing on GitHub using Travis CI
+    <div id="chap13xhtml_leanpub-auto-automated-testing-on-github-using-travis-ci" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-automated-testing-on-github-using-travis-ci" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Automated testing using a continuous integration tool like Travis CI
+(which is free for public projects and integrated very well with GitHub)
+allows you to run tests against Ansible playbooks or roles you have
+hosted on GitHub with every commit.</p>
+<p>There are four main things to test when building and maintaining Ansible
+playbooks or roles:</p>
+<ol>
+<li>The playbook or role&rsquo;s syntax (are all the .yml files formatted
+correctly?).</li>
+<li>Whether the playbook or role will run through all the included tasks
+without failing.</li>
+<li>The playbook or role&rsquo;s idempotence (if run again, it should not make
+any changes!).</li>
+<li>The playbook or role&rsquo;s success (does the role do what it should be
+doing?).</li>
+</ol>
+<p>Ultimately, the most important aspect is #4, because what&rsquo;s the point of
+a playbook or role if it doesn&rsquo;t do what you want it to do (e.g. start a
+web server, configure a database, deploy an app, etc.)?</p>
+<p>We&rsquo;re going to assume you&rsquo;re testing a role you have on GitHub, though
+the example can be applied just as easily for standalone Ansible
+playbooks.</p>
+
+<h5 class="relative group">Setting up a role for testing
+    <div id="chap13xhtml_leanpub-auto-setting-up-a-role-for-testing" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-setting-up-a-role-for-testing" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>Since you&rsquo;re going to need an Ansible playbook and inventory file to
+test your role, create both inside a new &rsquo;tests&rsquo; directory in your
+Ansible role:</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 # Directory structure:
+2 my_role/
+3   tests/
+4     test.yml &lt;-- your test playbook
+5     inventory &lt;-- an inventory file to use with the playbook</code></pre>
+</div>
+</figure>
+<p>Inside the inventory file, add:</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 localhost</code></pre>
+</div>
+</figure>
+<p>We just want to tell Ansible to run commands on the local machine (we&rsquo;ll
+use the &ndash;connection=local option when running the test playbook).</p>
+<p>Inside <code>test.yml</code>, add:</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 ---
+2 - hosts: localhost
+3   remote_user: root
+4   roles:
+5     - github-role-project-name</code></pre>
+</div>
+</figure>
+<p>Substitude your own role name for <code>github-role-project-name</code> (e.g.
+<code>ansible-role-django</code>). This is a typical Ansible playbook, and we tell
+Ansible to run the tasks on localhost, with the <code>root</code> user (otherwise,
+you could run tasks with <code>travis</code> if you want, and use <code>sudo</code> on certain
+tasks). You can add <code>vars</code>, <code>vars_files</code>, etc. if you want, but we&rsquo;ll
+keep things simple, because for many smaller roles, the role is
+pre-packaged with sane defaults and all the other info it needs to run.</p>
+<p>The next step is to add a <code>.travis.yml</code> file to your role so Travis CI
+will pick it up and use it for testing. Add the file to the root level
+of your role, and add the following to kick things off:</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code> 1 ---
+ 2 language: python
+ 3 python: &quot;2.7&quot;
+ 4 
+ 5 before_install:
+ 6   # Make sure everything&#39;s up to date.
+ 7   - sudo apt-get update -qq
+ 8 
+ 9 install:
+10   # Install Ansible.
+11   - pip install ansible
+12 
+13   # Add ansible.cfg to pick up roles path.
+14   - &quot;printf &#39;[defaults]\nroles_path = ../&#39; &gt; ansible.cfg&quot;
+15 
+16 script:
+17   # We&#39;ll add some commands to test the role here.</code></pre>
+</div>
+</figure>
+<p>The only surprising part here is the <code>printf</code> line in the <code>install</code>
+section; I&rsquo;ve added that line to create a quick and dirty <code>ansible.cfg</code>
+configuration file Ansible will use to set the <code>roles_path</code> one
+directory up from the current working directory. That way, we can
+include roles like <code>github-role-project-name</code>, or if we use
+<code>ansible-galaxy</code> to download dependencies (as another command in the
+install section), we can use <code>- galaxy-role-name-here</code> to include the
+role in our <code>test.yml</code> playbook.</p>
+<p>Now that we have the basic structure, it&rsquo;s time to start adding the
+commands to test our role.</p>
+
+<h5 class="relative group">Testing the role&rsquo;s syntax
+    <div id="chap13xhtml_leanpub-auto-testing-the-roles-syntax" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-testing-the-roles-syntax" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>This is the easiest test; <code>ansible-playbook</code> has a built in command to
+check a playbook&rsquo;s syntax (including all the included files and roles),
+and return <code>0</code> if there are no problems, or an error code and some
+output if there were any syntax issues.</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 ansible-playbook -i tests/inventory tests/test.yml --syntax-check</code></pre>
+</div>
+</figure>
+<p>Add this as a command in the <code>script</code> section of <code>.travis.yml</code>:</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 script:
+2   # Check the role/playbook&#39;s syntax.
+3   - ansible-playbook -i tests/inventory tests/test.yml --syntax-check</code></pre>
+</div>
+</figure>
+<p>If there are any syntax errors, Travis will fail the build and output
+the errors in the log.</p>
+
+<h5 class="relative group">Role success - first run
+    <div id="chap13xhtml_leanpub-auto-role-success---first-run" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-role-success---first-run" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>The next aspect to check is whether the role runs correctly or fails on
+its first run.</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 # Run the role/playbook with ansible-playbook.
+2 - &quot;ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo&quot;</code></pre>
+</div>
+</figure>
+<p>This is a basic ansible-playbook command, which runs the playbook
+<code>test.yml</code> against the local host, using <code>--sudo</code>, and with the
+inventory file we added to the role&rsquo;s <code>tests</code> directory.</p>
+<p>Ansible returns a non-zero exit code if the playbook run fails, so
+Travis will know whether the command succeeded or failed.</p>
+
+<h5 class="relative group">Role idempotence
+    <div id="chap13xhtml_leanpub-auto-role-idempotence" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-role-idempotence" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>Another important test is the idempotence test&mdash;does the role change
+anything if it runs a second time? It should not, since all tasks you
+perform via Ansible should be idempotent (ensuring a static/unchanging
+configuration on subsequent runs with the same settings).</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 # Run the role/playbook again, checking to make sure it&#39;s idempotent.
+2 - &gt;
+3   ansible-playbook -i tests/inventory tests/test.yml --connection=local --sudo
+4   | grep -q &#39;changed=0.*failed=0&#39;
+5   &amp;&amp; (echo &#39;Idempotence test: pass&#39; &amp;&amp; exit 0)
+6   || (echo &#39;Idempotence test: fail&#39; &amp;&amp; exit 1)</code></pre>
+</div>
+</figure>
+<p>This command runs the exact same command as before, but pipes the
+results through grep, which checks to make sure &lsquo;changed&rsquo; and &lsquo;failed&rsquo;
+both report <code>0</code>. If there were no changes or failures, the idempotence
+test passes (and Travis sees the <code>0</code> exit and is happy), but if there
+were any changes or failures, the test fails (and Travis sees the <code>1</code>
+exit and reports a build failure).</p>
+
+<h5 class="relative group">Role success - final result
+    <div id="chap13xhtml_leanpub-auto-role-success---final-result" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-role-success---final-result" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>The last thing I check is whether the role actually did what it was
+supposed to do. If it configured a web server, is the server responding
+on port 80 or 443 without any errors? If it configured a command line
+application, does the application work when invoked, and do the things
+it&rsquo;s supposed to do?</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 # Request a page via the web server, to make sure it&#39;s running and responds.
+2 - &quot;curl http://localhost/&quot;</code></pre>
+</div>
+</figure>
+<p>In this example, I&rsquo;m testing a web server by loading &rsquo;localhost&rsquo;; curl
+will exit with a 0 status (and dump the output of the web server&rsquo;s
+response) if the server responds with a 200 OK status, or will exit with
+a non-zero status if the server responds with an error status (like 500)
+or is unavailable.</p>
+<p>Taking this a step further, you could even run a deployed application or
+service&rsquo;s own automated tests after Ansible is finished with the
+deployment, thus testing your infrastructure and application in one
+go&mdash;but we&rsquo;re getting ahead of ourselves here&hellip; that&rsquo;s a topic for
+later!</p>
+
+<h5 class="relative group">Some notes about Travis CI
+    <div id="chap13xhtml_leanpub-auto-some-notes-about-travis-ci" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-some-notes-about-travis-ci" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>There are a few things you need to know about Travis CI, especially if
+you&rsquo;re testing Ansible, which will rely heavily on the VM environment
+inside which it is running:</p>
+<ul>
+<li><strong>Ubuntu 12.04</strong>: As of this writing, the only OS available via Travis
+CI is Ubuntu 12.04. Most of my roles work with
+Ubuntu/Debian/RedHat/CentOS, so it&rsquo;s not an issue for me&hellip; but if
+your roles strictly target a non-Debian-flavored distro, you probably
+won&rsquo;t get much mileage out of Travis. (There is an <a
+  href="https://github.com/travis-ci/travis-ci/issues/2046"
+    target="_blank"
+  >open
+issue</a> to get
+Travis upgraded to Ubuntu 14.04, at least).</li>
+<li><strong>Preinstalled packages</strong>: Travis CI comes with a bunch of services
+installed out of the box, like MySQL, Elasticsearch, Ruby, etc. In the
+<code>.travis.yml</code> <code>before_install</code> section, you may need to do some
+<code>apt-get remove --purge [package]</code> commands and/or other cleanup
+commands to make sure the VM is fresh for your Ansible role&rsquo;s run.</li>
+<li><strong>Networking/Disk/Memory</strong>: Travis CI continously shifts the VM specs
+you&rsquo;re using, so don&rsquo;t assume you&rsquo;ll have X amount of RAM, disk space,
+or network capacity. Add commands like <code>cat /proc/cpuinfo</code>,
+<code>cat /proc/meminfo</code>, <code>free -m</code>, etc. in the <code>.travis.yml</code>
+<code>before_install</code> section if you need to figure out the resources
+available in your VM.</li>
+</ul>
+<p>See much more information about the VM environment on the <a
+  href="http://docs.travis-ci.com/user/ci-environment/"
+    target="_blank"
+  >Travis CI
+Build Environment page</a>.</p>
+
+<h5 class="relative group">Real-world examples
+    <div id="chap13xhtml_leanpub-auto-real-world-examples" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-real-world-examples" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<p>This style of testing is integrated into many of the <code>geerlingguy.*</code>
+roles on Ansible Galaxy; here are a few example roles using Travis CI
+integration in the way outlined above:</p>
+<ul>
+<li><a
+  href="https://github.com/geerlingguy/ansible-role-apache"
+    target="_blank"
+  >https://github.com/geerlingguy/ansible-role-apache</a></li>
+<li><a
+  href="https://github.com/geerlingguy/ansible-role-gitlab"
+    target="_blank"
+  >https://github.com/geerlingguy/ansible-role-gitlab</a></li>
+<li><a
+  href="https://github.com/geerlingguy/ansible-role-mysql"
+    target="_blank"
+  >https://github.com/geerlingguy/ansible-role-mysql</a></li>
+</ul>
+<p>If you would like to run your tests using a slightly more simplified and
+more self-contained test running environment, you might be interested in
+the <a
+  href="https://github.com/nickjj/rolespec"
+    target="_blank"
+  >rolespec</a> project, which
+formalizes and simplifies much of the code in the Travis CI examples
+shown above. Your tests will be dependent on another library for test
+runs, but doing this allows you to run the tests more easily in
+environments other than Travis CI.</p>
+
+<h4 class="relative group">Functional testing using serverspec
+    <div id="chap13xhtml_leanpub-auto-functional-testing-using-serverspec" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-functional-testing-using-serverspec" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p><a
+  href="http://serverspec.org/"
+    target="_blank"
+  >Serverspec</a> is a tool to help automate server
+tests using RSpec tests, which use a Ruby-like DSL to ensure your server
+configuration matches your expectations. In a sense, it&rsquo;s another way of
+building well-tested infrastructure.</p>
+<p>Serverspec tests can be run locally, via SSH, through Docker&rsquo;s APIs, or
+through other means, without the need for an agent installed on your
+servers, so it&rsquo;s a lightweight tool for testing your infrastructure
+(just like Ansible is a lightweight tool for <em>managing</em> your
+infrastructure).</p>
+<p>There&rsquo;s a lot of debate over whether well-written Ansible playbooks
+themselves (especially along with the dry-run <code>--check</code> mode) are
+adequate for well-tested infrastructure, but many teams are more
+comfortable maintaining infrastructure tests in Serverspec instead
+(especially if the team is already familiar with how Serverspec and
+Rspec works!).</p>
+<p>Consider this: a truly idempotent Ansible playbook is already a great
+testing tool if it uses Ansible&rsquo;s robust core modules and <code>fail</code>,
+<code>assert</code>, <code>wait_for</code> and other tests to ensure a specific state for your
+server. If you use Ansible&rsquo;s <code>user</code> module to ensure a given user exists
+and is in a given group, and run the same playbook with <code>--check</code> and
+get <code>ok</code> for the same task, isn&rsquo;t that a good enough test your server is
+configured correctly?</p>
+<p>This book will not provide a detailed guide for using Serverspec with
+your Ansible-managed servers, but here are a few resources in case you&rsquo;d
+like to use it:</p>
+<ul>
+<li><a
+  href="https://www.debian-administration.org/article/703/A_brief_introduction_to_server-testing_with_serverspec"
+    target="_blank"
+  >A brief introduction to server testing with
+Serverspec</a></li>
+<li><a
+  href="http://www.slideshare.net/MartinEtmajer/testing-ansible-roles-with-test-kitchen-serverspec-and-rspec-48185017"
+    target="_blank"
+  >Testing Ansible Roles with Test Kitchen, Serverspec and
+RSpec</a></li>
+<li><a
+  href="http://vincent.bernat.im/en/blog/2014-serverspec-test-infrastructure.html"
+    target="_blank"
+  >Testing infrastructure with
+serverspec</a></li>
+</ul>
+
+<h3 class="relative group">Summary
+    <div id="chap13xhtml_leanpub-auto-summary-13" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap13xhtml_leanpub-auto-summary-13" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Tools to help manage, test, and run playbooks regularly and easily, such
+as Travis CI, Jenkins, and Ansible Tower, also help deliver certainty
+when applying changes to your infrastructure using Ansible. In addition
+the information contained in this chapter, read through the <a
+  href="http://docs.ansible.com/test_strategies.html"
+    target="_blank"
+  >Testing
+Strategies</a> documentation
+in Ansible&rsquo;s documentation for a comprehensive overview of
+infrastructure testing and Ansible.</p>
+<figure class="code">
+<div class="highlight">
+<pre><code> ________________________________________
+/ The first rule of any technology used  \
+| in a business is that automation       |
+| applied to an efficient operation will |
+| magnify the efficiency. The second is  |
+| that automation applied to an          |
+| inefficient operation will magnify the |
+\ inefficiency. (Bill Gates)             /
+ ----------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||</code></pre>
+</div>
+</figure>
+<p><code>&lt;!-- begin backmatter --&gt;</code>{=html}
+:::</p>
+<p>[]{#chap14.xhtml}</p>
+<p>::: {}</p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_tech/ansible/Ansible4Devops/Chapter 11 - Automating Your Automation - Ansible Tower and CICD.md"
+          data-oid-likes="likes_tech/ansible/Ansible4Devops/Chapter 11 - Automating Your Automation - Ansible Tower and CICD.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+      
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 overflow-x-auto py-2">
+        <ul class="flex list-none flex-row">
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 me-4">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href=""
+                title="">
+                
+                
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          David Thomas
+      </p>
+    
+
+    
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

@@ -1,0 +1,1279 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>Controller-Based Networking &middot; </title>
+    <meta name="title" content="Controller-Based Networking &middot; ">
+  
+
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/tech/networking/controllerbasednetworking/">
+  
+
+  
+  
+    <meta name="author" content="David Thomas">
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/tech/networking/controllerbasednetworking/">
+  <meta property="og:title" content="Controller-Based Networking">
+  <meta property="og:description" content="Friday, October 29, 2021 2:40 PM
+○ Matching an Ethernet frame’s destination Media Access Control (MAC) address to the MAC address table (Layer 2 switches) Matching an IP packet’s destination IP address to the IP routing table (routers, Layer 3 switches) ○ # Encrypting the data and adding a new IP header (for virtual private network [VPN] processing) ○ # ○ Changing the source or destination IP address (for Network Address Translation [NAT] processing)
+○ Discarding a message due to a filter (access control lists [ACLs], port security)
+The Control Plane
+any action that controls the data plane.
+creating the tables used by the data plane, tables like the IP routing table, an IP Address Resolution Protocol (ARP) table, a switch MAC address table, and so on.
+adding to, removing, and changing entries to the tables used by the data plane">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Controller-Based Networking">
+  <meta name="twitter:description" content="Friday, October 29, 2021 2:40 PM
+○ Matching an Ethernet frame’s destination Media Access Control (MAC) address to the MAC address table (Layer 2 switches) Matching an IP packet’s destination IP address to the IP routing table (routers, Layer 3 switches) ○ # Encrypting the data and adding a new IP header (for virtual private network [VPN] processing) ○ # ○ Changing the source or destination IP address (for Network Address Translation [NAT] processing)
+○ Discarding a message due to a filter (access control lists [ACLs], port security)
+The Control Plane
+any action that controls the data plane.
+creating the tables used by the data plane, tables like the IP routing table, an IP Address Resolution Protocol (ARP) table, a switch MAC address table, and so on.
+adding to, removing, and changing entries to the tables used by the data plane">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.278a55d3e0b39215730b0c642c7c22cc020054272d3850d92c957cddf6209cf18e0ed01f082db397c8c048c30e727b44ca408c350384ca92d5f37c62d008cbd8.css"
+    integrity="sha512-J4pV0&#43;CzkhVzCwxkLHwizAIAVCctOFDZLJV83fYgnPGODtAfCC2zl8jASMMOcntEykCMNQOEypLV83xi0AjL2A==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js"
+      integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP&#43;pSqMXxm6JPOUeAg=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "Controller-Based Networking",
+    "headline": "Controller-Based Networking",
+    
+    "abstract": "\u003cp\u003eFriday, October 29, 2021 2:40 PM\u003c\/p\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003e○ Matching an Ethernet frame’s destination Media Access Control (MAC) address to the MAC address table (Layer 2 switches)\nMatching an IP packet’s destination IP address to the IP routing table (routers, Layer 3\nswitches)\n\u003c\/code\u003e\u003c\/pre\u003e\n\u003ch6 class=\u0022relative group\u0022\u003e○\n    \u003cdiv id=\u0022heading\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#heading\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h6\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003eEncrypting the data and adding a new IP header (for virtual private network [VPN]\nprocessing)\n\u003c\/code\u003e\u003c\/pre\u003e\n\u003ch6 class=\u0022relative group\u0022\u003e○\n    \u003cdiv id=\u0022heading-1\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#heading-1\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h6\u003e\n\u003cp\u003e○ Changing the source or destination IP address (for Network Address Translation [NAT] processing)\u003cbr\u003e\n○ Discarding a message due to a filter (access control lists [ACLs], port security)\u003cbr\u003e\nThe Control Plane\u003cbr\u003e\nany action that controls the data plane.\u003cbr\u003e\ncreating the tables used by the data plane, tables like the IP routing table, an IP Address Resolution Protocol (ARP) table, a switch MAC address table, and so on.\u003cbr\u003e\nadding to, removing, and changing entries to the tables used by the data plane\u003c\/p\u003e",
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/tech/networking/controllerbasednetworking/",
+    "author" : {
+      "@type": "Person",
+      "name": "David Thomas"
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2351"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc",
+      authDomain: "davidwrites-89dd7.firebaseapp.com",
+      projectId: "davidwrites-89dd7",
+      storageBucket: "davidwrites-89dd7.firebasestorage.app",
+      messagingSenderId: "433139099634",
+      appId: "1:433139099634:web:c14275555bd7171e6c6d6b",
+      measurementId: "G-XX5507B82W"
+    };
+
+        var app = firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        var auth = firebase.auth();
+
+      </script>
+    
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+      <div>
+        <a href="/" class="flex">
+          <span class="sr-only"></span>
+          
+            <img
+              src="/img/logo.png"
+              width="200"
+              height="37"
+              class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
+              alt="">
+          
+        </a>
+      </div>
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/tech/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Tech"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      Tech
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Notes"
+  title="Book Notes &amp; Reviews">
+  
+  
+    <p class="text-base font-medium">
+      Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/articles/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Articles"
+  title="Articles">
+  
+  
+    <p class="text-base font-medium">
+      Articles
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/now/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Now"
+  title="Now">
+  
+  
+    <p class="text-base font-medium">
+      Now
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  
+  title="">
+  
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/tech/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Tech"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        Tech
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Notes"
+    title="Book Notes &amp; Reviews">
+    
+    
+      <p class="text-bg font-bg">
+        Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/articles/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Articles"
+    title="Articles">
+    
+    
+      <p class="text-bg font-bg">
+        Articles
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/now/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Now"
+    title="Now">
+    
+    
+      <p class="text-bg font-bg">
+        Now
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    
+    title="">
+    
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
+    })();
+  </script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Controller-Based Networking
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>Friday, October 29, 2021 2:40 PM</p>
+<pre tabindex="0"><code>○ Matching an Ethernet frame’s destination Media Access Control (MAC) address to the MAC address table (Layer 2 switches)
+Matching an IP packet’s destination IP address to the IP routing table (routers, Layer 3
+switches)
+</code></pre>
+<h6 class="relative group">○
+    <div id="heading" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#heading" aria-label="Anchor">#</a>
+    </span>
+    
+</h6>
+<pre tabindex="0"><code>Encrypting the data and adding a new IP header (for virtual private network [VPN]
+processing)
+</code></pre>
+<h6 class="relative group">○
+    <div id="heading-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#heading-1" aria-label="Anchor">#</a>
+    </span>
+    
+</h6>
+<p>○ Changing the source or destination IP address (for Network Address Translation [NAT] processing)<br>
+○ Discarding a message due to a filter (access control lists [ACLs], port security)<br>
+The Control Plane<br>
+any action that controls the data plane.<br>
+creating the tables used by the data plane, tables like the IP routing table, an IP Address Resolution Protocol (ARP) table, a switch MAC address table, and so on.<br>
+adding to, removing, and changing entries to the tables used by the data plane</p>
+<p>common control plane protocols:<br>
+Routing protocols (OSPF, Enhanced Interior Gateway Routing Protocol [EIGRP], Routing<br>
+Information Protocol [RIP], Border Gateway Protocol [BGP])<br>
+IPv4 ARP<br>
+IPv6 Neighbor Discovery Protocol (NDP)<br>
+Switch MAC learning<br>
+STP<br>
+The Management Plane<br>
+includes protocols that allow network engineers to manage the devices.<br>
+Telnet and Secure Shell (SSH)are two of the most obvious management plane protocols.</p>
+<p>Cisco Switch Data Plane Internals<br>
+switch uses a ternary contentspecialized type of memory to store the equivalent of the MAC address table: -addressable memory (TCAM).<br>
+the ASIC can feed the fields to be matched, like a MAC address value, into the TCAM, and the TCAM returns the matching table entry, without a need to run a search algorithm.<br>
+Most of the control and management plane functions run in IOS. The data plane function (and the<br>
+control plane function of MAC learning) happens in the ASIC.</p>
+<p>Controllers and Software-Defined Architecture<br>
+Controllers and Centralized Control<br>
+To do their work, those distributed control plane processes use messages to communicate<br>
+with each othernetworks are said to use a , like OSPF protocol messages between routers. As a result, traditional distributed control plane.<br>
+centralized control plane,with its foundations in a service called a controller.<br>
+A controller, or SDN controller, centralizes the control of the networking devices<br>
+the controller can perform all control plane functions, replacing the devices’ distributed control plane. Alternately, the controller can simply be aware of the ongoing work of the<br>
+distributed data, control, and management planes on the devices, without changing how those operate. And the list goes on, with many variations.<br>
+The networking devices do not populate their forwarding tables with traditional distributed</p>
+<pre tabindex="0"><code>The networking devices do not populate their forwarding tables with traditional distributed control plane processes
+</code></pre><p>The Southbound Interface<br>
+an interface between the controller and those devices, and given its location at the bottom part of<br>
+drawings,<br>
+in SDN, the word interface (including in the names of SBI, NBI, and API) refers to software<br>
+interfaces<br>
+often includes a protocol, so that the controller and devices can communicate, but it often includes an application programming interface (API). An APIis a method for one application<br>
+(program) to exchange data with another application.<br>
+API is an interface to an application program. Programs process data, so an API lets two programs<br>
+exchange data<br>
+functions, variables, and data structurescopy structured data between the programs across a network.—that can be used by one program to communicate and<br>
+an interface between a program (the controller) and a program (on the networking device) that lets the two programs communicate,<br>
+one goal being to allow the controller to program the data plane forwarding tables of the<br>
+networking device.<br>
+some controllers might support one or a few SBIs, for a specific purpose, while others might support many more SBIs, allowing a choice of SBIs to use<br>
+three sample architectures that happen to show three separate SBIs, specifically:<br>
+OpenFlow (from the ONF; <a
+  href="http://www.opennetworking.org/"
+    target="_blank"
+  >http://www.opennetworking.org)</a>)<br>
+(SBI) OpFlex (from Cisco; used with ACI)<br>
+CLI (Telnet/SSH) and SNMP (used with Cisco APIC-EM)<br>
+CLI (Telnet/SSH) and SNMP, and NETCONF (used with Cisco Software-Defined Access)<br>
+The Northbound Interface</p>
+<p>The Northbound Interface<br>
+how does the controller know what to add? How does it choose? What kind of information would your program need to gather before it could attempt to add something like MAC table entries or<br>
+IP routes to a network?<br>
+○ A list of all the devices in the network<br>
+○ The capabilities of each devices<br>
+○ The interfaces/ports on each device<br>
+○ The current state of each port<br>
+○ The topology—which devices connect to which, over which interfaces<br>
+○ Device configuration—IP addresses, VLANs, and so on as configured on the devices<br>
+A controller gathers all sorts of useful information about the network, like the items in the previous list. The controller itself can create a centralized repository of all this useful information<br>
+about the network.<br>
+NBI) opens the controller so its data and functions can be used by other programs, enabling<br>
+network programmability<br>
+Programs can pull information from the controller, using the controller’s APIs. The NBIs also enable programs to use the controller’s capabilities to program flows into the devices using the<br>
+controller’s SBIs.<br>
+An application can run on the same server as the controller and use an NBI, which is an API, so<br>
+that two programs can communicate.</p>
+<pre tabindex="0"><code>REST (Representational State Transfer)different hosts, using HTTP messages to transfer data over the APIdescribes a type of API that allows applications to sit on
+application running on the same system as the controller, the API does not need to send messages
+over a network because both programs run on the same system.
+</code></pre><pre tabindex="0"><code>over a network because both programs run on the same system.
+when the application runs on a different system somewhere else in the network other than running on the controller, the API needs a way to send the data back and forth over an IP network,
+and RESTful APIs meet that need
+REST API
+HTTP GET request to a particular URI. The HTTP GET is like any other HTTP GET, even like
+those used to retrieve web pages.
+the URI is not for a web page, but rather identifies an object on the controller, typically a data structure that the application needs to learn and then process
+the URI might identify an object that is the list of physical interfaces on a specific device along with the status of each.
+</code></pre><p>the response holds variable names and their values, in a format that can be easily used by a program. The common formats for data used for network programmabilityare JavaScript Object<br>
+Notation (JSON) and eXtensible Markup Language (XML), shown as step 3.<br>
+<strong>Examples of Network Programmability and SDN</strong></p>
+
+<h5 class="relative group">OpenDaylight(Controller) and OpenFlow (SBI)
+    <div id="opendaylightcontroller-and-openflow-sbi" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#opendaylightcontroller-and-openflow-sbi" aria-label="Anchor">#</a>
+    </span>
+    
+</h5>
+<pre tabindex="0"><code>defines the concept of a controller along with an IP-based SBI between the controller and
+the network devices.
+defines a standard idea of what a switch’s capabilities are, based on the ASICs and TCAMs commonly used in switches today. (switch abstraction)
+An with great flexibility beyond the traditional model of a Layer 2/3 switch.OpenFlowswitch can act as a Layer 2 switch, a Layer 3 switch, or in different ways and
+centralizes most control plane functions, with control of the network done by the controller
+plus any applications that use the controller’s NBIs.
+applications may use any APIs (NBIs) supported on the controller platform to dictate what
+</code></pre><p>applications may use any APIs (NBIs) supported on the controller platform to dictate what kinds of forwarding table entries are placed into the devices; however, it calls for OpenFlow<br>
+as the SBI protocolOpenFlow .Additionally,the networking devices need to be switches that support</p>
+<p>a controller with an OpenFlow SBI, the controller plays a big role in the network. The next few pages provide a brief background about two such controllers.</p>
+<p>The OpenDaylightController<br>
+open-source<br>
+ageneralized version of the ODL architecture.</p>
+<p><strong>The Cisco Open SDN Controller (OSC)</strong><br>
+a commercial version of the OpenDaylight controller<br>
+followed the intended model for the ODL project:<br>
+no longer produces and sells the Cisco OSC<br>
+two Cisco offerings that use an IBN approach to SDN<br>
+Cisco Application Centric Infrastructure (ACI)<br>
+Cisco’s current SDN offerings of Access (SDA) in the enterprise campusACI in the data center, and Software-Defined WAN (SD, Software-Defined -<br>
+WAN) in the enterprise WAN.<br>
+Cisco made the network infrastructure become application centric, hence the name of the Cisco data center SDN solution: Application Centric<br>
+Infrastructure, or ACI.</p>
+<p>how ACI creates a powerful and flexible network to support a modern<br>
+data center in which VMs and containers are created, run, move, and are stopped dynamically as a matter of routine.</p>
+<pre tabindex="0"><code>ACI Physical Design: Spine and Leaf
+uses a specific physical switch topology called spine and leaf.
+also called a Clos network
+ Each leaf switch must connect to every spine switch.
+ Each spine switch must connect to every leaf switch.
+ Leaf switches cannot connect to each other.
+ Spine switches cannot connect to each other.
+ Endpoints connect only to the leaf switches.
+</code></pre><pre tabindex="0"><code>The center, like the router on the leftendpoints can be connections to devices outside the data
+most of the endpoints will be either physical servers running a
+native OS or servers running virtualization software with numbers of VMs and containers as shown in the center of the figure.
+</code></pre><p>ACI Operating Model with Intent-Based Networking<br>
+endpoints are the VMs, containers, or even traditional servers with<br>
+the OS running directly on the hardware. ACI then uses several constructs as implemented via the Application Policy Infrastructure<br>
+Controller (APIC)controller for ACI., the software that serves as the centralized<br>
+one web app often exists as three separate servers:<br>
+<strong>Web server</strong> web server, which sends web page content to the user.: Users from outside the data center connect to a<br>
+<strong>App (Application) server</strong> dynamic content, the app server does the processing to build : Because most web pages contain<br>
+the next web page for that particular user based on the user’s profile and latest actions and input.<br>
+<strong>DB (Database) server:</strong> Many of the app server’s actions<br>
+require data; the DB server retrieves and stores the data as requested by the app server.</p>
+<pre tabindex="0"><code>the engineer, or some automation program, defines the policies and intent for which endpoints should be allowed to
+communicate and which should not. Then the controller determines what that means for this network at this moment
+in time, depending on where the endpoints are right now.
+</code></pre><pre tabindex="0"><code>intent-based networking (IBN) model.
+</code></pre><pre tabindex="0"><code>when starting the VMs for this app, the virtualization software
+would create (via the APIC) several endpoint groups (EPGs) as shown in Figure 16-11. The controller must also be told the access
+policies, which define which EPGs should be able to communicate (and which should not), as implied in the figure with arrowed lines.
+For example, the routers that connect to the network external to
+</code></pre><p>For example, the routers that connect to the network external to the data center should be able to send packets to all web servers,<br>
+but not to the app servers or DB servers.</p>
+<p>ACI uses a centralized controller called the Application Policy Infrastructure Controller (APIC),</p>
+<pre tabindex="0"><code>it is the controller that creates application policies for the
+data center infrastructure. The APIC takes the intent (EPGs, policies, and so on), which completely changes the
+operational model away from configuring VLANs, trunks, EtherChannels, ACLs, and so on. (Some control plane in
+switches)
+</code></pre><p>Cisco APIC Enterprise Module (APIC-EM)<br>
+a Cisco SDN solution:<br>
+APIC Enterprise Module (APICbegan to reimagine networking in the enterprise, they saw a -EM), solves a different problem. When Cisco huge barrier: the<br>
+installed base of their own products in most of their customer’s networks.<br>
+APIC-EM Basics<br>
+offer enterprise SDN using the same switches and routers already<br>
+installed in networks.<br>
+It includes these applications,<br>
+Topology map: of the network.The application discovers and displays the topology<br>
+Path Trace: the application shows the path through the network, along with The user supplies a source and destination device, and<br>
+details about the forwarding decision at each step.<br>
+Plug and Play: that you can unbox a new device and make it IP reachable through This application provides Day 0 installation support so<br>
+automation in the controller.<br>
+Easy QoS: With a few simple decisions at the controller, you can<br>
+configure complex QoS features at each device.</p>
+<pre tabindex="0"><code>does not directly program the data or control planes, but it does interact with the management plane via Telnet, SSH, and/or SNMP;
+</code></pre><p>APIC-EM Replacement<br>
+many of the functions of APICCisco DNA Center (DNAC) product-EM have become core features of the<br>
+list of applications just above this chapter’s Figure 16-14 also exist<br>
+as part of DNAC, for instance.</p>
+<p>Comparing Traditional Versus Controller-Based Networks<br>
+Configuration management refers to any feature that changes device configuration, with automated configuration management doing so with software (program) control.<br>
+Operational network management includes monitoring, gathering operational data, reporting, and<br>
+alerting humans to possible issues</p>
+<p>How Automation Impacts Network Management<br>
+Centralized controllers formalize and define data models for the configuration and operational data about networks.</p>
+<p>Northbound APIs and their underlying data models make it much easier to automate functions versus traditional networks.<br>
+The robust data created by controllers makes it possible to automate functions that were not<br>
+easily automated without controllers.<br>
+The new reimagined software defined networks that use new operational models simplify operations, with automation resulting in more consistent configuration and less errors.<br>
+Centralized collection of operational data at controllers allows the application of modern data analytics to networking operational data, providing actionable insights that were likely not<br>
+noticeable with the former model.<br>
+Time required to complete projects is reduced.<br>
+New operational models use external inputs, like considering time-of-day, day-of-week, and<br>
+network load.<br>
+Comparing Traditional Networks with Controller-Based Networks</p>
+<p>three most likely to be seen from Cisco in an enterprise: Software-Defined Access (SDA), Software-<br>
+Defined WAN (SDSDA.) -WAN), and Application Centric Infrastructure (ACI). (Chapter 17 introduces</p>
+<p>The network engineer does not need to think about every command on every device.<br>
+The controller configures the devices with consistent and streamlined settings.<br>
+The result: faster and more consistent changes with fewer issues.<br>
+Uses new and improved operational models that allow the configuration of the network rather than per-device configuration</p>
+<p>Enables automation through northbound APIs that provide robust methods and modeldata -driven</p>
+<p>Configures the network devices through southbound APIs, resulting in more consistent device<br>
+configuration, fewer errors, and less time spent troubleshooting the network<br>
+Enables a DevOps approach to networks</p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_tech/networking/controllerbasednetworking.md"
+          data-oid-likes="likes_tech/networking/controllerbasednetworking.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+      
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 overflow-x-auto py-2">
+        <ul class="flex list-none flex-row">
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 me-4">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href=""
+                title="">
+                
+                
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          David Thomas
+      </p>
+    
+
+    
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

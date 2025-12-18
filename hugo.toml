@@ -1,0 +1,5 @@
+baseURL = 'https://davidwrites.xyz/'
+languageCode = 'en-us'
+title = 'David Thomas'
+publishDir = "docs"
+

@@ -1,0 +1,2276 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title> &middot; David Thomas</title>
+    <meta name="title" content=" &middot; David Thomas">
+  
+
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/tech-notes/rhce/ansible4devops/chapter-3---ad-hoc-commands/">
+  
+
+  
+  
+    <meta name="author" content="David Thomas">
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/tech-notes/rhce/ansible4devops/chapter-3---ad-hoc-commands/">
+  <meta property="og:site_name" content="David Thomas">
+  <meta property="og:title" content="David Thomas">
+  <meta property="og:description" content="Discover Ansible’s parallel nature # Verify group multi hostnames: ansible multi -a &#34;hostname&#34;
+If Ansible reports No hosts matched or returns some other inventory-related error, try setting the ANSIBLE_HOSTS environment variable explicitly: export ANSIBLE_HOSTS=/etc/ansible/hosts. Generally Ansible will read the file in /etc/ansible/hosts automatically, but depending on how you installed Ansible, you may need to explicitly set ANSIBLE_HOSTS for the ansible command to work correctly.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech-notes">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="David Thomas">
+  <meta name="twitter:description" content="Discover Ansible’s parallel nature # Verify group multi hostnames: ansible multi -a &#34;hostname&#34;
+If Ansible reports No hosts matched or returns some other inventory-related error, try setting the ANSIBLE_HOSTS environment variable explicitly: export ANSIBLE_HOSTS=/etc/ansible/hosts. Generally Ansible will read the file in /etc/ansible/hosts automatically, but depending on how you installed Ansible, you may need to explicitly set ANSIBLE_HOSTS for the ansible command to work correctly.">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.c5c4ab59b36e3a06d6dff38478af5d2c18b2d7a3603611d7fc5647b02111f989bd5957610b6bed4d10718428186bc7c38590e84c77c0d50f401da78f4fbb5384.css"
+    integrity="sha512-xcSrWbNuOgbW3/OEeK9dLBiy16NgNhHX/FZHsCER&#43;Ym9WVdhC2vtTRBxhCgYa8fDhZDoTHfA1Q9AHaePT7tThA==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js"
+      integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP&#43;pSqMXxm6JPOUeAg=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "",
+    "headline": "",
+    
+    "abstract": "\u003ch4 class=\u0022relative group\u0022\u003eDiscover Ansible\u0026rsquo;s parallel nature\n    \u003cdiv id=\u0022discover-ansibles-parallel-nature\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#discover-ansibles-parallel-nature\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h4\u003e\n\u003cp\u003eVerify group multi hostnames:\n\u003ccode\u003eansible multi -a \u0026quot;hostname\u0026quot;\u003c\/code\u003e\u003c\/p\u003e\n\u003cp\u003eIf Ansible reports \u003ccode\u003eNo hosts matched\u003c\/code\u003e or returns some other\ninventory-related error, try setting the \u003ccode\u003eANSIBLE_HOSTS\u003c\/code\u003e environment\nvariable explicitly: \u003ccode\u003eexport ANSIBLE_HOSTS=\/etc\/ansible\/hosts\u003c\/code\u003e.\nGenerally Ansible will read the file in \u003ccode\u003e\/etc\/ansible\/hosts\u003c\/code\u003e\nautomatically, but depending on how you installed Ansible, you may need\nto explicitly set \u003ccode\u003eANSIBLE_HOSTS\u003c\/code\u003e for the \u003ccode\u003eansible\u003c\/code\u003e command to work\ncorrectly.\u003c\/p\u003e",
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/tech-notes/rhce/ansible4devops/chapter-3---ad-hoc-commands/",
+    "author" : {
+      "@type": "Person",
+      "name": "David Thomas"
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "5680"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc",
+      authDomain: "davidwrites-89dd7.firebaseapp.com",
+      projectId: "davidwrites-89dd7",
+      storageBucket: "davidwrites-89dd7.firebasestorage.app",
+      messagingSenderId: "433139099634",
+      appId: "1:433139099634:web:c14275555bd7171e6c6d6b",
+      measurementId: "G-XX5507B82W"
+    };
+
+        var app = firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        var auth = firebase.auth();
+
+      </script>
+    
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium">
+          David Thomas
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/tech-notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Tech Notes"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      Tech Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Notes"
+  title="Book Notes &amp; Reviews">
+  
+  
+    <p class="text-base font-medium">
+      Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/articles/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Articles"
+  title="Articles">
+  
+  
+    <p class="text-base font-medium">
+      Articles
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/now/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Now"
+  title="Now">
+  
+  
+    <p class="text-base font-medium">
+      Now
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  
+  title="">
+  
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/tech-notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Tech Notes"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        Tech Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Notes"
+    title="Book Notes &amp; Reviews">
+    
+    
+      <p class="text-bg font-bg">
+        Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/articles/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Articles"
+    title="Articles">
+    
+    
+      <p class="text-bg font-bg">
+        Articles
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/now/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Now"
+    title="Now">
+    
+    
+      <p class="text-bg font-bg">
+        Now
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    
+    title="">
+    
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
+    })();
+  </script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="views_tech notes/RHCE/Ansible4Devops/Chapter 3 - Ad-Hoc Commands.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="views"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></span>
+</span>
+<span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="likes_tech notes/RHCE/Ansible4Devops/Chapter 3 - Ad-Hoc Commands.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span></span>
+</span>
+<span class="px-2 text-primary-500">&middot;</span><span>
+  <button
+    id="button_likes"
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    <span id="button_likes_heart" class="inline-block align-text-bottom hidden"
+      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span>
+    </span>
+    <span id="button_likes_emtpty_heart" class="inline-block align-text-bottom"
+      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg></span></span
+    >
+    <span id="button_likes_text">&nbsp;Like</span>
+  </button>
+</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#discover-ansibles-parallel-nature">Discover Ansible&rsquo;s parallel nature</a></li>
+            <li><a href="#learning-about-your-environment">Learning about your environment</a></li>
+            <li><a href="#make-changes-using-ansible-modules">Make changes using Ansible modules</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap05.xhtml_leanpub-auto-configure-groups-of-servers-or-individual-servers">Configure groups of servers, or individual servers</a>
+          <ul>
+            <li><a href="#chap05.xhtml_leanpub-auto-configure-the-application-servers">Configure the Application servers</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-configure-the-database-servers">Configure the Database servers</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-make-changes-to-just-one-server">Make changes to just one server</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#chap05.xhtml_leanpub-auto-manage-users-and-groups">Manage users and groups</a></li>
+        <li><a href="#chap05.xhtml_leanpub-auto-manage-files-and-directories">Manage files and directories</a>
+          <ul>
+            <li><a href="#chap05.xhtml_leanpub-auto-get-information-about-a-file">Get information about a file</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-copy-a-file-to-the-servers">Copy a file to the servers</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-retrieve-a-file-from-the-servers">Retrieve a file from the servers</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-create-directories-and-files">Create directories and files</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-delete-directories-and-files">Delete directories and files</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap05.xhtml_leanpub-auto-run-operations-in-the-background">Run operations in the background</a>
+          <ul>
+            <li><a href="#chap05.xhtml_leanpub-auto-update-servers-asynchronously-monitoring-progress">Update servers asynchronously, monitoring progress</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-fire-and-forget-tasks">Fire-and-forget tasks</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap05.xhtml_leanpub-auto-check-log-files">Check log files</a></li>
+        <li><a href="#chap05.xhtml_leanpub-auto-manage-cron-jobs">Manage cron jobs</a></li>
+        <li><a href="#chap05.xhtml_leanpub-auto-deploy-a-version-controlled-application">Deploy a version-controlled application</a></li>
+        <li><a href="#chap05.xhtml_leanpub-auto-ansibles-ssh-connection-history">Ansible&rsquo;s SSH connection history</a>
+          <ul>
+            <li><a href="#chap05.xhtml_leanpub-auto-paramiko">Paramiko</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-openssh-default">OpenSSH (default)</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-accelerated-mode">Accelerated Mode</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-faster-openssh-in-ansible-15">Faster OpenSSH in Ansible 1.5+</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap05.xhtml_leanpub-auto-summary-2">Summary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#discover-ansibles-parallel-nature">Discover Ansible&rsquo;s parallel nature</a></li>
+            <li><a href="#learning-about-your-environment">Learning about your environment</a></li>
+            <li><a href="#make-changes-using-ansible-modules">Make changes using Ansible modules</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap05.xhtml_leanpub-auto-configure-groups-of-servers-or-individual-servers">Configure groups of servers, or individual servers</a>
+          <ul>
+            <li><a href="#chap05.xhtml_leanpub-auto-configure-the-application-servers">Configure the Application servers</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-configure-the-database-servers">Configure the Database servers</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-make-changes-to-just-one-server">Make changes to just one server</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#chap05.xhtml_leanpub-auto-manage-users-and-groups">Manage users and groups</a></li>
+        <li><a href="#chap05.xhtml_leanpub-auto-manage-files-and-directories">Manage files and directories</a>
+          <ul>
+            <li><a href="#chap05.xhtml_leanpub-auto-get-information-about-a-file">Get information about a file</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-copy-a-file-to-the-servers">Copy a file to the servers</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-retrieve-a-file-from-the-servers">Retrieve a file from the servers</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-create-directories-and-files">Create directories and files</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-delete-directories-and-files">Delete directories and files</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap05.xhtml_leanpub-auto-run-operations-in-the-background">Run operations in the background</a>
+          <ul>
+            <li><a href="#chap05.xhtml_leanpub-auto-update-servers-asynchronously-monitoring-progress">Update servers asynchronously, monitoring progress</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-fire-and-forget-tasks">Fire-and-forget tasks</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap05.xhtml_leanpub-auto-check-log-files">Check log files</a></li>
+        <li><a href="#chap05.xhtml_leanpub-auto-manage-cron-jobs">Manage cron jobs</a></li>
+        <li><a href="#chap05.xhtml_leanpub-auto-deploy-a-version-controlled-application">Deploy a version-controlled application</a></li>
+        <li><a href="#chap05.xhtml_leanpub-auto-ansibles-ssh-connection-history">Ansible&rsquo;s SSH connection history</a>
+          <ul>
+            <li><a href="#chap05.xhtml_leanpub-auto-paramiko">Paramiko</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-openssh-default">OpenSSH (default)</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-accelerated-mode">Accelerated Mode</a></li>
+            <li><a href="#chap05.xhtml_leanpub-auto-faster-openssh-in-ansible-15">Faster OpenSSH in Ansible 1.5+</a></li>
+          </ul>
+        </li>
+        <li><a href="#chap05.xhtml_leanpub-auto-summary-2">Summary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h4 class="relative group">Discover Ansible&rsquo;s parallel nature
+    <div id="discover-ansibles-parallel-nature" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#discover-ansibles-parallel-nature" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Verify group multi hostnames:
+<code>ansible multi -a &quot;hostname&quot;</code></p>
+<p>If Ansible reports <code>No hosts matched</code> or returns some other
+inventory-related error, try setting the <code>ANSIBLE_HOSTS</code> environment
+variable explicitly: <code>export ANSIBLE_HOSTS=/etc/ansible/hosts</code>.
+Generally Ansible will read the file in <code>/etc/ansible/hosts</code>
+automatically, but depending on how you installed Ansible, you may need
+to explicitly set <code>ANSIBLE_HOSTS</code> for the <code>ansible</code> command to work
+correctly.</p>
+<p>You may have noticed that the command was not run on each server in the
+order you&rsquo;d expect. Go ahead and run the command a few more times, and
+see the order:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code># First run results:                # Second run results:
+192.168.60.5 | success | rc=0 &gt;&gt;    192.168.60.6 | success | rc=0 &gt;&gt;
+orc-app2.dev                        orc-db.dev
+<p>192.168.60.6 | success | rc=0 &gt;&gt;    192.168.60.5 | success | rc=0 &gt;&gt;
+orc-db.dev                          orc-app2.dev</p>
+<p>192.168.60.4 | success | rc=0 &gt;&gt;    192.168.60.4 | success | rc=0 &gt;&gt;
+orc-app1.dev                        orc-app1.dev</code></pre></p>
+</div>
+</figure>
+<p>By default, Ansible will run your commands in parallel, using multiple
+process forks, so the command will complete more quickly. If you&rsquo;re
+managing a few servers, this may not be much quicker than running the
+command serially, on one server after the other, but even managing 5-10
+servers, you&rsquo;ll notice a dramatic speedup if you use Ansible&rsquo;s
+parallelism (which is enabled by default).</p>
+<p>Run the same command again, but this time, add the argument <code>-f 1</code> to
+tell Ansible to use only one fork (basically, to perform the command on
+each server in sequence):</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -a &quot;hostname&quot; -f 1
+192.168.60.4 | success | rc=0 &gt;&gt;
+orc-app1.dev
+<p>192.168.60.5 | success | rc=0 &gt;&gt;
+orc-app2.dev</p>
+<p>192.168.60.6 | success | rc=0 &gt;&gt;
+orc-db.dev</code></pre></p>
+</div>
+</figure>
+<p>Run the same command over and over again, and it will always return
+results in the same order. It&rsquo;s fairly rare that you will ever need to
+do this, but it&rsquo;s much more frequent that you&rsquo;ll want to <em>increase</em> the
+value (like <code>-f 10</code>, or <code>-f 25</code>&hellip; depending on how much your system and
+network connection can handle) to speed up the process of running
+commands on tens or hundreds of servers.</p>
+<aside class="tip blurb">
+<p>Most people place the target of the action (<code>multi</code>) before the
+command/action itself (&ldquo;on X servers, run Y command&rdquo;), but if your brain
+works in the reverse order (&ldquo;run Y command on X servers&rdquo;), you could put
+the target <em>after</em> the other arguments
+(<code>ansible -a &quot;hostname&quot; multi</code>)&mdash;the commands are equivalent.</p>
+</aside>
+
+<h4 class="relative group">Learning about your environment
+    <div id="learning-about-your-environment" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#learning-about-your-environment" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Now that we trust Vagrant&rsquo;s ability to set hostnames correctly, let&rsquo;s
+make sure everything else is in order.</p>
+<p>First, let&rsquo;s make sure the servers have disk space available for our
+application:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -a &quot;df -h&quot;
+192.168.60.6 | success | rc=0 &gt;&gt;
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root   19G 1014M   18G   6% /
+devtmpfs                 111M     0  111M   0% /dev
+tmpfs                    120M     0  120M   0% /dev/shm
+tmpfs                    120M  4.3M  115M   4% /run
+tmpfs                    120M     0  120M   0% /sys/fs/cgroup
+/dev/sda1                497M  124M  374M  25% /boot
+none                     233G  217G   17G  94% /vagrant
+<p>192.168.60.5 | success | rc=0 &gt;&gt;
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root   19G 1014M   18G   6% /
+devtmpfs                 111M     0  111M   0% /dev
+tmpfs                    120M     0  120M   0% /dev/shm
+tmpfs                    120M  4.3M  115M   4% /run
+tmpfs                    120M     0  120M   0% /sys/fs/cgroup
+/dev/sda1                497M  124M  374M  25% /boot
+none                     233G  217G   17G  94% /vagrant</p>
+<p>192.168.60.4 | success | rc=0 &gt;&gt;
+Filesystem               Size  Used Avail Use% Mounted on
+/dev/mapper/centos-root   19G 1014M   18G   6% /
+devtmpfs                 111M     0  111M   0% /dev
+tmpfs                    120M     0  120M   0% /dev/shm
+tmpfs                    120M  4.3M  115M   4% /run
+tmpfs                    120M     0  120M   0% /sys/fs/cgroup
+/dev/sda1                497M  124M  374M  25% /boot
+none                     233G  217G   17G  94% /vagrant</code></pre></p>
+</div>
+</figure>
+<p>It looks like we have plenty of room for now; our application is pretty
+lightweight.</p>
+<p>Second, let&rsquo;s also make sure there is enough memory on our servers:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -a &quot;free -m&quot;
+192.168.60.4 | success | rc=0 &gt;&gt;
+             total       used       free     shared    buffers     cached
+Mem:           238        187         50          4          1         69
+-/+ buffers/cache:        116        121
+Swap:         1055          0       1055
+<p>192.168.60.6 | success | rc=0 &gt;&gt;
+total       used       free     shared    buffers     cached
+Mem:           238        190         47          4          1         72
+-/+ buffers/cache:        116        121
+Swap:         1055          0       1055</p>
+<p>192.168.60.5 | success | rc=0 &gt;&gt;
+total       used       free     shared    buffers     cached
+Mem:           238        186         52          4          1         67
+-/+ buffers/cache:        116        121
+Swap:         1055          0       1055</code></pre></p>
+</div>
+</figure>
+<p>Memory is pretty tight, but since we&rsquo;re running three VMs on our
+localhost, we need to be a little conservative.</p>
+<p>Third, let&rsquo;s make sure the date and time on each server is in sync:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -a &quot;date&quot;
+192.168.60.5 | success | rc=0 &gt;&gt;
+Sat Feb  1 20:23:08 UTC 2021
+<p>192.168.60.4 | success | rc=0 &gt;&gt;
+Sat Feb  1 20:23:08 UTC 2021</p>
+<p>192.168.60.6 | success | rc=0 &gt;&gt;
+Sat Feb  1 20:23:08 UTC 2021</code></pre></p>
+</div>
+</figure>
+<p>Most applications are written with slight tolerances for per-server time
+jitter, but it&rsquo;s always a good idea to make sure the times on the
+different servers are as close as possible, and the simplest way to do
+that is to use the Network Time Protocol, which is easy enough to
+configure. We&rsquo;ll do that next, using Ansible&rsquo;s modules to make the
+process painless.</p>
+<aside class="tip blurb">
+<p>To get an exhaustive list of all the environment details (&lsquo;facts&rsquo;, in
+Ansible&rsquo;s lingo) for a particular server (or for a group of servers),
+use the command <code>ansible [host-or-group] -m setup</code>. This will provide a
+list of every minute bit of detail about the server (including file
+systems, memory, OS, network interfaces&hellip; you name it, it&rsquo;s in the
+list).</p>
+</aside>
+
+<h4 class="relative group">Make changes using Ansible modules
+    <div id="make-changes-using-ansible-modules" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#make-changes-using-ansible-modules" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>We want to install the NTP daemon on the server to keep the time in
+sync. Instead of running the command <code>yum install -y ntp</code> on each of the
+servers, we&rsquo;ll use ansible&rsquo;s <code>yum</code> module to do the same (just like we
+did in the playbook example earlier, but this time using an ad-hoc
+command).</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -s -m yum -a &quot;name=ntp state=present&quot;</code></pre>
+</div>
+</figure>
+<p>You should see three simple &lsquo;success&rsquo; messages, reporting no change,
+since NTP was already installed on the three machines; this confirms
+everything is in working order.</p>
+<aside class="information blurb">
+<p>The <code>-s</code> option (alias for <code>--sudo</code>) tells Ansible to run the command
+with sudo. This will work fine with our Vagrant VMs, but if you&rsquo;re
+running commands against a server where your user account requires a
+sudo password, you should also pass in <code>-K</code> (alias for
+<code>--ask-sudo-pass</code>), so you can enter your sudo password when Ansible
+needs it.</p>
+</aside>
+<p>Now we&rsquo;ll make sure the NTP daemon is started and set to run on boot. We
+could use two separate commands, <code>service ntpd start</code> and
+<code>chkconfig ntpd on</code>, but we&rsquo;ll use Ansible&rsquo;s <code>service</code> module instead.</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -s -m service -a &quot;name=ntpd state=started enabled=yes&quot;</code></pre>
+</div>
+</figure>
+<p>All three servers should show a success message like:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>&quot;changed&quot;: true,
+&quot;enabled&quot;: true,
+&quot;name&quot;: &quot;ntpd&quot;,
+&quot;state&quot;: &quot;started&quot;</code></pre>
+</div>
+</figure>
+<p>If you run the exact same command again, everything will be the same,
+but Ansible will report that nothing has changed, so the <code>&quot;changed&quot;</code>
+value becomes <code>false</code>.</p>
+<p>When you use Ansible&rsquo;s modules instead of plain shell commands, you can
+use the powers of abstraction and idempotency offered by Ansible. Even
+if you&rsquo;re running shell commands, you could wrap them in Ansible&rsquo;s
+<code>shell</code> or <code>command</code> modules (like <code>ansible -m shell -a &quot;date&quot; multi</code>),
+but for these kind of commands, there&rsquo;s usually no need to use an
+Ansible module when running them ad-hoc.</p>
+<p>The last thing we should do is check to make sure our servers are synced
+closely to the official time on the NTP server:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -s -a &quot;service ntpd stop&quot;
+$ ansible multi -s -a &quot;ntpdate -q 0.rhel.pool.ntp.org&quot;
+$ ansible multi -s -a &quot;service ntpd start&quot;</code></pre>
+</div>
+</figure>
+<p>For the <code>ntpdate</code> command to work, the <code>ntpd</code> service has to be stopped,
+so we stop the service, run the command to check our jitter, then start
+the service again.</p>
+<p>In my test, I was within three one-hundredths of a second on all three
+servers&mdash;close enough for my purposes.</p>
+
+<h3 class="relative group">Configure groups of servers, or individual servers
+    <div id="chap05xhtml_leanpub-auto-configure-groups-of-servers-or-individual-servers" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-configure-groups-of-servers-or-individual-servers" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Now that we&rsquo;ve been able to get all our servers to a solid baseline
+(e.g. all of them at least have the correct time), we need to set up the
+application servers, then the database server.</p>
+<p>Since we set up two separate groups in our inventory file, <code>app</code> and
+<code>db</code>, we can target commands to just the servers in those groups.</p>
+
+<h4 class="relative group">Configure the Application servers
+    <div id="chap05xhtml_leanpub-auto-configure-the-application-servers" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-configure-the-application-servers" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Our hypothetical web application uses Django, so we need to make sure
+Django and its dependencies are installed. Django is not in the official
+CentOS yum repository, but we can install it using Python&rsquo;s easy_install
+(which, conveniently, has an Ansible module).</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible app -s -m yum -a &quot;name=MySQL-python state=present&quot;
+$ ansible app -s -m yum -a &quot;name=python-setuptools state=present&quot;
+$ ansible app -s -m easy_install -a &quot;name=django&quot;</code></pre>
+</div>
+</figure>
+<p>You could also install django using <code>pip</code>, which can be installed via
+<code>easy_install</code> (since Ansible&rsquo;s <code>easy_install</code> module doesn&rsquo;t allow you
+to uninstall packages like <code>pip</code> does), but for simplicity&rsquo;s sake, we&rsquo;ve
+installed it with <code>easy_install</code>.</p>
+<p>Check to make sure Django is installed and working correctly.</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible app -a &quot;python -c &#39;import django; print django.get_version()&#39;&quot;
+192.168.60.4 | success | rc=0 &gt;&gt;
+1.8
+<p>192.168.60.5 | success | rc=0 &gt;&gt;
+1.8</code></pre></p>
+</div>
+</figure>
+<p>Things look like they&rsquo;re working correctly on our app servers. We can
+now move on to our database server.</p>
+<aside class="tip blurb">
+<p>Almost all of the configuration we&rsquo;ve done in this chapter would be much
+better off in an Ansible playbook (which will be explored in greater
+depth throughout the rest of this book). This chapter demonstrates how
+easy it is to manage multiple servers&mdash;for whatever purpose&mdash;using
+Ansible. Even if you set up and configure servers by hand using shell
+commands, using Ansible will save you a ton of time and help you do
+everything in the most secure and efficient manner possible.</p>
+</aside>
+
+<h4 class="relative group">Configure the Database servers
+    <div id="chap05xhtml_leanpub-auto-configure-the-database-servers" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-configure-the-database-servers" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>We configured the application servers using the <code>app</code> group defined in
+Ansible&rsquo;s main inventory, and we can configure the database server
+(currently the only server in the <code>db</code> group) using the
+similarly-defined <code>db</code> group.</p>
+<p>Let&rsquo;s install MariaDB, start it, and configure the server&rsquo;s firewall to
+allow access on MariaDB&rsquo;s default port, 3306.</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible db -s -m yum -a &quot;name=mariadb-server state=present&quot;
+$ ansible db -s -m service -a &quot;name=mariadb state=started enabled=yes&quot;
+$ ansible db -s -a &quot;iptables -F&quot;
+$ ansible db -s -a &quot;iptables -A INPUT -s 192.168.60.0/24 -p tcp \
+-m tcp --dport 3306 -j ACCEPT&quot;</code></pre>
+</div>
+</figure>
+<p>If you try connecting to the database from the app servers (or your host
+machine) at this point, you won&rsquo;t be able to connect, since MariaDB
+still needs to be set up. Typically, you&rsquo;d do this by logging into the
+server and running <code>mysql_secure_installation</code>. Luckily, though, Ansible
+can control a MariaDB server with its assorted <code>mysql_*</code> modules. For
+now, we need to allow MySQL access for one user from our app servers.
+The MySQL modules require the <code>MySQL-python</code> module to be present on the
+managed server.</p>
+<aside class="tip blurb">
+<p>Why MariaDB and not MySQL? RHEL 7 and CentOS 7 have MariaDB as the
+default supported MySQL-compatible database server. Some of the tooling
+around MariaDB still uses the old &lsquo;MySQL*&rsquo; naming syntax, but if you&rsquo;re
+used to MySQL, things work similarly with MariaDB.</p>
+</aside>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible db -s -m yum -a &quot;name=MySQL-python state=present&quot;
+$ ansible db -s -m mysql_user -a &quot;name=django host=% password=12345 \
+priv=*.*:ALL state=present&quot;</code></pre>
+</div>
+</figure>
+<p>At this point, you should be able to create or deploy a Django
+application on the app servers, then point it at the database server
+with the username django and password 12345.</p>
+<aside class="information blurb">
+<p>The MySQL configuration used here is for example/development purposes
+only! There are a few other things you should do to secure a production
+MySQL server, including removing the test database, adding a password
+for the root user account, restricting the IP addresses allowed to
+access port 3306 more closely, and some other minor cleanups. Some of
+these things will be covered later in this book, but, as always, you are
+responsible for securing your servers&mdash;make sure you&rsquo;re doing it
+correctly!</p>
+</aside>
+
+<h4 class="relative group">Make changes to just one server
+    <div id="chap05xhtml_leanpub-auto-make-changes-to-just-one-server" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-make-changes-to-just-one-server" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Congratulations! You now have a small web application environment
+running Django and MySQL. It&rsquo;s not much, and there&rsquo;s not even a load
+balancer in front of the app servers to spread out the requests; but
+we&rsquo;ve configured everything pretty quickly, and without ever having to
+log into a server. What&rsquo;s even more impressive is that you could run any
+of the ansible commands again (besides a couple of the simple shell
+commands), and they wouldn&rsquo;t change anything&mdash;they would return
+<code>&quot;changed&quot;: false</code>, giving you peace of mind that the original
+configuration is intact.</p>
+<p>Now that your local infrastructure has been running a while, you notice
+(hypothetically, of course) that the logs indicate one of the two app
+servers&rsquo; time has gotten way out of sync with the others, likely because
+the NTP daemon has crashed or somehow been stopped. Quickly, you enter
+the following command to check the status of <code>ntpd</code>:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible app -s -a &quot;service ntpd status&quot;</code></pre>
+</div>
+</figure>
+<p>Then, you restart the service on the affected app server:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible app -s -a &quot;service ntpd restart&quot; --limit &quot;192.168.60.4&quot;</code></pre>
+</div>
+</figure>
+<p>In this command, we used the <code>--limit</code> argument to limit the command to
+a specific host in the specified group. <code>--limit</code> will match either an
+exact string or a regular expression (prefixed with <code>~</code>). The above
+command could be stated more simply if you want to apply the command to
+only the <code>.4</code> server (assuming you know there are no other servers with
+the an IP address ending in .4), the following would work exactly the
+same:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code># Limit hosts with a simple pattern (asterisk is a wildcard).
+$ ansible app -s -a &quot;service ntpd restart&quot; --limit &quot;*.4&quot;
+
+<h1 class="relative group">Limit hosts with a regular expression (prefix with a tilde).
+    <div id="limit-hosts-with-a-regular-expression-prefix-with-a-tilde" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#limit-hosts-with-a-regular-expression-prefix-with-a-tilde" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+<p>$ ansible app -s -a &quot;service ntpd restart&quot; &ndash;limit ~&quot;.*.4&quot;</code></pre></p>
+</div>
+</figure>
+<p>In these examples, we&rsquo;ve been using IP addresses instead of hostnames,
+but in many real-world scenarios, you&rsquo;ll probably be using hostnames
+like nyc-dev-1.example.com; being able to match on regular expressions
+is often helpful.</p>
+<aside class="tip blurb">
+<p>Try to reserve the <code>--limit</code> option for running commands on single
+servers. If you often find yourself running commands on the same set of
+servers using <code>--limit</code>, consider instead adding them to a group in your
+inventory file. That way you can enter
+<code>ansible [my-new-group-name] [command]</code>, and save yourself a few
+keystrokes.</p>
+</aside>
+
+<h3 class="relative group">Manage users and groups
+    <div id="chap05xhtml_leanpub-auto-manage-users-and-groups" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-manage-users-and-groups" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>One of the most common uses for Ansible&rsquo;s ad-hoc commands in my
+day-to-day usage is user and group management. I don&rsquo;t know how many
+times I&rsquo;ve had to re-read the man pages or do a Google search just to
+remember which arguments I need to create a user with or without a home
+folder, add the user to certain groups, etc.</p>
+<p>Ansible&rsquo;s <code>user</code> and <code>group</code> modules make things pretty simple and
+standard across any Linux flavor.</p>
+<p>First, add an <code>admin</code> group on the app servers for the server
+administrators:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible app -s -m group -a &quot;name=admin state=present&quot;</code></pre>
+</div>
+</figure>
+<p>The <code>group</code> module is pretty simple; you can remove a group by setting
+<code>state=absent</code>, set a group id with <code>gid=[gid]</code>, and indicate that the
+group is a system group with <code>system=yes</code>.</p>
+<p>Now add the user <code>johndoe</code> to the app servers with the group I just
+created and give him a home folder in <code>/home/johndoe</code> (the default
+location for most Linux distributions). Simple:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible app -s -m user -a &quot;name=johndoe group=admin createhome=yes&quot;</code></pre>
+</div>
+</figure>
+<p>If you want to automatically create an SSH key for the new user (if one
+doesn&rsquo;t already exist), you can run the same command with the additional
+parameter <code>generate_ssh_key=yes</code>. You can also set the UID of the user
+by passing in <code>uid=[uid]</code>, set the user&rsquo;s shell with <code>shell=[shell]</code>,
+and the password with <code>password=[encrypted-password]</code>.</p>
+<p>What if you want to delete the account?</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible app -s -m user -a &quot;name=johndoe state=absent remove=yes&quot;</code></pre>
+</div>
+</figure>
+<p>You can do just about anything you could do with <code>useradd</code>, <code>userdel</code>,
+and <code>usermod</code> using Ansible&rsquo;s <code>user</code> module, except you can do it more
+easily. The <a
+  href="http://docs.ansible.com/user_module.html"
+    target="_blank"
+  >official documentation of the User
+module</a> explains all the
+possibilities in great detail.</p>
+
+<h3 class="relative group">Manage files and directories
+    <div id="chap05xhtml_leanpub-auto-manage-files-and-directories" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-manage-files-and-directories" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Another common use for ad-hoc commands is remote file management.
+Ansible makes it easy to copy files from your host to remote servers,
+create directories, manage file and directory permissions and ownership,
+and delete files or directories.</p>
+
+<h4 class="relative group">Get information about a file
+    <div id="chap05xhtml_leanpub-auto-get-information-about-a-file" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-get-information-about-a-file" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>If you need to check a file&rsquo;s permissions, MD5, or owner, use Ansible&rsquo;s
+<code>stat</code> module:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -m stat -a &quot;path=/etc/environment&quot;</code></pre>
+</div>
+</figure>
+<p>This gives the same information you&rsquo;d get when running the <code>stat</code>
+command, but passes back information in JSON, which can be parsed a
+little more easily (or, later, used in playbooks to conditionally do or
+not do certain tasks).</p>
+
+<h4 class="relative group">Copy a file to the servers
+    <div id="chap05xhtml_leanpub-auto-copy-a-file-to-the-servers" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-copy-a-file-to-the-servers" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>You probably use <code>scp</code> and/or <code>rsync</code> to copy files and directories to
+remote servers, and while Ansible has recently gained an <code>rsync</code> module,
+most file copy operations can be completed with Ansible&rsquo;s <code>copy</code> module:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -m copy -a &quot;src=/etc/hosts dest=/tmp/hosts&quot;</code></pre>
+</div>
+</figure>
+<p>The <code>src</code> can be a file or a directory. If you include a trailing slash,
+only the contents of the directory will be copied into the <code>dest</code>. If
+you omit the trailing slash, the contents <em>and</em> the directory itself
+will be copied into the <code>dest</code>.</p>
+<p>The <code>copy</code> module is perfect for single-file copies, and works very well
+with small directories. When you want to copy hundreds of files,
+especially in very deeply-nested directory structures, you should
+consider either copying then expanding an archive of the files with
+Ansible&rsquo;s <code>unarchive</code> module, or using Ansible&rsquo;s <code>synchronize</code> module.</p>
+
+<h4 class="relative group">Retrieve a file from the servers
+    <div id="chap05xhtml_leanpub-auto-retrieve-a-file-from-the-servers" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-retrieve-a-file-from-the-servers" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>The <code>fetch</code> module works almost exactly the same as the <code>copy</code> module,
+except in reverse. The major difference is that files will be copied
+down to the local <code>dest</code> in a directory structure that matches the host
+from which you copied them. For example, use the following command to
+grab the hosts file from the servers:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -s -m fetch -a &quot;src=/etc/hosts dest=/tmp&quot;</code></pre>
+</div>
+</figure>
+<p>Fetch will, by default, put the <code>/etc/hosts</code> file from each server into
+a folder in the destination with the name of the host (in our case, the
+three IP addresses), then in the location defined by <code>src</code>. So, the db
+server&rsquo;s hosts file will end up in <code>/tmp/192.168.60.6/etc/hosts</code>.</p>
+<p>You can add the parameter <code>flat=yes</code>, and set the <code>dest</code> to <code>dest=/tmp/</code>
+(add a trailing slash), to make Ansible fetch the files directly into
+the <code>/tmp</code> directory. However, filenames must be unique for this to
+work, so it&rsquo;s not as useful when copying down files from multiple hosts.
+Only use <code>flat=yes</code> if you&rsquo;re copying files from a single host.</p>
+
+<h4 class="relative group">Create directories and files
+    <div id="chap05xhtml_leanpub-auto-create-directories-and-files" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-create-directories-and-files" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>You can use the <code>file</code> module to create files and directories (like
+<code>touch</code>), manage permissions and ownership on files and directories,
+modify SELinux properties, and create symlinks.</p>
+<p>Here&rsquo;s how to create a directory:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -m file -a &quot;dest=/tmp/test mode=644 state=directory&quot;</code></pre>
+</div>
+</figure>
+<p>Here&rsquo;s how to create a symlink (set <code>state=link</code>):</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -m file -a &quot;src=/src/symlink dest=/dest/symlink \
+owner=root group=root state=link&quot;</code></pre>
+</div>
+</figure>
+
+<h4 class="relative group">Delete directories and files
+    <div id="chap05xhtml_leanpub-auto-delete-directories-and-files" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-delete-directories-and-files" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>You can set the <code>state</code> to <code>absent</code> to delete a file or directory.</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -m file -a &quot;dest=/tmp/test state=absent&quot;</code></pre>
+</div>
+</figure>
+<p>There are many simple ways to manage files remotely using Ansible. We&rsquo;ve
+briefly covered the <code>copy</code> and <code>file</code> modules here, but be sure to read
+the documentation for the other file-management modules like
+<code>lineinfile</code>, <code>ini_file</code>, and <code>unarchive</code>. This book will cover these
+additional modules in depth in later chapters (when dealing with
+playbooks).</p>
+
+<h3 class="relative group">Run operations in the background
+    <div id="chap05xhtml_leanpub-auto-run-operations-in-the-background" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-run-operations-in-the-background" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Some operations take quite a while (minutes or even hours). For example,
+when you run <code>yum update</code> or <code>apt-get update &amp;&amp; apt-get dist-upgrade</code>,
+it could be a few minutes before all the packages on your servers are
+updated.</p>
+<p>In these situations, you can tell Ansible to run the commands
+asynchronously, and poll the servers to see when the commands finish.
+When you&rsquo;re only managing one server, this is not really helpful, but if
+you have many servers, Ansible starts the command <em>very</em> quickly on all
+your servers (especially if you set a higher <code>--forks</code> value), then
+polls the servers for status until they&rsquo;re all up to date.</p>
+<p>To run a command in the background, you set the following options:</p>
+<ul>
+<li><code>-B &lt;seconds&gt;</code>: the maximum amount of time (in seconds) to let the job
+run.</li>
+<li><code>-P &lt;seconds&gt;</code>: the amount of time (in seconds) to wait between
+polling the servers for an updated job status.</li>
+</ul>
+
+<h4 class="relative group">Update servers asynchronously, monitoring progress
+    <div id="chap05xhtml_leanpub-auto-update-servers-asynchronously-monitoring-progress" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-update-servers-asynchronously-monitoring-progress" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Let&rsquo;s run <code>yum -y update</code> on all our servers to get them up to date. If
+we leave out <code>-P</code>, Ansible defaults to polling every 10 seconds:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -s -B 3600 -a &quot;yum -y update&quot;
+background launch...
+<p>192.168.60.6 | success &gt;&gt; {
+&quot;ansible_job_id&quot;: &quot;763350539037&quot;,
+&quot;results_file&quot;: &quot;/root/.ansible_async/763350539037&quot;,
+&quot;started&quot;: 1
+}</p>
+<p>&hellip; [other hosts] &hellip;</code></pre></p>
+</div>
+</figure>
+<p>Wait a little while (or a <em>long</em> while, depending on how old the system
+image is we used to build our example VMs!), and eventually, you should
+see something like:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>&lt;job 763350539037&gt; finished on 192.168.60.6 =&gt; {
+    &quot;ansible_job_id&quot;: &quot;763350539037&quot;,
+    &quot;changed&quot;: true,
+    &quot;cmd&quot;: [
+        &quot;yum&quot;,
+        &quot;-y&quot;,
+        &quot;update&quot;
+    ],
+    &quot;delta&quot;: &quot;0:13:13.973892&quot;,
+    &quot;end&quot;: &quot;2021-02-09 04:47:58.259723&quot;,
+    &quot;finished&quot;: 1,
+<p>&hellip; [more info and stdout from job] &hellip;</code></pre></p>
+</div>
+</figure>
+<p>While a background task is running, you can also check on the status
+elsewhere using Ansible&rsquo;s <code>async_status</code> module, as long as you have the
+<code>ansible_job_id</code> value to pass in as <code>jid</code>:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -s -m async_status -a &quot;jid=763350539037&quot;</code></pre>
+</div>
+</figure>
+
+<h4 class="relative group">Fire-and-forget tasks
+    <div id="chap05xhtml_leanpub-auto-fire-and-forget-tasks" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-fire-and-forget-tasks" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>You may also need to run occasional long-running maintenance scripts, or
+other tasks that take many minutes or hours to complete, and you&rsquo;d
+rather not babysit the task. In these cases, you can set the <code>-B</code> value
+as high as you want (be generous, so your task will complete before
+Ansible kills it!), and set <code>-P</code> to &lsquo;0&rsquo;, so Ansible fires off the
+command then forgets about it:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -B 3600 -P 0 -a &quot;/path/to/fire-and-forget-script.sh&quot;
+background launch...
+<p>192.168.60.5 | success &gt;&gt; {
+&quot;ansible_job_id&quot;: &quot;204960925196&quot;,
+&quot;results_file&quot;: &quot;/root/.ansible_async/204960925196&quot;,
+&quot;started&quot;: 1
+}</p>
+<p>&hellip; [other hosts] &hellip;</p>
+<p>$</code></pre></p>
+</div>
+</figure>
+<p>Running the command this way doesn&rsquo;t allow status updates via
+<code>async_status</code> and a jid, but you can still inspect the file
+<code>~/.ansible_async/&lt;jid&gt;</code> on the remote server. This option is usually
+more helpful for &lsquo;fire-and-forget&rsquo; tasks.</p>
+<aside class="warning blurb">
+<p>For tasks you don&rsquo;t track remotely, it&rsquo;s usually a good idea to log the
+progress of the task <em>somewhere</em>, and also send some sort of alert on
+failure&mdash;especially, for example, when running backgrounded tasks that
+perform backup operations, or when running business-critical database
+maintenance tasks.</p>
+</aside>
+<p>You can also run tasks in Ansible playbooks in the background,
+asynchronously, by defining an <code>async</code> and <code>poll</code> parameter on the play.
+We&rsquo;ll discuss playbook task backgrounding in later chapters.</p>
+
+<h3 class="relative group">Check log files
+    <div id="chap05xhtml_leanpub-auto-check-log-files" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-check-log-files" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Sometimes, when debugging application errors, or diagnosing outages or
+other problems, you need to check server log files. Any common log file
+operation (like using <code>tail</code>, <code>cat</code>, <code>grep</code>, etc.) works through the
+<code>ansible</code> command, with a few caveats:</p>
+<ol>
+<li>Operations that continuously monitor a file, like <code>tail -f</code>, won&rsquo;t
+work via Ansible, because Ansible only displays output after the
+operation is complete, and you won&rsquo;t be able to send the Control-C
+command to stop following the file. Someday, the async module might
+have this feature, but for now, it&rsquo;s not possible.</li>
+<li>It&rsquo;s not a good idea to run a command that returns a huge amount of
+data via stdout via Ansible. If you&rsquo;re going to cat a file larger
+than a few KB, you should probably log into the server(s)
+individually.</li>
+<li>If you redirect and filter output from a command run via Ansible,
+you need to use the <code>shell</code> module instead of Ansible&rsquo;s default
+<code>command</code> module (add <code>-m shell</code> to your commands).</li>
+</ol>
+<p>As a simple example, let&rsquo;s view the last few lines of the messages log
+file on each of our servers:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -s -a &quot;tail /var/log/messages&quot;</code></pre>
+</div>
+</figure>
+<p>As stated in the caveats, if you want to filter the messages log with
+something like <code>grep</code>, you can&rsquo;t use Ansible&rsquo;s default <code>command</code> module,
+but instead, <code>shell</code>:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -s -m shell -a &quot;tail /var/log/messages | \
+grep ansible-command | wc -l&quot;
+<p>192.168.60.5 | success | rc=0 &gt;&gt;
+12</p>
+<p>192.168.60.4 | success | rc=0 &gt;&gt;
+12</p>
+<p>192.168.60.6 | success | rc=0 &gt;&gt;
+14</code></pre></p>
+</div>
+</figure>
+<p>This command shows how many ansible commands have been run on each
+server (the numbers you get may be different).</p>
+
+<h3 class="relative group">Manage cron jobs
+    <div id="chap05xhtml_leanpub-auto-manage-cron-jobs" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-manage-cron-jobs" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Periodic tasks run via cron are managed by a system&rsquo;s crontab. Normally,
+to change cron job settings on a server, you would log into the server,
+use <code>crontab -e</code> under the account where the cron jobs reside, and type
+in an entry with the interval and job.</p>
+<p>Ansible makes managing cron jobs easy with its <code>cron</code> module. If you
+want to run a shell script on all the servers every day at 4 a.m., add
+the cron job with:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -s -m cron -a &quot;name=&#39;daily-cron-all-servers&#39; \
+hour=4 job=&#39;/path/to/daily-script.sh&#39;&quot;</code></pre>
+</div>
+</figure>
+<p>Ansible will assume <code>*</code> for all values you don&rsquo;t specify (valid values
+are <code>day</code>, <code>hour</code>, <code>minute</code>, <code>month</code>, and <code>weekday</code>). You could also
+specify special time values like <code>reboot</code>, <code>yearly</code>, or <code>monthly</code> using
+<code>special_time=[value]</code>. You can also set the user the job will run under
+via <code>user=[user]</code>, and create a backup of the current crontab by passing
+<code>backup=yes</code>.</p>
+<p>What if we want to remove the cron job? Simple enough, use the same
+<code>cron</code> command, and pass the name of the cron job you want to delete,
+and <code>state=absent</code>:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible multi -s -m cron -a &quot;name=&#39;daily-cron-all-servers&#39; state=absent&quot;</code></pre>
+</div>
+</figure>
+<p>You can also use Ansible to manage custom crontab files; use the same
+syntax as you used earlier, but specify the location to the cron file
+with: <code>cron_file=cron_file_name</code> (where <code>cron_file_name</code> is a cron file
+located in <code>/etc/cron.d</code>).</p>
+<aside class="information blurb">
+<p>Ansible denotes Ansible-managed crontab entries by adding a comment on
+the line above the entry like <code>#Ansible: daily-cron-all-servers</code>. It&rsquo;s
+best to leave things be in the crontab itself, and always manage entries
+via ad-hoc commands or playbooks using Ansible&rsquo;s <code>cron</code> module.</p>
+</aside>
+
+<h3 class="relative group">Deploy a version-controlled application
+    <div id="chap05xhtml_leanpub-auto-deploy-a-version-controlled-application" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-deploy-a-version-controlled-application" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>For simple application deployments, where you may need to update a git
+checkout, or copy a new bit of code to a group of servers, then run a
+command to finish the deployment, Ansible&rsquo;s ad-hoc mode can help. For
+more complicated deployments, use Ansible playbooks and rolling update
+features (which will be discussed in later chapters) to ensure
+successful deployments with zero downtime.</p>
+<p>In the example below, I&rsquo;ll assume we&rsquo;re running a simple application on
+one or two servers, in the directory <code>/opt/myapp</code>. This directory is a
+git repository cloned from a central server or a service like GitHub,
+and application deployments and updates are done by updating the clone,
+then running a shell script at <code>/opt/myapp/scripts/update.sh</code>.</p>
+<p>First, update the git checkout to the application&rsquo;s new version branch,
+1.2.4, on all the app servers:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible app -s -m git -a &quot;repo=git://example.com/path/to/repo.git \
+dest=/opt/myapp update=yes version=1.2.4&quot;</code></pre>
+</div>
+</figure>
+<p>Ansible&rsquo;s git module lets you specify a branch, tag, or even a specific
+commit with the <code>version</code> parameter (in this case, we chose to checkout
+tag <code>1.2.4</code>, but if you run the command again with a branch name, like
+<code>prod</code>, Ansible will happily do that instead). To force Ansible to
+update the checked-out copy, we passed in <code>update=yes</code>. The <code>repo</code> and
+<code>dest</code> options should be self-explanatory.</p>
+<aside class="information blurb">
+<p>If you get a message saying &ldquo;Failed to find required executable git&rdquo;,
+you will need to install Git on the server. To do so, run the ad-hoc
+command <code>ansible app -s -m yum -a &quot;name=git state=present&quot;</code> (substitute
+your OS&rsquo;s package manager for <code>yum</code>).</p>
+<p>If you get a message saying the Git server has an &ldquo;unknown hostkey&rdquo;, add
+the option <code>accept_hostkey=yes</code> to the command, or add the hostkey to
+your server&rsquo;s <code>known_hosts</code> file before running this command.</p>
+</aside>
+<p>Then, run the application&rsquo;s <code>update.sh</code> shell script:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>$ ansible app -s -a &quot;/opt/myapp/update.sh&quot;</code></pre>
+</div>
+</figure>
+<p>Ad-hoc commands are fine for the simple deployments (like our example
+above), but you should use Ansible&rsquo;s more powerful and flexible
+application deployment features described later in this book if you have
+complex application or infrastructure needs. See especially the &lsquo;Rolling
+Updates&rsquo; section later in this book.</p>
+
+<h3 class="relative group">Ansible&rsquo;s SSH connection history
+    <div id="chap05xhtml_leanpub-auto-ansibles-ssh-connection-history" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-ansibles-ssh-connection-history" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>One of Ansible&rsquo;s greatest features is its ability to function without
+running any extra applications or daemons on the servers it manages.
+Instead of using a proprietary protocol to communicate with the servers,
+Ansible uses the standard and secure SSH connection that is commonly
+used for basic administration on almost every Linux server running
+today.</p>
+<p>Since a stable, fast, and secure SSH connection is the heart of
+Ansible&rsquo;s communication abilities, Ansible&rsquo;s implementation of SSH has
+continually improved throughout the past few years&mdash;and is still
+improving today.</p>
+<p>One thing that is universal to all of Ansible&rsquo;s SSH connection methods
+is that Ansible uses the connection to transfer one or a few files
+defining a play or command to the remote server, then runs the
+play/command, then deletes the transferred file(s), and reports back the
+results. This sequence of events may change and become more
+simple/direct with later versions of Ansible (see the notes on Ansible
+1.5 below), but a fast, stable, and secure SSH connection is of
+paramount importance to Ansible.</p>
+
+<h4 class="relative group">Paramiko
+    <div id="chap05xhtml_leanpub-auto-paramiko" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-paramiko" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>In the beginning, Ansible used paramiko&mdash;an open source SSH2
+implementation for Python&mdash;exclusively. However, as a single library
+for a single language (Python), development of paramiko doesn&rsquo;t keep
+pace with development of OpenSSH (the standard implementation of SSH
+used almost everywhere), and its performance and security is slightly
+worse than OpenSSH&mdash;at least to this writer&rsquo;s eyes.</p>
+<p>Ansible continues to support the use of paramiko, and even chooses it as
+the default for systems (like RHEL 5/6) which don&rsquo;t support
+ControlPersist&mdash;an option present only in OpenSSH 5.6 or newer.
+(ControlPersist allows SSH connections to persist so frequent commands
+run over SSH don&rsquo;t have to go through the initial handshake over and
+over again until the <code>ControlPersist</code> timeout set in the server&rsquo;s SSH
+config is reached.)</p>
+
+<h4 class="relative group">OpenSSH (default)
+    <div id="chap05xhtml_leanpub-auto-openssh-default" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-openssh-default" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Beginning in Ansible 1.3, Ansible defaulted to using native OpenSSH
+connections to connect to servers supporting ControlPersist. Ansible had
+this ability since version 0.5, but didn&rsquo;t default to it until 1.3.</p>
+<p>Most local SSH configuration parameters (like hosts, key files, etc.)
+are respected, but if you need to connect via a port other than port 22
+(the default SSH port), you need to specify the port in an inventory
+file (<code>ansible_ssh_port</code> option) or when running <code>ansible</code> commands.</p>
+<p>OpenSSH is faster, and a little more reliable, than paramiko, but there
+are ways to make Ansible faster still.</p>
+
+<h4 class="relative group">Accelerated Mode
+    <div id="chap05xhtml_leanpub-auto-accelerated-mode" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-accelerated-mode" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>While not too helpful for ad-hoc commands, Ansible&rsquo;s Accelerated mode
+achieves greater performance for playbooks. Instead of connecting
+repeatedly via SSH, Ansible connects via SSH initially, then uses the
+AES key used in the initial connection to communicate further commands
+and transfers via a separate port (5099 by default, but this is
+configurable).</p>
+<p>The only extra package required to use accelerated mode is
+<code>python-keyczar</code>, and almost everything in normal OpenSSH/Paramiko mode
+works in Accelerated mode, with two exceptions when using <code>sudo</code>:</p>
+<ul>
+<li>Your sudoers file needs to have <code>requiretty</code> disabled (comment out the
+line with it, or set it per user by changing the line to
+<code>Defaults:username !requiretty</code>).</li>
+<li>You must disable sudo passwords by setting <code>NOPASSWD</code> in the sudoers
+file.</li>
+</ul>
+<p>Accelerated mode can offer 2-4 times faster performance (especially for
+things like file transfers) compared to OpenSSH, and you can enable it
+for a playbook by adding the option <code>accelerate: true</code> to your playbook,
+like so:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>---
+- hosts: all
+  accelerate: true
+  [...]</code></pre>
+</div>
+</figure>
+<p>It goes without saying, if you use accelerated mode, you need to have
+the port through which it communicates open in your firewall (port 5099
+by default, or whatever port you set with the <code>accelerate_port</code> option
+after <code>accelerate</code>).</p>
+<p>Accelerate mode is a spiritual descendant of the now-deprecated
+&lsquo;Fireball&rsquo; mode, which used a similar method for accelerating Ansible
+communications, but required ZeroMQ to be installed on the controlled
+server (which is at odds with Ansible&rsquo;s simple no-dependency, no-daemon
+philosophy), and didn&rsquo;t work with sudo commands at all.</p>
+
+<h4 class="relative group">Faster OpenSSH in Ansible 1.5+
+    <div id="chap05xhtml_leanpub-auto-faster-openssh-in-ansible-15" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-faster-openssh-in-ansible-15" aria-label="Anchor">#</a>
+    </span>
+    
+</h4>
+<p>Ansible 1.5 and later contains a very nice improvement to Ansible&rsquo;s
+default OpenSSH implementation.</p>
+<p>Instead of copying files, running them on the remote server, then
+removing them, the new method of OpenSSH transfer will send and execute
+commands for most Ansible modules directly over the SSH connection.</p>
+<p>This method of connection is only available in Ansible 1.5+, and it can
+be enabled by adding <code>pipelining=True</code> under the <code>[ssh_connection]</code>
+section of the Ansible configuration file (<code>ansible.cfg</code>, which will be
+covered in more detail later).</p>
+<aside class="warning blurb">
+<p>The <code>pipelining=True</code> configuration option won&rsquo;t help much unless you
+have removed or commented the <code>Defaults requiretty</code> option in
+<code>/etc/sudoers</code>. This is commented out in the default configuration for
+most OSes, but you might want to double-check this setting to make sure
+you&rsquo;re getting the fastest connection possible!</p>
+</aside>
+<aside class="warning blurb">
+<p>If you&rsquo;re running a recent version of Mac OS X, Ubuntu, Windows with
+Cygwin, or most other OS for the host from which you run <code>ansible</code> and
+<code>ansible-playbook</code>, you should be running OpenSSH version 5.6 or later,
+which works perfectly with the <code>ControlPersist</code> setting used with all of
+Ansible&rsquo;s SSH connections settings.</p>
+<p>If the host on which Ansible runs has RHEL or CentOS, however, you might
+need to update your version of OpenSSH so it supports the
+faster/persistent connection method. Any OpenSSH version 5.6 or greater
+should work. To install a later version, either compile from source, or
+use a different repository (like
+<a
+  href="http://mirror.neu.edu.cn/CentALT/readme.txt"
+    target="_blank"
+  >CentALT</a> and
+<code>yum update openssh</code>.</p>
+</aside>
+
+<h3 class="relative group">Summary
+    <div id="chap05xhtml_leanpub-auto-summary-2" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap05xhtml_leanpub-auto-summary-2" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>In this chapter, you learned how to build a multi-server infrastructure
+for testing on your local workstation using Vagrant, and you configured,
+monitored, and managed the infrastructure without ever logging in to an
+individual server. You also learned how Ansible connects to remote
+servers, and how to use the <code>ansible</code> command to perform tasks on many
+servers quickly in parallel, or one by one.</p>
+<p>By now, you should be getting familiar with the basics of Ansible, and
+you should be able to start managing your own infrastructure more
+efficiently.</p>
+<figure class="code">
+<div class="highlight">
+<pre><code> ______________________________________
+/ It&#39;s easier to seek forgiveness than \
+\ ask for permission. (Proverb)        /
+ --------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||</code></pre>
+</div>
+</figure>
+:::
+<p>[]{#chap06.xhtml}</p>
+<p>::: {}</p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_tech notes/RHCE/Ansible4Devops/Chapter 3 - Ad-Hoc Commands.md"
+          data-oid-likes="likes_tech notes/RHCE/Ansible4Devops/Chapter 3 - Ad-Hoc Commands.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+      
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 overflow-x-auto py-2">
+        <ul class="flex list-none flex-row">
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 me-4">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href=""
+                title="">
+                
+                
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          David Thomas
+      </p>
+    
+
+    
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

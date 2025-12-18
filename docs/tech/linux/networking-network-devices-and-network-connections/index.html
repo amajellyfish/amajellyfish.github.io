@@ -1,0 +1,1798 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>Networking Network Devices and Network Connections &middot; </title>
+    <meta name="title" content="Networking Network Devices and Network Connections &middot; ">
+  
+
+  
+  
+    <meta name="description" content="Hostname, IP addressing, network protocols, network manager, tools, etc.">
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/tech/linux/networking-network-devices-and-network-connections/">
+  
+
+  
+  
+    <meta name="author" content="David Thomas">
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/tech/linux/networking-network-devices-and-network-connections/">
+  <meta property="og:title" content="Networking Network Devices and Network Connections">
+  <meta property="og:description" content="Hostname, IP addressing, network protocols, network manager, tools, etc.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Networking Network Devices and Network Connections">
+  <meta name="twitter:description" content="Hostname, IP addressing, network protocols, network manager, tools, etc.">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.278a55d3e0b39215730b0c642c7c22cc020054272d3850d92c957cddf6209cf18e0ed01f082db397c8c048c30e727b44ca408c350384ca92d5f37c62d008cbd8.css"
+    integrity="sha512-J4pV0&#43;CzkhVzCwxkLHwizAIAVCctOFDZLJV83fYgnPGODtAfCC2zl8jASMMOcntEykCMNQOEypLV83xi0AjL2A==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js"
+      integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP&#43;pSqMXxm6JPOUeAg=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "Networking Network Devices and Network Connections",
+    "headline": "Networking Network Devices and Network Connections",
+    "description": "Hostname, IP addressing, network protocols, network manager, tools, etc.",
+    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003eHostname\n    \u003cdiv id=\u0022hostname\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#hostname\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h2\u003e\n\u003cul\u003e\n\u003cli\u003e\u0026ldquo;-\u0026rdquo;, \u0026ldquo;_ \u0026ldquo;, and \u0026ldquo;. \u0026quot; characters are allowed.\u003c\/li\u003e\n\u003cli\u003eUp to 253 characters.\u003c\/li\u003e\n\u003cli\u003eStored in \u003cem\u003e\/etc\/hostname\u003c\/em\u003e.\u003c\/li\u003e\n\u003cli\u003eCan be viewed with several different commands, such as \u003ccode\u003ehostname\u003c\/code\u003e, \u003ccode\u003ehostnamectl\u003c\/code\u003e, \u003ccode\u003euname\u003c\/code\u003e, and \u003ccode\u003enmcli\u003c\/code\u003e, as well as by displaying the content of the \u003cem\u003e\/etc\/hostname\u003c\/em\u003e file.\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003eView the hostname:\u003c\/p\u003e",
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/tech/linux/networking-network-devices-and-network-connections/",
+    "author" : {
+      "@type": "Person",
+      "name": "David Thomas"
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1832"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc",
+      authDomain: "davidwrites-89dd7.firebaseapp.com",
+      projectId: "davidwrites-89dd7",
+      storageBucket: "davidwrites-89dd7.firebasestorage.app",
+      messagingSenderId: "433139099634",
+      appId: "1:433139099634:web:c14275555bd7171e6c6d6b",
+      measurementId: "G-XX5507B82W"
+    };
+
+        var app = firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        var auth = firebase.auth();
+
+      </script>
+    
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+      <div>
+        <a href="/" class="flex">
+          <span class="sr-only"></span>
+          
+            <img
+              src="/img/logo.png"
+              width="200"
+              height="37"
+              class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
+              alt="">
+          
+        </a>
+      </div>
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/tech/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Tech"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      Tech
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Notes"
+  title="Book Notes &amp; Reviews">
+  
+  
+    <p class="text-base font-medium">
+      Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/articles/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Articles"
+  title="Articles">
+  
+  
+    <p class="text-base font-medium">
+      Articles
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/now/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Now"
+  title="Now">
+  
+  
+    <p class="text-base font-medium">
+      Now
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  
+  title="">
+  
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/tech/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Tech"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        Tech
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Notes"
+    title="Book Notes &amp; Reviews">
+    
+    
+      <p class="text-bg font-bg">
+        Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/articles/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Articles"
+    title="Articles">
+    
+    
+      <p class="text-bg font-bg">
+        Articles
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/now/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Now"
+    title="Now">
+    
+    
+      <p class="text-bg font-bg">
+        Now
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    
+    title="">
+    
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
+    })();
+  </script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Networking Network Devices and Network Connections
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hostname">Hostname</a>
+      <ul>
+        <li><a href="#lab-change-the-hostname">Lab: Change the Hostname</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#ethernet-address">Ethernet Address</a></li>
+        <li><a href="#subnetting">Subnetting</a></li>
+        <li><a href="#ipv4">IPv4</a></li>
+        <li><a href="#classful-network-addressing">Classful Network Addressing</a></li>
+        <li><a href="#ipv6-address">IPv6 Address</a></li>
+      </ul>
+    </li>
+    <li><a href="#protocols">Protocols</a>
+      <ul>
+        <li><a href="#tcp-and-udp-protocols">TCP and UDP Protocols</a></li>
+        <li><a href="#icmp">ICMP</a></li>
+        <li><a href="#icmpv6">ICMPv6</a></li>
+      </ul>
+    </li>
+    <li><a href="#network-manager-service">Network Manager Service</a>
+      <ul>
+        <li><a href="#interface-connection-profiles">Interface Connection Profiles</a></li>
+      </ul>
+    </li>
+    <li><a href="#understanding-hosts-table">Understanding Hosts Table</a></li>
+    <li><a href="#networking-diy-challenge-labs">Networking DIY Challenge Labs</a>
+      <ul>
+        <li><a href="#lab-update-hosts-table-and-test-connectivity">Lab: Update Hosts Table and Test Connectivity.</a></li>
+        <li><a href="#lab-15-1-add-new-interface-and-configure-connection-profile-with-nmcli">Lab 15-1: Add New Interface and Configure Connection Profile with nmcli</a></li>
+        <li><a href="#lab-add-new-interface-and-configure-connection-profile-manually-server30">Lab: Add New Interface and Configure Connection Profile Manually (server30)</a></li>
+      </ul>
+    </li>
+    <li><a href="#administration-tools">Administration Tools</a>
+      <ul>
+        <li><a href="#nmcli-command"><code>nmcli</code> command</a></li>
+        <li><a href="#3-connection">3. connection</a></li>
+        <li><a href="#4-device">4. Device</a></li>
+        <li><a href="#lab-add-network-devices-to-server10-and-one-to-server20-using-virtualbox">Lab: Add Network Devices to server10 and one to server20 using VirtualBox</a></li>
+        <li><a href="#lab-configure-new-network-connection-using-nmcli-server20">Lab: Configure New Network Connection Using nmcli (server20)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hostname">Hostname</a>
+      <ul>
+        <li><a href="#lab-change-the-hostname">Lab: Change the Hostname</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#ethernet-address">Ethernet Address</a></li>
+        <li><a href="#subnetting">Subnetting</a></li>
+        <li><a href="#ipv4">IPv4</a></li>
+        <li><a href="#classful-network-addressing">Classful Network Addressing</a></li>
+        <li><a href="#ipv6-address">IPv6 Address</a></li>
+      </ul>
+    </li>
+    <li><a href="#protocols">Protocols</a>
+      <ul>
+        <li><a href="#tcp-and-udp-protocols">TCP and UDP Protocols</a></li>
+        <li><a href="#icmp">ICMP</a></li>
+        <li><a href="#icmpv6">ICMPv6</a></li>
+      </ul>
+    </li>
+    <li><a href="#network-manager-service">Network Manager Service</a>
+      <ul>
+        <li><a href="#interface-connection-profiles">Interface Connection Profiles</a></li>
+      </ul>
+    </li>
+    <li><a href="#understanding-hosts-table">Understanding Hosts Table</a></li>
+    <li><a href="#networking-diy-challenge-labs">Networking DIY Challenge Labs</a>
+      <ul>
+        <li><a href="#lab-update-hosts-table-and-test-connectivity">Lab: Update Hosts Table and Test Connectivity.</a></li>
+        <li><a href="#lab-15-1-add-new-interface-and-configure-connection-profile-with-nmcli">Lab 15-1: Add New Interface and Configure Connection Profile with nmcli</a></li>
+        <li><a href="#lab-add-new-interface-and-configure-connection-profile-manually-server30">Lab: Add New Interface and Configure Connection Profile Manually (server30)</a></li>
+      </ul>
+    </li>
+    <li><a href="#administration-tools">Administration Tools</a>
+      <ul>
+        <li><a href="#nmcli-command"><code>nmcli</code> command</a></li>
+        <li><a href="#3-connection">3. connection</a></li>
+        <li><a href="#4-device">4. Device</a></li>
+        <li><a href="#lab-add-network-devices-to-server10-and-one-to-server20-using-virtualbox">Lab: Add Network Devices to server10 and one to server20 using VirtualBox</a></li>
+        <li><a href="#lab-configure-new-network-connection-using-nmcli-server20">Lab: Configure New Network Connection Using nmcli (server20)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h2 class="relative group">Hostname
+    <div id="hostname" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#hostname" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>&ldquo;-&rdquo;, &ldquo;_ &ldquo;, and &ldquo;. &quot; characters are allowed.</li>
+<li>Up to 253 characters.</li>
+<li>Stored in <em>/etc/hostname</em>.</li>
+<li>Can be viewed with several different commands, such as <code>hostname</code>, <code>hostnamectl</code>, <code>uname</code>, and <code>nmcli</code>, as well as by displaying the content of the <em>/etc/hostname</em> file.</li>
+</ul>
+<p>View the hostname:</p>
+<pre tabindex="0"><code>hostnamectl --static
+</code></pre><pre tabindex="0"><code>hostname
+</code></pre><pre tabindex="0"><code>uname -n
+</code></pre><pre tabindex="0"><code>cat /etc/hostname
+</code></pre>
+<h3 class="relative group">Lab: Change the Hostname
+    <div id="lab-change-the-hostname" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-change-the-hostname" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Server1</p>
+<ol>
+<li>Open <em>/etc/hostname</em> and change the entry to <code>server10.example.com</code></li>
+<li>Restart the <code>systemd-hostnamed</code> service daemon</li>
+</ol>
+<pre tabindex="0"><code>sudo systemctl restart systemd-hostnamed
+</code></pre><ol start="3">
+<li>confirm</li>
+</ol>
+<pre tabindex="0"><code>hostname
+</code></pre><p>server2</p>
+<ol>
+<li>Change the hostname with hostnamectl:</li>
+</ol>
+<pre tabindex="0"><code class="language-bah" data-lang="bah">sudo hostnamectl set-hostname server21.example.com
+</code></pre><ol start="2">
+<li>
+<p>Log out and back in for the prompt to update</p>
+</li>
+<li>
+<p>Change the hostname using nmcli</p>
+</li>
+</ol>
+<pre tabindex="0"><code>nmcli general hostname server20.example.com
+</code></pre>
+<h1 class="relative group">Hardware and IP Addressing
+    <div id="hardware-and-ip-addressing" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#hardware-and-ip-addressing" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
+
+<h3 class="relative group">Ethernet Address
+    <div id="ethernet-address" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#ethernet-address" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>48-bit address that is used to identify the correct destination node for data packets transmitted from the source node.</li>
+<li>The data packets include hardware addresses for the source and the destination node.</li>
+<li>Also referred to as the hardware, physical, link layer, or MAC address.</li>
+</ul>
+<p>List all network interfaces with their ethernet addresses:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ip addr <span class="p">|</span> grep ether
+</span></span></code></pre></div>
+<h3 class="relative group">Subnetting
+    <div id="subnetting" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#subnetting" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Network address space is divided into several smaller and more manageable logical subnetworks (subnets).</li>
+<li>Benefits:
+<ul>
+<li>Reduced network traffic</li>
+<li>Improved network performance</li>
+<li>de-centralized and easier administration</li>
+<li>uses the node bits only</li>
+</ul>
+</li>
+<li>Results in the reduction of usable addresses.</li>
+<li>All nodes in a given subnet have the same subnet mask.</li>
+<li>Each subnet acts as an isolated network and requires a router to talk to other subnets.</li>
+<li>The first and the last IP address in a subnet are reserved. The first address points to the subnet itself, and the last address is the broadcast address.</li>
+</ul>
+
+<h3 class="relative group">IPv4
+    <div id="ipv4" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#ipv4" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>View current ipv4 address:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ip addr
+</span></span></code></pre></div>
+<h3 class="relative group">Classful Network Addressing
+    <div id="classful-network-addressing" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#classful-network-addressing" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>See <a
+  href="../networking/classfulipv4.md">classfulipv4</a></p>
+
+<h3 class="relative group">IPv6 Address
+    <div id="ipv6-address" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#ipv6-address" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>See <a
+  href="../networking/CCNA%20Notes/ipv6.md">ipv6</a></p>
+<p>The <code>ip addr</code> command also shows IPv6 addresses for the interfaces:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@server200 ~<span class="o">]</span><span class="c1"># ip addr</span>
+</span></span><span class="line"><span class="cl">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu <span class="m">65536</span> qdisc noqueue state UNKNOWN group default qlen <span class="m">1000</span>
+</span></span><span class="line"><span class="cl">    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+</span></span><span class="line"><span class="cl">    inet 127.0.0.1/8 scope host lo
+</span></span><span class="line"><span class="cl">       valid_lft forever preferred_lft forever
+</span></span><span class="line"><span class="cl">    inet6 ::1/128 scope host 
+</span></span><span class="line"><span class="cl">       valid_lft forever preferred_lft forever
+</span></span><span class="line"><span class="cl">2: enp0s3: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu <span class="m">1500</span> qdisc fq_codel state UP group default qlen <span class="m">1000</span>
+</span></span><span class="line"><span class="cl">    link/ether 08:00:27:b9:4e:ef brd ff:ff:ff:ff:ff:ff
+</span></span><span class="line"><span class="cl">    inet 172.16.1.155/20 brd 172.16.15.255 scope global dynamic noprefixroute enp0s3
+</span></span><span class="line"><span class="cl">       valid_lft 79061sec preferred_lft 79061sec
+</span></span><span class="line"><span class="cl">    inet6 fe80::a00:27ff:feb9:4eef/64 scope link noprefixroute 
+</span></span><span class="line"><span class="cl">       valid_lft forever preferred_lft forever
+</span></span></code></pre></div><p>Tools:</p>
+<ul>
+<li><code>ping6</code></li>
+<li><code>traceroute6</code></li>
+<li><code>tracepath6</code></li>
+</ul>
+
+<h2 class="relative group">Protocols
+    <div id="protocols" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#protocols" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<ul>
+<li>Defined in <em>/etc/protocols</em></li>
+<li>Well known ports are defined in <em>/etc/services</em></li>
+</ul>
+<p><code>cat /etc/protocols</code></p>
+
+<h3 class="relative group">TCP and UDP Protocols
+    <div id="tcp-and-udp-protocols" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#tcp-and-udp-protocols" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>See <a
+  href="../networking/IP%20Transport%20and%20Applications.md">IP Transport and Applications</a> and <a
+  href="../networking/CCNA%20Notes/tcp_ip_basic.md">tcp_ip_basic</a></p>
+
+<h3 class="relative group">ICMP
+    <div id="icmp" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#icmp" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Send two pings to server 20</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ping -c2 192.168.0.120
+</span></span></code></pre></div><p>Ping the server&rsquo;s loopback interface:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ping 127.0.0.1
+</span></span></code></pre></div><p>Send a traceroute to server 20</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">traceroute 192.168.0.120
+</span></span></code></pre></div><p>Or:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">tracepath 192.168.0.120
+</span></span></code></pre></div>
+<h3 class="relative group">ICMPv6
+    <div id="icmpv6" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#icmpv6" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>IPv6 version of ICMP</li>
+<li>enabled by default</li>
+</ul>
+<p>Ping and ipv6 address:</p>
+<pre tabindex="0"><code>ping6 
+</code></pre><p>Trace a route to an IPv6 address:</p>
+<pre tabindex="0"><code>tracepath6
+</code></pre><pre tabindex="0"><code>traceroute6
+</code></pre><p>Show IPv6 addresses:</p>
+<pre tabindex="0"><code>ip addr | grep inet6
+</code></pre>
+<h2 class="relative group">Network Manager Service
+    <div id="network-manager-service" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#network-manager-service" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Default service in RHEL for network:</p>
+<ul>
+<li>interface and connection configuration.</li>
+<li>Administration.</li>
+<li>Monitoring.</li>
+</ul>
+<p><strong>NetworkManager daemon</strong></p>
+<ul>
+<li>Responsible for keeping interfaces and connection up and active.</li>
+<li>Includes:
+<ul>
+<li><code>nmcli</code></li>
+<li><code>nmtui </code>(text-based)</li>
+<li><code>nm-connection-editor</code> (GUI)</li>
+</ul>
+</li>
+<li>Does not manage loopback interfaces.</li>
+</ul>
+
+<h3 class="relative group">Interface Connection Profiles
+    <div id="interface-connection-profiles" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#interface-connection-profiles" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>
+<p>Configuration file on each interface that defines IP assignments and other relevant parameters for it.</p>
+</li>
+<li>
+<p>The networking subsystem reads this file and applies the settings at the time the connection is activated.</p>
+</li>
+<li>
+<p>Connection configuration files (or <strong>connection profiles</strong>) are stored in a central location under the <em>/etc/NetworkManager/system-connections</em> directory.</p>
+</li>
+<li>
+<p>The filenames are identified by the interface connection names with <em>nmconnection</em> as the extension.</p>
+</li>
+<li>
+<p>Some instances of connection profiles are: <em>enp0s3.nmconnection</em>, <em>ens160.nmconnection</em>, and <em>em1.nmconnection</em>.</p>
+<p>On server10 and server20, the device name for the first interface is enp0s3 with connection name enp0s3 and relevant connection information stored in the enp0s3.nmconnection file.</p>
+</li>
+</ul>
+<p>This connection was established at the time of RHEL installation. The current content of the file from server10 are presented below:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@server200 system-connections<span class="o">]</span><span class="c1"># cat /etc/NetworkManager/system-connections/enp0s3.nmconnection </span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>connection<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">id</span><span class="o">=</span>enp0s3
+</span></span><span class="line"><span class="cl"><span class="nv">uuid</span><span class="o">=</span>45d6a8ea-6bd7-38e0-8219-8c7a1b90afde
+</span></span><span class="line"><span class="cl"><span class="nv">type</span><span class="o">=</span>ethernet
+</span></span><span class="line"><span class="cl">autoconnect-priority<span class="o">=</span>-999
+</span></span><span class="line"><span class="cl">interface-name<span class="o">=</span>enp0s3
+</span></span><span class="line"><span class="cl"><span class="nv">timestamp</span><span class="o">=</span><span class="m">1710367323</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>ethernet<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>ipv4<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">method</span><span class="o">=</span>auto
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>ipv6<span class="o">]</span>
+</span></span><span class="line"><span class="cl">addr-gen-mode<span class="o">=</span>eui64
+</span></span><span class="line"><span class="cl"><span class="nv">method</span><span class="o">=</span>auto
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>proxy<span class="o">]</span>
+</span></span></code></pre></div><ul>
+<li>Each section defines a set of networking properties for the connection.</li>
+</ul>
+<p>Directives</p>
+<p><strong>id</strong></p>
+<ul>
+<li>Any description given to this connection. The default matches the interface name.</li>
+</ul>
+<p><strong>uuid</strong></p>
+<ul>
+<li>The UUID associated with this connection</li>
+</ul>
+<p><strong>type</strong></p>
+<ul>
+<li>Specifies the type of this connection</li>
+</ul>
+<p><strong>autoconnect-priority</strong></p>
+<ul>
+<li>If the connection is set to autoconnect, connections with higher priority will be preferred. A higher number means higher priority. The range is between -999 and 999 with 0 being the default.</li>
+</ul>
+<p><strong>interface_name</strong></p>
+<ul>
+<li>Specifies the device name for the network interface</li>
+</ul>
+<p><strong>timestamp</strong></p>
+<ul>
+<li>The time, in seconds since the Unix Epoch that the connection was last activated successfully. This field is automatically populated each time the connection is activated.</li>
+</ul>
+<p><strong>address1/method</strong></p>
+<ul>
+<li>Specifies the static IP for the connection if the method property is set to manual. /24 represents  the subnet mask.</li>
+</ul>
+<p><strong>addr-gen-mode/method</strong></p>
+<ul>
+<li>Generates an IPv6 address based on the hardware address of the interface.</li>
+</ul>
+<p>View additional directives:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">man nm-settings
+</span></span></code></pre></div><p>Naming rules for devices are governed by udevd service based on:</p>
+<ul>
+<li>Device location</li>
+<li>Topology</li>
+<li>setting in firmware</li>
+<li>virtualization layer</li>
+</ul>
+
+<h2 class="relative group">Understanding Hosts Table
+    <div id="understanding-hosts-table" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#understanding-hosts-table" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>See <a
+  href="../../../personal/tech-public/DNS%20and%20Time%20Synchronization.md">DNS and Time Synchronization</a></p>
+<p><em>/etc/hosts</em> file</p>
+<ul>
+<li>Table used to maintain hostname to IP mapping for systems on the local network, allowing us to access a system by simply employing its hostname.</li>
+</ul>
+<p>Each row in the file contains an IP address in column 1 followed by the official (or canonical) hostname in column 2, and one or more optional aliases thereafter.</p>
+<p>EXAM TIP: In the presence of an active DNS with all hostnames resolvable, there is no need to worry about updating the hosts file.</p>
+<p>As expressed above, the use of the hosts file is common on small networks, and it should be updated on each individual system to reflect any changes for best inter-system connectivity experience.</p>
+
+<h2 class="relative group">Networking DIY Challenge Labs
+    <div id="networking-diy-challenge-labs" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#networking-diy-challenge-labs" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">Lab: Update Hosts Table and Test Connectivity.
+    <div id="lab-update-hosts-table-and-test-connectivity" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-update-hosts-table-and-test-connectivity" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ol>
+<li>Add both server10 and server20&rsquo;s interfaces to both server&rsquo;s <em>/etc/host</em> files:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">192.168.0.110  server10.example.com  server10 &lt;-- This is an <span class="nb">alias</span>
+</span></span><span class="line"><span class="cl">192.168.0.120  server20.example.com  server20   
+</span></span><span class="line"><span class="cl">172.10.10.110  server10s8.example.com   server10s8
+</span></span><span class="line"><span class="cl">172.10.10.120  server20s8.example.com   server20s8
+</span></span></code></pre></div><ol start="2">
+<li>Send 2 packets from server10 to server20&rsquo;s IP address:</li>
+</ol>
+<pre tabindex="0"><code>ping -c2 192.168.0.120
+</code></pre><ol start="3">
+<li>Send 2 pings from server10 to server20&rsquo;s hostname:</li>
+</ol>
+<pre tabindex="0"><code>ping -c2 server20
+</code></pre>
+<h3 class="relative group">Lab 15-1: Add New Interface and Configure Connection Profile with nmcli
+    <div id="lab-15-1-add-new-interface-and-configure-connection-profile-with-nmcli" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-15-1-add-new-interface-and-configure-connection-profile-with-nmcli" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Add a third network interface to rhel9server40 in VirtualBox.</li>
+<li>As user1 with sudo on server40, run <code>ip a</code> and verify the addition of the new interface.</li>
+<li>Use the <code>nmcli</code> command and assign IP 192.168.0.40/24 and gateway 192.168.0.1</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@server40 ~<span class="o">]</span><span class="c1"># nmcli c a type Ethernet ifname enp0s8 con-name enp0s8 ip4 192.168.0.40/24 gw4 192.168.0.1</span>
+</span></span></code></pre></div><ul>
+<li>Deactivate and reactivate this connection manually.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@server40 ~<span class="o">]</span><span class="c1"># nmcli c d enp0s8</span>
+</span></span><span class="line"><span class="cl">Connection <span class="s1">&#39;enp0s8&#39;</span> successfully deactivated <span class="o">(</span>D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/3<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@server40 ~<span class="o">]</span><span class="c1"># nmcli c s</span>
+</span></span><span class="line"><span class="cl">NAME    UUID                                  TYPE      DEVICE 
+</span></span><span class="line"><span class="cl">enp0s3  6e75a5e4-869b-3ed1-bdc4-c55d2d268285  ethernet  enp0s3 
+</span></span><span class="line"><span class="cl">lo      66809437-d3fa-4104-9777-7c3364b943a9  loopback  lo     
+</span></span><span class="line"><span class="cl">enp0s8  9a32e279-84c2-4bba-b5c5-82a04f40a7df  ethernet  --     
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@server40 ~<span class="o">]</span><span class="c1"># nmcli c u enp0s8</span>
+</span></span><span class="line"><span class="cl">Connection successfully activated <span class="o">(</span>D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/4<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@server40 ~<span class="o">]</span><span class="c1"># nmcli c s</span>
+</span></span><span class="line"><span class="cl">NAME    UUID                                  TYPE      DEVICE 
+</span></span><span class="line"><span class="cl">enp0s3  6e75a5e4-869b-3ed1-bdc4-c55d2d268285  ethernet  enp0s3 
+</span></span><span class="line"><span class="cl">enp0s8  9a32e279-84c2-4bba-b5c5-82a04f40a7df  ethernet  enp0s8 
+</span></span><span class="line"><span class="cl">lo      66809437-d3fa-4104-9777-7c3364b943a9  loopback  lo   
+</span></span></code></pre></div><ul>
+<li>Add entry server40 to server30&rsquo;s hosts table.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@server30 ~<span class="o">]</span><span class="c1"># vim /etc/hosts</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@server30 ~<span class="o">]</span><span class="c1"># ping server40</span>
+</span></span><span class="line"><span class="cl">PING server40.example.com <span class="o">(</span>192.168.0.40<span class="o">)</span> 56<span class="o">(</span>84<span class="o">)</span> bytes of data.
+</span></span><span class="line"><span class="cl"><span class="m">64</span> bytes from server40.example.com <span class="o">(</span>192.168.0.40<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">1</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span>3.20 ms
+</span></span><span class="line"><span class="cl"><span class="m">64</span> bytes from server40.example.com <span class="o">(</span>192.168.0.40<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">2</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span>0.628 ms
+</span></span><span class="line"><span class="cl"><span class="m">64</span> bytes from server40.example.com <span class="o">(</span>192.168.0.40<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">3</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span>0.717 ms
+</span></span><span class="line"><span class="cl">^C
+</span></span><span class="line"><span class="cl">--- server40.example.com ping statistics ---
+</span></span><span class="line"><span class="cl"><span class="m">3</span> packets transmitted, <span class="m">3</span> received, 0% packet loss, <span class="nb">time</span> 2009ms
+</span></span><span class="line"><span class="cl">rtt min/avg/max/mdev <span class="o">=</span> 0.628/1.516/3.204/1.193 ms
+</span></span></code></pre></div>
+<h3 class="relative group">Lab: Add New Interface and Configure Connection Profile Manually (server30)
+    <div id="lab-add-new-interface-and-configure-connection-profile-manually-server30" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-add-new-interface-and-configure-connection-profile-manually-server30" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Add a third network interface to RHEL9server30 in VirtualBox.</p>
+<p>run <code>ip a</code> and verify the addition of the new interface.</p>
+<p>Use the <code>nmcli</code> command and assign IP 192.168.0.30/24 and gateway 192.168.0.1</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli c a <span class="nb">type</span> Ethernet ifname enp0s8 con-name enp0s8 ip4 192.168.0.30/24 gw4 192.168.0.1
+</span></span></code></pre></div><p>Deactivate and reactivate this connection manually. Add entry server30 to the hosts table of server 40</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@server30 system-connections<span class="o">]</span><span class="c1"># nmcli c d enp0s8</span>
+</span></span><span class="line"><span class="cl">Connection <span class="s1">&#39;enp0s8&#39;</span> successfully deactivated <span class="o">(</span>D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/3<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@server30 system-connections<span class="o">]</span><span class="c1"># nmcli c u enp0s8</span>
+</span></span><span class="line"><span class="cl">Connection successfully activated <span class="o">(</span>D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/4<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/etc/hosts
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">192.168.0.30 server30.example.com server30
+</span></span></code></pre></div><p>ping tests to server30 from server 40</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@server40 ~<span class="o">]</span><span class="c1"># ping server30</span>
+</span></span><span class="line"><span class="cl">PING server30.example.com <span class="o">(</span>192.168.0.30<span class="o">)</span> 56<span class="o">(</span>84<span class="o">)</span> bytes of data.
+</span></span><span class="line"><span class="cl"><span class="m">64</span> bytes from server30.example.com <span class="o">(</span>192.168.0.30<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">1</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span>1.59 ms
+</span></span><span class="line"><span class="cl"><span class="m">64</span> bytes from server30.example.com <span class="o">(</span>192.168.0.30<span class="o">)</span>: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">2</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">64</span> <span class="nv">time</span><span class="o">=</span>0.474 ms
+</span></span><span class="line"><span class="cl">^C
+</span></span><span class="line"><span class="cl">--- server30.example.com ping statistics ---
+</span></span><span class="line"><span class="cl"><span class="m">2</span> packets transmitted, <span class="m">2</span> received, 0% packet loss, <span class="nb">time</span> 999ms
+</span></span><span class="line"><span class="cl">rtt min/avg/max/mdev <span class="o">=</span> 0.474/1.032/1.590/0.558 ms
+</span></span></code></pre></div><p>Or create the profile manually and restart network manager:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>connection<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">id</span><span class="o">=</span>enp0s8
+</span></span><span class="line"><span class="cl"><span class="nv">type</span><span class="o">=</span>ethernet
+</span></span><span class="line"><span class="cl">interface-name<span class="o">=</span>enp0s8
+</span></span><span class="line"><span class="cl"><span class="nv">uuid</span><span class="o">=</span>92db4c65-2f13-4952-b81f-2779b1d24a49
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>ethernet<span class="o">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>ipv4<span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="nv">method</span><span class="o">=</span>manual
+</span></span><span class="line"><span class="cl"><span class="nv">address1</span><span class="o">=</span>10.1.13.3/24,10.1.13.1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>ipv6<span class="o">]</span>
+</span></span><span class="line"><span class="cl">addr-gen-mode<span class="o">=</span>default
+</span></span><span class="line"><span class="cl"><span class="nv">method</span><span class="o">=</span>auto
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">[</span>proxy<span class="o">]</span>
+</span></span></code></pre></div>
+<h2 class="relative group">Administration Tools
+    <div id="administration-tools" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#administration-tools" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p><code>ip </code></p>
+<ul>
+<li>Display monitor and manage network interfaces, routing, connections, traffic, etc.</li>
+</ul>
+<p><code>ifup</code></p>
+<ul>
+<li>Brings up an interface</li>
+</ul>
+<p><code>ifdown</code></p>
+<ul>
+<li>Brings down an interface</li>
+</ul>
+<p><code>nmcli</code></p>
+<ul>
+<li>Creates, updates, deletes, activates, and deactivates a connection profile.</li>
+</ul>
+
+<h3 class="relative group"><code>nmcli</code> command
+    <div id="nmcli-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#nmcli-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Create, view, modify, remove, activate, and deactivate network connections.</li>
+<li>Control and report network device status.</li>
+<li>Supports abbreviation of commands.</li>
+</ul>
+<p>Operates on 7 different object categories.</p>
+<ol>
+<li>general</li>
+<li>networking</li>
+<li>connection (c)(con)</li>
+<li>device (d)(dev)</li>
+<li>radio</li>
+<li>monitor</li>
+<li>agent</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@server200 system-connections<span class="o">]</span><span class="c1"># nmcli --help</span>
+</span></span><span class="line"><span class="cl">Usage: nmcli <span class="o">[</span>OPTIONS<span class="o">]</span> OBJECT <span class="o">{</span> COMMAND <span class="p">|</span> <span class="nb">help</span> <span class="o">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">OPTIONS
+</span></span><span class="line"><span class="cl">  -a, --ask                                ask <span class="k">for</span> missing parameters
+</span></span><span class="line"><span class="cl">  -c, --colors auto<span class="p">|</span>yes<span class="p">|</span>no                 whether to use colors in output
+</span></span><span class="line"><span class="cl">  -e, --escape yes<span class="p">|</span>no                      escape columns separators in values
+</span></span><span class="line"><span class="cl">  -f, --fields &lt;field,...&gt;<span class="p">|</span>all<span class="p">|</span>common      specify fields to output
+</span></span><span class="line"><span class="cl">  -g, --get-values &lt;field,...&gt;<span class="p">|</span>all<span class="p">|</span>common  shortcut <span class="k">for</span> -m tabular -t -f
+</span></span><span class="line"><span class="cl">  -h, --help                               print this <span class="nb">help</span>
+</span></span><span class="line"><span class="cl">  -m, --mode tabular<span class="p">|</span>multiline             output mode
+</span></span><span class="line"><span class="cl">  -o, --overview                           overview mode
+</span></span><span class="line"><span class="cl">  -p, --pretty                             pretty output
+</span></span><span class="line"><span class="cl">  -s, --show-secrets                       allow displaying passwords
+</span></span><span class="line"><span class="cl">  -t, --terse                              terse output
+</span></span><span class="line"><span class="cl">  -v, --version                            show program version
+</span></span><span class="line"><span class="cl">  -w, --wait &lt;seconds&gt;                     <span class="nb">set</span> timeout waiting <span class="k">for</span> finishing operations
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">OBJECT
+</span></span><span class="line"><span class="cl">  g<span class="o">[</span>eneral<span class="o">]</span>       NetworkManager<span class="se">\&#39;</span>s general status and operations
+</span></span><span class="line"><span class="cl">  n<span class="o">[</span>etworking<span class="o">]</span>    overall networking control
+</span></span><span class="line"><span class="cl">  r<span class="o">[</span>adio<span class="o">]</span>         NetworkManager radio switches
+</span></span><span class="line"><span class="cl">  c<span class="o">[</span>onnection<span class="o">]</span>    NetworkManager<span class="se">\&#39;</span>s connections
+</span></span><span class="line"><span class="cl">  d<span class="o">[</span>evice<span class="o">]</span>        devices managed by NetworkManager
+</span></span><span class="line"><span class="cl">  a<span class="o">[</span>gent<span class="o">]</span>         NetworkManager secret agent or polkit agent
+</span></span><span class="line"><span class="cl">  m<span class="o">[</span>onitor<span class="o">]</span>       monitor NetworkManager changes
+</span></span></code></pre></div>
+<h3 class="relative group">3. connection
+    <div id="3-connection" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#3-connection" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Activates, deactivates, and administers network connections.</li>
+</ul>
+<p>Options:</p>
+<ul>
+<li><code>show</code> (list connections)</li>
+<li><code>up</code>/<code>down</code> (Brings connection up or down)</li>
+<li><code>add(a)</code> (adds a connection)</li>
+<li><code>edit</code> (edit connection or add a new one)</li>
+<li><code>modify</code> (modify properties of a connection)</li>
+<li><code>delete(d)</code> (delete a connection)</li>
+<li><code>reload</code> (re-read all connection profiles)</li>
+<li><code>load</code> (re-read a connection profile)</li>
+</ul>
+
+<h3 class="relative group">4. Device
+    <div id="4-device" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#4-device" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Options:</p>
+<ul>
+<li><code>status</code> (Displays device status)</li>
+<li><code>show</code> (Displays info about device(s)</li>
+</ul>
+<p>Show all connections, inactive or active:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli c s
+</span></span></code></pre></div><p>Deactivate the connection enp0s8:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nmcli c down enp0s8
+</span></span></code></pre></div><p>Note:</p>
+<pre tabindex="0"><code>The connection profile gets detached from the device, disabling the connection.
+</code></pre><p>Activate the connection enp0s8:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo nmcli c up enp0s8
+</span></span><span class="line"><span class="cl"><span class="c1"># connection profile re-attaches to the device.</span>
+</span></span></code></pre></div><p>Display the status of all network devices:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli d s
+</span></span></code></pre></div>
+<h3 class="relative group">Lab: Add Network Devices to server10 and one to server20 using VirtualBox
+    <div id="lab-add-network-devices-to-server10-and-one-to-server20-using-virtualbox" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-add-network-devices-to-server10-and-one-to-server20-using-virtualbox" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ol>
+<li>Shut down your servers (follow each step for both servers)</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo shutdown now
+</span></span></code></pre></div><ol start="2">
+<li>Add network interface in Virtualbox then power on the VMs</li>
+</ol>
+<pre tabindex="0"><code>Select machine &gt; settings &gt; Network &gt; Adapter 2 &gt; Enable Network Adapter &gt; Internal Network &gt; ok
+</code></pre><ol start="3">
+<li>Verify the new interfaces:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">ip a
+</span></span></code></pre></div>
+<h3 class="relative group">Lab: Configure New Network Connection Using nmcli (server20)
+    <div id="lab-configure-new-network-connection-using-nmcli-server20" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-configure-new-network-connection-using-nmcli-server20" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ol>
+<li>Verify the interface that was added from virtualbox:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">nmcli d status <span class="p">|</span> grep enp
+</span></span></code></pre></div><ol start="2">
+<li>Add connection profile and attach it to the interface:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sudo nmcli c a <span class="nb">type</span> Ethernet ifname enp0s8 con-name enp0s8 ip4 172.10.10.120/24 gw4 172.10.10.1
+</span></span></code></pre></div><ol start="3">
+<li>Confirm connection status</li>
+</ol>
+<pre tabindex="0"><code>nmcli d status | grep enp
+</code></pre><ol start="4">
+<li>Verify ip address</li>
+</ol>
+<pre tabindex="0"><code>ip a
+</code></pre><ol start="5">
+<li>Check the content of the connection profile</li>
+</ol>
+<pre tabindex="0"><code>cat /etc/NetworkManager/system-connections/enp0s8.nmconnection
+</code></pre>
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_tech/linux/Networking Network Devices and Network Connections.md"
+          data-oid-likes="likes_tech/linux/Networking Network Devices and Network Connections.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+      
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 overflow-x-auto py-2">
+        <ul class="flex list-none flex-row">
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 me-4">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href=""
+                title="">
+                
+                
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          David Thomas
+      </p>
+    
+
+    
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

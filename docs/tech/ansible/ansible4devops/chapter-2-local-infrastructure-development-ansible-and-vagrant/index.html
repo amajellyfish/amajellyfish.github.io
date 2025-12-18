@@ -1,0 +1,1550 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title> &middot; David Thomas</title>
+    <meta name="title" content=" &middot; David Thomas">
+  
+
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/tech/ansible/ansible4devops/chapter-2-local-infrastructure-development-ansible-and-vagrant/">
+  
+
+  
+  
+    <meta name="author" content="David Thomas">
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/tech/ansible/ansible4devops/chapter-2-local-infrastructure-development-ansible-and-vagrant/">
+  <meta property="og:site_name" content="David Thomas">
+  <meta property="og:title" content="David Thomas">
+  <meta property="og:description" content="Chapter 2 Local Infrastructure Development Ansible and Vagrant # Prototyping and testing with local virtual machines # Ansible works well with any server to which you can connect—remote or local. For speedier testing and development of Ansible playbooks, and for testing in general, it’s a very good idea to work locally. Local development and testing of infrastructure is both safer and faster than doing it on remote/live machines—especially in production environments!">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="David Thomas">
+  <meta name="twitter:description" content="Chapter 2 Local Infrastructure Development Ansible and Vagrant # Prototyping and testing with local virtual machines # Ansible works well with any server to which you can connect—remote or local. For speedier testing and development of Ansible playbooks, and for testing in general, it’s a very good idea to work locally. Local development and testing of infrastructure is both safer and faster than doing it on remote/live machines—especially in production environments!">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.c5c4ab59b36e3a06d6dff38478af5d2c18b2d7a3603611d7fc5647b02111f989bd5957610b6bed4d10718428186bc7c38590e84c77c0d50f401da78f4fbb5384.css"
+    integrity="sha512-xcSrWbNuOgbW3/OEeK9dLBiy16NgNhHX/FZHsCER&#43;Ym9WVdhC2vtTRBxhCgYa8fDhZDoTHfA1Q9AHaePT7tThA==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js"
+      integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP&#43;pSqMXxm6JPOUeAg=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "",
+    "headline": "",
+    
+    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003eChapter 2 Local Infrastructure Development Ansible and Vagrant\n    \u003cdiv id=\u0022chapter-2-local-infrastructure-development-ansible-and-vagrant\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#chapter-2-local-infrastructure-development-ansible-and-vagrant\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h2\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003ePrototyping and testing with local virtual machines\n    \u003cdiv id=\u0022chap04xhtml_leanpub-auto-prototyping-and-testing-with-local-virtual-machines\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#chap04xhtml_leanpub-auto-prototyping-and-testing-with-local-virtual-machines\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h3\u003e\n\u003cp\u003eAnsible works well with any server to which you can connect\u0026mdash;remote\n\u003cem\u003eor\u003c\/em\u003e local. For speedier testing and development of Ansible playbooks,\nand for testing in general, it\u0026rsquo;s a very good idea to work locally. Local\ndevelopment and testing of infrastructure is both safer and faster than\ndoing it on remote\/live machines\u0026mdash;especially in production\nenvironments!\u003c\/p\u003e",
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/tech/ansible/ansible4devops/chapter-2-local-infrastructure-development-ansible-and-vagrant/",
+    "author" : {
+      "@type": "Person",
+      "name": "David Thomas"
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1843"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc",
+      authDomain: "davidwrites-89dd7.firebaseapp.com",
+      projectId: "davidwrites-89dd7",
+      storageBucket: "davidwrites-89dd7.firebasestorage.app",
+      messagingSenderId: "433139099634",
+      appId: "1:433139099634:web:c14275555bd7171e6c6d6b",
+      measurementId: "G-XX5507B82W"
+    };
+
+        var app = firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        var auth = firebase.auth();
+
+      </script>
+    
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium">
+          David Thomas
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <div>
+  <div class="cursor-pointer flex items-center nested-menu">
+    
+    <a
+      
+      aria-label="Tech"
+      class="text-base font-medium hover:text-primary-600 dark:hover:text-primary-400"
+      title="">
+      <p>
+        Tech
+      </p>
+    </a>
+    <span>
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </div>
+  <div class="absolute menuhide">
+    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+      <div class="flex flex-col space-y-3">
+        
+          <a
+            href="/tech/networking/"
+            
+            aria-label="Networking"
+            class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+            
+            <p class="text-sm font-sm" title="">
+              Networking
+            </p>
+          </a>
+        
+          <a
+            href="/tech/linux/"
+            
+            aria-label="Linux"
+            class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+            
+            <p class="text-sm font-sm" title="">
+              Linux
+            </p>
+          </a>
+        
+          <a
+            href="/tech/ansible/"
+            
+            aria-label="Ansible"
+            class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+            
+            <p class="text-sm font-sm" title="Ansible">
+              Ansible
+            </p>
+          </a>
+        
+          <a
+            href="/tech/podman/"
+            
+            aria-label="Podman"
+            class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+            
+            <p class="text-sm font-sm" title="">
+              Podman
+            </p>
+          </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      
+        
+  <a
+  href="/notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Notes"
+  title="Book Notes &amp; Reviews">
+  
+  
+    <p class="text-base font-medium">
+      Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/articles/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Articles"
+  title="Articles">
+  
+  
+    <p class="text-base font-medium">
+      Articles
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/now/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Now"
+  title="Now">
+  
+  
+    <p class="text-base font-medium">
+      Now
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  
+  title="">
+  
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    aria-label="Tech"
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      Tech
+    </p>
+    <span>
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </a>
+</li>
+
+  <li class="mt-1">
+    <a
+      href="/tech/networking/"
+      
+      aria-label="Networking"
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+      
+      <p class="text-sm font-small" title="">
+        Networking
+      </p>
+    </a>
+  </li>
+
+  <li class="mt-1">
+    <a
+      href="/tech/linux/"
+      
+      aria-label="Linux"
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+      
+      <p class="text-sm font-small" title="">
+        Linux
+      </p>
+    </a>
+  </li>
+
+  <li class="mt-1">
+    <a
+      href="/tech/ansible/"
+      
+      aria-label="Ansible"
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+      
+      <p class="text-sm font-small" title="Ansible">
+        Ansible
+      </p>
+    </a>
+  </li>
+
+  <li class="mt-1">
+    <a
+      href="/tech/podman/"
+      
+      aria-label="Podman"
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+      
+      <p class="text-sm font-small" title="">
+        Podman
+      </p>
+    </a>
+  </li>
+
+<li class="mb-2"></li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Notes"
+    title="Book Notes &amp; Reviews">
+    
+    
+      <p class="text-bg font-bg">
+        Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/articles/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Articles"
+    title="Articles">
+    
+    
+      <p class="text-bg font-bg">
+        Articles
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/now/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Now"
+    title="Now">
+    
+    
+      <p class="text-bg font-bg">
+        Now
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    
+    title="">
+    
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
+    })();
+  </script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#chapter-2-local-infrastructure-development-ansible-and-vagrant">Chapter 2 Local Infrastructure Development Ansible and Vagrant</a>
+      <ul>
+        <li><a href="#chap04.xhtml_leanpub-auto-prototyping-and-testing-with-local-virtual-machines">Prototyping and testing with local virtual machines</a></li>
+        <li><a href="#chap04.xhtml_leanpub-auto-your-first-local-server-setting-up-vagrant">Your first local server: Setting up Vagrant</a></li>
+        <li><a href="#chap04.xhtml_leanpub-auto-using-ansible-with-vagrant">Using Ansible with Vagrant</a></li>
+        <li><a href="#chap04.xhtml_leanpub-auto-your-first-ansible-playbook">Your first Ansible playbook</a></li>
+        <li><a href="#chap04.xhtml_leanpub-auto-summary-1">Summary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#chapter-2-local-infrastructure-development-ansible-and-vagrant">Chapter 2 Local Infrastructure Development Ansible and Vagrant</a>
+      <ul>
+        <li><a href="#chap04.xhtml_leanpub-auto-prototyping-and-testing-with-local-virtual-machines">Prototyping and testing with local virtual machines</a></li>
+        <li><a href="#chap04.xhtml_leanpub-auto-your-first-local-server-setting-up-vagrant">Your first local server: Setting up Vagrant</a></li>
+        <li><a href="#chap04.xhtml_leanpub-auto-using-ansible-with-vagrant">Using Ansible with Vagrant</a></li>
+        <li><a href="#chap04.xhtml_leanpub-auto-your-first-ansible-playbook">Your first Ansible playbook</a></li>
+        <li><a href="#chap04.xhtml_leanpub-auto-summary-1">Summary</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h2 class="relative group">Chapter 2 Local Infrastructure Development Ansible and Vagrant
+    <div id="chapter-2-local-infrastructure-development-ansible-and-vagrant" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chapter-2-local-infrastructure-development-ansible-and-vagrant" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">Prototyping and testing with local virtual machines
+    <div id="chap04xhtml_leanpub-auto-prototyping-and-testing-with-local-virtual-machines" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap04xhtml_leanpub-auto-prototyping-and-testing-with-local-virtual-machines" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Ansible works well with any server to which you can connect&mdash;remote
+<em>or</em> local. For speedier testing and development of Ansible playbooks,
+and for testing in general, it&rsquo;s a very good idea to work locally. Local
+development and testing of infrastructure is both safer and faster than
+doing it on remote/live machines&mdash;especially in production
+environments!</p>
+<aside class="information blurb">
+<p>In the past decade, test-driven development (TDD), in one form or
+another, has become the norm for much of the software industry.
+Infrastructure development hasn&rsquo;t been as organized until recently, and
+best practices dictate that infrastructure (which is becoming more and
+more important to the software that runs on it) should be thoroughly
+tested as well.</p>
+<p>Changes to software are tested either manually or in some automated
+fashion; there are now systems that integrate both with Ansible and with
+other deployment and configuration management tools, to allow some
+amount of infrastructure testing as well. Even if it&rsquo;s just testing a
+configuration change locally before applying it to production, that
+approach is a thousand times better than what, in the software
+development world, would be called &lsquo;cowboy coding&rsquo;&mdash;working directly in
+a production environment, not documenting or encapsulating changes in
+code, and not having a way to roll back to a previous version.</p>
+</aside>
+<p>The past decade has seen the growth of many virtualization tools that
+allow for flexible and very powerful infrastructure emulation, all from
+your local workstation! It&rsquo;s empowering to be able to play around with a
+config file, or to tweak the order of a server update to perfection,
+over and over again, with no fear of breaking an important server. If
+you use a local virtual machine, there&rsquo;s no downtime for a server
+rebuild; just re-run the provisioning on a new VM, and you&rsquo;re back up
+and running in minutes&mdash;with no one the wiser.</p>
+<p><a
+  href="http://www.vagrantup.com/"
+    target="_blank"
+  >Vagrant</a>, a server provisioning tool, and
+<a
+  href="https://www.virtualbox.org/"
+    target="_blank"
+  >VirtualBox</a>, a local virtualization
+environment, make a potent combination for testing infrastructure and
+individual server configurations locally. Both applications are free and
+open source, and work well on Mac, Linux, or Windows hosts.</p>
+<p>We&rsquo;re going to set up Vagrant and VirtualBox for easy testing with
+Ansible to provision a new server.</p>
+
+<h3 class="relative group">Your first local server: Setting up Vagrant
+    <div id="chap04xhtml_leanpub-auto-your-first-local-server-setting-up-vagrant" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap04xhtml_leanpub-auto-your-first-local-server-setting-up-vagrant" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>To get started with your first local virtual server, you need to
+download and install Vagrant and VirtualBox, and set up a simple
+Vagrantfile, which will describe the virtual server.</p>
+<ol>
+<li>Download and install Vagrant and VirtualBox (whichever version is
+appropriate for your OS): - <a
+  href="http://www.vagrantup.com/downloads.html"
+    target="_blank"
+  >Download
+Vagrant</a> - <a
+  href="https://www.virtualbox.org/wiki/Downloads"
+    target="_blank"
+  >Download
+VirtualBox</a> (when
+installing, make sure the command line tools are installed, so
+Vagrant work with it)</li>
+<li>Create a new folder somewhere on your hard drive where you will keep
+your Vagrantfile and provisioning instructions.</li>
+<li>Open a Terminal or PowerShell window, then navigate to the folder
+you just created.</li>
+<li>Add a CentOS 7.x 64-bit &lsquo;box&rsquo; using the
+<a
+  href="http://docs.vagrantup.com/v2/boxes.html"
+    target="_blank"
+  ><code>vagrant box add</code></a>
+command: <code>vagrant box add geerlingguy/centos7</code> (note: HashiCorp&rsquo;s
+<a
+  href="https://atlas.hashicorp.com/boxes/search"
+    target="_blank"
+  >Atlas</a> has a
+comprehensive list of different pre-made Linux boxes. Also, check
+out the &lsquo;official&rsquo; Vagrant Ubuntu boxes on the <a
+  href="https://github.com/mitchellh/vagrant/wiki/Available-Vagrant-Boxes"
+    target="_blank"
+  >Vagrant
+wiki</a>.</li>
+<li>Create a default virtual server configuration using the box you just
+downloaded: <code>vagrant init geerlingguy/centos7</code></li>
+<li>Boot your CentOS server: <code>vagrant up</code></li>
+</ol>
+<p>Vagrant has downloaded a pre-built 64-bit CentOS 7 virtual machine (you
+can <a
+  href="http://docs.vagrantup.com/v2/virtualbox/boxes.html"
+    target="_blank"
+  >build your own</a>
+virtual machine &lsquo;boxes&rsquo;, if you so desire), loaded it into VirtualBox
+with the configuration defined in the default Vagrantfile (which is now
+in the folder you created earlier), and booted the virtual machine.</p>
+<p>Managing this virtual server is extremely easy: <code>vagrant halt</code> will shut
+down the VM, <code>vagrant up</code> will bring it back up, and <code>vagrant destroy</code>
+will completely delete the machine from VirtualBox. A simple
+<code>vagrant up</code> again will re-create it from the base box you originally
+downloaded.</p>
+<p>Now that you have a running server, you can use it just like you would
+any other server, and you can connect via SSH. To connect, enter
+<code>vagrant ssh</code> from the folder where the Vagrantfile is located. If you
+want to connect manually, or connect from another application, enter
+<code>vagrant ssh-config</code> to get the required SSH details.</p>
+
+<h3 class="relative group">Using Ansible with Vagrant
+    <div id="chap04xhtml_leanpub-auto-using-ansible-with-vagrant" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap04xhtml_leanpub-auto-using-ansible-with-vagrant" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Vagrant&rsquo;s ability to bring up preconfigured boxes is convenient on its
+own, but you could do similar things with the same efficiency using
+VirtualBox&rsquo;s (or VMWare&rsquo;s, or Parallels&rsquo;) GUI. Vagrant has some other
+tricks up its sleeve:</p>
+<ul>
+<li><a
+  href="http://docs.vagrantup.com/v2/networking/index.html"
+    target="_blank"
+  ><strong>Network interface
+management</strong></a>: You
+can forward ports to a VM, share the public network connection, or use
+private networking for inter-VM and host-only communication.</li>
+<li><a
+  href="http://docs.vagrantup.com/v2/synced-folders/index.html"
+    target="_blank"
+  ><strong>Shared folder
+management</strong></a>:
+Vagrant sets up shares between your host machine and VMs using NFS or
+(much slower) native folder sharing in VirtualBox.</li>
+<li><a
+  href="http://docs.vagrantup.com/v2/multi-machine/index.html"
+    target="_blank"
+  ><strong>Multi-machine
+management</strong></a>:
+Vagrant is able to configure and control multiple VMs within one
+Vagrantfile. This is important because, as stated in the
+documentation, &ldquo;Historically, running complex environments was done by
+flattening them onto a single machine. The problem with that is that
+it is an inaccurate model of the production setup, which behaves far
+differently.&rdquo;</li>
+<li><a
+  href="http://docs.vagrantup.com/v2/provisioning/index.html"
+    target="_blank"
+  ><strong>Provisioning</strong></a>:
+When running <code>vagrant up</code> the first time, Vagrant automatically
+<em>provisions</em> the newly-minted VM using whatever provisioner you have
+configured in the Vagrantfile. You can also run <code>vagrant provision</code>
+after the VM has been created to explicitly run the provisioner again.</li>
+</ul>
+<p>It&rsquo;s this last feature that is most important for us. Ansible is one of
+many provisioners integrated with Vagrant (others include basic shell
+scripts, Chef, Docker, Puppet, and Salt). When you call
+<code>vagrant provision</code> (or <code>vagrant up</code>) the first time, Vagrant passes off
+the VM to Ansible, and tells Ansible to run a defined Ansible playbook.
+We&rsquo;ll get into the details of Ansible playbooks later, but for now,
+we&rsquo;re going to edit our Vagrantfile to use Ansible to provision our
+virtual machine.</p>
+<p>Open the Vagrantfile that was created when we used the <code>vagrant init</code>
+command earlier. Add the following lines just before the final &rsquo;end&rsquo;
+(Vagrantfiles use Ruby syntax, in case you&rsquo;re wondering):</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 # Provisioning configuration for Ansible.
+2 config.vm.provision &quot;ansible&quot; do |ansible|
+3   ansible.playbook = &quot;playbook.yml&quot;
+4 end</code></pre>
+</div>
+</figure>
+<p>This is a very basic configuration to get you started using Ansible with
+Vagrant. There are <a
+  href="http://docs.vagrantup.com/v2/provisioning/ansible.html"
+    target="_blank"
+  >many other Ansible
+options</a> you can
+use once we get deeper into using Ansible. For now, we just want to set
+up a very basic playbook&mdash;a simple file you create to tell Ansible how
+to configure your VM.</p>
+
+<h3 class="relative group">Your first Ansible playbook
+    <div id="chap04xhtml_leanpub-auto-your-first-ansible-playbook" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap04xhtml_leanpub-auto-your-first-ansible-playbook" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Let&rsquo;s create the Ansible <code>playbook.yml</code> file now. Create an empty text
+file in the same folder as your Vagrantfile, and put in the following
+contents:</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 ---
+2 - hosts: all
+3   sudo: yes
+4   tasks:
+5   - name: Ensure NTP (for time synchronization) is installed.
+6     yum: name=ntp state=present
+7   - name: Ensure NTP is running.
+8     service: name=ntpd state=started enabled=yes</code></pre>
+</div>
+</figure>
+<p>I&rsquo;ll get into what this playbook is doing in a minute. For now, let&rsquo;s
+run the playbook on our VM. Make sure you&rsquo;re in the same directory as
+the Vagrantfile and new playbook.yml file, and enter
+<code>vagrant provision</code>. You should see status messages for each of the
+&rsquo;tasks&rsquo; you defined, and then a recap showing what Ansible did on your
+VM&mdash;something like the following:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>PLAY RECAP ********************************************************************
+default                    : ok=3    changed=1    unreachable=0    failed=0</code></pre>
+</div>
+</figure>
+<p>Ansible just took the simple playbook you defined, parsed the YAML
+syntax, and ran a bunch of commands via SSH to configure the server as
+you specified. Let&rsquo;s go through the playbook, step by step:</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 ---</code></pre>
+</div>
+</figure>
+<p>This first line is a marker showing that the rest of the document will
+be formatted in YAML (read a <a
+  href="http://www.yaml.org/start.html"
+    target="_blank"
+  >getting started guide for
+YAML</a>).</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>2 - hosts: all</code></pre>
+</div>
+</figure>
+<p>This line tells Ansible to which hosts this playbook applies. <code>all</code>
+works here, since Vagrant is invisibly using its own Ansible inventory
+file (instead of the one we created earlier in <code>/etc/ansible/hosts</code>),
+which just defines the Vagrant VM.</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>3   sudo: yes</code></pre>
+</div>
+</figure>
+<p>Since we need privileged access to install NFS and modify system
+configuration, this line tells Ansible to use <code>sudo</code> for all the tasks
+in the playbook.</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>4   tasks:</code></pre>
+</div>
+</figure>
+<p>All the tasks after this line will be run on all hosts (or, in our case,
+our one VM).</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>5   - name: Ensure NTP daemon (for time synchronization) is installed.
+6     yum: name=ntp state=present</code></pre>
+</div>
+</figure>
+<p>This command is the equivalent of running <code>yum install ntp</code>, but is much
+more intelligent; it will check if ntp is installed, and, if not,
+install it. This is the equivalent of the following shell script:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code>if ! rpm -qa | grep -qw ntp; then
+    yum install ntp
+fi</code></pre>
+</div>
+</figure>
+<p>However, the above script is still not quite as robust as Ansible&rsquo;s
+<code>yum</code> command. What if ntpdate is installed, but not ntp? This script
+would require extra tweaking and complexity to match the simple Ansible
+yum command, especially after we explore the yum module more intimately
+(or the <code>apt</code> module, when using Ubuntu and Debian-flavored Linux).</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>7   - name: Ensure NTP is running.
+8     service: name=ntpd state=started enabled=yes</code></pre>
+</div>
+</figure>
+<p>This final task both checks and ensures that the ntpd service is started
+and running, and sets it to start at system boot. A shell script with
+the same effect would be:</p>
+<figure class="code">
+<div class="highlight">
+<pre><code># Start ntpd if it&#39;s not already running.
+if ps aux | grep -v grep | grep &quot;[n]tpd&quot; &gt; /dev/null
+then
+    echo &quot;ntpd is running.&quot; &gt; /dev/null
+else
+    /sbin/service ntpd restart &gt; /dev/null
+    echo &quot;Started ntpd.&quot;
+fi
+# Make sure ntpd is enabled on system startup.
+chkconfig ntpd on</code></pre>
+</div>
+</figure>
+<p>You can see how things start getting complex in the land of shell
+scripts! And this shell script is still not as robust as what you get
+with Ansible. To maintain idempotency and handle error conditions,
+you&rsquo;ll have to do a lot more extra work with basic shell scripts than
+you do with Ansible.</p>
+<p>We could be even more terse (and really demonstrate Ansible&rsquo;s powerful
+simplicity) and not use Ansible&rsquo;s <code>name</code> module to give human-readable
+names to each command, resulting in the following playbook:</p>
+<figure class="code">
+<div class="highlight">
+<pre class="lineno"><code>1 ---
+2 - hosts: all
+3   sudo: yes
+4   tasks:
+5   - yum: name=ntp state=present
+6   - service: name=ntpd state=started enabled=yes</code></pre>
+</div>
+</figure>
+<aside class="information blurb">
+<p>Just as with code and configuration files, documentation in Ansible
+(e.g. using the <code>name</code> function and/or adding comments to the YAML for
+complicated tasks) is not absolutely necessary. However, I&rsquo;m a firm
+believer in thorough (but concise) documentation, so I almost always
+document what my tasks will do by providing a <code>name</code> for each one. This
+also helps when you&rsquo;re running the playbooks, so you can see what&rsquo;s
+going on in a human-readable format.</p>
+</aside>
+
+<h3 class="relative group">Summary
+    <div id="chap04xhtml_leanpub-auto-summary-1" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#chap04xhtml_leanpub-auto-summary-1" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p>Your workstation is on the path to becoming an
+&ldquo;infrastructure-in-a-box,&rdquo; and you can now ensure your infrastructure is
+as well-tested as the code that runs on top if it. With one small
+example, you&rsquo;ve got a glimpse at the simple-yet-powerful Ansible
+playbook. We&rsquo;ll dive deeper into Ansible playbooks later, and we&rsquo;ll also
+explore Vagrant a little more as we go.</p>
+<figure class="code">
+<div class="highlight">
+<pre><code> ______________________________________
+/ I have not failed, I&#39;ve just found   \
+| 10,000 ways that won&#39;t work. (Thomas |
+\ Edison)                              /
+ --------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||</code></pre>
+</div>
+</figure>
+:::
+<p>[]{#chap05.xhtml}</p>
+<p>::: {}</p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_tech/ansible/Ansible4Devops/Chapter 2 Local Infrastructure Development Ansible and Vagrant.md"
+          data-oid-likes="likes_tech/ansible/Ansible4Devops/Chapter 2 Local Infrastructure Development Ansible and Vagrant.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+      
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 overflow-x-auto py-2">
+        <ul class="flex list-none flex-row">
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 me-4">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href=""
+                title="">
+                
+                
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          David Thomas
+      </p>
+    
+
+    
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

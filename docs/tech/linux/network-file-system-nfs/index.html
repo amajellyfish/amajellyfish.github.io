@@ -1,0 +1,1278 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>Network File System (NFS) &middot; </title>
+    <meta name="title" content="Network File System (NFS) &middot; ">
+  
+
+  
+  
+    <meta name="description" content="Managing NFS and AutoFS">
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/tech/linux/network-file-system-nfs/">
+  
+
+  
+  
+    <meta name="author" content="David Thomas">
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/tech/linux/network-file-system-nfs/">
+  <meta property="og:title" content="Network File System (NFS)">
+  <meta property="og:description" content="Managing NFS and AutoFS">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Network File System (NFS)">
+  <meta name="twitter:description" content="Managing NFS and AutoFS">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.278a55d3e0b39215730b0c642c7c22cc020054272d3850d92c957cddf6209cf18e0ed01f082db397c8c048c30e727b44ca408c350384ca92d5f37c62d008cbd8.css"
+    integrity="sha512-J4pV0&#43;CzkhVzCwxkLHwizAIAVCctOFDZLJV83fYgnPGODtAfCC2zl8jASMMOcntEykCMNQOEypLV83xi0AjL2A==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js"
+      integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP&#43;pSqMXxm6JPOUeAg=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "Network File System (NFS)",
+    "headline": "Network File System (NFS)",
+    "description": "Managing NFS and AutoFS",
+    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003eNFS Basics and Configuration\n    \u003cdiv id=\u0022nfs-basics-and-configuration\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#nfs-basics-and-configuration\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h2\u003e\n\u003cp\u003eSame tools for mounting and unmounting a filesystem.\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eMounted and accessed the same way as local filesystems.\u003c\/li\u003e\n\u003cli\u003eNetwork protocol that allows file sharing over the network.\u003c\/li\u003e\n\u003cli\u003eMulti-platform\u003c\/li\u003e\n\u003cli\u003eMultiple clients can access a single share at the same time.\u003c\/li\u003e\n\u003cli\u003eReduced overhead and storage cost.\u003c\/li\u003e\n\u003cli\u003eGive users access to uniform data.\u003c\/li\u003e\n\u003cli\u003eConsolidate scattered user home directories.\u003c\/li\u003e\n\u003cli\u003eMay cause client to hang if share is not accessible.\u003c\/li\u003e\n\u003cli\u003eShare stays mounted until manually unmounted or the client shuts down.\u003c\/li\u003e\n\u003cli\u003eDoes not support wildcard characters or environment variables.\u003c\/li\u003e\n\u003c\/ul\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003eNFS Supported versions\n    \u003cdiv id=\u0022nfs-supported-versions\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#nfs-supported-versions\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003eRHEL 9 Supports versions 3,4.0,4.1, and 4.2 (default)\u003c\/li\u003e\n\u003cli\u003eNFSv3 supports:\n\u003cul\u003e\n\u003cli\u003eTCP and UDP.\u003c\/li\u003e\n\u003cli\u003easynchronous writes.\u003c\/li\u003e\n\u003cli\u003e64-bit files sizes.\u003c\/li\u003e\n\u003cli\u003eAccess files larger than 2GB.\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003cli\u003eNFSv4.x supports:\n\u003cul\u003e\n\u003cli\u003eAll features of NFSv3.\u003c\/li\u003e\n\u003cli\u003eTransit firewalls and work on internet.\u003c\/li\u003e\n\u003cli\u003eEnhanced security and support for encrypted transfers and ACLs.\u003c\/li\u003e\n\u003cli\u003eBetter scalability\u003c\/li\u003e\n\u003cli\u003eBetter cross-platform\u003c\/li\u003e\n\u003cli\u003eBetter system crash handling\u003c\/li\u003e\n\u003cli\u003eUse usernames and group names rather than UID and GID.\u003c\/li\u003e\n\u003cli\u003eUses TCP by default.\u003c\/li\u003e\n\u003cli\u003eCan use UDP for backwards compatibility.\u003c\/li\u003e\n\u003cli\u003eVersion 4.2 only supports TCP\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003c\/ul\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003eNetwork File System service\n    \u003cdiv id=\u0022network-file-system-service\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#network-file-system-service\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003eExport shares to mount on remote clients\u003c\/li\u003e\n\u003cli\u003eExporting\n\u003cul\u003e\n\u003cli\u003eWhen the NFS server makes shares available.\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003cli\u003eMounting\n\u003cul\u003e\n\u003cli\u003eWhen a client mounts an exported share locally.\u003c\/li\u003e\n\u003cli\u003eMount point should be empty before trying to mount a share on it.\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003cli\u003eSystem can be both client and server.\u003c\/li\u003e\n\u003cli\u003eEntire directory tree of the share is shared.\u003c\/li\u003e\n\u003cli\u003eCannot re-share a subdirectory of a share.\u003c\/li\u003e\n\u003cli\u003eA mounted share cannot be exported from the client.\u003c\/li\u003e\n\u003cli\u003eA single exported share is mounted on a directory mount point.\u003c\/li\u003e\n\u003cli\u003eMake sure to update the fstab file on the client.\u003c\/li\u003e\n\u003c\/ul\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003eNFS Server and Client Configuration\n    \u003cdiv id=\u0022nfs-server-and-client-configuration\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#nfs-server-and-client-configuration\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h3\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003eHow to export a share\n    \u003cdiv id=\u0022how-to-export-a-share\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#how-to-export-a-share\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003eAdd entry of the share to \u003cem\u003e\/etc\/exports\u003c\/em\u003e using \u003ccode\u003eexportfs\u003c\/code\u003e command\u003c\/li\u003e\n\u003cli\u003eAdd firewall rule to allow access\u003c\/li\u003e\n\u003c\/ul\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003eMount a share from the client side\n    \u003cdiv id=\u0022mount-a-share-from-the-client-side\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#mount-a-share-from-the-client-side\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003eUse \u003ccode\u003emount\u003c\/code\u003e and add the filesystem to the fstab file.\u003c\/li\u003e\n\u003c\/ul\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003eLab: Export Share on NFS Server\n    \u003cdiv id=\u0022lab-export-share-on-nfs-server\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#lab-export-share-on-nfs-server\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h3\u003e\n\u003col\u003e\n\u003cli\u003eInstall nfs-utils\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003e sudo dnf -y install nfs-utils\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eCreate \/common\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003e sudo mkdir \/common\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eAdd full permissions\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003e sudo chmod 777 \/common\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eAdd NFS service persistently to the firewalld configuration to allow NFS traffic and load the new rule:\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003esudo firewall-cmd --permanent --add-service nfs\nsudo firewall-cmd --reload\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eStart the NFS service and enable it to autostart at system reboots:\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003esudo systemctl --now enable nfs-server\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eVerify Operational Status of the NFS services:\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003esudo systemctl status nfs-server\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eOpen \u003cem\u003e\/etc\/exports\u003c\/em\u003e and add entry for \u003cem\u003e\/common\u003c\/em\u003e to export it to server10 with read\/write:\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003e\/common server10(rw)\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eExport the entry defined in \u003cem\u003e\/etc\/exports\u003c\/em\u003e\/. -a option exports all entries in the file. -v is verbose.\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003esudo exportfs -av\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eUnexport the share (-u):\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003esudo exportfs -u server10:\/common\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eRe-export the share:\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003esudo exportfs -av\n\u003c\/code\u003e\u003c\/pre\u003e\n\u003ch3 class=\u0022relative group\u0022\u003eLAB: Mount share on NFS client\n    \u003cdiv id=\u0022lab-mount-share-on-nfs-client\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#lab-mount-share-on-nfs-client\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h3\u003e\n\u003col\u003e\n\u003cli\u003eInstall nfs-utils\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003esudo dnf -y install nfs-utils\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eCreate \/local mount point\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003esudo mkdir \/local\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eMount the share manually:\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003esudo mount server20:\/common \/local\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eConfirm using mount: (shows nfs version)\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003emount | grep local\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eConfirm using df:\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003edf -h | grep local\n\u003c\/code\u003e\u003c\/pre\u003e\u003col\u003e\n\u003cli\u003eAdd to \/fstab for persistence:\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cpre tabindex=\u00220\u0022\u003e\u003ccode\u003eserver20:\/common \/local nfs _netdev 0 0\n\u003c\/code\u003e\u003c\/pre\u003e\u003cp\u003eNote:\u003c\/p\u003e",
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/tech/linux/network-file-system-nfs/",
+    "author" : {
+      "@type": "Person",
+      "name": "David Thomas"
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "560"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc",
+      authDomain: "davidwrites-89dd7.firebaseapp.com",
+      projectId: "davidwrites-89dd7",
+      storageBucket: "davidwrites-89dd7.firebasestorage.app",
+      messagingSenderId: "433139099634",
+      appId: "1:433139099634:web:c14275555bd7171e6c6d6b",
+      measurementId: "G-XX5507B82W"
+    };
+
+        var app = firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        var auth = firebase.auth();
+
+      </script>
+    
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+      <div>
+        <a href="/" class="flex">
+          <span class="sr-only"></span>
+          
+            <img
+              src="/img/logo.png"
+              width="200"
+              height="37"
+              class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
+              alt="">
+          
+        </a>
+      </div>
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/tech/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Tech"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      Tech
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Notes"
+  title="Book Notes &amp; Reviews">
+  
+  
+    <p class="text-base font-medium">
+      Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/articles/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Articles"
+  title="Articles">
+  
+  
+    <p class="text-base font-medium">
+      Articles
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/now/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Now"
+  title="Now">
+  
+  
+    <p class="text-base font-medium">
+      Now
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  
+  title="">
+  
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/tech/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Tech"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        Tech
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Notes"
+    title="Book Notes &amp; Reviews">
+    
+    
+      <p class="text-bg font-bg">
+        Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/articles/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Articles"
+    title="Articles">
+    
+    
+      <p class="text-bg font-bg">
+        Articles
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/now/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Now"
+    title="Now">
+    
+    
+      <p class="text-bg font-bg">
+        Now
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    
+    title="">
+    
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
+    })();
+  </script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        Network File System (NFS)
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#nfs-basics-and-configuration">NFS Basics and Configuration</a>
+      <ul>
+        <li><a href="#nfs-supported-versions">NFS Supported versions</a></li>
+        <li><a href="#network-file-system-service">Network File System service</a></li>
+        <li><a href="#nfs-server-and-client-configuration">NFS Server and Client Configuration</a></li>
+        <li><a href="#how-to-export-a-share">How to export a share</a></li>
+        <li><a href="#mount-a-share-from-the-client-side">Mount a share from the client side</a></li>
+        <li><a href="#lab-export-share-on-nfs-server">Lab: Export Share on NFS Server</a></li>
+        <li><a href="#lab-mount-share-on-nfs-client">LAB: Mount share on NFS client</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#nfs-basics-and-configuration">NFS Basics and Configuration</a>
+      <ul>
+        <li><a href="#nfs-supported-versions">NFS Supported versions</a></li>
+        <li><a href="#network-file-system-service">Network File System service</a></li>
+        <li><a href="#nfs-server-and-client-configuration">NFS Server and Client Configuration</a></li>
+        <li><a href="#how-to-export-a-share">How to export a share</a></li>
+        <li><a href="#mount-a-share-from-the-client-side">Mount a share from the client side</a></li>
+        <li><a href="#lab-export-share-on-nfs-server">Lab: Export Share on NFS Server</a></li>
+        <li><a href="#lab-mount-share-on-nfs-client">LAB: Mount share on NFS client</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h2 class="relative group">NFS Basics and Configuration
+    <div id="nfs-basics-and-configuration" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#nfs-basics-and-configuration" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Same tools for mounting and unmounting a filesystem.</p>
+<ul>
+<li>Mounted and accessed the same way as local filesystems.</li>
+<li>Network protocol that allows file sharing over the network.</li>
+<li>Multi-platform</li>
+<li>Multiple clients can access a single share at the same time.</li>
+<li>Reduced overhead and storage cost.</li>
+<li>Give users access to uniform data.</li>
+<li>Consolidate scattered user home directories.</li>
+<li>May cause client to hang if share is not accessible.</li>
+<li>Share stays mounted until manually unmounted or the client shuts down.</li>
+<li>Does not support wildcard characters or environment variables.</li>
+</ul>
+
+<h3 class="relative group">NFS Supported versions
+    <div id="nfs-supported-versions" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#nfs-supported-versions" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>RHEL 9 Supports versions 3,4.0,4.1, and 4.2 (default)</li>
+<li>NFSv3 supports:
+<ul>
+<li>TCP and UDP.</li>
+<li>asynchronous writes.</li>
+<li>64-bit files sizes.</li>
+<li>Access files larger than 2GB.</li>
+</ul>
+</li>
+<li>NFSv4.x supports:
+<ul>
+<li>All features of NFSv3.</li>
+<li>Transit firewalls and work on internet.</li>
+<li>Enhanced security and support for encrypted transfers and ACLs.</li>
+<li>Better scalability</li>
+<li>Better cross-platform</li>
+<li>Better system crash handling</li>
+<li>Use usernames and group names rather than UID and GID.</li>
+<li>Uses TCP by default.</li>
+<li>Can use UDP for backwards compatibility.</li>
+<li>Version 4.2 only supports TCP</li>
+</ul>
+</li>
+</ul>
+
+<h3 class="relative group">Network File System service
+    <div id="network-file-system-service" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#network-file-system-service" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Export shares to mount on remote clients</li>
+<li>Exporting
+<ul>
+<li>When the NFS server makes shares available.</li>
+</ul>
+</li>
+<li>Mounting
+<ul>
+<li>When a client mounts an exported share locally.</li>
+<li>Mount point should be empty before trying to mount a share on it.</li>
+</ul>
+</li>
+<li>System can be both client and server.</li>
+<li>Entire directory tree of the share is shared.</li>
+<li>Cannot re-share a subdirectory of a share.</li>
+<li>A mounted share cannot be exported from the client.</li>
+<li>A single exported share is mounted on a directory mount point.</li>
+<li>Make sure to update the fstab file on the client.</li>
+</ul>
+
+<h3 class="relative group">NFS Server and Client Configuration
+    <div id="nfs-server-and-client-configuration" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#nfs-server-and-client-configuration" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+
+<h3 class="relative group">How to export a share
+    <div id="how-to-export-a-share" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#how-to-export-a-share" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Add entry of the share to <em>/etc/exports</em> using <code>exportfs</code> command</li>
+<li>Add firewall rule to allow access</li>
+</ul>
+
+<h3 class="relative group">Mount a share from the client side
+    <div id="mount-a-share-from-the-client-side" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#mount-a-share-from-the-client-side" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Use <code>mount</code> and add the filesystem to the fstab file.</li>
+</ul>
+
+<h3 class="relative group">Lab: Export Share on NFS Server
+    <div id="lab-export-share-on-nfs-server" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-export-share-on-nfs-server" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ol>
+<li>Install nfs-utils</li>
+</ol>
+<pre tabindex="0"><code> sudo dnf -y install nfs-utils
+</code></pre><ol>
+<li>Create /common</li>
+</ol>
+<pre tabindex="0"><code> sudo mkdir /common
+</code></pre><ol>
+<li>Add full permissions</li>
+</ol>
+<pre tabindex="0"><code> sudo chmod 777 /common
+</code></pre><ol>
+<li>Add NFS service persistently to the firewalld configuration to allow NFS traffic and load the new rule:</li>
+</ol>
+<pre tabindex="0"><code>sudo firewall-cmd --permanent --add-service nfs
+sudo firewall-cmd --reload
+</code></pre><ol>
+<li>Start the NFS service and enable it to autostart at system reboots:</li>
+</ol>
+<pre tabindex="0"><code>sudo systemctl --now enable nfs-server
+</code></pre><ol>
+<li>Verify Operational Status of the NFS services:</li>
+</ol>
+<pre tabindex="0"><code>sudo systemctl status nfs-server
+</code></pre><ol>
+<li>Open <em>/etc/exports</em> and add entry for <em>/common</em> to export it to server10 with read/write:</li>
+</ol>
+<pre tabindex="0"><code>/common server10(rw)
+</code></pre><ol>
+<li>Export the entry defined in <em>/etc/exports</em>/. -a option exports all entries in the file. -v is verbose.</li>
+</ol>
+<pre tabindex="0"><code>sudo exportfs -av
+</code></pre><ol>
+<li>Unexport the share (-u):</li>
+</ol>
+<pre tabindex="0"><code>sudo exportfs -u server10:/common
+</code></pre><ol>
+<li>Re-export the share:</li>
+</ol>
+<pre tabindex="0"><code>sudo exportfs -av
+</code></pre>
+<h3 class="relative group">LAB: Mount share on NFS client
+    <div id="lab-mount-share-on-nfs-client" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-mount-share-on-nfs-client" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ol>
+<li>Install nfs-utils</li>
+</ol>
+<pre tabindex="0"><code>sudo dnf -y install nfs-utils
+</code></pre><ol>
+<li>Create /local mount point</li>
+</ol>
+<pre tabindex="0"><code>sudo mkdir /local
+</code></pre><ol>
+<li>Mount the share manually:</li>
+</ol>
+<pre tabindex="0"><code>sudo mount server20:/common /local
+</code></pre><ol>
+<li>Confirm using mount: (shows nfs version)</li>
+</ol>
+<pre tabindex="0"><code>mount | grep local
+</code></pre><ol>
+<li>Confirm using df:</li>
+</ol>
+<pre tabindex="0"><code>df -h | grep local
+</code></pre><ol>
+<li>Add to /fstab for persistence:</li>
+</ol>
+<pre tabindex="0"><code>server20:/common /local nfs _netdev 0 0
+</code></pre><p>Note:</p>
+<pre tabindex="0"><code>_netdev option makes system wait for networking to come up before trying to mount the share. 
+</code></pre><ol>
+<li>Unmount share manually using umount then remount to validate accuracy of the entry in /fstab:</li>
+</ol>
+<pre tabindex="0"><code>sudo umount /local
+sudo mount -a
+</code></pre><ol>
+<li>Verify:</li>
+</ol>
+<pre tabindex="0"><code>df -h
+</code></pre><ol>
+<li>Create a file in /local/ and verify:</li>
+</ol>
+<pre tabindex="0"><code>touch /local/nfsfile
+ls -l /local
+</code></pre><ol>
+<li>Confirm the sync on server 2</li>
+</ol>
+<pre tabindex="0"><code>ls -l /common/
+</code></pre><ol start="5">
+<li>Update fstab</li>
+</ol>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_tech/linux/Network File System (NFS).md"
+          data-oid-likes="likes_tech/linux/Network File System (NFS).md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+      
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 overflow-x-auto py-2">
+        <ul class="flex list-none flex-row">
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 me-4">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href=""
+                title="">
+                
+                
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          David Thomas
+      </p>
+    
+
+    
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

@@ -1,0 +1,118 @@
+colorScheme = "blowfish"
+defaultAppearance = "light"
+autoSwitchAppearance = false
+enableA11y = false
+enableSearch = true
+enableCodeCopy = true
+enableStructuredBreadcrumbs = false
+replyByEmail = false
+disableImageOptimization = false
+disableImageOptimizationMD = false
+disableTextInHeader = true
+hotlinkFeatureImage = false
+fingerprintAlgorithm = "sha512"
+giteaDefaultServer = "https://git.fsfe.org"
+forgejoDefaultServer = "https://v11.next.forgejo.org"
+firebase = { enable = true, apiKey = "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc", authDomain = "davidwrites-89dd7.firebaseapp.com", projectId = "davidwrites-89dd7", storageBucket = "davidwrites-89dd7.firebasestorage.app", messagingSenderId = "433139099634", appId = "1:433139099634:web:c14275555bd7171e6c6d6b", measurementId = "G-XX5507B82W" }
+fathomAnalytics = { }
+umamiAnalytics = { }
+selineAnalytics = { }
+buymeacoffee = { }
+verification = { }
+rssnext = { }
+advertisement = { }
+defaultFeaturedImage = "/img/sunny_mountain.jpg"
+defaultBackgroundImage = "/img/sunny_mountain.jpg"
+smartTOC = true
+highlightCurrentMenuArea = true
+mainSections = ["articles"]
+smartTOCHideUnfocusedChildren = true
+
+[header]
+layout = "basic"
+
+[footer]
+showMenu = true
+showCopyright = true
+showThemeAttribution = false
+showAppearanceSwitcher = false
+showScrollToTop = true
+
+[homepage]
+layout = "page"
+showRecent = true
+showRecentItems = 5
+showMoreLink = true
+showMoreLinkDest = "/articles"
+cardView = true
+cardViewScreenWidth = false
+layoutBackgroundBlur = false
+disableHeroImageFilter = false
+homepageImage = "/img/davidsquare.png"
+showSummary = false
+
+[article]
+showDate = true
+showViews = true
+showLikes = true
+showDateOnlyInArticle = false
+showDateUpdated = false
+showHero = false
+layoutBackgroundBlur = true
+layoutBackgroundHeaderSpace = true
+showBreadcrumbs = false
+showDraftLabel = true
+showEdit = false
+editAppendPath = true
+seriesOpened = false
+showHeadingAnchors = true
+showPagination = false
+invertPagination = false
+showReadingTime = false
+showTableOfContents = true
+showTaxonomies = false
+showCategoryOnly = false
+showAuthorsBadges = false
+showWordCount = false
+showZenMode = false
+sharingLinks = [ "linkedin", "twitter", "bluesky", "reddit", "whatsapp", "telegram", "pinterest", "facebook", "email", "line"]
+
+[list]
+showAuthor = false
+showHero = false
+layoutBackgroundBlur = true
+layoutBackgroundHeaderSpace = true
+showBreadcrumbs = false
+showSummary = false
+showViews = false
+showLikes = false
+showTableOfContents = false
+showCards = false
+orderByWeight = false
+groupByYear = false
+cardView = true
+cardViewScreenWidth = false
+constrainItemsWidth = false
+
+[sitemap]
+excludedKinds = [ "taxonomy", "term" ]
+
+[taxonomy]
+showTermCount = true
+showHero = false
+showBreadcrumbs = false
+showViews = false
+showLikes = false
+showTableOfContents = false
+cardView = false
+
+[term]
+showHero = false
+showBreadcrumbs = false
+showViews = false
+showLikes = false
+showTableOfContents = true
+groupByYear = false
+cardView = false
+cardViewScreenWidth = false
+

@@ -1,0 +1,1341 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title> &middot; David Thomas</title>
+    <meta name="title" content=" &middot; David Thomas">
+  
+
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/tech/networking/ccna-notes/ospf_network_types_and_neighbors/">
+  
+
+  
+  
+    <meta name="author" content="David Thomas">
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/tech/networking/ccna-notes/ospf_network_types_and_neighbors/">
+  <meta property="og:site_name" content="David Thomas">
+  <meta property="og:title" content="David Thomas">
+  <meta property="og:description" content="This chapter covers the following exam topics:
+3.0 IP Connectivity
+3.4 Configure and verify single area OSPFv2
+3.4.a Neighbor adjacencies
+3.4.b Point-to-point
+3.4.c Broadcast (DR/BDR selection)
+3.4.d Router ID
+OSPF Network Types">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="David Thomas">
+  <meta name="twitter:description" content="This chapter covers the following exam topics:
+3.0 IP Connectivity
+3.4 Configure and verify single area OSPFv2
+3.4.a Neighbor adjacencies
+3.4.b Point-to-point
+3.4.c Broadcast (DR/BDR selection)
+3.4.d Router ID
+OSPF Network Types">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.c5c4ab59b36e3a06d6dff38478af5d2c18b2d7a3603611d7fc5647b02111f989bd5957610b6bed4d10718428186bc7c38590e84c77c0d50f401da78f4fbb5384.css"
+    integrity="sha512-xcSrWbNuOgbW3/OEeK9dLBiy16NgNhHX/FZHsCER&#43;Ym9WVdhC2vtTRBxhCgYa8fDhZDoTHfA1Q9AHaePT7tThA==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js"
+      integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP&#43;pSqMXxm6JPOUeAg=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "",
+    "headline": "",
+    
+    "abstract": "\u003cp\u003eThis chapter covers the following exam topics:\u003c\/p\u003e\n\u003cp\u003e3.0 IP Connectivity\u003c\/p\u003e\n\u003cp\u003e3.4 Configure and verify single area OSPFv2\u003c\/p\u003e\n\u003cp\u003e3.4.a Neighbor adjacencies\u003c\/p\u003e\n\u003cp\u003e3.4.b Point-to-point\u003c\/p\u003e\n\u003cp\u003e3.4.c Broadcast (DR\/BDR selection)\u003c\/p\u003e\n\u003cp\u003e3.4.d Router ID\u003c\/p\u003e\n\u003cp\u003eOSPF Network Types\u003c\/p\u003e",
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/tech/networking/ccna-notes/ospf_network_types_and_neighbors/",
+    "author" : {
+      "@type": "Person",
+      "name": "David Thomas"
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "1760"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc",
+      authDomain: "davidwrites-89dd7.firebaseapp.com",
+      projectId: "davidwrites-89dd7",
+      storageBucket: "davidwrites-89dd7.firebasestorage.app",
+      messagingSenderId: "433139099634",
+      appId: "1:433139099634:web:c14275555bd7171e6c6d6b",
+      measurementId: "G-XX5507B82W"
+    };
+
+        var app = firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        var auth = firebase.auth();
+
+      </script>
+    
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium">
+          David Thomas
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <div>
+  <div class="cursor-pointer flex items-center nested-menu">
+    
+    <a
+      
+      aria-label="Tech"
+      class="text-base font-medium hover:text-primary-600 dark:hover:text-primary-400"
+      title="">
+      <p>
+        Tech
+      </p>
+    </a>
+    <span>
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </div>
+  <div class="absolute menuhide">
+    <div class="pt-2 p-5 mt-2 rounded-xl backdrop-blur shadow-2xl">
+      <div class="flex flex-col space-y-3">
+        
+          <a
+            href="/tech/networking/"
+            
+            aria-label="Networking"
+            class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+            
+            <p class="text-sm font-sm" title="">
+              Networking
+            </p>
+          </a>
+        
+          <a
+            href="/tech/linux/"
+            
+            aria-label="Linux"
+            class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+            
+            <p class="text-sm font-sm" title="">
+              Linux
+            </p>
+          </a>
+        
+          <a
+            href="/tech/ansible/"
+            
+            aria-label="Ansible"
+            class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+            
+            <p class="text-sm font-sm" title="Ansible">
+              Ansible
+            </p>
+          </a>
+        
+          <a
+            href="/tech/podman/"
+            
+            aria-label="Podman"
+            class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+            
+            <p class="text-sm font-sm" title="">
+              Podman
+            </p>
+          </a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      
+        
+  <a
+  href="/notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Notes"
+  title="Book Notes &amp; Reviews">
+  
+  
+    <p class="text-base font-medium">
+      Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/articles/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Articles"
+  title="Articles">
+  
+  
+    <p class="text-base font-medium">
+      Articles
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/now/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Now"
+  title="Now">
+  
+  
+    <p class="text-base font-medium">
+      Now
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  
+  title="">
+  
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    aria-label="Tech"
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+    
+    <p class="text-bg font-bg" title="">
+      Tech
+    </p>
+    <span>
+      <span class="relative block icon"><svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  fill="currentColor"
+  aria-hidden="true"
+>
+  <path
+    fill-rule="evenodd"
+    d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+    clip-rule="evenodd"
+  />
+</svg>
+</span>
+    </span>
+  </a>
+</li>
+
+  <li class="mt-1">
+    <a
+      href="/tech/networking/"
+      
+      aria-label="Networking"
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+      
+      <p class="text-sm font-small" title="">
+        Networking
+      </p>
+    </a>
+  </li>
+
+  <li class="mt-1">
+    <a
+      href="/tech/linux/"
+      
+      aria-label="Linux"
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+      
+      <p class="text-sm font-small" title="">
+        Linux
+      </p>
+    </a>
+  </li>
+
+  <li class="mt-1">
+    <a
+      href="/tech/ansible/"
+      
+      aria-label="Ansible"
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+      
+      <p class="text-sm font-small" title="Ansible">
+        Ansible
+      </p>
+    </a>
+  </li>
+
+  <li class="mt-1">
+    <a
+      href="/tech/podman/"
+      
+      aria-label="Podman"
+      class="flex items-center hover:text-primary-600 dark:hover:text-primary-400">
+      
+      <p class="text-sm font-small" title="">
+        Podman
+      </p>
+    </a>
+  </li>
+
+<li class="mb-2"></li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Notes"
+    title="Book Notes &amp; Reviews">
+    
+    
+      <p class="text-bg font-bg">
+        Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/articles/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Articles"
+    title="Articles">
+    
+    
+      <p class="text-bg font-bg">
+        Articles
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/now/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Now"
+    title="Now">
+    
+    
+      <p class="text-bg font-bg">
+        Now
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    
+    title="">
+    
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
+    })();
+  </script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>This chapter covers the following exam topics:</p>
+<p>3.0 IP Connectivity</p>
+<p>3.4 Configure and verify single area OSPFv2</p>
+<p>3.4.a Neighbor adjacencies</p>
+<p>3.4.b Point-to-point</p>
+<p>3.4.c Broadcast (DR/BDR selection)</p>
+<p>3.4.d Router ID</p>
+<p>OSPF Network Types</p>
+<p>Network Type
+Keyword
+broadcast
+point-to-point
+Dynamically Discovers
+Neighbors
+Yes
+Yes
+Uses a
+DR/BDR
+Yes
+No &ldquo;&gt;</p>
+<p>The OSPF Broadcast Network Type</p>
+<p>default to use network type broadcast</p>
+<p>Attempt to discover neighbors by sending OSPF Hellos to the 224.0.0.5 multicast address (an address reserved for sending packets to all OSPF routers in the subnet)</p>
+<p>Attempt to elect a DR and BDR on each subnet</p>
+<p>On the interface with no other routers on the subnet (G0/1), become the DR</p>
+<p>On the interface with three other routers on the subnet (G0/0), be either DR, BDR, or a DROther router</p>
+<p>all discovered routers on the link should become neighbors and at least reach the 2-way state. For all neighbor relationships that include the DR and/or BDR, the neighbor relationship should further reach the full state. That section defined the term fully adjacent as a special term that refers to neighbors that reach this full state.</p>
+<p>To see the setting, use the show ip ospf interface command, as shown in Example 21-4. The first highlighted item identifies the network type</p>
+<p>Click here to view code image
+RI* show ip ospf interface ge/ø
+GigabitEthernete/e is up, line protocol is up
+Internet Address 10.1.1.1/24, Area e, Attached via Interface Enabl
+Process ID 1, Router ID 1.1.1.1, Network Type BROADCAST, cost: 1
+Topology-MTID
+e
+Cost
+1
+Disabled
+no
+Shutdown
+no
+Topology Name
+Base
+Enabled by interface config, including secondary ip addresses
+Transmit Delay is 1 sec, State DROTHER, Priority 1
+Designated Router (ID) 4.4.4.4, Interface address 10.1.1.4
+Backup Designated router (ID) 3.3.3.3, Interface address 10.1.1.3
+Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit
+oob-resync timeout 40
+Hello due in ee:ee:ee
+Supports Link-local Signaling (LLS)
+Cisco NSF helper support enabled
+IETF NSF helper support enabled
+Index 1/1/1, flood queue length e
+Next
+Last flood scan length is e, maximum is 1
+Last flood scan time is e msec, maximum is e
+Nei ghhnr r Olin* i e R Ad-iarpnt- nei ghhnr c-nllnt-
+msec &ldquo;&gt;</p>
+<p>Adjacent with neighbor 4.4.4.4 (Designated Router)
+Suppress hello for e neighbor(s) &ldquo;&gt;</p>
+<p>ip ospf network broadcast interface subcommand would configure the setting.</p>
+<p>Configuring to Influence the DR/BDR Election</p>
+<p>If the DR fails, the BDR becomes the DR, and a new BDR is elected.</p>
+<p>When a better router enters the subnet, no preemption of the existing DR or BDR occurs.</p>
+<ul>
+<li>Preemption: If a new router is configured to be the DR, it will not become the DR until the OSPF process is reset.</li>
+</ul>
+<p>As a result of these rules, while you can configure a router to be the best (highest priority) router to become the DR in an election, doing so only increases that router’s statistical chances of being the DR at a given point in time. If the router fails, other routers will become DR and BDR, and the best router will not be DR again until the current DR and BDR fail.</p>
+<p>The highest OSPF interface priority: The highest value wins during an election, with values ranging from 0 to 255.</p>
+<p>The highest OSPF Router ID: If the priority ties, the election chooses the router with the highest OSPF RID.</p>
+<p>If an engineer preferred that R1 be the DR, the engineer could add the configuration in Example 21-5 to set R1’s interface priority to 99. (default of 1)</p>
+<p>RI* configure terminal
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line.
+End with CNTL/Z.
+RI (config)# interface gø,&lsquo;ø
+RI (config-if)# ip ospf priority 99
+RI (config-if)# AZ
+RI* show ip ospf interface ge/ø I include Priority
+Transmit Delay is 1 sec, State DROTHER, Priority 99
+10.1.1.2
+10.1.1.3
+10.1.
+1.4
+RI* show ip
+Neighbor ID
+2.2. 2.2
+3.3. 3.3
+4.4.4.4
+RI* show ip
+Interface
+Gie/l
+Gie/e
+ospf neighbor
+pri
+1
+1
+1
+State
+2WAY/DROTHER
+FULL/BDR
+FULL/DR
+Dead Time
+ospf
+PID
+1
+1
+interface brief
+Area
+e
+e
+Address/Mask
+IP
+le.1.11.1/24
+le.1.1.1/24
+Address
+Cost
+1
+1
+State
+DR
+DROTH
+In
+2/ &ldquo;&gt;</p>
+<p>show that the DR and BDR have not changed at all</p>
+<p>The OSPF Point-to-Point Network Type</p>
+<p>(HDLC and PPP) do not support data-link broadcasts.</p>
+<p>to use OSPF network type point-to-point. R2, on the other end of the WAN link, would need the same configuration command on its matching interface.</p>
+<p>RI
+Click here to view code image
+RI* configure terminal
+Enter configuration commands, one per line.
+End with CNTL/Z.
+RI (config)# interface ge/Ø/0
+RI (config-if)# ip ospf network point-to-point
+RI (config-if)#
+RI* show ip ospf interface ge/0/0
+GigabitEthernete/0/e is up, line protocol is up
+Internet Address 10.1.12.1/24, Area e, Attached via Interface Enab
+Process ID 1, Router ID 1.1.1.1, Network Type POINT TO POINT, cost
+Topology-MT ID
+e
+Cost
+4
+Disabled
+no
+Shutdown
+no
+Topology Name
+Base
+Enabled by interface config, including secondary ip addresses
+Transmit Delay is 1 sec, State POINT TO POINT
+Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit
+oob-resync timeout 40
+Hello due in ee:ee:el
+Supports Link-local Signaling (LLS)
+Cisco NSF helper support enabled &ldquo;&gt;</p>
+<p>Index 1/3/3, flood queue length e
+Next
+Last flood scan length is 1, maximum is 3
+Last flood scan time is e msec, maximum is e msec
+Neighbor Count is 1, Adjacent neighbor count is 1
+Adjacent with neighbor 2.2.2.2
+Suppress hello for e neighbor(s) &ldquo;&gt;</p>
+<p>RI
+Click here to view code image
+show ip ospf neighbor
+eighbor ID
+.2.2.2
+pri
+e
+State
+FULL/
+Dead Time
+lines omitted for brevity
+show ip ospf interface brief
+nterface
+ie/e/e
+PID
+1
+Area
+e
+Address/Mask
+IP
+le.1.12.1/24
+Address
+10.1. 12.2
+Cost
+4
+Interfac
+GigabitE
+State Nbrs F
+1/1
+P2P
+lines omitted for brevity &ldquo;&gt;</p>
+<p>OSPF Neighbor Relationships</p>
+<p>They must have compatible values for several settings as listed in the Hellos exchanged between the two routers</p>
+<p>Requirement
+Interfaces must be in an up/up state.
+Access control lists (ACL) must not filter
+routing protocol messages.
+Interfaces must be in the same subnet.
+They must pass routing protocol neigh-
+bor authentication (if configured).
+Hello and hold/dead timers must match.
+Router IDs (RID) must be unique.
+They must be in the same area.
+OSPF process must not be shut down.
+Required
+for OSPF
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Neighbor Missing
+if Incorrect
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes
+Yes &ldquo;&gt;</p>
+<p>MTU setting.
+Neighboring interfaces must use same
+OSPF network type.
+Yes
+Yes
+No
+No &ldquo;&gt;</p>
+<p>For items listing a “yes” in this column, if that item is configured incorrectly, the neighbor will not appear in lists of OSPF neighbors—for instance, with the show ip ospf neighbor command.</p>
+<p>the last section (shaded) lists a couple of OSPF settings that give a different symptom when incorrect</p>
+<p>for these two items, when incorrect, a router can list the other router as a neighbor, but the neighbor relationship does not work properly in that the routers do not exchange LSAs as they should</p>
+<p>Requirement
+Hello and dead timers must match.
+They must be in the same area.
+RIDs must be unique.
+They must pass any neighbor
+authentication.
+OSPF process must not be shut down.
+Best show Command
+show ip ospf interface
+show ip ospf interface brief
+show ip ospf
+show ip ospf interface
+show ip ospf, show ip ospf
+interface &ldquo;&gt;</p>
+<p>10/40 is the default hello/dead timer</p>
+<p>Finding Area Mismatches</p>
+<p>Check the output of show running-config to look for</p>
+<p>ip ospf process-id area area-number interface subcommands</p>
+<p>network commands in OSPF configuration mode</p>
+<p>Use the show ip ospf interface </p>
+\[brief\]<p> command to list the area number</p>
+<p>Finding Duplicate OSPF Router IDs</p>
+<p>both routers automatically generate a log message for the duplicate OSPF RID problem between R1 and R3;</p>
+<p>show ip ospf commands on both R3 and R1 to easily list the RID on each router,</p>
+<p>use the router-id 3.3.3.3 OSPF subcommand and use the EXEC mode command clear ip ospf process. (OSPF will not begin using a new RID value until the process restarts, either via command or reload.)</p>
+<p>Finding OSPF Hello and Dead Timer Mismatches</p>
+<p>Hello interval/timer: The per-interface timer that tells a router how often to send OSPF Hello messages on an interface.</p>
+<p>Dead interval/timer: The per-interface timer that tells the router how long to wait without having received a Hello from a neighbor before believing that neighbor has failed. (Defaults to four times the Hello timer.)</p>
+<p>Click here to view code image
+RI* show ip ospf interface GO/O
+GigabitEthernete/e is up, line protocol is up
+Internet Address 10.1.1.1/24, Area e, Attached via Network Stateme
+Process ID 1, Router ID 1.1.1.1, Network Type BROADCAST, cost: 1
+Topology-MT ID Cost Disabled Shutdown
+e
+1
+no
+no
+Topology Name
+Base
+Transmit Delay is 1 sec, State DR, Priority 1
+Designated Router (ID) 1.1.1.1, Interface address 10.1.1.1
+No backup designated router on this network
+Timer intervals configured, Hello 10, Dead 40, Wait 40, Retransmit
+lines omitted for brevity &ldquo;&gt;</p>
+<p>R4# show ip ospf interface Gi€/€
+GigabitEthernete/e is up, line protocol is up
+Internet Address le.1.1.4/24, Area e, Attached via Network Statem
+Process ID 4, Router ID le.1.44.4, Network Type BROADCAST, cost:
+Topology-MT ID Cost Disabled Shutdown
+e
+1
+no
+no
+Topology Name
+Base
+Transmit Delay is 1 sec, State DR, Priority 1
+Transmit Delay is 1 sec, State DR, Priority 1
+Designated Router (ID) 10.1
+No backup designated router
+Timer intervals configured,
+lines omitted for brevity
+.44.4, Interface address 10.1.1.4
+on this network
+Hello 5, Dead 20, Wait 2e, Retransmit &ldquo;&gt;</p>
+<p>Shutting Down the OSPF Process</p>
+<p>When a routing protocol process is shut down, IOS does the following:</p>
+<p>Brings down all neighbor relationships and clears the OSPF neighbor table</p>
+<p>Clears the LSDB</p>
+<p>Clears the IP routing table of any OSPF-learned routes</p>
+<p>IOS retains all OSPF configuration.</p>
+<p>IOS still lists all OSPF-enabled interfaces in the OSPF interface list (show ip ospf interface) but in a DOWN state.</p>
+<p>Mismatched MTU Settings</p>
+<p>defining the largest network layer packet that the router will forward out each interface.</p>
+<p>default MTU size of 1500 bytes,</p>
+<p>The ip mtu size interface subcommand defines the IPv4 MTU setting, and the ipv6 mtu size command sets the equivalent for IPv6 packets.</p>
+<p>Symptom: they fail to exchange their LSDBs. Eventually, after trying and failing to exchange their LSDBs, the neighbor relationship also fails.</p>
+<p>show interfaces command (which lists the IP MTU).</p>
+<p>Mismatched OSPF Network Types</p>
+<p>one router uses broadcast, and the other uses point-to-point, the following occurs:</p>
+<p>The two routers become fully adjacent neighbors (that is, they reach a full state).</p>
+<p>They exchange their LSDBs.</p>
+<p>They do not add IP routes to the IP routing table.</p>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_tech/networking/CCNA Notes/ospf_network_types_and_neighbors.md"
+          data-oid-likes="likes_tech/networking/CCNA Notes/ospf_network_types_and_neighbors.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+      
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 overflow-x-auto py-2">
+        <ul class="flex list-none flex-row">
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 me-4">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href=""
+                title="">
+                
+                
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          David Thomas
+      </p>
+    
+
+    
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

@@ -1,0 +1,1250 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="dark"
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title> &middot; David Thomas</title>
+    <meta name="title" content=" &middot; David Thomas">
+  
+
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/tech-notes/ccna/newccnanotes/part1/">
+  
+
+  
+  
+    <meta name="author" content="David Thomas">
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/tech-notes/ccna/newccnanotes/part1/">
+  <meta property="og:site_name" content="David Thomas">
+  <meta property="og:title" content="David Thomas">
+  <meta property="og:description" content="1.0 Network Fundamentals 1.6 Configure and verify IPv4 addressing and subnetting 3.0 IP Connectivity 3.1 Interpret the components of routing table 3.1.a Routing protocol code 3.1.b Prefix 3.1.c Network mask 3.1.d Next hop 3.1.e Administrative distance 3.1.f Metric 3.1.g Gateway of last resort 3.2 Determine how a router makes a forwarding decision by default 3.2.a Longest match 3.2.b Administrative distance 3.3 Configure and verify IPv4 and IPv6 static routing 3.3.a Default route 3.3.b Network route 3.3.c Host route 3.3.d Floating static">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech-notes">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="David Thomas">
+  <meta name="twitter:description" content="1.0 Network Fundamentals 1.6 Configure and verify IPv4 addressing and subnetting 3.0 IP Connectivity 3.1 Interpret the components of routing table 3.1.a Routing protocol code 3.1.b Prefix 3.1.c Network mask 3.1.d Next hop 3.1.e Administrative distance 3.1.f Metric 3.1.g Gateway of last resort 3.2 Determine how a router makes a forwarding decision by default 3.2.a Longest match 3.2.b Administrative distance 3.3 Configure and verify IPv4 and IPv6 static routing 3.3.a Default route 3.3.b Network route 3.3.c Host route 3.3.d Floating static">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.c5c4ab59b36e3a06d6dff38478af5d2c18b2d7a3603611d7fc5647b02111f989bd5957610b6bed4d10718428186bc7c38590e84c77c0d50f401da78f4fbb5384.css"
+    integrity="sha512-xcSrWbNuOgbW3/OEeK9dLBiy16NgNhHX/FZHsCER&#43;Ym9WVdhC2vtTRBxhCgYa8fDhZDoTHfA1Q9AHaePT7tThA==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js"
+      integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP&#43;pSqMXxm6JPOUeAg=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "",
+    "headline": "",
+    
+    "abstract": "\u003cp\u003e1.0 Network Fundamentals\n1.6 Configure and verify IPv4 addressing and subnetting\n3.0 IP Connectivity\n3.1 Interpret the components of routing table\n3.1.a Routing protocol code\n3.1.b Prefix\n3.1.c Network mask\n3.1.d Next hop\n3.1.e Administrative distance\n3.1.f Metric\n3.1.g Gateway of last resort\n3.2 Determine how a router makes a forwarding decision by default\n3.2.a Longest match\n3.2.b Administrative distance\n3.3 Configure and verify IPv4 and IPv6 static routing\n3.3.a Default route\n3.3.b Network route\n3.3.c Host route\n3.3.d Floating static\u003c\/p\u003e",
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/tech-notes/ccna/newccnanotes/part1/",
+    "author" : {
+      "@type": "Person",
+      "name": "David Thomas"
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "3246"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc",
+      authDomain: "davidwrites-89dd7.firebaseapp.com",
+      projectId: "davidwrites-89dd7",
+      storageBucket: "davidwrites-89dd7.firebasestorage.app",
+      messagingSenderId: "433139099634",
+      appId: "1:433139099634:web:c14275555bd7171e6c6d6b",
+      measurementId: "G-XX5507B82W"
+    };
+
+        var app = firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        var auth = firebase.auth();
+
+      </script>
+    
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+        <a href="/" class="text-base font-medium">
+          David Thomas
+        </a>
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/tech-notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Tech Notes"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      Tech Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Notes"
+  title="Book Notes &amp; Reviews">
+  
+  
+    <p class="text-base font-medium">
+      Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/articles/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Articles"
+  title="Articles">
+  
+  
+    <p class="text-base font-medium">
+      Articles
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/now/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Now"
+  title="Now">
+  
+  
+    <p class="text-base font-medium">
+      Now
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  
+  title="">
+  
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/tech-notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Tech Notes"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        Tech Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Notes"
+    title="Book Notes &amp; Reviews">
+    
+    
+      <p class="text-bg font-bg">
+        Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/articles/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Articles"
+    title="Articles">
+    
+    
+      <p class="text-bg font-bg">
+        Articles
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/now/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Now"
+    title="Now">
+    
+    
+      <p class="text-bg font-bg">
+        Now
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    
+    title="">
+    
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
+    })();
+  </script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+    
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+      <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time><span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="views_tech notes/CCNA/newccnanotes/part1.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="views"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+<path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></span>
+</span>
+<span class="px-2 text-primary-500">&middot;</span><span>
+  
+  
+    
+    
+      
+      
+        
+        
+      
+      
+    
+  
+  <span
+    id="likes_tech notes/CCNA/newccnanotes/part1.md"
+    class="animate-pulse inline-block text-transparent max-h-3 rounded-full -mt-[2px] align-middle bg-neutral-300 dark:bg-neutral-400"
+    title="likes"
+    >loading</span
+  >
+  <span class="inline-block align-text-bottom"><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span></span>
+</span>
+<span class="px-2 text-primary-500">&middot;</span><span>
+  <button
+    id="button_likes"
+    class="rounded-md border border-primary-400 px-1 py-[1px] text-xs font-normal text-primary-700 dark:border-primary-600 dark:text-primary-400">
+    <span id="button_likes_heart" class="inline-block align-text-bottom hidden"
+      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"/></svg></span>
+    </span>
+    <span id="button_likes_emtpty_heart" class="inline-block align-text-bottom"
+      ><span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<path fill="currentColor" d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/></svg></span></span
+    >
+    <span id="button_likes_text">&nbsp;Like</span>
+  </button>
+</span>
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          <p>1.0 Network Fundamentals
+1.6 Configure and verify IPv4 addressing and subnetting
+3.0 IP Connectivity
+3.1 Interpret the components of routing table
+3.1.a Routing protocol code
+3.1.b Prefix
+3.1.c Network mask
+3.1.d Next hop
+3.1.e Administrative distance
+3.1.f Metric
+3.1.g Gateway of last resort
+3.2 Determine how a router makes a forwarding decision by default
+3.2.a Longest match
+3.2.b Administrative distance
+3.3 Configure and verify IPv4 and IPv6 static routing
+3.3.a Default route
+3.3.b Network route
+3.3.c Host route
+3.3.d Floating static</p>
+<pre tabindex="0"><code></code></pre><p>Routers first learn connected routes,Routers can also use static routes, which are which are routes created through a configuration command (ip routes for subnets attached to a router interface.
+route)protocol, in which routers tell each other about all their known routes, so that all routers can learn that tells the router what route to put in the IPv4 routing table.And routers can use a routing
+and build routes to all networks and subnets.
+Step 1. If the destination is local, send directly:
+A. &lsquo;&lsquo;Find the destination host’s MAC address. Use the already-known Address Resolution Protocol</p>
+<pre tabindex="0"><code>
+# 16 Static Routes
+
+Friday, November 12, 2021 9:33 PM
+</code></pre><p>A. &lsquo;&rsquo;(ARP) table entry, or use ARP messages to learn the information.Find the destination host’s MAC address. Use the already-known Address Resolution Protocol
+B. Encapsulate the IP packet in a data-link frame, with the destination data-link address of the
+destination host.</p>
+<pre tabindex="0"><code>
+1. The frame has no errors (per the dataThe frame’s destination data-link address is the router’s address (or an appropriate multicast or -link trailer Frame Check Sequence [FCS] field).  
+    broadcast address).
+</code></pre><ol start="2">
+<li></li>
+</ol>
+<pre tabindex="0"><code></code></pre><p>For each received data-link frame, choose whether or not to process the frame. Process it if</p>
+<pre tabindex="0"><code>
+1. If choosing to process the frame at Step 1, de-encapsulate the packet from inside the data-link frame.  
+    Make a routing decision. To do so, compare the packet’s destination IP address to the routing table  
+    and find the route that matches the destination address. This route identifies the outgoing interface of the router and possibly the next-hop router.
+    
+</code></pre><p>Encapsulate the packet into a data-link frame appropriate for the outgoing interface. When
+forwarding out LAN interfaces, use ARP as needed to find the next device’s MAC address.</p>
+<pre tabindex="0"><code>
+4. Transmit the frameout the outgoing interface, as listed in the matched IP route.
+    
+    - The interface is in a working state. In other words, the interface status in theinterfacescommand lists a line status of up and a protocol status of up. show
+    - The interface has an IP address assigned through theip addressinterface subcommand.  
+        Routing Protocol Code:The legend at the top of the show ip routeoutput (about nine lines) lists all  
+        the routing protocol codes (exam topic 3.1.a). (C), local (L), static (S), and OSPF (O). This book references the codes for connected routes  
+        Prefix: The word prefix (exam topic 3.1.b) is just another name for subnet ID.  
+        Mask: Each route lists a prefix (subnet ID) and network mask (exam topic 3.1.c) in prefix format, for example, /24.
+
+###### The ARP Table on a Cisco Router
+</code></pre><p>Dynamically learned ARP table entries have an upward counter, like the 35ARP table entry for IP address 172.16.1.9.By default, IOS will time out (remove) an ARP table -minute value for the
+entry after 240 minutes in which the entry is not used.</p>
+<pre tabindex="0"><code>
+clear ip arp [ip-address]EXEC command.  
+Configuring Static Routes  
+The static route is considered a network route when the destination listed in the ip route command defines a subnet, or an entire Class A, B, or C network.In contrast, a default route  
+matches all destination IP addresses, while a host route matches a single IP addressaddress of one host.) (that is, an
+</code></pre><p>However, troute; this is just a quirk of the output of the he route that used the outgoing interface configuration is also noted as a connected show ip route command.
+also lists a few statistics about all IPv4 routes. For example, the example shows two lines, for
+the two static routes configured in Example 16for eight subnets. -4, but statistics state that this router has routes
+IOS adds and removes these static routes dynamically over time, based on whether the outgoing interface is working or not.For example, in this case, if R1’s S0/0/0 interface fails, R1
+removes the static route to 172.16.2.0/24 from the IPv4 routingcomes up again, IOS adds the route back to the routing table. table. Later, when the interface</p>
+<pre tabindex="0"><code>
+Static Host Routes  
+To configure such a static route, theof 255.255.255.255 so that the matching logic matches just that one address.ip routecommand uses an IP address plus a mask
+</code></pre><p>An engineer might use host routes to direct packets sent to one host over one path, with all other traffic to that host’s subnet over some other path. For instance, you could
+define these two static routes for subnet 10.1.1.0/24 and host 10.1.1.9, with two different next-hop addresses, as follows:</p>
+<pre tabindex="0"><code></code></pre><p>routers use the most specific route (that is, the route with the longest prefix length)</p>
+<pre tabindex="0"><code>
+###### the router must first decide which routing source has the betterdistance, with lower being better, and then use the route learned from the better administrative
+
+###### source
+
+###### By default, IOS considers static routes better than OSPF-learned routes. By
+
+###### default,IOS gives static routes an administrative distance of 1and OSPF routes
+
+###### an administrative distance of 110
+
+Floating Static Routes
+
+###### an administrative distance of 110
+
+###### Torouteimplement a floating static routecommand that sets the administrative distance for just that route, making , you need to use a parameter on theip
+
+###### the value larger than the default administrative distance of the routing protocol.
+
+###### For example, theip route 172.16.2.0 255.255.255.0 172.16.5.3 130
+
+###### while theshow ip routecommand lists the administrative distance of most
+
+###### routes, as the first of two numbers inside two brackets, theroutesubnetcommand plainly lists the administrative distance.show ip
+
+###### ip route 0.0.0.0 0.0.0.0 S0/0/1creates a static default routeon Router B1—a
+
+###### route that matches all IP packets—and sends those packets out interface S0/0/1.
+
+###### a than one default route, and the router then has to choose which one to use; *, meaning it is acandidate default route. A router can learn about more
+
+###### the * means that it is at least a candidate to become the default route.
+
+###### show ip route
+
+Static Default Routes
+
+- The route is in the routing table but is incorrect.
+    - Is there a subnetting math error in the subnet ID and mask?
+    - Is the nextrouter? -hop IP address correct and referencing an IP address on a neighboring
+    - Does the nextIs the outgoing interface correct, and referencing an interface on the local router -hop IP address identify the correct router?
+    - (that is, the same router where the static route is configured)?
+- The route is not in the routing table.
+
+###### Troubleshooting Static Routes
+
+- The route is not in the routing table.  
+    table. IOS also considers the following before adding the route to its routing table:
+- Forup/up state.ip routecommands that list an outgoing interface, that interface must be in an
+- Fora route to reach that nextip routecommands that list a next-hop address.-hop IP address, the local router must have
+
+###### You can configure a static route so that IOS ignores these basic checks, always putting the IP route in the routing table. To do so, just use
+
+###### thethepermanentpermanentkeywordkeyword to the end of the two commands as demonstrated on theip routecommand. For example, by adding
+
+###### inExample 16- 7 , R1 would now add these routes, regardless of whether the
+
+###### two WAN links were up.
+
+- The route is in the routing table and is correct, but the packets do not arrive at the destination host.  
+    Many legitimate router features can cause these multiple routes to appear in a router’s routing table, including
+- • Static routesRoute autosummarization
+- Manual route summarization
+
+###### When a particular destination IP address matches more than one route in a router’s
+
+###### IPv4 routing table, the router uses the most specific route—in other words, the route
+
+###### with the longest prefix length mask.
+
+###### A second way to identify the route a router will use, one that does not require any subnetting math, is theshow ip routeaddresscommand.The last parameter on this
+
+###### command is the IP address of an assumed IP packet. The router replies by listing the route it would use to route a packet sent to that address.
+
+A. Use the switch forwarding ASIC settings to make space for IPv4 routes at the next reload of the switch. **sdm prefer lanbase-routing** command (or similar) in global configuration modeto change the
+
+B. Use the prefer command setting. **reload EXEC** command in enable mode toreload (reboot) the switch to pick up the new sdm
+
+C. Once reloaded, use the **ip routing** command in global configuration mode to enable the IPv4 routing  
+function in IOS software and to enable key commands like **show ip route**.  
+if you then enabled OSPF on the Layer 3 switch, the configuration and verification would work the same as it does on a router, as discussed in Chapter 20, “Implementing OSPF.” The routes that IOS adds to the  
+Layer 3 switch’s IP routing table would list the VLAN interfaces as outgoing interfaces.  
+Troubleshooting Routing with SVIs  
+look to those first few configuration commands listed in the configuration checklist found in the  
+earlier section “Configuring Routing Using Switch SVIs.” Those commands are (followed by a reload) and then ip routing(after the reload). sdm prefer  
+Theforwarding tables, and changes to those tables require a reload of the switch. By default, many sdm prefercommand changes how the switch forwarding chips allocate memory for different  
+access switches that support Layer 3 switching still have an SDM default that does not allocate space for an IP routing table. Once changed and reloaded, the **ip routing** command then enables  
+IPv4 routing in IOS software. Both are necessary before some Cisco switches will act as a Layer 3 switch.  
+Scenario 1: The last access interface in VLAN 10 is shut down (F0/1), so IOS shuts down the VLAN 10 interface.  
+Scenario 2: VLAN 20 (not VLAN interface 20, but VLAN 20) is deleted, which results in IOS then  
+bringing down (not shutting down) the VLAN 20 interface.  
+Scenario 3: VLAN 30 (not VLAN interface 30, but VLAN 30) is shut down, which results in IOS then  
+bringing down (not shutting down) the VLAN 30 interface.  
+VLAN Routing with Layer 3 Switch Routed Ports  
+On a routed port, the switch does not perform Layer 2 switching logic on that frame. Instead, frames arriving in a routed port trigger the Layer 3 routing logic, including  
+Stripping off the incoming frame’s Ethernet data-link header/trailer  
+Making a Layer 3 forwarding decision by comparing the destination IP address to the IP routing table  
+Adding a new Ethernet data-link header/trailer to the packet  
+Forwarding the packet, encapsulated in a new frame
+
+# 17 Routing in the LAN
+
+Monday, November 22, 2021 9:39 AM
+</code></pre><p>Forwarding the packet, encapsulated in a new frame
+The exam topics do not mention routed interfaces specifically, but the exam topics do mention L3 EtherChannels, meaning Layer 3 EtherChannels.</p>
+<pre tabindex="0"><code>
+Implementing Routed Interfaces on Switches  
+Enabling a switch interface to be a routed interface instead of a switched interfaceuse the no switchportsubcommand on the physical interface. is simple: just  
+To make the port stop acting like a switch port and instead act like a router port, use the no  
+switchport command on the interface.  
+Once the port is acting as a routed port, think of it like a router interface  
+the routed interface will show up differently in command output in the switch.In particular, for an  
+interface configured as a routed port with an IP address, like interface GigabitEthernet0/1 in the previous example:  
+Key Topic. **show interfaces:** Similar to the same command on a router, the output will display the IP address  
+of the interface. (Conversely, for switch ports, this command does not list an IP address.)  
+**show interfaces status:** trunk, the output lists the word routedUnder the “VLAN” heading, instead of listing the access VLAN or the word , meaning that it is a routed port.  
+**show ip route** : Lists the routed port as an outgoing interface in routes.  
+**show interfaces type number switchport** the port is not a switch port. (If the port is a Layer 2 port, this command lists many configuration :If a routed port, the output is short and confirms that  
+and status details.)  
+All the ports that are links directly between the Layer 3 switches can be routed interfaces.
+</code></pre><p>each pair of switches has one routing protocol neighbor relationship with the neighbor, and not two. Each switch learns one route per destination per pair of links, and not two. IOS then balances
+the traffic, often with better balancing than the balancing that occurs with the use of multiple IP routes to the same subnet.</p>
+<pre tabindex="0"><code>
+Implementing Layer 3 EtherChannels
+
+Step 1.Configure the physical interfaces as follows, in interface configuration mode:  
+A. Add thechannel-group number mode oncommand to add it to the channel. Use the same  
+number for all physical interfaces on the same switch, but the number used (the channelnumber) can differ on the two neighboring switches. -group
+
+B. Add the **no switchport** command to make each physical port a routed port.  
+Step 2. Configure the PortChannel interface:  
+A. Use thefor the same channel number configured on the physical interfaces. **interface port-channel number** command to move to port-channel configuration mode
+
+B. Add the port. (IOS may have already added this command.) **no switchport** command to make sure that the port-channel interface acts as a routed
+
+C. Use the **ip address address mask** command to configure the address and mask.  
+Cisco uses the term EtherChannel in concepts discussed in this section and then uses the term PortChannel, with command keyword port-channel, when verifying and configuring  
+EtherChannels.
+
+although the physical interfaces and PortChannel interface are all routed ports,should be placed on the PortChannel interface only. In fact,when the no switchport command is the IP address  
+configured on an interface, IOS adds the no ip address command to the interface.
+
+Troubleshooting Layer 3 EtherChannels
+</code></pre><p>look at the configuration of the EtherChannel. Second, you should check a list of settings that must match on the interfaces for a channel-group command, which enables an interface for an
+Layer 3 EtherChannel to work correctly.
+As for the channel-group interface subcommand, this command can enable EtherChannel
+statically or dynamically. If dynamic, this command’s keywords imply either Port Aggregation Protocol (PAgP) or Link Aggregation Control Protocol (LACP) as the protocol to negotiate between
+the neighboring switches whether they put the link into the EtherChannel.
+no switchportand so must the physical interfaces. : The PortChannel interface must be configured with the no switchport command,
+Speed: The physical ports in the channel must use the same speed.
+duplex: The physical ports in the channel must use the same duplex.</p>
+<pre tabindex="0"><code>
+Troubleshooting Layer 3 EtherChannels
+
+Problem Isolation Using the ping Command  
+functions as part of Layer 3, as a control protocol to assist IP by helping manage the IP network  
+functions.  
+The name or IP address of the destination, how many times the command should send an echo request,  
+how long the command should wait (timeout) for an echo reply,how big to make the packets, and many other options.
+</code></pre><p>Ping options</p>
+<pre tabindex="0"><code></code></pre><p>Extended ping allows R1’s ping command to use R1’s LAN IP address from within subnet
+172.16.1.0/24.</p>
+<pre tabindex="0"><code></code></pre><p>This same command could have been issued from the command line as ping 172.16.2.101 source
+172.16.1.1.
+R1# pingProtocol [ip]:
+Target IP address: 172.16.2.101Repeat count [5]:
+Datagram size [100]:
+Timeout in seconds [2]:Extended commands [n]: y
+Source address or interface: 172.16.1.1Type of service [0]:
+Set DF bit in IP header? [no]:Validate reply data? [no]:
+Data pattern [0xABCD]:
+Loose, Strict, Record, Timestamp, Verbose[none]:Sweep range of sizes [n]:
+Type escape sequence to abort.Sending 5, 100-byte ICMP Echos to 172.16.2.101, timeout is 2 seconds:
+Packet sent with a source address of 172.16.1.1!!!!!
+Success rate is 100 percent (5/5), round-trip min/avg/max = 1/2/4 ms
+Problems to test. ( ping from router or from host?)</p>
+<pre tabindex="0"><code>
+# 18 T-Shoot Routing
+
+Tuesday, November 23, 2021 5:09 AM
+</code></pre><p>IP ACLs that discard packets based on host A’s IP address but allow packets that match the
+router’s IP address</p>
+<pre tabindex="0"><code>
+- LAN switch port security that filters A’s frames (based on A’s MAC address)
+- IP routes on routers that happen to match host A’s 172.16.1.51 address, with different routes that match R1’s 172.16.1.1 address
+- Problems with host A’s default router setting
+</code></pre><p>If the ping works, it confirms the following, which rules out some potential issues:
+The host with address 172.16.1.51 replied.
+The LAN can pass unicast frames from R1 to host 172.16.1.51 and vice versa.
+You can reasonably assume that the switches learned the MAC addresses of the router and
+the host, adding those to the MAC address tables.
+Host A and Router R1 completed the ARP process and list each other in their respective Address Resolution Protocol (ARP) tables.</p>
+<pre tabindex="0"><code>
+- **IP addressing problem:DHCP problems:** If you are using Dynamic Host Configuration Protocol (DHCP), many problems Host A could be statically configured with the wrong IP address.  
+    could exist.
+- **VLAN trunking problems:** The router could be configured for 802.1Q trunking, when the switch is  
+    not (or vice versa).
+- **LAN problems:** A wide variety of issues could exist with the Layer 2 switches, preventing any  
+    frames from flowing between host A and the router.
+
+Testing LAN Neighbors with Extended Ping  
+an extended ping can test the host’s default router setting. Both tests can be useful, especially for  
+problem isolation, because
+
+- If a standard ping of a local LAN host works...
+- • But an extended ping of the same LAN host fails...The problem likely relates somehow to the host’s default router setting.
+
+Testing WAN Neighbors with Standard Ping
+</code></pre><p>A successful ping of the IP address on the other end of an Ethernet WAN link that sits between two routers confirms several specific facts, such as the following:
+Both routers’ WAN interfaces are in an up/up state.
+The Layer 1 and 2 features of the link work.
+The routers believe that the neighboring router’s IP address is in the same subnet.
+Inbound ACLs on both routers do not filter the incoming packets, respectively.
+The remote router is configured with the expected IP address (172.16.4.2 in this case).</p>
+<pre tabindex="0"><code>
+###### Using Ping with Names and with IP Addresses
+
+Problem Isolation Using the traceroute Command  
+ping vs Tracert
+
+- Both send messages in the network to test connectivity.
+
+- • Both send messages in the network to test connectivity.Both rely on other devices to send back a reply.
+- • Both have wide support on many different operating systems.Both can use a hostname or an IP address to identify the destination.
+- On routers, both have a standard and extended version, allowing better testing of the reverse route.  
+    Standard and Extended traceroute  
+    a standardthe packet sent by the command. So, in this example, the packets sent by R1 come from **traceroute** command chooses an IP address based on the outgoing interface for  
+    source IP address 172.16.4.1, R1’s G0/0/0 IP address.
+
+Host OS traceroute commands usually create ICMP echo requests.TheCisco IOS traceroute  
+command instead creates IP packets with a UDP headertrivial at this point. However, note that an ACL may actually filter the traffic from a host’s. This bit of information may seem  
+traceroute messages but not the router traceroute command, or vice versa.  
+Telnet and SSH
+
+This is a offline tool, your data stays locally and is not send to any server!
+</code></pre>
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_tech notes/CCNA/newccnanotes/part1.md"
+          data-oid-likes="likes_tech notes/CCNA/newccnanotes/part1.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+      
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 overflow-x-auto py-2">
+        <ul class="flex list-none flex-row">
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 me-4">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href=""
+                title="">
+                
+                
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          David Thomas
+      </p>
+    
+
+    
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>

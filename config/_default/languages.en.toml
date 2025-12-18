@@ -1,0 +1,18 @@
+disabled = false
+languageCode = "en"
+languageName = "English"
+weight = 1
+title = ""
+
+[params]
+displayName = "EN"
+isoCode = "en"
+rtl = false
+dateFormat = "2 January 2006"
+logo = "/img/logo.png"
+
+["params.author"]
+name = "David Thomas"
+image = "img/david.png"
+headline = "Stuff about tech, escaping tech, mind control, and other random stuff."
+bio = "I'm a tech tinkerer who likes the smell of paperback books. It doesn't matter where you are as long as you have a mindset for growth. "

@@ -1,0 +1,10 @@
+/* Increase the default font size */
+html {
+  font-size: 15pt;
+}
+.max-w-\[5rem\] {
+    max-width: 17rem;
+}
+.max-h-\[5rem\] {
+    max-height: 17rem;
+}

@@ -1,0 +1,33 @@
+[[main]]
+none = "none"
+
+[[main]]
+  name = "Notes"
+  pageRef = "notes"
+  weight = 10
+
+[[main]]
+  name = "Notes"
+  pageRef = "notes"
+  weight = 20
+
+[[main]]
+  name = "Articles"
+  pageRef = "Articles"
+  identifier = "TmCySnU7d5"
+  weight = 30
+
+[[main]]
+  name = "Now"
+  pageRef = "Now"
+  identifier = "76cUaCSiy6"
+  weight = 40
+
+[[main]]
+  identifier = "github"
+  pre = "github"
+  url = "https://github.com/davidwritesxyz"
+  weight = 400
+
+[[footer]]
+none = "none"

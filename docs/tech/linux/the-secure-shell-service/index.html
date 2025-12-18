@@ -1,0 +1,1705 @@
+<!doctype html>
+<html
+  lang="en"
+  dir="ltr"
+  class="scroll-smooth"
+  data-default-appearance="light"
+  data-auto-appearance="false"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8">
+  
+    <meta http-equiv="content-language" content="en">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color">
+
+  
+  
+    <title>The Secure Shell Service &middot; </title>
+    <meta name="title" content="The Secure Shell Service &middot; ">
+  
+
+  
+  
+    <meta name="description" content="OpenSSH, system access, file transfer">
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/tech/linux/the-secure-shell-service/">
+  
+
+  
+  
+    <meta name="author" content="David Thomas">
+  
+  
+
+  
+  <meta property="og:url" content="http://localhost:1313/tech/linux/the-secure-shell-service/">
+  <meta property="og:title" content="The Secure Shell Service">
+  <meta property="og:description" content="OpenSSH, system access, file transfer">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="tech">
+
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Secure Shell Service">
+  <meta name="twitter:description" content="OpenSSH, system access, file transfer">
+
+  
+  
+  
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+  
+    
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+    
+  
+  
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="/css/main.bundle.min.278a55d3e0b39215730b0c642c7c22cc020054272d3850d92c957cddf6209cf18e0ed01f082db397c8c048c30e727b44ca408c350384ca92d5f37c62d008cbd8.css"
+    integrity="sha512-J4pV0&#43;CzkhVzCwxkLHwizAIAVCctOFDZLJV83fYgnPGODtAfCC2zl8jASMMOcntEykCMNQOEypLV83xi0AjL2A==">
+
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/appearance.min.6f41174b3a05b680820fe08cadbfa5fb7a7ca347b76a0955cdc68b9d8aca1ce24f0547e138cea33bcc7904d551a90afcb1cc7f2d9fe8557075d501419046c08c.js"
+    integrity="sha512-b0EXSzoFtoCCD&#43;CMrb&#43;l&#43;3p8o0e3aglVzcaLnYrKHOJPBUfhOM6jO8x5BNVRqQr8scx/LZ/oVXB11QFBkEbAjA=="></script>
+  
+  
+  
+  
+  
+  
+    
+    <script src="/lib/zoom/zoom.min.umd.a527109b68c082a70f3697716dd72a9d5aa8b545cf800cecbbc7399f2ca6f6e0ce3e431f2062b48bbfa47c9ea42822714060bef309be073f49b9c0e30d318d7b.js" integrity="sha512-pScQm2jAgqcPNpdxbdcqnVqotUXPgAzsu8c5nyym9uDOPkMfIGK0i7&#43;kfJ6kKCJxQGC&#43;8wm&#43;Bz9JucDjDTGNew=="></script>
+  
+
+  
+  
+  
+    
+  
+  
+    
+  
+  
+    
+  
+  
+  
+  
+  
+  
+    
+    <script
+      defer
+      type="text/javascript"
+      id="script-bundle"
+      src="/js/main.bundle.min.9cc802d09f28c6af56ceee7bc6e320a39251fdae98243f2a9942f221ac57a9f49c51609699a91794a7b2580ee1deaa8e4d794a68ffa94aa317c66e893ce51e02.js"
+      integrity="sha512-nMgC0J8oxq9Wzu57xuMgo5JR/a6YJD8qmULyIaxXqfScUWCWmakXlKeyWA7h3qqOTXlKaP&#43;pSqMXxm6JPOUeAg=="
+      data-copy="Copy"
+      data-copied="Copied"></script>
+  
+
+  
+  
+
+<script src="/lib/jquery/jquery.slim.min.b0dca576e87d7eaa5850ae4e61759c065786cdb6489d68fcc82240539eebd5da522bdb4fda085ffd245808c8fe2acb2516408eb774ef26b5f6015fc6737c0ea8.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj&#43;KsslFkCOt3TvJrX2AV/Gc3wOqA=="></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  
+  
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  
+
+  
+  <script type="application/ld+json">
+  [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "articleSection": "",
+    "name": "The Secure Shell Service",
+    "headline": "The Secure Shell Service",
+    "description": "OpenSSH, system access, file transfer",
+    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003eThe OpenSSH Service\n    \u003cdiv id=\u0022the-openssh-service\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#the-openssh-service\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h2\u003e\n\u003cp\u003e\u003cstrong\u003eSecure Shell (SSH)\u003c\/strong\u003e\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eDelivers a secure mechanism for data transmission between source and destination systems over IP networks.\u003c\/li\u003e\n\u003cli\u003eDesigned to replace the old remote login programs that transmitted user passwords in clear text and data unencrypted.\u003c\/li\u003e\n\u003cli\u003eEmploys digital signatures for user authentication with encryption to secure a communication channel.\n\u003cul\u003e\n\u003cli\u003ethis makes it extremely hard for unauthorized people to gain access to passwords or the data in transit.\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003c\/li\u003e\n\u003cli\u003eMonitors the data being transferred throughout a session to ensure integrity.\u003c\/li\u003e\n\u003cli\u003eIncludes a set of utilities \u003ccode\u003essh\u003c\/code\u003e and \u003ccode\u003esftp\u003c\/code\u003e for remote users to log in, transfer files, and execute commands securely.\u003c\/li\u003e\n\u003c\/ul\u003e\n\n\u003ch3 class=\u0022relative group\u0022\u003eCommon Encryption Techniques\n    \u003cdiv id=\u0022common-encryption-techniques\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#common-encryption-techniques\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h3\u003e\n\u003cul\u003e\n\u003cli\u003eTwo common techniques: symmetric and asymetric\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003e\u003cstrong\u003eSymmetric Technique\u003c\/strong\u003e\u003c\/p\u003e",
+    "inLanguage": "en",
+    "url" : "http://localhost:1313/tech/linux/the-secure-shell-service/",
+    "author" : {
+      "@type": "Person",
+      "name": "David Thomas"
+    },
+    
+    
+    
+    
+    
+    
+    
+    
+    "mainEntityOfPage": "true",
+    "wordCount": "2465"
+  }]
+  </script>
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+      <script>
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc",
+      authDomain: "davidwrites-89dd7.firebaseapp.com",
+      projectId: "davidwrites-89dd7",
+      storageBucket: "davidwrites-89dd7.firebasestorage.app",
+      messagingSenderId: "433139099634",
+      appId: "1:433139099634:web:c14275555bd7171e6c6d6b",
+      measurementId: "G-XX5507B82W"
+    };
+
+        var app = firebase.initializeApp(firebaseConfig);
+        var db = firebase.firestore();
+        var auth = firebase.auth();
+
+      </script>
+    
+  
+
+  
+  
+</head>
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+
+
+
+  
+  
+  <body class="flex flex-col h-screen m-auto leading-7 max-w-7xl px-6 sm:px-14 md:px-24 lg:px-32 text-lg bg-neutral text-neutral-900 dark:bg-neutral-800 dark:text-neutral scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600">
+    <div id="the-top" class="absolute flex self-center">
+      <a
+        class="px-3 py-1 text-sm -translate-y-8 rounded-b-lg bg-primary-200 focus:translate-y-0 dark:bg-neutral-600"
+        href="#main-content">
+        <span class="font-bold text-primary-600 pe-2 dark:text-primary-400">&darr;</span>
+        Skip to main content
+      </a>
+    </div>
+    
+    
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div
+  class="main-menu flex items-center justify-between py-6 md:justify-start gap-x-3 pt-[2px] pr-2 md:pr-4 pb-[3px] pl-0">
+  
+  
+    
+    
+      <div>
+        <a href="/" class="flex">
+          <span class="sr-only"></span>
+          
+            <img
+              src="/img/logo.png"
+              width="200"
+              height="37"
+              class="logo max-h-[5rem] max-w-[5rem] object-scale-down object-left nozoom"
+              alt="">
+          
+        </a>
+      </div>
+    
+
+  <div class="flex flex-1 items-center justify-between">
+    <nav class="flex space-x-3">
+      
+    </nav>
+    
+  <nav class="hidden md:flex items-center gap-x-5 md:ml-12 h-12">
+    
+      
+        
+  <a
+  href="/tech/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Tech"
+  title="">
+  
+  
+    <p class="text-base font-medium">
+      Tech
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/notes/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Notes"
+  title="Book Notes &amp; Reviews">
+  
+  
+    <p class="text-base font-medium">
+      Notes
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/articles/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Articles"
+  title="Articles">
+  
+  
+    <p class="text-base font-medium">
+      Articles
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href="/now/"
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  aria-label="Now"
+  title="Now">
+  
+  
+    <p class="text-base font-medium">
+      Now
+    </p>
+  
+</a>
+
+
+
+      
+        
+  <a
+  href=""
+  
+  class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+  
+  title="">
+  
+  
+</a>
+
+
+
+      
+    
+
+    
+
+    
+
+    
+      <button
+        id="search-button"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </nav>
+
+    
+  <div class="flex md:hidden items-center gap-x-5 md:ml-12 h-12">
+    <span></span>
+
+    
+
+    
+
+    
+      <button
+        id="search-button-mobile"
+        aria-label="Search"
+        class="text-base hover:text-primary-600 dark:hover:text-primary-400"
+        title="Search (/)">
+        <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+      </button>
+    
+
+    
+  </div>
+
+  </div>
+  
+  <div class="-my-2 md:hidden">
+    <div id="menu-button" class="block">
+      
+        <div class="cursor-pointer hover:text-primary-600 dark:hover:text-primary-400">
+          <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+</span>
+        </div>
+        <div
+          id="menu-wrapper"
+          class="fixed inset-0 z-30 invisible w-screen h-screen m-0 overflow-auto transition-opacity opacity-0 cursor-default bg-neutral-100/50 backdrop-blur-sm dark:bg-neutral-900/50 pt-[5px]">
+          <ul
+            class="flex space-y-2 mt-3 flex-col items-end w-full px-6 py-6 mx-auto overflow-visible list-none text-end max-w-7xl">
+            <li id="menu-close-button">
+              <span
+                class="cursor-pointer inline-block align-text-bottom hover:text-primary-600 dark:hover:text-primary-400">
+                <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+              </span>
+            </li>
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/tech/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Tech"
+    title="">
+    
+    
+      <p class="text-bg font-bg">
+        Tech
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/notes/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Notes"
+    title="Book Notes &amp; Reviews">
+    
+    
+      <p class="text-bg font-bg">
+        Notes
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/articles/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Articles"
+    title="Articles">
+    
+    
+      <p class="text-bg font-bg">
+        Articles
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href="/now/"
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    aria-label="Now"
+    title="Now">
+    
+    
+      <p class="text-bg font-bg">
+        Now
+      </p>
+    
+  </a>
+</li>
+
+
+
+            
+              
+  <li class="mt-1">
+  <a
+    href=""
+    
+    class="flex items-center hover:text-primary-600 dark:hover:text-primary-400"
+    
+    title="">
+    
+    
+  </a>
+</li>
+
+
+
+            
+
+          </ul>
+          
+        </div>
+      
+    </div>
+  </div>
+
+</div>
+
+
+
+
+  <script>
+    (function () {
+      var $mainmenu = $(".main-menu");
+      var path = window.location.pathname;
+      $mainmenu.find('a[href="' + path + '"]').each(function (i, e) {
+        $(e).children("p").addClass("active");
+      });
+    })();
+  </script>
+
+
+    
+    <div class="relative flex flex-col grow">
+      <main id="main-content" class="grow">
+        
+  
+  <article>
+    
+    
+
+    
+    <header id="single_header" class="mt-5 max-w-prose">
+      
+      <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
+        The Secure Shell Service
+      </h1>
+      <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
+        
+
+
+
+
+
+  
+  
+
+
+
+  
+
+  
+  
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <div class="flex flex-row flex-wrap items-center">
+    
+    
+
+    
+    
+  </div>
+
+  
+
+  
+  
+
+  
+  
+
+
+
+      </div>
+      
+        
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+      
+    </header>
+
+    
+    <section class="flex flex-col max-w-full mt-0 prose dark:prose-invert lg:flex-row">
+      
+      
+      
+      
+      
+        <div class="order-first lg:ml-auto px-0 lg:order-last lg:ps-8 lg:max-w-2xs">
+          <div class="toc ps-5 print:hidden lg:sticky lg:top-10">
+            
+              <details
+  open
+  id="TOCView"
+  class="toc-right mt-0 overflow-y-auto overscroll-contain scrollbar-thin scrollbar-track-neutral-200 scrollbar-thumb-neutral-400 dark:scrollbar-track-neutral-800 dark:scrollbar-thumb-neutral-600 rounded-lg -ms-5 ps-5 pe-2 hidden lg:block">
+  <summary
+    class="block py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-openssh-service">The OpenSSH Service</a>
+      <ul>
+        <li><a href="#common-encryption-techniques">Common Encryption Techniques</a></li>
+        <li><a href="#authentication-methods">Authentication Methods</a></li>
+        <li><a href="#openssh-protocol-version-and-algorithms">OpenSSH Protocol Version and Algorithms</a></li>
+        <li><a href="#openssh-packages">OpenSSH Packages</a></li>
+        <li><a href="#openssh-server-daemon-and-client-commands">OpenSSH Server Daemon and Client Commands</a></li>
+        <li><a href="#server-configuration-file">Server Configuration File</a></li>
+        <li><a href="#client-configuration-file">Client Configuration File</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-access-and-file-transfer">System Access and File Transfer</a>
+      <ul>
+        <li><a href="#lab-access-rhel-system-from-another-rhel-system">Lab: Access RHEL System from Another RHEL System</a></li>
+        <li><a href="#lab-generate-distribute-and-use-ssh-keys">Lab: Generate, Distribute, and Use SSH Keys</a></li>
+        <li><a href="#executing-commands-remotely-using-ssh">Executing Commands Remotely Using ssh</a></li>
+        <li><a href="#sftp-command">sftp` command</a></li>
+      </ul>
+    </li>
+    <li><a href="#secure-shell-service-diy-labs">Secure Shell Service DIY Labs</a>
+      <ul>
+        <li><a href="#lab-establish-key-based-authentication">Lab: Establish Key-Based Authentication</a></li>
+        <li><a href="#lab-test-the-effect-of-permitrootlogin-directive">Lab: Test the Effect of PermitRootLogin Directive</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+<details class="toc-inside mt-0 overflow-hidden rounded-lg -ms-5 ps-5 lg:hidden">
+  <summary
+    class="py-1 text-lg font-semibold cursor-pointer bg-neutral-100 text-neutral-800 -ms-5 ps-5 dark:bg-neutral-700 dark:text-neutral-100 lg:hidden">
+    Table of Contents
+  </summary>
+  <div
+    class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-openssh-service">The OpenSSH Service</a>
+      <ul>
+        <li><a href="#common-encryption-techniques">Common Encryption Techniques</a></li>
+        <li><a href="#authentication-methods">Authentication Methods</a></li>
+        <li><a href="#openssh-protocol-version-and-algorithms">OpenSSH Protocol Version and Algorithms</a></li>
+        <li><a href="#openssh-packages">OpenSSH Packages</a></li>
+        <li><a href="#openssh-server-daemon-and-client-commands">OpenSSH Server Daemon and Client Commands</a></li>
+        <li><a href="#server-configuration-file">Server Configuration File</a></li>
+        <li><a href="#client-configuration-file">Client Configuration File</a></li>
+      </ul>
+    </li>
+    <li><a href="#system-access-and-file-transfer">System Access and File Transfer</a>
+      <ul>
+        <li><a href="#lab-access-rhel-system-from-another-rhel-system">Lab: Access RHEL System from Another RHEL System</a></li>
+        <li><a href="#lab-generate-distribute-and-use-ssh-keys">Lab: Generate, Distribute, and Use SSH Keys</a></li>
+        <li><a href="#executing-commands-remotely-using-ssh">Executing Commands Remotely Using ssh</a></li>
+        <li><a href="#sftp-command">sftp` command</a></li>
+      </ul>
+    </li>
+    <li><a href="#secure-shell-service-diy-labs">Secure Shell Service DIY Labs</a>
+      <ul>
+        <li><a href="#lab-establish-key-based-authentication">Lab: Establish Key-Based Authentication</a></li>
+        <li><a href="#lab-test-the-effect-of-permitrootlogin-directive">Lab: Test the Effect of PermitRootLogin Directive</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</details>
+
+
+<script>
+  (function () {
+    'use strict'
+
+    const SCROLL_OFFSET_RATIO = 0.33
+    const TOC_SELECTOR = '#TableOfContents'
+    const ANCHOR_SELECTOR = '.anchor'
+    const TOC_LINK_SELECTOR = 'a[href^="#"]'
+    const NESTED_LIST_SELECTOR = 'li ul'
+    const ACTIVE_CLASS = 'active'
+    let isJumpingToAnchor = false
+
+    function getActiveAnchorId(anchors, offsetRatio) {
+      const threshold = window.scrollY + window.innerHeight * offsetRatio
+      const tocLinks = [...document.querySelectorAll('#TableOfContents a[href^="#"]')]
+      const tocIds = new Set(tocLinks.map(link => link.getAttribute('href').substring(1)))
+
+      if (isJumpingToAnchor) {
+        for (let i = 0; i < anchors.length; i++) {
+          const anchor = anchors[i]
+          if (!tocIds.has(anchor.id)) continue
+          const top = anchor.getBoundingClientRect().top + window.scrollY
+          if (Math.abs(window.scrollY - top) < 100) {
+            return anchor.id
+          }
+        }
+      }
+
+      for (let i = anchors.length - 1; i >= 0; i--) {
+        const top = anchors[i].getBoundingClientRect().top + window.scrollY
+        if (top <= threshold && tocIds.has(anchors[i].id)) {
+          return anchors[i].id
+        }
+      }
+      return anchors.find(anchor => tocIds.has(anchor.id))?.id || ''
+    }
+
+    function updateTOC({ toc, anchors, links, scrollOffset, collapseInactive }) {
+      const activeId = getActiveAnchorId(anchors, scrollOffset)
+      if (!activeId) return
+
+      links.forEach(link => {
+        const isActive = link.getAttribute('href') === `#${activeId}`
+        link.classList.toggle(ACTIVE_CLASS, isActive)
+
+        if (collapseInactive) {
+          const ul = link.closest('li')?.querySelector('ul')
+          if (ul) ul.style.display = isActive ? '' : 'none'
+        }
+      })
+
+      if (collapseInactive) {
+        const activeLink = toc.querySelector(`a[href="#${CSS.escape(activeId)}"]`)
+        let el = activeLink
+        while (el && el !== toc) {
+          if (el.tagName === 'UL') el.style.display = ''
+          if (el.tagName === 'LI') el.querySelector('ul')?.style.setProperty('display', '')
+          el = el.parentElement
+        }
+      }
+    }
+
+    function initTOC() {
+      const toc = document.querySelector(TOC_SELECTOR)
+      if (!toc) return
+
+      const collapseInactive = true
+      const anchors = [...document.querySelectorAll(ANCHOR_SELECTOR)]
+      const links = [...toc.querySelectorAll(TOC_LINK_SELECTOR)]
+
+      if (collapseInactive) {
+        toc.querySelectorAll(NESTED_LIST_SELECTOR).forEach(ul => ul.style.display = 'none')
+      }
+
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          isJumpingToAnchor = true
+        })
+      })
+
+      const config = {
+        toc,
+        anchors,
+        links,
+        scrollOffset: SCROLL_OFFSET_RATIO,
+        collapseInactive
+      }
+
+      window.addEventListener('scroll', () => updateTOC(config), { passive: true })
+      window.addEventListener('hashchange', () => updateTOC(config), { passive: true })
+
+      updateTOC(config)
+    }
+
+    document.readyState === 'loading'
+      ? document.addEventListener('DOMContentLoaded', initTOC)
+      : initTOC()
+  })()
+</script>
+
+
+            
+          </div>
+        </div>
+      
+
+
+      <div class="min-w-0 min-h-0 max-w-fit">
+        
+
+        <div class="article-content max-w-prose mb-20">
+          
+<h2 class="relative group">The OpenSSH Service
+    <div id="the-openssh-service" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#the-openssh-service" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p><strong>Secure Shell (SSH)</strong></p>
+<ul>
+<li>Delivers a secure mechanism for data transmission between source and destination systems over IP networks.</li>
+<li>Designed to replace the old remote login programs that transmitted user passwords in clear text and data unencrypted.</li>
+<li>Employs digital signatures for user authentication with encryption to secure a communication channel.
+<ul>
+<li>this makes it extremely hard for unauthorized people to gain access to passwords or the data in transit.</li>
+</ul>
+</li>
+<li>Monitors the data being transferred throughout a session to ensure integrity.</li>
+<li>Includes a set of utilities <code>ssh</code> and <code>sftp</code> for remote users to log in, transfer files, and execute commands securely.</li>
+</ul>
+
+<h3 class="relative group">Common Encryption Techniques
+    <div id="common-encryption-techniques" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#common-encryption-techniques" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Two common techniques: symmetric and asymetric</li>
+</ul>
+<p><strong>Symmetric Technique</strong></p>
+<ul>
+<li>Secret key encryption.</li>
+<li>Uses a single key called a secret key that is generated as a result of a negotiation process between two entities at the time of their initial contact.</li>
+<li>Both sides use the same secret key during subsequent communication for data encryption and decryption.</li>
+</ul>
+<p><strong>Asymmetric Technique</strong></p>
+<ul>
+<li>Public key encryption</li>
+<li>Combination of private and public keys
+<ul>
+<li>Randomly generated and mathematically related strings of alphanumeric characters</li>
+<li>attached to messages being exchanged.</li>
+</ul>
+</li>
+<li>The client transmutes the information with a public key and the server decrypts it with the paired private key.</li>
+<li>Private key must be kept secure since it is private to a single sender</li>
+<li>the public key is disseminated to clients.</li>
+<li>used for channel encryption and user authentication.</li>
+</ul>
+
+<h3 class="relative group">Authentication Methods
+    <div id="authentication-methods" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#authentication-methods" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Encrypted channel is established between the client and server</li>
+<li>Then additional negotiations take place between the two to authenticate the user trying to access the server.</li>
+<li>Methods listed in the order in which they are attempted during the authentication process:</li>
+</ul>
+<ol>
+<li>GSSAPI-based ( Generic Security Service Application Program Interface) authentication</li>
+<li>Host-based authentication</li>
+<li>Public key-based authentication</li>
+<li>Challenge-response authentication</li>
+<li>Password-based authentication</li>
+</ol>
+<p><strong>GSSAPI-Based Authentication</strong></p>
+<ul>
+<li>Provides a standard interface that allows security mechanisms, such as Kerberos, to be plugged in.</li>
+<li>OpenSSH uses this interface and the underlying Kerberos for authentication.</li>
+<li>Exchange of tokens takes place between the client and server to validate user identity.</li>
+</ul>
+<p><strong>Host-Based Authentication</strong></p>
+<ul>
+<li>Allows a single user, a group of users, or all users on the client to be authenticated on the server.</li>
+<li>A user may be configured to log in with a matching username on the server or as a different user that already exists there.</li>
+<li>For each user that requires an automatic entry on the server, a ~/.shosts file is set up containing the client name or IP address, and, optionally, a different username.</li>
+<li>The same rule applies to a group of users or all users on the client that require access to the server.
+<ul>
+<li>In that case, the setup is done in the /etc/ssh/shosts.equiv file on the server.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Private/Public Key-Based Authentication</strong></p>
+<ul>
+<li>Uses a private/public key combination for user authentication.</li>
+<li>User on the client has a private key and the server stores the corresponding public key.</li>
+<li>At the login attempt, the server prompts the user to enter the passphrase associated with the key and logs the user in if the passphrase and key are validated.</li>
+</ul>
+<p><strong>Challenge-Response Authentication</strong></p>
+<ul>
+<li>Based on the response(s) to one or more arbitrary challenge questions that the user has to answer correctly in order to be allowed to log in to the server.</li>
+</ul>
+<p><strong>Password-Based Authentication</strong></p>
+<ul>
+<li>Last fall back option.</li>
+<li>Server prompts the user to enter their password.</li>
+<li>Checks the password against the stored entry in the shadow file and allows the user in if the password is confirmed.</li>
+</ul>
+
+<h3 class="relative group">OpenSSH Protocol Version and Algorithms
+    <div id="openssh-protocol-version-and-algorithms" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#openssh-protocol-version-and-algorithms" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>V2</li>
+<li>Supports various algorithms for data encryption and user authentication (digital signatures) such as:</li>
+</ul>
+<p><strong>RSA</strong> (Rivest-Shamir-Adleman)</p>
+<ul>
+<li>More prevalent than the rest</li>
+<li>Supports both encryption and authentication.</li>
+</ul>
+<p><strong>DSA and ECDSA</strong> (Digital Signature Algorithm and Elliptic Curve Digital Signature Algorithm)</p>
+<ul>
+<li>Authentication only.</li>
+<li>Used to generate public and private key pairs for the asymmetric technique.</li>
+</ul>
+
+<h3 class="relative group">OpenSSH Packages
+    <div id="openssh-packages" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#openssh-packages" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Installed during OS installation</li>
+</ul>
+<p><strong>openssh</strong></p>
+<ul>
+<li>provides the <code>ssh-keygen</code> command and some library routines</li>
+</ul>
+<p><strong>openssh-clients</strong></p>
+<ul>
+<li>includes commands, such as <code>sftp</code>, <code>ssh</code>, and <code>ssh-copy-id</code>, and a client configuration file <em>/etc/ssh/ssh_config</em></li>
+</ul>
+<p><strong>openssh-server</strong></p>
+<ul>
+<li>contains the sshd service daemon, server configuration file <em>/etc/ssh/sshd_config</em>, and library routines.</li>
+</ul>
+
+<h3 class="relative group">OpenSSH Server Daemon and Client Commands
+    <div id="openssh-server-daemon-and-client-commands" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#openssh-server-daemon-and-client-commands" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>OpenSSH server program is sshd</li>
+</ul>
+<p><strong>sshd</strong></p>
+<ul>
+<li>
+<p>Preconfigured and operational on new RHEL installations</p>
+</li>
+<li>
+<p>Allows remote users to log in to the system using an ssh client program such as PuTTY or the ssh command.</p>
+</li>
+<li>
+<p>Daemon listens on TCP port 22</p>
+<ul>
+<li>Documented in the /etc/ssh/sshd_config file with the Port directive.</li>
+</ul>
+</li>
+<li>
+<p>Use sftp instead of scp do to scp security flaws.</p>
+</li>
+</ul>
+<p><code>sftp</code></p>
+<ul>
+<li>Secure remote file transfer program</li>
+</ul>
+<p><code>ssh</code></p>
+<ul>
+<li>Secure remote login command</li>
+</ul>
+<p><code>ssh-copy-id</code></p>
+<ul>
+<li>Copies public key to remote systems</li>
+</ul>
+<p><code>ssh-keygen</code></p>
+<ul>
+<li>Generates and manages private and public key pairs</li>
+</ul>
+
+<h3 class="relative group">Server Configuration File
+    <div id="server-configuration-file" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#server-configuration-file" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p><strong>/etc/ssh/sshd_config</strong></p>
+<p><strong>/var/log/secure</strong></p>
+<ul>
+<li>log file is used to capture authentication messages.</li>
+</ul>
+<p>View directives listed in <em>/etc/ssh/sshd_config</em>:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@server30 tmp<span class="o">]</span><span class="c1"># cat /etc/ssh/sshd_config</span>
+</span></span></code></pre></div><p><strong>Port</strong></p>
+<ul>
+<li>Port number to listen on. Default is 22.</li>
+</ul>
+<p><strong>Protocol</strong></p>
+<ul>
+<li>Default protocol version to use.</li>
+</ul>
+<p><strong>ListenAddress</strong></p>
+<ul>
+<li>Sets the local addresses the sshd service should listen on.</li>
+<li>Default is to listen on all local addresses.</li>
+</ul>
+<p><strong>SyslogFacility</strong></p>
+<ul>
+<li>Defines the facility code to be used when logging messages to the /var/log/secure file. This is based on the configuration in the /etc/rsyslog.conf file. Default is <strong>AUTHPRIV.</strong></li>
+</ul>
+<p><strong>LogLevel</strong>                         <br>
+Identifies the level of criticality for the messages to be logged. Default is <strong>INFO</strong>.</p>
+<p><strong>PermitRootLogin</strong>                  <br>
+Allows or disallows the root user to log in directly to the system. Default is yes.</p>
+<p><strong>PubKeyAuthentication</strong>             <br>
+Enables or disables public key-based authentication. Default is yes.</p>
+<p><strong>AuthorizedKeysFile</strong>               <br>
+Sets the name and location of the file containing a user&rsquo;s authorized keys. Default is ~/.ssh/authorized_keys.</p>
+<p><strong>PasswordAuthentication</strong>           <br>
+Enables or disables local password authentication. Default is yes.</p>
+<p><strong>PermitEmptyPasswords</strong>             <br>
+Allows or disallows the use of null passwords. Default is no.</p>
+<p><strong>ChallengeResponseAuthentication</strong>  <br>
+Enables or disables challenge-response authentication mechanism. Default is yes.</p>
+<p><strong>UsePAM</strong>                           <br>
+Enables or disables user authentication via PAM. If enabled, only root will be able to run the sshd daemon. Default is yes.</p>
+<p><strong>X11Forwarding</strong>                    <br>
+Allows or disallows remote access to graphical applications. Default is yes.</p>
+
+<h3 class="relative group">Client Configuration File
+    <div id="client-configuration-file" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#client-configuration-file" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<p><strong>/etc/ssh/ssh_config</strong></p>
+<ul>
+<li>Local configuration file that directs how the client should behave. This file, , is located in the /etc/ssh directory.</li>
+<li>Directives preset in this file that affect all outbound ssh communication.</li>
+</ul>
+<p>View the default directive settings:
+<code>[root@server30 tmp]# cat /etc/ssh/sshd_config</code></p>
+<p><strong>Host</strong></p>
+<ul>
+<li>Container that declares directives applicable to one host, a group of hosts, or all hosts.</li>
+<li>Ends when another occurrence of Host or Match is encountered. Default is *,  (all hosts)</li>
+</ul>
+<p><strong>ForwardX11</strong></p>
+<ul>
+<li>Enables or disables automatic redirection of X11 traffic over SSH connections.</li>
+<li>Default is no.</li>
+</ul>
+<p><strong>PasswordAuthentication</strong></p>
+<ul>
+<li>Allows or disallows password authentication.</li>
+<li>Default is yes.</li>
+</ul>
+<p><strong>StrictHostKeyChecking</strong></p>
+<ul>
+<li>
+<p>Whether to add host keys (host fingerprints) to  ~/.ssh/known_hosts when accessing a host for the first time</p>
+</li>
+<li>
+<p>What to do when the keys of a previously accessed host mismatch with what is stored in ~/.ssh/known_hosts.</p>
+</li>
+<li>
+<p>no:</p>
+<ul>
+<li>Adds new host keys and ignores changes to existing keys.</li>
+</ul>
+</li>
+<li>
+<p>yes:</p>
+<ul>
+<li>Adds new host keys and disallows connections to hosts with non-matching keys.</li>
+</ul>
+</li>
+<li>
+<p>accept-new:</p>
+<ul>
+<li>Adds new host keys and disallows connections to hosts with non-matching keys.</li>
+</ul>
+</li>
+<li>
+<p>ask (default):</p>
+<ul>
+<li>Prompts whether to add new host keys and disallows connections to hosts with non-matching keys.</li>
+</ul>
+</li>
+</ul>
+<p><strong>IdentityFile</strong></p>
+<ul>
+<li>Defines the name and location of a file that stores a user&rsquo;s private key for their identity validation.</li>
+<li>Defaults are:
+<ul>
+<li>id_rsa, id_dsa, and  id_ecdsa based on the type of algorithm used.</li>
+<li>Corresponding public key files with .pub extension are also stored at the same directory location.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Port</strong>                             <br>
+Sets the port number to listen on. Default is 22.</p>
+<p><strong>Protocol</strong>                         <br>
+Specifies the default protocol version to use</p>
+<p>~/.ssh/</p>
+<ul>
+<li>does not exist by default</li>
+<li>created when:
+<ul>
+<li>a user executes the <code>ssh-keygen</code> command for the first time to generate a key pair</li>
+<li>A user connects to a remote ssh server and accepts its host key for the first time.
+<ul>
+<li>The client stores the server&rsquo;s host key locally in a file called known_hosts along with its hostname or IP address.</li>
+<li>On subsequent access attempts, the client will use this information to verify the server&rsquo;s authenticity.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2 class="relative group">System Access and File Transfer
+    <div id="system-access-and-file-transfer" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#system-access-and-file-transfer" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">Lab: Access RHEL System from Another RHEL System
+    <div id="lab-access-rhel-system-from-another-rhel-system" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-access-rhel-system-from-another-rhel-system" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>issue the ssh command as user1 on server10 to log in to server20.</li>
+<li>Run appropriate commands on server20 for validation.</li>
+<li>Log off and return to the originating system.</li>
+</ul>
+<p>1. Issue the ssh command as user1 on server10:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>user1@server30 tmp<span class="o">]</span>$ ssh server20
+</span></span></code></pre></div><p>2. Issue the basic Linux commands whoami, hostname, and pwd to confirm
+that you are logged in as user1 on server20 and placed in the correct
+home directory:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>user1@server40 ~<span class="o">]</span>$ whoami
+</span></span><span class="line"><span class="cl">user1
+</span></span><span class="line"><span class="cl"><span class="o">[</span>user1@server40 ~<span class="o">]</span>$ hostname
+</span></span><span class="line"><span class="cl">server40
+</span></span><span class="line"><span class="cl"><span class="o">[</span>user1@server40 ~<span class="o">]</span>$ <span class="nb">pwd</span>
+</span></span><span class="line"><span class="cl">/home/user1
+</span></span></code></pre></div><p>3. Run the logout or the exit command or simply press the key combination Ctrl+d to log off server20 and return to server10:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>user1@server40 ~<span class="o">]</span>$ <span class="nb">exit</span>
+</span></span><span class="line"><span class="cl"><span class="nb">logout</span>
+</span></span><span class="line"><span class="cl">Connection to server40 closed.
+</span></span></code></pre></div><p>If you wish to log on as a different user such as user2 (assuming user2
+exists on the target server server20), you may run the ssh command in
+either of the following ways:</p>
+<p><code>[user1@server30 tmp]$ ssh -l user2 server40</code></p>
+<p><code>[user1@server30 tmp]$ ssh user2@server40</code></p>
+
+<h3 class="relative group">Lab: Generate, Distribute, and Use SSH Keys
+    <div id="lab-generate-distribute-and-use-ssh-keys" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-generate-distribute-and-use-ssh-keys" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Generate a passwordless ssh key pair using RSA algorithm for user1 on server10.</li>
+<li>display the private and public file contents.</li>
+<li>Distribute the public key to server20 and attempt to log on to server20 from server10.</li>
+<li>Show the log file message for the login attempt.</li>
+</ul>
+<p>1. Log on to server10 as user1.</p>
+<p>2. Generate RSA keys without a password (-N) and without detailed
+output (-q). Press Enter when prompted to provide the filename to store
+the private key.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>user1@server30 tmp<span class="o">]</span>$ ssh-keygen -N <span class="s2">&#34;&#34;</span> -q
+</span></span><span class="line"><span class="cl">Enter file in which to save the key <span class="o">(</span>/home/user1/.ssh/id_rsa<span class="o">)</span>: 
+</span></span></code></pre></div><p>View the private key:
+<code>[user1@server30 tmp]$ cat ~/.ssh/id_rsa</code></p>
+<p>View the public key:
+<code>[user1@server30 tmp]$ cat ~/.ssh/id_rsa.pub</code></p>
+<p>3. Copy the public key file to server20 under /home/user1/.ssh
+directory.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">user1@server30 tmp<span class="o">]</span>$ ssh-copy-id server40
+</span></span><span class="line"><span class="cl">/usr/bin/ssh-copy-id: INFO: Source of key<span class="o">(</span>s<span class="o">)</span> to be installed: <span class="s2">&#34;/home/user1/.ssh/id_rsa.pub&#34;</span>
+</span></span><span class="line"><span class="cl">/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key<span class="o">(</span>s<span class="o">)</span>, to filter out any that are already installed
+</span></span><span class="line"><span class="cl">/usr/bin/ssh-copy-id: INFO: <span class="m">1</span> key<span class="o">(</span>s<span class="o">)</span> remain to be installed -- <span class="k">if</span> you are prompted now it is to install the new keys
+</span></span><span class="line"><span class="cl">user1@server40<span class="s1">&#39;s password: 
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">Number of key(s) added: 1
+</span></span></span><span class="line"><span class="cl"><span class="s1">
+</span></span></span><span class="line"><span class="cl"><span class="s1">Now try logging into the machine, with:   &#34;ssh &#39;</span>server40<span class="err">&#39;</span><span class="s2">&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">and check to make sure that only the key(s) you wanted were added.
+</span></span></span></code></pre></div><ul>
+<li>This command also creates or updates the known_hosts
+file on server10 and stores the fingerprints for server20 in it.</li>
+</ul>
+<p><code>[user1@server30 tmp]$ cat ~/.ssh/known_hosts</code></p>
+<p>4. On server10, run the ssh command as user1 to connect to server20.
+You will not be prompted for a password because there was none assigned
+to the ssh keys.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>user1@server30 tmp<span class="o">]</span>$ ssh server40
+</span></span><span class="line"><span class="cl">Register this system with Red Hat Insights: insights-client --register
+</span></span><span class="line"><span class="cl">Create an account or view all your systems at https://red.ht/insights-dashboard
+</span></span><span class="line"><span class="cl">Last login: Sun Jul <span class="m">21</span> 01:20:17 <span class="m">2024</span> from 192.168.0.30
+</span></span></code></pre></div><p>View this login attempt in the /var/log/secure file on server20:
+<code>[user1@server40 ~]$ sudo tail /var/log/secure</code></p>
+
+<h3 class="relative group">Executing Commands Remotely Using ssh
+    <div id="executing-commands-remotely-using-ssh" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#executing-commands-remotely-using-ssh" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Can use <code>ssh</code> command to run programs without remoting in:</li>
+</ul>
+<p>Execute the hostname command on server20:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>user1@server30 tmp<span class="o">]</span>$ ssh server40 hostname
+</span></span><span class="line"><span class="cl">server40
+</span></span></code></pre></div><p>Run the <code>nmcli</code> command on server20 to show (s) active network connections(c):</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>user1@server30 tmp<span class="o">]</span>$ ssh server40 nmcli c s
+</span></span><span class="line"><span class="cl">NAME    UUID                                  TYPE      DEVICE 
+</span></span><span class="line"><span class="cl">enp0s3  1c391bb6-20a3-4eb4-b717-1e458877dbe4  ethernet  enp0s3 
+</span></span><span class="line"><span class="cl">lo      175f8a4c-1907-4006-b838-eb43438d847b  loopback  lo 
+</span></span></code></pre></div>
+<h3 class="relative group">sftp` command
+    <div id="sftp-command" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#sftp-command" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Interactive file transfer tool.</li>
+</ul>
+<p>On server10, to connect to server20:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>user1@server30 tmp<span class="o">]</span>$ sftp server40
+</span></span><span class="line"><span class="cl">Connected to server40.
+</span></span><span class="line"><span class="cl">sftp&gt; 
+</span></span></code></pre></div><p>Type ? at the prompt to list available commands along with a short description:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>user1@server30 tmp<span class="o">]</span>$ sftp server40
+</span></span><span class="line"><span class="cl">Connected to server40.
+</span></span><span class="line"><span class="cl">sftp&gt; ?
+</span></span><span class="line"><span class="cl">Available commands:
+</span></span><span class="line"><span class="cl">bye                                Quit sftp
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> path                            Change remote directory to <span class="s1">&#39;path&#39;</span>
+</span></span><span class="line"><span class="cl">chgrp <span class="o">[</span>-h<span class="o">]</span> grp path                Change group of file <span class="s1">&#39;path&#39;</span> to <span class="s1">&#39;grp&#39;</span>
+</span></span><span class="line"><span class="cl">chmod <span class="o">[</span>-h<span class="o">]</span> mode path               Change permissions of file <span class="s1">&#39;path&#39;</span> to <span class="s1">&#39;mode&#39;</span>
+</span></span><span class="line"><span class="cl">chown <span class="o">[</span>-h<span class="o">]</span> own path                Change owner of file <span class="s1">&#39;path&#39;</span> to <span class="s1">&#39;own&#39;</span>
+</span></span><span class="line"><span class="cl">df <span class="o">[</span>-hi<span class="o">]</span> <span class="o">[</span>path<span class="o">]</span>                    Display statistics <span class="k">for</span> current directory or
+</span></span><span class="line"><span class="cl">                                   filesystem containing <span class="s1">&#39;path&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">exit</span>                               Quit sftp
+</span></span><span class="line"><span class="cl">get <span class="o">[</span>-afpR<span class="o">]</span> remote <span class="o">[</span>local<span class="o">]</span>         Download file
+</span></span><span class="line"><span class="cl"><span class="nb">help</span>                               Display this <span class="nb">help</span> text
+</span></span><span class="line"><span class="cl">lcd path                           Change <span class="nb">local</span> directory to <span class="s1">&#39;path&#39;</span>
+</span></span><span class="line"><span class="cl">lls <span class="o">[</span>ls-options <span class="o">[</span>path<span class="o">]]</span>            Display <span class="nb">local</span> directory listing
+</span></span><span class="line"><span class="cl">lmkdir path                        Create <span class="nb">local</span> directory
+</span></span><span class="line"><span class="cl">ln <span class="o">[</span>-s<span class="o">]</span> oldpath newpath            Link remote file <span class="o">(</span>-s <span class="k">for</span> symlink<span class="o">)</span>
+</span></span><span class="line"><span class="cl">lpwd                               Print <span class="nb">local</span> working directory
+</span></span><span class="line"><span class="cl">ls <span class="o">[</span>-1afhlnrSt<span class="o">]</span> <span class="o">[</span>path<span class="o">]</span>             Display remote directory listing
+</span></span><span class="line"><span class="cl">lumask <span class="nb">umask</span>                       Set <span class="nb">local</span> <span class="nb">umask</span> to <span class="s1">&#39;umask&#39;</span>
+</span></span><span class="line"><span class="cl">mkdir path                         Create remote directory
+</span></span><span class="line"><span class="cl">progress                           Toggle display of progress meter
+</span></span><span class="line"><span class="cl">put <span class="o">[</span>-afpR<span class="o">]</span> <span class="nb">local</span> <span class="o">[</span>remote<span class="o">]</span>         Upload file
+</span></span><span class="line"><span class="cl"><span class="nb">pwd</span>                                Display remote working directory
+</span></span><span class="line"><span class="cl">quit                               Quit sftp
+</span></span><span class="line"><span class="cl">reget <span class="o">[</span>-fpR<span class="o">]</span> remote <span class="o">[</span>local<span class="o">]</span>        Resume download file
+</span></span><span class="line"><span class="cl">rename oldpath newpath             Rename remote file
+</span></span><span class="line"><span class="cl">reput <span class="o">[</span>-fpR<span class="o">]</span> <span class="nb">local</span> <span class="o">[</span>remote<span class="o">]</span>        Resume upload file
+</span></span><span class="line"><span class="cl">rm path                            Delete remote file
+</span></span><span class="line"><span class="cl">rmdir path                         Remove remote directory
+</span></span><span class="line"><span class="cl">symlink oldpath newpath            Symlink remote file
+</span></span><span class="line"><span class="cl">version                            Show SFTP version
+</span></span><span class="line"><span class="cl">!command                           Execute <span class="s1">&#39;command&#39;</span> in <span class="nb">local</span> shell
+</span></span><span class="line"><span class="cl">!                                  Escape to <span class="nb">local</span> shell
+</span></span><span class="line"><span class="cl">?                                  Synonym <span class="k">for</span> <span class="nb">help</span>
+</span></span></code></pre></div><p>Example:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sftp&gt; ls
+</span></span><span class="line"><span class="cl">sftp&gt; mkdir /tmp/dir10-20
+</span></span><span class="line"><span class="cl">sftp&gt; <span class="nb">cd</span> /tmp/dir10-20
+</span></span><span class="line"><span class="cl">sftp&gt; <span class="nb">pwd</span>
+</span></span><span class="line"><span class="cl">Remote working directory: /tmp/dir10-20
+</span></span><span class="line"><span class="cl">sftp&gt; put /etc/group
+</span></span><span class="line"><span class="cl">Uploading /etc/group to /tmp/dir10-20/group
+</span></span><span class="line"><span class="cl">group                                       100% <span class="m">1118</span>     1.0MB/s   00:00    
+</span></span><span class="line"><span class="cl">sftp&gt; ls -l
+</span></span><span class="line"><span class="cl">-rw-r--r--    <span class="m">1</span> user1    user1        <span class="m">1118</span> Jul <span class="m">21</span> 01:41 group
+</span></span><span class="line"><span class="cl">sftp&gt; <span class="nb">cd</span> ..
+</span></span><span class="line"><span class="cl">sftp&gt; <span class="nb">pwd</span>
+</span></span><span class="line"><span class="cl">Remote working directory: /tmp
+</span></span><span class="line"><span class="cl">sftp&gt; <span class="nb">cd</span> /home/user1
+</span></span><span class="line"><span class="cl">sftp&gt; get /usr/bin/gzip
+</span></span><span class="line"><span class="cl">Fetching /usr/bin/gzip to gzip
+</span></span><span class="line"><span class="cl">gzip                                        100%   90KB  23.0MB/s   00:00    
+</span></span><span class="line"><span class="cl">sftp&gt; 
+</span></span></code></pre></div><ul>
+<li><code>lcd</code>, <code>lls</code>, <code>lpwd</code>, and <code>lmkdir</code> are run on the source server.</li>
+<li>Other commands are also available. (See man pages)</li>
+</ul>
+<p>Type quit at the sftp&gt; prompt to exit the program when you&rsquo;re done:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sftp&gt; quit
+</span></span><span class="line"><span class="cl"><span class="o">[</span>user1@server30 tmp<span class="o">]</span>$ 
+</span></span></code></pre></div>
+<h2 class="relative group">Secure Shell Service DIY Labs
+    <div id="secure-shell-service-diy-labs" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#secure-shell-service-diy-labs" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+
+<h3 class="relative group">Lab: Establish Key-Based Authentication
+    <div id="lab-establish-key-based-authentication" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-establish-key-based-authentication" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>Create user account user20 on both systems and assign a password.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>root@server40 ~<span class="o">]</span><span class="c1"># adduser user20</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>root@server40 ~<span class="o">]</span><span class="c1"># passwd user20</span>
+</span></span><span class="line"><span class="cl">Changing password <span class="k">for</span> user user20.
+</span></span><span class="line"><span class="cl">New password: 
+</span></span><span class="line"><span class="cl">BAD PASSWORD: The password is shorter than <span class="m">8</span> characters
+</span></span><span class="line"><span class="cl">Retype new password: 
+</span></span><span class="line"><span class="cl">passwd: all authentication tokens updated successfully.
+</span></span></code></pre></div><ul>
+<li>As user20 on server40, generate a private/public key pair without a passphrase using the ssh-keygen command.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>user20@server40 ~<span class="o">]</span><span class="c1"># ssh-keygen -N &#34;&#34; -q</span>
+</span></span><span class="line"><span class="cl">Enter file in which to save the key <span class="o">(</span>/root/.ssh/id_rsa<span class="o">)</span>: 
+</span></span></code></pre></div><ul>
+<li>Distribute the public key to server30 with the ssh-copy-id command.
+<code>[user20@server40 ~]# ssh-copy-id server30</code></li>
+<li>Log on to server30 as user20 and accept the fingerprints for the server if presented.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>user20@server40 ~<span class="o">]</span><span class="c1"># ssh server30</span>
+</span></span><span class="line"><span class="cl">Activate the web console with: systemctl <span class="nb">enable</span> --now cockpit.socket
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">Register this system with Red Hat Insights: insights-client --register
+</span></span><span class="line"><span class="cl">Create an account or view all your systems at https://red.ht/insights-dashboard
+</span></span><span class="line"><span class="cl">Last login: Fri Jul <span class="m">19</span> 14:09:22 <span class="m">2024</span>
+</span></span><span class="line"><span class="cl"><span class="o">[</span>user20@server30 ~<span class="o">]</span><span class="c1"># </span>
+</span></span></code></pre></div><ul>
+<li>On subsequent log in attempts from server40 to server30, user20 should not be prompted for their password.</li>
+</ul>
+
+<h3 class="relative group">Lab: Test the Effect of PermitRootLogin Directive
+    <div id="lab-test-the-effect-of-permitrootlogin-directive" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#lab-test-the-effect-of-permitrootlogin-directive" aria-label="Anchor">#</a>
+    </span>
+    
+</h3>
+<ul>
+<li>
+<p>As user1 with sudo on server30, edit the /etc/ssh/sshd_config file and change the value of the directive PermitRootLogin to &ldquo;no&rdquo;.
+<code>[user1@server30 ~]$ sudo vim /etc/ssh/sshd_config</code></p>
+</li>
+<li>
+<p>Use the systemctl command to activate the change.</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="o">[</span>user1@server30 ~<span class="o">]</span>$ systemctl restart <span class="nv">sshd</span>
+</span></span><span class="line"><span class="cl"><span class="o">====</span> AUTHENTICATING FOR org.freedesktop.systemd1.manage-units <span class="o">====</span>
+</span></span><span class="line"><span class="cl">Authentication is required to restart <span class="s1">&#39;sshd.service&#39;</span>.
+</span></span><span class="line"><span class="cl">Authenticating as: root
+</span></span><span class="line"><span class="cl">Password: 
+</span></span><span class="line"><span class="cl"><span class="o">====</span> AUTHENTICATION <span class="nv">COMPLETE</span> <span class="o">====</span>
+</span></span></code></pre></div><ul>
+<li>As root on server40, run ssh server40 (or use its IP). You&rsquo;ll get permission denied message.</li>
+</ul>
+<p>(this didn&rsquo;t work, I think it&rsquo;s because I configured passwordless authentication on here)</p>
+<ul>
+<li>Reverse the change on server40 and retry ssh server40. You should be able to log in.</li>
+</ul>
+
+          
+          
+          
+        </div>
+        
+        
+
+        
+
+        
+
+      </div>
+
+      
+      
+        
+        
+          
+          
+        
+        
+        
+        <script
+          type="text/javascript"
+          src="/js/page.min.54b6f4371722649edbe871e431d8670d670878c22be8f36e229fe53cc9b786fe25a834def5e6de621f7a3e37b72bc8cd73839aa5ed907ed6cbd45cd3e1b0fa20.js"
+          integrity="sha512-VLb0NxciZJ7b6HHkMdhnDWcIeMIr6PNuIp/lPMm3hv4lqDTe9ebeYh96Pje3K8jNc4Oape2QftbL1FzT4bD6IA=="
+          data-oid="views_tech/linux/The Secure Shell Service.md"
+          data-oid-likes="likes_tech/linux/The Secure Shell Service.md"></script>
+      
+    </section>
+
+    
+    <footer class="pt-8 max-w-prose print:hidden">
+      
+
+      
+    </footer>
+  </article>
+
+        
+
+
+  
+
+
+
+
+
+
+<div
+  id="scroll-to-top"
+  class="fixed bottom-6 end-6 z-50 transform translate-y-4 opacity-0 duration-200">
+  <a
+    href="#the-top"
+    class="pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full bg-neutral/50 text-xl text-neutral-700 hover:text-primary-600 dark:bg-neutral-800/50 dark:text-neutral dark:hover:text-primary-400"
+    aria-label="Scroll to top"
+    title="Scroll to top">
+    &uarr;
+  </a>
+</div>
+
+      </main><footer id="site-footer" class="py-10 print:hidden">
+  
+  
+    
+      
+      
+        
+      
+      
+      
+      
+      <nav class="flex flex-row pb-4 text-base font-medium text-neutral-500 dark:text-neutral-400 overflow-x-auto py-2">
+        <ul class="flex list-none flex-row">
+          
+            <li class=" flex mb-1 text-end sm:mb-0 sm:me-7 sm:last:me-0 me-4">
+              <a
+                class="decoration-primary-500 hover:underline hover:decoration-2 hover:underline-offset-2 flex items-center"
+                href=""
+                title="">
+                
+                
+              </a>
+            </li>
+          
+        </ul>
+      </nav>
+    
+  
+  <div class="flex items-center justify-between">
+    
+    
+      <p class="text-sm text-neutral-500 dark:text-neutral-400">
+          &copy;
+          2025
+          David Thomas
+      </p>
+    
+
+    
+    
+  </div>
+  
+    <script>
+      mediumZoom(document.querySelectorAll("img:not(.nozoom)"), {
+        margin: 24,
+        background: "rgba(0,0,0,0.5)",
+        scrollOffset: 0,
+      });
+    </script>
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/process.min.ee03488f19c93c2efb199e2e3014ea5f3cb2ce7d45154adb3399a158cac27ca52831db249ede5bb602700ef87eb02434139de0858af1818ab0fb4182472204a4.js"
+    integrity="sha512-7gNIjxnJPC77GZ4uMBTqXzyyzn1FFUrbM5mhWMrCfKUoMdsknt5btgJwDvh&#43;sCQ0E53ghYrxgYqw&#43;0GCRyIEpA=="></script>
+  
+  
+</footer>
+<div
+  id="search-wrapper"
+  class="invisible fixed inset-0 flex h-screen w-screen cursor-default flex-col bg-neutral-500/50 p-4 backdrop-blur-sm dark:bg-neutral-900/50 sm:p-6 md:p-[10vh] lg:p-[12vh] z-500"
+  data-url="http://localhost:1313/">
+  <div
+    id="search-modal"
+    class="flex flex-col w-full max-w-3xl min-h-0 mx-auto border rounded-md shadow-lg top-20 border-neutral-200 bg-neutral dark:border-neutral-700 dark:bg-neutral-800">
+    <header class="relative z-10 flex items-center justify-between flex-none px-2">
+      <form class="flex items-center flex-auto min-w-0">
+        <div class="flex items-center justify-center w-8 h-8 text-neutral-400">
+          <span class="relative block icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" class="svg-inline--fa fa-search fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"/></svg>
+</span>
+        </div>
+        <input
+          type="search"
+          id="search-query"
+          class="flex flex-auto h-12 mx-1 bg-transparent appearance-none focus:outline-dotted focus:outline-2 focus:outline-transparent"
+          placeholder="Search"
+          tabindex="0">
+      </form>
+      <button
+        id="close-search-button"
+        class="flex items-center justify-center w-8 h-8 text-neutral-700 hover:text-primary-600 dark:text-neutral dark:hover:text-primary-400"
+        title="Close (Esc)">
+        <span class="relative block icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 361.4c12.5 12.5 12.5 32.75 0 45.25C304.4 412.9 296.2 416 288 416s-16.38-3.125-22.62-9.375L160 301.3L54.63 406.6C48.38 412.9 40.19 416 32 416S15.63 412.9 9.375 406.6c-12.5-12.5-12.5-32.75 0-45.25l105.4-105.4L9.375 150.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L160 210.8l105.4-105.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-105.4 105.4L310.6 361.4z"/></svg>
+</span>
+      </button>
+    </header>
+    <section class="flex-auto px-2 overflow-auto">
+      <ul id="search-results">
+        
+      </ul>
+    </section>
+  </div>
+</div>
+
+    </div>
+  </body>
+  
+</html>
