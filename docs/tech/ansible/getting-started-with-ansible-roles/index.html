@@ -198,7 +198,7 @@
     "name": "Getting Started with Ansible Roles",
     "headline": "Getting Started with Ansible Roles",
     "description": "Ansible Galaxy Roles, RHEL System Roles, and Role Structure",
-    "abstract": "\u003cp\u003eAnsible roles are fully-featured solutions to accomplish a task. Roles can be downloaded from Ansible Galaxy, built from scratch, or vendor created like RHEL System Roles.\u003c\/p\u003e\n\u003cp\u003eRoles provide a reusable way to build a webserver, a database server, and more.\u003c\/p\u003e",
+    "abstract": "\u003cp\u003eAnsible roles are fully-featured solutions to accomplish a task. Roles can be downloaded from Ansible Galaxy, built from scratch, or vendor created like RHEL System Roles.\u003c\/p\u003e\n\u003cp\u003eRoles provide a reusable way to build a webserver, a database server, and more. That way you can have a role handle tasks the same way on all of your server.\u003c\/p\u003e",
     "inLanguage": "en",
     "url" : "https://davidwrites.xyz/tech/ansible/getting-started-with-ansible-roles/",
     "author" : {
@@ -214,7 +214,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "3140"
+    "wordCount": "3108"
   }]
   </script>
 
@@ -843,12 +843,15 @@
     class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#role-structure">Role Structure</a></li>
+    <li><a href="#where-roles-are-stored">Where roles are stored</a></li>
+  </ul>
+
+  <ul>
     <li>
       <ul>
         <li>
           <ul>
-            <li><a href="#understanding-ansible-roles">Understanding Ansible Roles</a></li>
-            <li><a href="#understanding-role-location">Understanding Role Location</a></li>
             <li><a href="#using-roles-from-playbooks">Using Roles from Playbooks</a></li>
             <li><a href="#creating-custom-roles">Creating Custom Roles</a></li>
             <li><a href="#managing-role-dependencies">Managing Role Dependencies</a></li>
@@ -859,6 +862,10 @@
         <li><a href="#lab-9-2">Lab 9-2</a></li>
         <li><a href="#lab-9-1-1">Lab 9-1</a></li>
         <li><a href="#lab-9-2-1">Lab 9-2</a></li>
+      </ul>
+    </li>
+    <li><a href="#ansible-galaxy">Ansible Galaxy</a>
+      <ul>
         <li><a href="#the-ansible-galaxy-command">The <code>ansible-galaxy</code> Command</a>
           <ul>
             <li><a href="#some-handy-command-line-options">Some handy command-line options:</a></li>
@@ -867,7 +874,11 @@
         </li>
         <li><a href="#ansible-requirements-file">Ansible requirements file</a></li>
         <li><a href="#examples">Examples</a></li>
-        <li><a href="#using-rhel-system-roles">Using RHEL System Roles</a>
+      </ul>
+    </li>
+    <li><a href="#using-rhel-system-roles">Using RHEL System Roles</a>
+      <ul>
+        <li>
           <ul>
             <li><a href="#understanding-rhel-system-roles">Understanding RHEL System Roles</a></li>
             <li><a href="#installing-rhel-system-roles">Installing RHEL System Roles</a></li>
@@ -895,12 +906,15 @@
     class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#role-structure">Role Structure</a></li>
+    <li><a href="#where-roles-are-stored">Where roles are stored</a></li>
+  </ul>
+
+  <ul>
     <li>
       <ul>
         <li>
           <ul>
-            <li><a href="#understanding-ansible-roles">Understanding Ansible Roles</a></li>
-            <li><a href="#understanding-role-location">Understanding Role Location</a></li>
             <li><a href="#using-roles-from-playbooks">Using Roles from Playbooks</a></li>
             <li><a href="#creating-custom-roles">Creating Custom Roles</a></li>
             <li><a href="#managing-role-dependencies">Managing Role Dependencies</a></li>
@@ -911,6 +925,10 @@
         <li><a href="#lab-9-2">Lab 9-2</a></li>
         <li><a href="#lab-9-1-1">Lab 9-1</a></li>
         <li><a href="#lab-9-2-1">Lab 9-2</a></li>
+      </ul>
+    </li>
+    <li><a href="#ansible-galaxy">Ansible Galaxy</a>
+      <ul>
         <li><a href="#the-ansible-galaxy-command">The <code>ansible-galaxy</code> Command</a>
           <ul>
             <li><a href="#some-handy-command-line-options">Some handy command-line options:</a></li>
@@ -919,7 +937,11 @@
         </li>
         <li><a href="#ansible-requirements-file">Ansible requirements file</a></li>
         <li><a href="#examples">Examples</a></li>
-        <li><a href="#using-rhel-system-roles">Using RHEL System Roles</a>
+      </ul>
+    </li>
+    <li><a href="#using-rhel-system-roles">Using RHEL System Roles</a>
+      <ul>
+        <li>
           <ul>
             <li><a href="#understanding-rhel-system-roles">Understanding RHEL System Roles</a></li>
             <li><a href="#installing-rhel-system-roles">Installing RHEL System Roles</a></li>
@@ -1052,29 +1074,20 @@
 
         <div class="article-content max-w-prose mb-20">
           <p>Ansible roles are fully-featured solutions to accomplish a task. Roles can be downloaded from Ansible Galaxy, built from scratch, or vendor created like RHEL System Roles.</p>
-<p>Roles provide a reusable way to build a webserver, a database server, and more.</p>
-<ul>
-<li>You can easily define a specific task in a role, and after defining it in a role, you can easily redistribute that and ensure that tasks are handled the same way, no matter where they are executed.</li>
-<li>Roles can be custom-made for specific environments, or default roles provided from Ansible Galaxy can be used.</li>
-</ul>
+<p>Roles provide a reusable way to build a webserver, a database server, and more. That way you can have a role handle tasks the same way on all of your server.</p>
+<p>To use a role, include it in your playbook with <code>include_role: role_name</code> or <code>import_role:role_name</code></p>
 
-<h4 class="relative group">Understanding Ansible Roles
-    <div id="understanding-ansible-roles" class="anchor"></div>
+<h2 class="relative group">Role Structure
+    <div id="role-structure" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#understanding-ansible-roles" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#role-structure" aria-label="Anchor">#</a>
     </span>
     
-</h4>
-<ul>
-<li>work with include files.</li>
-<li>All the different components that you may use in a playbook are used in roles and stored in separate directories.</li>
-<li>While defining the role, you don&rsquo;t need to tell the role that it should look in some of these specific directories; it does that automatically.</li>
-<li>The only thing you need to do is tell your Ansible playbook that it should include a role.</li>
-<li>Different components of the role are stored in different subdirectories.</li>
-</ul>
-<p>Roles Sample Directory Structure:</p>
+</h2>
+<p>A role includes subdirectories that have everything needed to run the role. These include variables, handlers, templates, files, tasks, and information on how to use the role. Ansible automatically knows where to look in these directories to run a role.</p>
+<p>Here is an example:</p>
 <pre tabindex="0"><code>    [ansible@control roles]$ tree testrole/
     testrole/
     |-- defaults
@@ -1093,57 +1106,73 @@
     |   `-- test.yml
     `-- vars
         `-- main.yml
-</code></pre><p>Role Directory Structure
-<strong>defaults</strong></p>
-<ul>
-<li>
-<p>Default variables that may be overwritten by other variables
-<strong>files</strong></p>
-</li>
-<li>
-<p>Static files that are needed by role tasks
-<strong>handlers</strong></p>
-</li>
-<li>
-<p>Handlers for use in this role
-<strong>meta</strong></p>
-</li>
-<li>
-<p>metadata, such as dependencies, plus license and maintainer information
-<strong>tasks</strong></p>
-</li>
-<li>
-<p>Role task definitions
-<strong>templates</strong></p>
-</li>
-<li>
-<p>Jinja2 templates
-<strong>tests</strong></p>
-</li>
-<li>
-<p>Optional inventory and a test.yml file to test the role
-<strong>vars</strong></p>
-</li>
-<li>
-<p>Variables that are not meant to be overwritten</p>
-</li>
-<li>
-<p>Most of the role directories have a main.yml file.</p>
-</li>
-<li>
-<p>This is the entry-point YAML file that is used to define components in the role.</p>
-</li>
-</ul>
+</code></pre><table>
+  <thead>
+      <tr>
+          <th>Directory</th>
+          <th>Function</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>defaults</td>
+          <td>Default variables that can be replaced</td>
+      </tr>
+      <tr>
+          <td>files</td>
+          <td>Files needed by role tasks</td>
+      </tr>
+      <tr>
+          <td>handlers</td>
+          <td>Handlers used by tasks in the role</td>
+      </tr>
+      <tr>
+          <td>meta</td>
+          <td>Dependencies, license, and maintainer information</td>
+      </tr>
+      <tr>
+          <td>tasks</td>
+          <td>Tasks for the role</td>
+      </tr>
+      <tr>
+          <td>templates</td>
+          <td>Jinja2 template files</td>
+      </tr>
+      <tr>
+          <td>tests</td>
+          <td>Inventory and test file to test the role</td>
+      </tr>
+      <tr>
+          <td>vars</td>
+          <td>Variable not meant to be overwritten</td>
+      </tr>
+      <tr>
+          <td>Some things may not always be necessary and unused folders can be deleted to keep things clean.</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<p>Most of the role directories have a <code>main.yml</code> file. This is the the entrypoint to each of those directories. So when tasks are run for the playbook, it starts in tasks/main.yml then other task files can be referenced from there.</p>
 
-<h4 class="relative group">Understanding Role Location
-    <div id="understanding-role-location" class="anchor"></div>
+<h2 class="relative group">Where roles are stored
+    <div id="where-roles-are-stored" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
-        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#understanding-role-location" aria-label="Anchor">#</a>
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#where-roles-are-stored" aria-label="Anchor">#</a>
     </span>
     
-</h4>
+</h2>
+
+<h1 class="relative group">LEFT OFF HERE
+    <div id="left-off-here" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#left-off-here" aria-label="Anchor">#</a>
+    </span>
+    
+</h1>
 <p>Roles can be stored in different locations:</p>
 <p><strong>./roles</strong></p>
 <ul>
@@ -1497,7 +1526,17 @@ and the context label is set to public_content_rw_t.
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">handlers</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span>- <span class="nt">name</span><span class="p">:</span><span class="w">  </span><span class="l">run restorecon</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l">restorecon -v /var/ftp/uploads</span><span class="w">
-</span></span></span></code></pre></div><p>Ansible Galaxy is a public library of Ansible content provided by community members. It can be browsed on the web at <a
+</span></span></span></code></pre></div>
+<h2 class="relative group">Ansible Galaxy
+    <div id="ansible-galaxy" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none">
+        <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#ansible-galaxy" aria-label="Anchor">#</a>
+    </span>
+    
+</h2>
+<p>Ansible Galaxy is a public library of Ansible content provided by community members. It can be browsed on the web at <a
   href="https://galaxy.ansible.com"
     target="_blank"
   >https://galaxy.ansible.com</a>.</p>
@@ -1595,7 +1634,7 @@ collections:
 <code>ansible-galaxy install -r listing96.yaml</code>
 <code>ansible-galaxy list</code></p>
 
-<h3 class="relative group">Using RHEL System Roles
+<h2 class="relative group">Using RHEL System Roles
     <div id="using-rhel-system-roles" class="anchor"></div>
     
     <span
@@ -1603,7 +1642,7 @@ collections:
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#using-rhel-system-roles" aria-label="Anchor">#</a>
     </span>
     
-</h3>
+</h2>
 <ul>
 <li>Allows for a uniform approach while managing multiple RHEL versions</li>
 <li>Red Hat provides RHEL System Roles.</li>

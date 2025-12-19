@@ -1,10 +1,11 @@
 ---
+draft: true
 date: 2025-12-18
 title: Baremetal to Proxmox VM
 description: "How to convert a baremental server to a Proxmox VM"
 tags: ["articles"]
 summary: "How to convert a baremental server to a Proxmox VM"
-draft: true
+
 ---
 
 Create a vm in proxmox and copy the physical drive to the vm drive.

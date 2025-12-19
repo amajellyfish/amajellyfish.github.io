@@ -7,17 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2025 </copyright>
-    <lastBuildDate>Thu, 18 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://davidwrites.xyz/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Baremetal to Proxmox VM</title>
-      <link>https://davidwrites.xyz/articles/baremetal-to-proxmox-vm/</link>
-      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidwrites.xyz/articles/baremetal-to-proxmox-vm/</guid>
-      <description>How to convert a baremental server to a Proxmox VM</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://davidwrites.xyz/articles/baremetal-to-proxmox-vm/featured.png" />
-    </item>
+    <lastBuildDate>Fri, 19 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://davidwrites.xyz/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Now</title>
@@ -29,21 +19,20 @@
   href=&#34;https://nownownow.com/about&#34;
     target=&#34;_blank&#34;
   &gt;Now&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;I am working on finding balance between different aspects of life. And aggressively saying no and cutting out things that take up time.&lt;/p&gt;
 
-&lt;h3 class=&#34;relative group&#34;&gt;This week
-    &lt;div id=&#34;this-week&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
+&lt;h3 class=&#34;relative group&#34;&gt;Quarterly Quests
+    &lt;div id=&#34;quarterly-quests&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
     &lt;span
         class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#this-week&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
+        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#quarterly-quests&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
     &lt;/span&gt;
     
 &lt;/h3&gt;
-&lt;p&gt;Taper -5mg caffeine per day 4/7&lt;br&gt;
-Run 5 minutes per day 4/7&lt;br&gt;
-Study 15 minutes per day 3/7&lt;br&gt;
-Fast 14 hours per day 4/7&lt;/p&gt;</description>
+&lt;p&gt;Get down to 190lbs.&lt;br&gt;
+&lt;del&gt;Finish website design and push to production.&lt;/del&gt;&lt;br&gt;
+Taper off of caffeine.
+Build study habit up to 45 minutes per day.&lt;/p&gt;</description>
       
     </item>
     
@@ -1627,9 +1616,21 @@ logging = none&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://davidwrites.xyz/notes/</guid>
-      <description>&lt;p&gt;These are the summaries and notes of books I have read. I also keep a &lt;a
-  href=&#34;masterlist&#34;&gt;Master List&lt;/a&gt; of all of the books I have read and a &lt;a
-  href=&#34;bookgraveyard&#34;&gt;Book Graveyard&lt;/a&gt; of books I didn&amp;rsquo;t finish.&lt;/p&gt;</description>
+      <description>&lt;p&gt;These are the summaries and notes of books I have read.&lt;/p&gt;
+&lt;div style=&#34;display:flex; gap:1rem; align-items:flex-start;&#34;&gt;
+  &lt;img src=&#34;thewillpowerinstinct/willpowerinstinct.png&#34; style=&#34;width:19%; height:auto;&#34; /&gt;
+  &lt;div&gt;
+    &lt;h3 class=&#34;mb-1&#34;&gt;
+    &lt;a href=&#34;thewillpowerinstinct&#34; class=&#34;hover:underline&#34;&gt;
+     The Willpower Instinct
+    &lt;/a&gt;
+    &lt;/h3&gt;
+    &lt;div class=&#34;text-lg&#34;&gt;
+    ★★★★★
+    &lt;/div&gt;
+    &lt;p&gt;
+    I picked up a bunch of new habits in the past couple months since reading this. Positive habits are self-perpetuating. So are negative ones.
+    &lt;/p&gt;</description>
       
     </item>
     
@@ -2181,7 +2182,7 @@ Source Port- 2 bytes
       
       <guid>https://davidwrites.xyz/tech/ansible/getting-started-with-ansible-roles/</guid>
       <description>&lt;p&gt;Ansible roles are fully-featured solutions to accomplish a task. Roles can be downloaded from Ansible Galaxy, built from scratch, or vendor created like RHEL System Roles.&lt;/p&gt;
-&lt;p&gt;Roles provide a reusable way to build a webserver, a database server, and more.&lt;/p&gt;</description>
+&lt;p&gt;Roles provide a reusable way to build a webserver, a database server, and more. That way you can have a role handle tasks the same way on all of your server.&lt;/p&gt;</description>
       
     </item>
     
