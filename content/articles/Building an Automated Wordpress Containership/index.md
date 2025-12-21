@@ -27,3 +27,70 @@ sudo systemd-run --property User=seal --property Requires=user@${uid}.service --
 ```
 sudo systemd-run --property User=seal --property Requires=user@${uid}.service --property After=user@${uid}.service --property Environment=XDG_RUNTIME_DIR=/run/user/${uid} --collect --pipe --quiet --wait podman ps
 ```
+
+Dedicate a private git repo just for that content and version it and make it easy for the dev to spin up a test instance for himself and use tagged references to deploy to prod from git
+
+We get two volumes, one for html annd one for the SQL database. 
+```bash
+$ podman volume ls
+DRIVER      VOLUME NAME
+local       testsite
+local       testsitedb
+
+```
+
+You can see the contents of the volume with podman volume inspect under mount point:
+```bash
+seal@wordpress-01:~/.local/share/containers/storage/volumes/testsite/_data$ podman volume inspect testsite
+[
+     {
+          "Name": "testsite",
+          "Driver": "local",
+          "Mountpoint": "/home/seal/.local/share/containers/storage/volumes/testsite/_data",
+          "CreatedAt": "2025-12-17T10:43:45.347003912-07:00",
+          "Labels": {},
+          "Scope": "local",
+          "Options": {},
+          "MountCount": 0,
+          "LockNumber": 4
+     }
+]
+```
+
+Now that the container has generated the volume, we can copy the html files from `/home/seal/.local/share/containers/storage/volumes/testsite/_data`over to our `ansible/config/wordpress-01/` directory:
+```bash
+rsync -av . dthomas@sombrero:~/Ansible/config/wordpress-01/html/
+```
+
+We'll need to do the same for the database volume:
+```bash
+podman volume inspect testsitedb
+[
+     {
+          "Name": "testsitedb",
+          "Driver": "local",
+          "Mountpoint": "/home/seal/.local/share/containers/storage/volumes/testsitedb/_data",
+          "CreatedAt": "2025-12-17T10:43:45.35804307-07:00",
+          "Labels": {},
+          "Scope": "local",
+          "Options": {},
+          "MountCount": 0,
+          "NeedsCopyUp": true,
+          "NeedsChown": true,
+          "LockNumber": 5
+     }
+]
+```
+
+Rsync the files over to the control node:
+```bash
+
+```
+
+1. And make it easy for the dev to spin up a copy of the container, that isn't prod, using uncomitted changes
+    
+2. So he can iterate before you push to prod
+    
+3. he could even do it on his workstation with Podman Desktop and you could roll him a little recipe to do that
+    
+4. so he doesn't need to SSH to some server to do it

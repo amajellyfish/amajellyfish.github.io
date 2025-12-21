@@ -178,15 +178,13 @@ As you go about making decisions related to your willpower challenge, notice if 
 
 We wrongly predict we will have much more free time in the future than we do today.
 
-# Left off here
-
-Apply Rachlin’s advice to your own willpower challenge this week: Aim to reduce the variability of your behavior day to day. View every choice you make as a commitment to all future choices. So instead of asking, “Do I want to eat this candy bar now?” ask yourself, “Do I want the consequences of eating a candy bar every afternoon for the next year?” Or if you’ve been putting something off that you know you should do, instead of asking “Would I rather do this today or tomorrow?” ask yourself, “Do I really want the consequences of always putting this off?”
+Aim to reduce the variability of your behavior day to day. View every choice you make as a commitment to all future choices. So instead of asking, “Do I want to eat this candy bar now?” ask yourself, “Do I want the consequences of eating a candy bar every afternoon for the next year?” Or if you’ve been putting something off that you know you should do, instead of asking “Would I rather do this today or tomorrow?” ask yourself, “Do I really want the consequences of always putting this off?”
 
 Using a daily rule also helps you see through the illusion that what you do tomorrow will be totally different from what you do today.
 
 Is there a rule you can live with that will help you end the kind of inner debate that talks you right out of your goals?
 
-the halo effect
+The halo effect
 
 When we want permission to indulge, we’ll take any hint of virtue as a justification to give in.
 
