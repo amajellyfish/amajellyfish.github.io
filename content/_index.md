@@ -3,6 +3,8 @@
   <div style="max-width:60%;">
     <h2 class="mb-0">Hey, I'm David</h2><br>
     <p class="mt-0">I'm a Linux system administrator and freelance writer.</p>
+    <p class="mt-0">I read to grow. I write to help. </p>
+    <p class="mt-0">I am always running experiments to use tech intentionally. And to find balance. </p>
     <p>
       To contact me, <a href="mailto:tdavetech@gmail.com">send me an email</a>.
     </p>

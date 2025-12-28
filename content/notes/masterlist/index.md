@@ -39,6 +39,7 @@ These are all the books I have read from start to finish.
 - How to Get  Rich
 - I Will Teach You to Be Rich
 - The Four Hour Workweek
+- Unscripted
 ### Dating and Relationships
 - Online dating for guys
 - Saving a Low Sex Marriage: A Man's Guide to Dread, Seduction and the Long Game
@@ -130,7 +131,7 @@ These are all the books I have read from start to finish.
 - David vs Goliath
 - The Willpower Instinct
  
- ### ### Dog Training
+ ### Dog Training
 - The Power of Positive Dog Training
 - Chase
 - The Cautious Canine
