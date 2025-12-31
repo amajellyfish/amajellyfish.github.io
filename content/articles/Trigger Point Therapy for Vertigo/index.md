@@ -15,7 +15,7 @@ Muscle tension can cause an insane amount of symptoms in the head and neck regio
 {{< icon "check" >}} Visual Disturbances  
 
 
-Many triggers for headaches actually cause latent trigger points to "activate". Latent trigger points are contracted muscle fibers that are not yet causing any pain or symptoms. Simply coughing, consuming nicotine, alcohol, caffeine, certain medications, nutritional defenciencies, or sugar can do the trick. If the trick was to send you do the dark headache abyss. 
+Many triggers for headaches actually cause latent trigger points to "activate". Latent trigger points are contracted muscle fibers that are not yet causing any pain or symptoms. Simply coughing, consuming nicotine, alcohol, caffeine, certain medications, nutritional defenciencies, or sugar can do the trick. If the trick was to send you to the dark headache abyss. 
 
 These trigger points can also be set off by emotional distress, allergic reactions, chemical withdrawal, and physical trauma. 
 
@@ -44,7 +44,7 @@ Avoid anything that feels weird or gives you "bad pain".
 
 
 ### Scalenes
-
+![](scalenes.png)
 Tight scalenes can pull the first rib up into the collar bone and squeeze blood vessels  and nerves. Restricted bloodflow and nerve disturbance can cause pain, burning, numbness, and tingling all the way down the arm and hands (thoracic outlet syndrome).
 
 It's worth starting here because scalenes can cause so many other muscles to also be tense.
@@ -62,6 +62,7 @@ Work on your posture, such as keeping your head center, not slouching, etc. And 
 Massage the muscles in the front and side of the neck, being careful to avoid pulses and anything that feels weird. Do this throughout the day to relax these muscles. 
 
 
+
 ![](Pasted%20image%2020251231042757.png)
 
 ![](Pasted%20image%2020251231043523.png)
@@ -71,6 +72,8 @@ Massage the muscles in the front and side of the neck, being careful to avoid pu
 ![](Pasted%20image%2020251231044121.png)
 
 ### Sternocleidomastoid 
+
+![](Sternocleidomastoid.png)
 
 Tension here can cause dizziness that can occur suddenly or last for minutes, hours, or days. And often given a diagnosis of vertigo.
 
