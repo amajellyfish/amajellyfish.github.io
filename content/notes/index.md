@@ -245,6 +245,23 @@ These are the summaries and notes of books I have read.
 </div>
 
 <div style="display:flex; gap:1rem; align-items:flex-start;">
+  <img src="easywaytoquitcaffeine.png" style="width:19%; height:auto;" />
+  <div>
+    <h3 class="mb-1">
+     <a href="/notes/theeasywaytoquitcaffeine/" class="hover:underline">
+     The Easy Way to Quit Caffeine
+    </a>
+    </h3>
+    <div class="text-lg">
+    ★★☆☆☆
+    </div>
+    <p>
+    Good information but nothing new if you've read Caffeine Blues. Other than some good pep talking. Author says withdrawals are barely noticeable with the right mindset. I have to hard disagree with this. (I will change this if I am wrong.)
+    </p>
+  </div>
+</div>
+
+<div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="123magic/123magic.png" style="width:19%; height:auto;" />
   <div>
     <h3 class="mb-1">
