@@ -6,6 +6,7 @@ description: "Self Massage for Vertigo and Migraines"
 tags: ["articles"]
 summary: "Self Massage for Vertigo and Migraines"
 ---
+![](featured.png)
 
 Muscle tension can cause an insane amount of symptoms in the head and neck region:  
 {{< icon "check" >}} Blurred Vision  
@@ -61,18 +62,7 @@ Work on your posture, such as keeping your head center, not slouching, etc. And 
 
 Massage the muscles in the front and side of the neck, being careful to avoid pulses and anything that feels weird. Do this throughout the day to relax these muscles. 
 
-
-
-![](Pasted%20image%2020251231042757.png)
-
-![](Pasted%20image%2020251231043523.png)
-
-![](Pasted%20image%2020251231044054.png)
-
-![](Pasted%20image%2020251231044121.png)
-
 ### Sternocleidomastoid 
-
 ![](Sternocleidomastoid.png)
 
 Tension here can cause dizziness that can occur suddenly or last for minutes, hours, or days. And often given a diagnosis of vertigo.
@@ -87,12 +77,8 @@ Common causes:
 {{< icon "check" >}} Whiplash  
 {{< icon "check" >}} Using breath accessory muscles instead of diaphragm.  
 
-![](Pasted%20image%2020251231030744.png)
-
-![](Pasted%20image%2020251231035746.png)
-
 ### Trapezius
-
+![](trapezius.png)
 Headache and sore neck
 
 Common causes:  
@@ -105,17 +91,7 @@ Common causes:
 
 Purposefully let your shoulders drop down multiple times during the day.
 
-![](Pasted%20image%2020251231031136.png)
 
-![](Pasted%20image%2020251231031110.png)
-
-![](Pasted%20image%2020251231040847.png)
-
-![](Pasted%20image%2020251231040909.png)
-
-![](Pasted%20image%2020251231040952.png)
-
-![](Pasted%20image%2020251231041034.png)
 
 ### Splenius cervicis
 This muscle bends, flexes, and twists the neck. 
@@ -129,11 +105,7 @@ Common causes:
 
 Fix underlying posture issues and [learn to relax](https://www.health.harvard.edu/staying-healthy/try-this-progressive-muscle-relaxation-for-sleep). 
 
-![](Pasted%20image%2020251231030841.png)
-
-![](Pasted%20image%2020251231030912.png)
-
-![](Pasted%20image%2020251231041327.png)
+![](spleniuscervicis.png)
 
 ### Suboccipital
 
@@ -144,18 +116,11 @@ Common causes:
 {{< icon "check" >}} postural stresses  
 {{< icon "check" >}} worry
 
-![](Pasted%20image%2020251231041422.png)
-
-![](Pasted%20image%2020251231030956.png)
-
-
-![](Pasted%20image%2020251231041733.png)
+![](suboccipital.png)
 
 ### Temporalis
 
-![](Pasted%20image%2020251231031224.png)
-
-![](Pasted%20image%2020251231042437.png)
+![](temporalis.png)
 
 
 Sources:

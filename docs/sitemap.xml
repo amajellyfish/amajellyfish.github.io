@@ -149,6 +149,11 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://davidwrites.xyz/tech/tools/migrate-nextcloud-to-podman/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://davidwrites.xyz/tech/tools/obsidian-hugo-github-website-stack-ohg/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>

@@ -6,7 +6,7 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2025 </copyright>
+    <copyright>© 2026 </copyright>
     <lastBuildDate>Wed, 31 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://davidwrites.xyz/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -573,6 +573,17 @@ Creates an app launcher icon for the container&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Manage VMs&lt;/li&gt;
 &lt;/ul&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://davidwrites.xyz/tech/tools/migrate-nextcloud-to-podman/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://davidwrites.xyz/tech/tools/migrate-nextcloud-to-podman/</guid>
+      <description>&lt;p&gt;To migrate a standard nextcloud setup to Podman/Docker, you need to create the container setup and copy data from the old system to the new.&lt;/p&gt;
+&lt;p&gt;I am going to start with a new Alma 10 VM for my setup.&lt;/p&gt;</description>
       
     </item>
     
