@@ -10,6 +10,7 @@ summary: "How to reduce headaches naturally by relaxing tense muscles."
 ![](featured.png)
 
 Muscle tension can cause an insane amount of symptoms in the head and neck region:  
+
 {{< icon "check" >}} Blurred Vision  
 {{< icon "check" >}} Dizziness  
 {{< icon "check" >}} Migraine Headaches  
@@ -122,7 +123,7 @@ This muscle bends, flexes, and twists the neck.
 {{< icon "check" >}} Forward-­head posture   
 {{< icon "check" >}} Whiplash  
 
-**What you should do**
+**What you should do**  
 Fix underlying posture issues and [learn to relax](https://www.health.harvard.edu/staying-healthy/try-this-progressive-muscle-relaxation-for-sleep).  Another lacrosse-ball-to-wall spot.
 
 ### Suboccipital
@@ -149,11 +150,11 @@ Work on your posture and try to learn healthy ways to cope with stress. Use your
 {{< icon "check" >}} Migraines    
 
 **Common causes for tight temporalis muscles**  
-{{< icon "check" >}} Trauma
-{{< icon "check" >}} Teeth grinding from caffeine use
-{{< icon "check" >}} Forward head posture
+{{< icon "check" >}} Trauma  
+{{< icon "check" >}} Teeth grinding from caffeine use  
+{{< icon "check" >}} Forward head posture  
 
-**What you should do**
+**What you should do**  
 You can massage this area throughout the day with your fingers. 
 
 **Sources:**
