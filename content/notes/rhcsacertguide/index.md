@@ -19,7 +19,7 @@ summary: "My RHCSA Notes"
 </div>
 
 ### My Notes
-- [Advanced File Management](advancedfilemanagement/)
+- [Advanced File Management](Advanced File Management/)
 - [Advanced Package Management](Advanced%20Package%20Management.md)
 - [Advanced User Management](Advanced%20User%20Management.md)
 - [AutoFS](AutoFS.md)
