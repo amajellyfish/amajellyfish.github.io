@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 </copyright>
-    <atom:link href="https://davidwrites.xyz/tech/networking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Nov 2023 06:20:36 -0700</lastBuildDate><atom:link href="https://davidwrites.xyz/tech/networking/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
@@ -322,81 +322,6 @@ defaults by turning off timestamps and turning on sequence numbers.
       <guid>https://davidwrites.xyz/tech/networking/ccna-notes/dhcp-snooping-and-arp-inspection/</guid>
       <description>&lt;p&gt;Attacker replies with false dhcp information by naming itself as the default gateway Pc1 send all messages to another network to attacker, becoming a man-in-the-middle&lt;br&gt;
 attack (pc2 could forward the messages to the actual default gateway&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>DNS</title>
-      <link>https://davidwrites.xyz/tech/networking/dns/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidwrites.xyz/tech/networking/dns/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;DNS and Name Resolution
-    &lt;div id=&#34;dns-and-name-resolution&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#dns-and-name-resolution&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;DNS is also referred to as BIND (Berkeley Internet Name Domain)
-&lt;ul&gt;
-&lt;li&gt;An implementation of DNS,&lt;/li&gt;
-&lt;li&gt;Most popular DNS application in use.&lt;/li&gt;
-&lt;li&gt;Name resolution is the technique that uses DNS/BIND for hostname lookups.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 class=&#34;relative group&#34;&gt;DNS Name Space and Domains
-    &lt;div id=&#34;dns-name-space-and-domains&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#dns-name-space-and-domains&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;DNS name space is a
-&lt;ul&gt;
-&lt;li&gt;Hierarchical organization of all the domains on the Internet.&lt;/li&gt;
-&lt;li&gt;Root of the name space is represented by a period (.)&lt;/li&gt;
-&lt;li&gt;Hierarchy below the root (.) denotes the top-level domains (TLDs) with names such as .com, .net, .edu, .org, .gov, .ca, and .de.&lt;/li&gt;
-&lt;li&gt;A DNS domain is a collection of one or more systems. Subdomains fall under their parent domains and are separated by a period (.).
-root of the name space is represented by a period (	- redhat.com is a second-level subdomain that falls under .com, and bugzilla.redhat.com is a third-level subdomain that falls under redhat.com.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure&gt;&lt;img
-    class=&#34;my-0 rounded-md&#34;
-    loading=&#34;lazy&#34;
-    decoding=&#34;async&#34;
-    fetchpriority=&#34;low&#34;
-    alt=&#34;&#34;
-    src=&#34;../../img/image-TJ7OW7U5%201.jpg&#34;
-    &gt;&lt;/figure&gt;
-&lt;ul&gt;
-&lt;li&gt;Deepest level of the hierarchy are the leaves (systems, nodes, or any device with an IP address) of the name space.
-&lt;ul&gt;
-&lt;li&gt;a network switch net01 in .travel.gc.ca subdomain will be known as net01.travel.gc.ca.&lt;/li&gt;
-&lt;li&gt;If a period (.) is added to the end of this name to look like net01.travel.gc.ca., it will be referred to as the Fully Qualified Domain Name (FQDN) for net01.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 class=&#34;relative group&#34;&gt;DNS Roles
-    &lt;div id=&#34;dns-roles&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#dns-roles&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-&lt;p&gt;A DNS system or nameserver can be a&lt;/p&gt;</description>
       
     </item>
     
@@ -1068,47 +993,6 @@ Application Layer&lt;/p&gt;
 ○ HTTP Header OK/ Data&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Same layer interaction on different computers&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>Time Synchronization</title>
-      <link>https://davidwrites.xyz/tech/networking/time-synchronization/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidwrites.xyz/tech/networking/time-synchronization/</guid>
-      <description>&lt;h3 class=&#34;relative group&#34;&gt;Network Time Protocol (NTP)
-    &lt;div id=&#34;network-time-protocol-ntp&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#network-time-protocol-ntp&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Networking protocol for synchronizing the system clock with remote time servers for accuracy and reliability.&lt;/li&gt;
-&lt;li&gt;Having steady and exact time on networked systems allows time-sensitive applications, such as authentication and email applications, backup and scheduling tools, financial and billing systems, logging and monitoring software, and file and storage sharing protocols, to function with precision.&lt;/li&gt;
-&lt;li&gt;Sends a stream of messages to configured time servers and binds itself to the one with least amount of delay in its responses, the most accurate, and may or may not be the closest distance-wise.&lt;/li&gt;
-&lt;li&gt;Client system maintains a drift in time in a file and references this file for gradual drop in inaccuracy.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 class=&#34;relative group&#34;&gt;Chrony
-    &lt;div id=&#34;chrony&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#chrony&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;RHEL 9 implementation of NTP&lt;/li&gt;
-&lt;li&gt;Uses the UDP port 123.&lt;/li&gt;
-&lt;li&gt;If enabled, it starts at system boot and continuously operates to keep the system clock in sync with a more accurate source of time.&lt;/li&gt;
-&lt;li&gt;Performs well on computers that are occasionally connected to the network, attached to busy networks, do not run all the time, or have variations in temperature.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Chrony is the RHEL implementation of NTP. And it operates on UDP port 123. If you enable it, it starts at system boot and continuously monitors system time and keeps in in sync.&lt;/p&gt;</description>
       
     </item>
     

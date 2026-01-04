@@ -2,15 +2,15 @@
 title: Now
 description: "David's Now page"
 draft: false
-date: 2025-12-28
+date: 2026-01-01
 ---
 What I am up to [Now](https://nownownow.com/about).
 
-Trying something new. Instead of quarterly goals I am focusing on one thing until my goal is complete. 
-
-My one thing right now is **quitting caffeine**.
-
-I am going to read, write, and breath quitting caffeine until I'm off of it and over any withdrawals. 
+When I'm not working or spending time with the family, I am practicing drum rudiments, fiddling with a Rubix cube, or playing Starcraft 2. Also focused on eating healthy, running daily, and doing mobility work. 
+## Quarterly Goals
+- [ ] Take and pass RHCE exam
+- [ ] Taper off of caffeine
+- [ ] Lose 12 lbs
 
 ### What I am reading
 {{< gallery >}}
