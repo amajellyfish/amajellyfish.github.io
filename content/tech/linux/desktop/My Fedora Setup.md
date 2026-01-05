@@ -212,7 +212,7 @@ Here is some other stuff I install from the software center.
 ### Input Leap
 Input Leap let's you share a mouse and keyboard between two workstations.
 
-![](../../../img/Pasted%20image%2020240905105932.png)
+![](../../../../img/Pasted%20image%2020240905105932.png)
 
 I don't know what this is or why it is here:
 installing Git and a bunch of other stuff?
@@ -227,32 +227,32 @@ sudo dnf install git cmake make gcc-c++ xorg-x11-server-devel \
 ## Virtual machine Manager
 The best way to manage VMs on desktop.
 
-![](../../../img/Pasted%20image%2020240905110024.png)
+![](../../../../img/Pasted%20image%2020240905110024.png)
 
 ## Box Buddy
 For managing containers.
 
-![](../../../img/Pasted%20image%2020240905110223.png)
+![](../../../../img/Pasted%20image%2020240905110223.png)
 ## Warehouse
 Managing installed applications.
 
-![](../../../img/Pasted%20image%2020240905110143.png)
+![](../../../../img/Pasted%20image%2020240905110143.png)
 
 ## Mission Center 
 Task Manager like application.
 
-![](../../../img/Pasted%20image%2020240905110500.png)
+![](../../../../img/Pasted%20image%2020240905110500.png)
 
 ## Pika Backup
 For backing up your desktop.
-![](../../../img/Pasted%20image%2020240905110555.png)
+![](../../../../img/Pasted%20image%2020240905110555.png)
 ## Clapper
 Video player.
 
-![](../../../img/Pasted%20image%2020240905110319.png)
+![](../../../../img/Pasted%20image%2020240905110319.png)
 
 And some extensions installed through Extension Manager:
-![](../../../img/Pasted%20image%2020240905105517.png)
+![](../../../../img/Pasted%20image%2020240905105517.png)
 
 Install Gnome Screenshot tool:
 
@@ -328,7 +328,7 @@ From Tools menu, select Arrow
 
 ## Distrobox
 
-See [distrobox](distrobox.md) 
+See [distrobox](../../tools/distrobox.md) 
 
 ## ZSH For Humans
 

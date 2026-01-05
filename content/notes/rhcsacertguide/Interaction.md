@@ -484,7 +484,7 @@ lscpu
 ### Manual pages
 - Informational pages stored in /usr/share/man for each program. 
 
-See [Using Man Pages](../../articles/tech/tools/Using%20Man%20Pages.md) for more.
+See [Using Man Pages](../../tech/tools/Using%20Man%20Pages.md) for more.
 
 #### `man` command
 

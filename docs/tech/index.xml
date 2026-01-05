@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 </copyright>
-    <lastBuildDate>Sat, 03 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://davidwrites.xyz/tech/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Nov 2023 06:20:36 -0700</lastBuildDate><atom:link href="https://davidwrites.xyz/tech/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
@@ -883,7 +883,7 @@ deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription
     decoding=&#34;async&#34;
     fetchpriority=&#34;low&#34;
     alt=&#34;&#34;
-    src=&#34;../../img/Pasted%20image%2020240414034031.png&#34;
+    src=&#34;../../../img/Pasted%20image%2020240414034031.png&#34;
     &gt;&lt;/figure&gt;
 &lt;p&gt;As you can see, Bookfusion gives you a lot of extra information when you export highlights. First, let&amp;rsquo;s get rid of the lines that begin with &lt;code&gt;##&lt;/code&gt;&lt;/p&gt;</description>
       

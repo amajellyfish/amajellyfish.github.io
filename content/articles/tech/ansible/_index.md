@@ -1,4 +1,0 @@
----
-title: Ansible
-showDate: false
----

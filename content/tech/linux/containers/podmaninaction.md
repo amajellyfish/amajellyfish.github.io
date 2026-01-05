@@ -2,7 +2,7 @@
 draft: true
 ---
 
-![](../../../img/cover.jpeg)
+![](../../../../img/cover.jpeg)
 
 []{#titlepage.xhtml}
 
@@ -103,7 +103,7 @@ Podman and Docker feature comparison
 
   
 
-![](../../../img/Manning_copyright.png){.calibre7}
+![](../../../../img/Manning_copyright.png){.calibre7}
 
  
 
@@ -131,7 +131,7 @@ To comment go to
 
  
 
-![](../../../img/Manning_M_small.png){.calibre8}
+![](../../../../img/Manning_M_small.png){.calibre8}
 
 Manning
 
@@ -196,7 +196,7 @@ processed without the use of elemental chlorine.
  
 
 +--------------------------------------------------------------+-----------------------------------+
-| ![](../../../img/Manning_M_small.png){.calibre14}     | Manning Publications Co.          |
+| ![](../../../../img/Manning_M_small.png){.calibre14}     | Manning Publications Co.          |
 |                                                              |                                   |
 |                                                              | 20 Baldwin Road Technical         |
 |                                                              |                                   |
@@ -968,7 +968,7 @@ has presented available on YouTube as well.
 ## []{#fm.htm_pgfId-1113530}about the author {#fm.htm_heading_id_10 .fm-head}
 
 ::: figure
-![](../../../img/FM-Daniel_Walsh.png){.calibre18}
+![](../../../../img/FM-Daniel_Walsh.png){.calibre18}
 :::
 
 []{#fm.htm_pgfId-1113532}[Daniel Walsh]{.mc-small-caps} leads the team
@@ -1108,7 +1108,7 @@ each of these terms refers to in the context of this text:
 open source container projects fit.
 
 ::: figure
-![](../../../img/01-01.png){.calibre18}
+![](../../../../img/01-01.png){.calibre18}
 
 []{#01.htm_pgfId-1040864}Figure 1.1 Different open source projects
 dealing with containers within the categories of orchestrators, engines,
@@ -1125,7 +1125,7 @@ The Podman logo in figure 1.2 is a group of Selkies, the Irish concept
 of a mermaid. Groups of Selkies are called pods.
 
 ::: figure
-![](../../../img/01-02.png){.calibre18}
+![](../../../../img/01-02.png){.calibre18}
 
 []{#01.htm_pgfId-1040912}Figure 1.2 Podman's logo
 :::
@@ -1155,7 +1155,7 @@ Skopeo[]{#01.htm_marker-1036167}. (See appendix A for a description of
 some of these tools.)
 
 ::: figure
-![](../../../img/01-03.png){.calibre18}
+![](../../../../img/01-03.png){.calibre18}
 
 []{#01.htm_pgfId-1041026}Figure 1.3 Containers is the developer site for
 Podman and other related container tools (see
@@ -1388,7 +1388,7 @@ overhead and no additional OS management. Figure 1.4 shows three
 applications running in three different VMs.
 
 ::: figure
-![](../../../img/01-04.png){.calibre18}
+![](../../../../img/01-04.png){.calibre18}
 
 []{#01.htm_pgfId-1041065}Figure 1.4 Physical machine running three
 applications in three VMs
@@ -1401,7 +1401,7 @@ operating system, as shown in
 []{#01.htm_marker-1031679}[]{#01.htm_marker-1031680}figure 1.5.
 
 ::: figure
-![](../../../img/01-05.png){.calibre18}
+![](../../../../img/01-05.png){.calibre18}
 
 []{#01.htm_pgfId-1041103}Figure 1.5 Physical machine running three
 applications in three containerized applications
@@ -1419,7 +1419,7 @@ same time. Figure 1.6 shows a traditional application running within an
 operating system without use of containers.
 
 ::: figure
-![](../../../img/01-06.png){.calibre18}
+![](../../../../img/01-06.png){.calibre18}
 
 []{#01.htm_pgfId-1041150}Figure 1.6 Traditional LAMP stack (Linux,
 Apache, MariaDB, and PHP/PERL application) running on a server
@@ -1438,7 +1438,7 @@ single container. Containers allow you to easily wire multiple
 applications together via the network.
 
 ::: figure
-![](../../../img/01-07.png){.calibre18}
+![](../../../../img/01-07.png){.calibre18}
 
 []{#01.htm_pgfId-1041172}Figure 1.7 LAMP stack packaged individually
 into microservice containers. As containers communicate via the network,
@@ -1829,7 +1829,7 @@ of communication going on behind the scenes. Figure 1.8 shows the Docker
 client-server architecture.
 
 ::: figure
-![](../../../img/01-08.png){.calibre18}
+![](../../../../img/01-08.png){.calibre18}
 
 []{#01.htm_pgfId-1041223}Figure 1.8 Docker client-server architecture.
 The container is a direct descendant of containerd, not the Docker
@@ -1868,7 +1868,7 @@ architecture and communication
 []{#01.htm_marker-1032023}[]{#01.htm_marker-1032024}flow.
 
 ::: figure
-![](../../../img/01-09.png){.calibre18}
+![](../../../../img/01-09.png){.calibre18}
 
 []{#01.htm_pgfId-1041268}Figure 1.9 Podman fork/exec architecture. The
 user launches Podman, which executes the OCI runtime, which then
@@ -1936,7 +1936,7 @@ was surprised to remember he had been using Podman for two months while
 thinking he was using Docker.
 
 ::: figure
-![](../../../img/01-10.png){.calibre18}
+![](../../../../img/01-10.png){.calibre18}
 
 []{#01.htm_pgfId-1041309}Figure 1.10 Tweet about "alias docker='podman'"
 :::
@@ -2008,7 +2008,7 @@ actual badge of a Docker employee at the first DockerCon, illustrating
 their hostility towards systemd.
 
 ::: figure
-![](../../../img/01-11.png){.calibre18}
+![](../../../../img/01-11.png){.calibre18}
 
 []{#01.htm_pgfId-1041347}Figure 1.11 Docker employee badge at DockerCon
 EU
@@ -2051,7 +2051,7 @@ with pods. Figure 1.12 shows two pods running on a system, each pod
 containing three containers.
 
 ::: figure
-![](../../../img/01-12.png){.calibre18}
+![](../../../../img/01-12.png){.calibre18}
 
 []{#01.htm_pgfId-1041385}Figure 1.12 Two pods running on a host. Each
 pod runs two different containers along with the infra container.
@@ -2656,7 +2656,7 @@ $ web-browser localhost:8080
 ```
 
 ::: figure
-![](../../../img/02-01.png){.calibre18}
+![](../../../../img/02-01.png){.calibre18}
 
 []{#02.htm_pgfId-1052898}Figure 2.1 Web browser window connecting to the
 ubi8/httpd-24 container running in Podman
@@ -3157,7 +3157,7 @@ $ web-browser localhost:8080
 ```
 
 ::: figure
-![](../../../img/02-02.png){.calibre18}
+![](../../../../img/02-02.png){.calibre18}
 
 []{#02.htm_pgfId-1052948}Figure 2.2 Web browser window connecting to the
 ubi8/httpd-24 container running in Podman with updated Hello World HTML
@@ -3471,7 +3471,7 @@ section, Podman adds another layer on top of the ubi8/httpd-24 image
 called `myimage`{.fm-code-in-text}[]{#02.htm_marker-1038221}.
 
 ::: figure
-![](../../../img/02-03.png){.calibre18}
+![](../../../../img/02-03.png){.calibre18}
 
 []{#02.htm_pgfId-1052986}Figure 2.3 A wedding cake display showing the
 images making up our Hello World application.
@@ -4116,7 +4116,7 @@ $ web-browser quay.io/repository/rhatdan/myimage?tab=tags
 ```
 
 ::: figure
-![](../../../img/02-04.png){.calibre18}
+![](../../../../img/02-04.png){.calibre18}
 
 []{#02.htm_pgfId-1053027}Figure 2.4 List of `myimage`{.fm-code-in-text}
 tags on quay.io
@@ -5384,7 +5384,7 @@ $ web-browser localhost:8080
 ```
 
 ::: figure
-![](../../../img/03-01.png){.calibre18}
+![](../../../../img/03-01.png){.calibre18}
 
 []{#03.htm_pgfId-1054147}Figure 3.1 Web browser window connecting to the
 `myimage`{.fm-code-in-text} Podman container[]{#03.htm_marker-1054148}
@@ -5489,7 +5489,7 @@ created in the host directory is displaying "Goodbye World" (see figure
 3.2).
 
 ::: figure
-![](../../../img/03-02.png){.calibre18}
+![](../../../../img/03-02.png){.calibre18}
 
 []{#03.htm_pgfId-1054186}Figure 3.2 Web browser window connecting to the
 `myimage`{.fm-code-in-text} Podman container[]{#03.htm_marker-1054187}
@@ -5939,7 +5939,7 @@ while containers come and go. However, each pod will have a different
 infra container.
 
 ::: figure
-![](../../../img/04-01.png){.calibre18}
+![](../../../../img/04-01.png){.calibre18}
 
 []{#04.htm_pgfId-1108956}[]{#04.htm_id_84p7xz75sdgk}Figure 4.1 The
 Podman pod launches conmon with the infra container, which will hold
@@ -5962,7 +5962,7 @@ containers:
 []{#04.htm_pgfId-1103775}The primary container runs the application.
 
 ::: figure
-![](../../../img/04-02.png){.calibre18}
+![](../../../../img/04-02.png){.calibre18}
 
 []{#04.htm_pgfId-1109098}Figure 4.2 []{#04.htm_id_n238co82eabp}Podman
 next launches any init containers with conmon. The init containers
@@ -5978,7 +5978,7 @@ documentation
 describes pods with sidecar containers as follows:
 
 ::: figure
-![](../../../img/04-03.png){.calibre18}
+![](../../../../img/04-03.png){.calibre18}
 
 []{#04.htm_pgfId-1109134}[]{#04.htm_id_j3t1mdk8ldy}Figure 4.3 Podman
 waits until the init containers complete before launching the primary
@@ -5999,7 +5999,7 @@ containers, there are several good articles on the following website:
 [https://www.magalix.com/blog/the-sidecar-pattern](https://www.magalix.com/blog/the-sidecar-pattern){.url}.
 
 ::: figure
-![](../../../img/04-04.png){.calibre18}
+![](../../../../img/04-04.png){.calibre18}
 
 []{#04.htm_pgfId-1109173}[]{#04.htm_id_8bq5c4isrfz1}Figure 4.4 Podman
 can launch additional containers called sidecar containers.
@@ -6043,7 +6043,7 @@ create a container within a pod, the container inherits these options as
 its default (see figure 4.5).
 
 ::: figure
-![](../../../img/04-05.png){.calibre18}
+![](../../../../img/04-05.png){.calibre18}
 
 []{#04.htm_pgfId-1109215}[]{#04.htm_id_jxxk1q3so2r7}Figure 4.5 Podman
 creates a network namespace and binds port `8080`{.fm-code-in-text}
@@ -6094,7 +6094,7 @@ Cec045acb1c2be4a6e4e88e21275076fb1de5519a25fb5a55f192da70708a640
 ```
 
 ::: figure
-![](../../../img/04-06.png){.calibre18}
+![](../../../../img/04-06.png){.calibre18}
 
 []{#04.htm_pgfId-1109257}Figure 4.6 []{#04.htm_id_g2ujyja8w08f}Because
 the pod does not have any init containers, the first
@@ -6181,7 +6181,7 @@ the ./html/time.sh command in the host directory is available to every
 container within the pod.
 
 ::: figure
-![](../../../img/04-07.png){.calibre18}
+![](../../../../img/04-07.png){.calibre18}
 
 []{#04.htm_pgfId-1109296}[]{#04.htm_id_bsufq5aiah2b}Figure 4.7 Finally,
 Podman launches the sidecar container named
@@ -6231,7 +6231,7 @@ navigate to http://localhost:8080 to verify the application is working,
 as seen in figure 4.8.
 
 ::: figure
-![](../../../img/04-08.png){.calibre18}
+![](../../../../img/04-08.png){.calibre18}
 
 []{#04.htm_pgfId-1109339}[]{#04.htm_id_v0n4sa5bdmic}Figure 4.8 The web
 browser communicates with `myapp`{.fm-code-in-text} running in a pod.
@@ -6243,7 +6243,7 @@ running and updating the data used by the `myapp`{.fm-code-in-text} web
 server running within the primary container, as seen in figure 4.9.
 
 ::: figure
-![](../../../img/04-09.png){.calibre18}
+![](../../../../img/04-09.png){.calibre18}
 
 []{#04.htm_pgfId-1109375}[]{#04.htm_id_h58wqqsm5erb}Figure 4.9 The web
 browser shows that the content in `myapp`{.fm-code-in-text} has been
@@ -6832,7 +6832,7 @@ container on them, each layer needs to be mounted on the previous layer
 (figure 5.1).
 
 ::: figure
-![](../../../img/05-01.png){.calibre18}
+![](../../../../img/05-01.png){.calibre18}
 
 []{#05.htm_pgfId-1111790}[]{#05.htm_id_mnifp03xfnzo}Figure 5.1 Layered
 images stacked on one another are reassembled and mounted using
@@ -7530,7 +7530,7 @@ Figure 5.2 shows what containers based on this mapping look like on my
 system.
 
 ::: figure
-![](../../../img/05-02.png){.calibre18}
+![](../../../../img/05-02.png){.calibre18}
 
 []{#05.htm_pgfId-1111835}Figure 5.2 User namespace mapping for
 containers
@@ -7649,7 +7649,7 @@ client can be run as non-root, it connects to a root running daemon,
 giving full root access to the host OS.
 
 ::: figure
-![](../../../img/06-01.png){.calibre18}
+![](../../../../img/06-01.png){.calibre18}
 
 []{#06.htm_pgfId-1115608}Figure 6.1 Multiple users' workloads sharing
 the same daemon running as root is inherently insecure.
@@ -7663,7 +7663,7 @@ shows multiple users running Podman independent of each other, without
 any root access.
 
 ::: figure
-![](../../../img/06-02.png){.calibre18}
+![](../../../../img/06-02.png){.calibre18}
 
 []{#06.htm_pgfId-1115646}Figure 6.2 Each workload running within its
 unique user space is more secure.
@@ -7864,7 +7864,7 @@ namespace (along with a mount namespace). Figure 6.3 shows the UIDs used
 within a user namespace.
 
 ::: figure
-![](../../../img/06-03.png){.calibre18}
+![](../../../../img/06-03.png){.calibre18}
 
 []{#06.htm_pgfId-1115684}Figure 6.3 User namespace mapping for
 containers
@@ -8347,7 +8347,7 @@ process[]{#06.htm_marker-1110642} to hold open the user and mount
 namespaces (figure 6.4).
 
 ::: figure
-![](../../../img/06-04.png){.calibre18}
+![](../../../../img/06-04.png){.calibre18}
 
 []{#06.htm_pgfId-1115722}Figure 6.4 Podman launches the pause process to
 hold open the user and mount namespaces.
@@ -8421,7 +8421,7 @@ the image:
     from the container registry to the host.
 
 ::: figure
-![](../../../img/06-05.png){.calibre18}
+![](../../../../img/06-05.png){.calibre18}
 
 []{#06.htm_pgfId-1115763}Figure 6.5 Podman pulls an image off a
 container registry and stores it in the container storage.
@@ -8479,7 +8479,7 @@ Slirp4netns provides user-mode networking (slirp) for unprivileged
 network namespaces. See figure 6.6.
 
 ::: figure
-![](../../../img/06-06.png){.calibre18}
+![](../../../../img/06-06.png){.calibre18}
 
 []{#06.htm_pgfId-1115814}Figure 6.6 Podman creates a network namespace
 and launches slirp4netns to relay network connections.
@@ -8536,7 +8536,7 @@ command[]{#06.htm_marker-1110719} when the container exits (see figure
 []{#06.htm_marker-1110720}[]{#06.htm_marker-1110721}section 4.1.
 
 ::: figure
-![](../../../img/06-07.png){.calibre18}
+![](../../../../img/06-07.png){.calibre18}
 
 []{#06.htm_pgfId-1115852}Figure 6.7 Podman launches the container
 monitor, which launches the OCI runtime.
@@ -8582,7 +8582,7 @@ figure 6.8). OCI runtimes do the following:
     conmon to monitor the container.
 
 ::: figure
-![](../../../img/06-08.png){.calibre18}
+![](../../../../img/06-08.png){.calibre18}
 
 []{#06.htm_pgfId-1116007}Figure 6.8 conmon launches the OCI runtime,
 which configures the kernel.
@@ -8592,7 +8592,7 @@ which configures the kernel.
 reports the success back to Podman (see figure 6.9).
 
 ::: figure
-![](../../../img/06-09.png){.calibre18}
+![](../../../../img/06-09.png){.calibre18}
 
 []{#06.htm_pgfId-1116045}Figure 6.9 Podman and OCI runtime exit, leaving
 the container running with conmon monitoring it and slirp4netns
@@ -8751,7 +8751,7 @@ model grants systemd the ability to track the processes within a
 containerized service.
 
 ::: figure
-![](../../../img/07-01.png){.calibre18}
+![](../../../../img/07-01.png){.calibre18}
 
 []{#07.htm_pgfId-1118970}Figure 7.1 Systemd executing a Podman container
 :::
@@ -8784,7 +8784,7 @@ Kubernetes assumes microservices, and thus gathers logs from the
 it runs. Figure 7.2 shows Podman running microservices.
 
 ::: figure
-![](../../../img/07-02.png){.calibre18}
+![](../../../../img/07-02.png){.calibre18}
 
 []{#07.htm_pgfId-1119015}Figure 7.2 Podman running three microservices
 :::
@@ -8827,7 +8827,7 @@ methods---microservices as well as multiservice containers. Figure 7.3
 shows systemd running a multiservice application within a container.
 
 ::: figure
-![](../../../img/07-03.png){.calibre18}
+![](../../../../img/07-03.png){.calibre18}
 
 []{#07.htm_pgfId-1119056}Figure 7.3 Podman running systemd in a
 container with three services
@@ -9120,7 +9120,7 @@ $ web-browser localhost:8080
 ```
 
 ::: figure
-![](../../../img/07-04.png){.calibre18}
+![](../../../../img/07-04.png){.calibre18}
 
 []{#07.htm_pgfId-1119097}Figure 7.4 Web browser window showing
 system-based container image running your content
@@ -9395,7 +9395,7 @@ have seen, systemd uses unit files to specify how to run a service.
 Figure 7.5 shows how systemd works with Podman to launch a container.
 
 ::: figure
-![](../../../img/07-05.png){.calibre18}
+![](../../../../img/07-05.png){.calibre18}
 
 []{#07.htm_pgfId-1119135}Figure 7.5 Podman fork/exec architecture is
 ideal for systemd service management.
@@ -9525,7 +9525,7 @@ $ web-browser localhost:8080
 ```
 
 ::: figure
-![](../../../img/07-06.png){.calibre18}
+![](../../../../img/07-06.png){.calibre18}
 
 []{#07.htm_pgfId-1119176}Figure 7.6 Web browser window connecting
 `myapp`{.fm-code-in-text}
@@ -9953,7 +9953,7 @@ needs to volume mount the socket into the container and pass down the
 environment variable into the container (figure 7.7).
 
 ::: figure
-![](../../../img/07-07.png){.calibre18}
+![](../../../../img/07-07.png){.calibre18}
 
 []{#07.htm_pgfId-1119214}Figure 7.7 Containerized
 `sd_notify`{.fm-code-in-text} systemd service launched by Podman
@@ -10003,7 +10003,7 @@ sockets on behalf of your service, without starting the service (figure
 7.8).
 
 ::: figure
-![](../../../img/07-08.png){.calibre18}
+![](../../../../img/07-08.png){.calibre18}
 
 []{#07.htm_pgfId-1119252}Figure 7.8 Systemd listening on a socket for a
 socket-activated container
@@ -10027,7 +10027,7 @@ pass the connection down to the service running within the container
 (figure 7.9).
 
 ::: figure
-![](../../../img/07-09.png){.calibre18}
+![](../../../../img/07-09.png){.calibre18}
 
 []{#07.htm_pgfId-1119290}Figure 7.9 When a connection to the socket
 systemd is listening on arrives, systemd activates Podman, which
@@ -10068,7 +10068,7 @@ $ web-browser localhost:8080
 ```
 
 ::: figure
-![](../../../img/07-10.png){.calibre18}
+![](../../../../img/07-10.png){.calibre18}
 
 []{#07.htm_pgfId-1119328}Figure 7.10 A web browser window connecting to
 the `ubi8/httpd-24`{.fm-code-in-text} container running in Podman with
@@ -10307,7 +10307,7 @@ $ podman generate kube myapp > myapp.yaml
 `kube`{.fm-code-in-text} command[]{#08.htm_marker-1118724}.
 
 ::: figure
-![](../../../img/08-01.png){.calibre18}
+![](../../../../img/08-01.png){.calibre18}
 
 []{#08.htm_pgfId-1123535}Figure 8.1 Shows the generated myapp.yaml file
 from the `myapp`{.fm-code-in-text} container[]{#08.htm_marker-1123534}
@@ -10404,7 +10404,7 @@ a `replicas`{.fm-code-in-text} option[]{#08.htm_marker-1118777} to your
 YAML file, as seen in figure 8.2.
 
 ::: figure
-![](../../../img/08-02.png){.calibre18}
+![](../../../../img/08-02.png){.calibre18}
 
 []{#08.htm_pgfId-1123573}Figure 8.2 The modified Kubernetes YAML file
 ready to run two replicas
@@ -10469,7 +10469,7 @@ command[]{#08.htm_marker-1118813} created a Pod with your container
 along with the infra containers.
 
 ::: figure
-![](../../../img/08-03.png){.calibre18}
+![](../../../../img/08-03.png){.calibre18}
 
 []{#08.htm_pgfId-1123611}Figure 8.3 The `myapp-pod`{.fm-code-in-text}
 running with the `myapp`{.fm-code-in-text} container and the infra
@@ -11182,7 +11182,7 @@ socket and then launches the Podman service when it receives a
 connection.
 
 ::: figure
-![](../../../img/09-01.png){.calibre18}
+![](../../../../img/09-01.png){.calibre18}
 
 []{#09.htm_pgfId-1117624}[]{#09.htm_id_i88bi4plbk5b}Figure 9.1 Podman
 service running under systemd
@@ -11951,7 +11951,7 @@ executing the commands and containers as a child of the Podman process,
 it communicates with the service over the REST API.
 
 ::: figure
-![](../../../img/09-02.png){.calibre18}
+![](../../../../img/09-02.png){.calibre18}
 
 []{#09.htm_pgfId-1117688}[]{#09.htm_id_y3fj7xwuq1cf}Figure 9.2
 `podman`{.fm-code-in-text} `--remote`{.fm-code-in-text} connecting to
@@ -12051,7 +12051,7 @@ activation and communicating with our REST API, as shown in figure
 9.3.[]{#09.htm_id_x2sukq7nfn9t}[]{#09.htm_id_xehzr5i0ipj2}[]{#09.htm_id_b0mmeax3hyir}[]{#09.htm_id_u61su794t7r7}[]{#09.htm_id_h07up9l04rih}[]{#09.htm_id_w7f0w92kjs8q}
 
 ::: figure
-![](../../../img/09-03.png){.calibre18}
+![](../../../../img/09-03.png){.calibre18}
 
 []{#09.htm_pgfId-1117726}Figure 9.3 `podman --remote`{.fm-code-in-text}
 connecting over SSH to the server machine
@@ -12437,7 +12437,7 @@ Máirín Duffy[]{#10.htm_marker-1114083}[]{#10.htm_marker-1114084}
 three pigs (figure 10.1).
 
 ::: figure
-![](../../../img/10-01.png){.calibre18}
+![](../../../../img/10-01.png){.calibre18}
 
 []{#10.htm_pgfId-1130030}Figure 10.1 *The Container Coloring Book*
 ([https://red.ht/3gfVlHF](https://red.ht/3gfVlHF){.url})
@@ -13052,7 +13052,7 @@ launching containers. See figure 10.2 for a description of the user
 namespace mapping.
 
 ::: figure
-![](../../../img/10-02.png){.calibre18}
+![](../../../../img/10-02.png){.calibre18}
 
 []{#10.htm_pgfId-1130085}Figure 10.2 The mapping of UIDs used by
 rootless Podman for my account
@@ -13709,7 +13709,7 @@ Book* to explain the labeling, using the analogy of cats and dogs
 (figure 10.3).
 
 ::: figure
-![](../../../img/10-03.png){.calibre18}
+![](../../../../img/10-03.png){.calibre18}
 
 []{#10.htm_pgfId-1130140}Figure 10.3 *The SELinux Coloring
 Book*[]{#10.htm_id_1vp0m2w67vu8}[]{#10.htm_marker-1130141}
@@ -15325,7 +15325,7 @@ Máirín Duffy[]{#A.htm_marker-1282237} (@marin), describing the container
 tools talked about in this appendix, based on superheroes.
 
 ::: figure
-![](../../../img/A-01.png){.calibre18}
+![](../../../../img/A-01.png){.calibre18}
 
 Figure A.1 The Container Coloring Book
 ([https://red.ht/3gfVlHF](https://red.ht/3gfVlHF){.url})
@@ -15368,7 +15368,7 @@ appendix describes the rest of the tools, starting with Skopeo (figure
 A.2).
 
 ::: figure
-![](../../../img/A-02.png){.calibre18}
+![](../../../../img/A-02.png){.calibre18}
 
 Figure A.2 Skopeo, Buildah, and Podman work together by sharing the same
 containers/storage images and containers/image library for pulling and
@@ -15390,7 +15390,7 @@ information and display it on the screen. *Skopeo* is the Greek word for
 *remote viewing*.
 
 ::: figure
-![](../../../img/A-UN01.png){.calibre18}
+![](../../../../img/A-UN01.png){.calibre18}
 :::
 
 []{#A.htm_pgfId-1277728}Execute the following `skopeo`{.fm-code-in-text}
@@ -15565,7 +15565,7 @@ created a tool called Buildah[]{#A.htm_marker-1277862}
 ([https://buildah.io](https://buildah.io){.url}) to serve this purpose.
 
 ::: figure
-![](../../../img/A-UN02.png){.calibre18}
+![](../../../../img/A-UN02.png){.calibre18}
 :::
 
 []{#A.htm_pgfId-1277867}Buildah was designed to be that simple tool for
@@ -16142,7 +16142,7 @@ CRI-O's primary objective is replacing the Docker service as the
 container engine for Kubernetes.
 
 ::: figure
-![](../../../img/A-UN03.png){.calibre18}
+![](../../../../img/A-UN03.png){.calibre18}
 :::
 
 []{#A.htm_pgfId-1278271}CRI-O is tied to Kubernetes releases. When a new
@@ -16176,7 +16176,7 @@ controls, and cgroups and eventually starts the container process
 (figure B.1)[]{#B.htm_marker-1285375}.
 
 ::: figure
-![](../../../img/B-01.png){.calibre18}
+![](../../../../img/B-01.png){.calibre18}
 
 Figure B.1 Podman executes the OCI runtime to launch the container.
 :::
@@ -16421,7 +16421,7 @@ in either OCI runtime, they are quickly fixed in both. See the
 ## []{#B.htm_pgfId-1282973}B.3 Kata {#B.htm_heading_id_5 .fm-head}
 
 ::: figure
-![](../../../img/B-01-UN01.png){.calibre18}
+![](../../../../img/B-01-UN01.png){.calibre18}
 :::
 
 []{#B.htm_pgfId-1282980}OCI
@@ -16435,7 +16435,7 @@ building lightweight virtual machines that seamlessly plug into the
 container's ecosystem."*
 
 ::: figure
-![](../../../img/B-02.png){.calibre18}
+![](../../../../img/B-02.png){.calibre18}
 
 Figure B.2 Kata containers launches a lightweight VM, which only runs
 the container.
@@ -16514,7 +16514,7 @@ these OCI runtimes with your workload's needs in
 ## []{#B.htm_pgfId-1283010}B.4 gVisor {#B.htm_heading_id_6 .fm-head}
 
 ::: figure
-![](../../../img/B-02-UN02.png){.calibre18}
+![](../../../../img/B-02-UN02.png){.calibre18}
 :::
 
 []{#B.htm_pgfId-1283017}The
@@ -16571,7 +16571,7 @@ different distributions. Most of the content in this appendix originates
 from the podman.io site, as seen in figure C.1.
 
 ::: figure
-![](../../../img/C-01.png){.calibre18}
+![](../../../../img/C-01.png){.calibre18}
 
 Figure C.1 Podman installation instructions website
 :::
@@ -16917,7 +16917,7 @@ complicated environments using Podman to blog about it, so others can
 learn.
 
 ::: figure
-![](../../../img/D-01.png){.calibre18}
+![](../../../../img/D-01.png){.calibre18}
 
 Figure D.1 Podman\'s Community page
 ([https://podman.io/community](https://podman.io/community){.url})
@@ -16949,7 +16949,7 @@ the project has over 1,200 forks and 12,000 stars. The bottom line is it
 is a very active project.
 
 ::: figure
-![](../../../img/D-02.png){.calibre18}
+![](../../../../img/D-02.png){.calibre18}
 
 Figure D.2 Podman\'s github page
 ([github.com/containers/podman](https://github.com/containers/podman){.url})
@@ -17117,7 +17117,7 @@ system designed to run containers.
 large and takes a few minutes to download.
 
 ::: figure
-![](../../../img/E-01.png){.calibre18}
+![](../../../../img/E-01.png){.calibre18}
 
 Figure E.1 The podman `machine init`{.fm-code-in-text} command pulling
 the VM and configuring the SSH
@@ -17530,7 +17530,7 @@ section (figure F.1;
 [https://github.com/containers/podman/releases](https://github.com/containers/podman/releases){.url}).
 
 ::: figure
-![](../../../img/F-01.png){.calibre18}
+![](../../../../img/F-01.png){.calibre18}
 
 Figure F.1 Downloading and running the Podman installer
 :::
@@ -17542,7 +17542,7 @@ Terminal as recommended), and execute your first
 F.2).
 
 ::: figure
-![](../../../img/F-02.png){.calibre18}
+![](../../../../img/F-02.png){.calibre18}
 
 Figure F.2 Podman commands running within the Windows Terminal
 :::
@@ -17564,7 +17564,7 @@ install.) If you prefer a manual installation, refer to the WSL
 [https://docs.microsoft.com/en-us/windows/wsl/install](https://docs.microsoft.com/en-us/windows/wsl/install){.url}.
 
 ::: figure
-![](../../../img/F-03.png){.calibre18}
+![](../../../../img/F-03.png){.calibre18}
 
 Figure F.3 The podman machine init starts the WSL installation.
 :::
@@ -17641,7 +17641,7 @@ since it is well integrated with Podman and is the operating system used
 by most of the Podman core developers.
 
 ::: figure
-![](../../../img/F-04.png){.calibre18}
+![](../../../../img/F-04.png){.calibre18}
 
 Figure F.4 The podman machine init command creating the WSL 2
 distribution and configuring SSH connections.

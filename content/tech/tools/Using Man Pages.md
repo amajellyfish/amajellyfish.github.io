@@ -74,7 +74,7 @@ When you see file in a man page, think file and or directory
 
 **Description**
  short and long options do the same thing
- ![](../../img/Pasted%20image%2020240709211540.png)
+ ![](../../../img/Pasted%20image%2020240709211540.png)
 
 Current section number is printed at the top left of the man page. 
 
@@ -148,10 +148,10 @@ Shell builtins do not have man pages. Look at the shell man page for info on the
 Search for the Shell Builtins section:
 `/SHELL BUILTIN COMMANDS`
 
-![](../../img/Pasted%20image%2020240710050240.png)
+![](../../../img/Pasted%20image%2020240710050240.png)
 
 You can find help on builtins with the help command:
-![](../../img/Pasted%20image%2020240710050536.png)
+![](../../../img/Pasted%20image%2020240710050536.png)
 
 ```bash
 david@fedora:~$ help hash

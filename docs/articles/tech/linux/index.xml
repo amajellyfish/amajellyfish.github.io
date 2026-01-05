@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>https://davidwrites.xyz/articles/tech/linux/</link>
+    <link>http://localhost:1313/articles/tech/linux/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 </copyright>
-    <atom:link href="https://davidwrites.xyz/articles/tech/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/articles/tech/linux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>https://davidwrites.xyz/articles/tech/linux/desktop/silverblue-1/</link>
+      <link>http://localhost:1313/articles/tech/linux/desktop/silverblue-1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/linux/desktop/silverblue-1/</guid>
+      <guid>http://localhost:1313/articles/tech/linux/desktop/silverblue-1/</guid>
       <description>&lt;p&gt;Automated setup &lt;a
   href=&#34;https://universal-blue.org/&#34;
     target=&#34;_blank&#34;
@@ -53,10 +53,10 @@ Separates system level packages from applications.&lt;/p&gt;
     
     <item>
       <title>Learning Touch Typing</title>
-      <link>https://davidwrites.xyz/articles/tech/linux/desktop/learning-touch-typing/</link>
+      <link>http://localhost:1313/articles/tech/linux/desktop/learning-touch-typing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/linux/desktop/learning-touch-typing/</guid>
+      <guid>http://localhost:1313/articles/tech/linux/desktop/learning-touch-typing/</guid>
       <description>&lt;p&gt;Using &lt;a
   href=&#34;https://monkeytype.com/&#34;
     target=&#34;_blank&#34;
@@ -91,10 +91,10 @@ Learning to type with:
     
     <item>
       <title>My Fedora Setup</title>
-      <link>https://davidwrites.xyz/articles/tech/linux/desktop/my-fedora-setup/</link>
+      <link>http://localhost:1313/articles/tech/linux/desktop/my-fedora-setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/linux/desktop/my-fedora-setup/</guid>
+      <guid>http://localhost:1313/articles/tech/linux/desktop/my-fedora-setup/</guid>
       <description>&lt;p&gt;When you first download Fedora Workstation, it&amp;rsquo;s going to be a little hard to figure out how to make it usable. Especially if you&amp;rsquo;ve never tinkered with Linux before.&lt;/p&gt;
 &lt;p&gt;This is because Fedora with Gnome desktop is a blank canvas. The point is to let you customize it to your needs. When I first install Fedora, I pull my justfile to install most of the programs I use:&lt;/p&gt;</description>
       
@@ -102,20 +102,20 @@ Learning to type with:
     
     <item>
       <title>RHCSA Vagrant Lab Setup</title>
-      <link>https://davidwrites.xyz/articles/tech/linux/rhcsa-vagrant-lab-setup/</link>
+      <link>http://localhost:1313/articles/tech/linux/rhcsa-vagrant-lab-setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/linux/rhcsa-vagrant-lab-setup/</guid>
+      <guid>http://localhost:1313/articles/tech/linux/rhcsa-vagrant-lab-setup/</guid>
       <description>&lt;p&gt;We are going to use Vagrant to set up two RHEL 8 servers with some custom configuration options. I will include some helpful Vagrant commands at the end if you get stuck.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Silverblue</title>
-      <link>https://davidwrites.xyz/articles/tech/linux/desktop/silverblue/</link>
+      <link>http://localhost:1313/articles/tech/linux/desktop/silverblue/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/linux/desktop/silverblue/</guid>
+      <guid>http://localhost:1313/articles/tech/linux/desktop/silverblue/</guid>
       <description>&lt;p&gt;Automated setup &lt;a
   href=&#34;https://universal-blue.org/&#34;
     target=&#34;_blank&#34;

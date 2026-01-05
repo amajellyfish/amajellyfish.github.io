@@ -3,6 +3,8 @@ title: 'My RHCE Notes'
 date: 2026-01-03
 description: "Red Hat RHCE 8 Cert Guide notes"
 summary: "Red Hat RHCE 8 Cert Guide notes"
+cascade:
+  showDate: false
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="rhceexamguide.png" style="width:25%; height:auto;" />

@@ -117,7 +117,7 @@ For subsequent git pushes:
 git commit -a -m "commit" && git push
 ```
 
-![](../../../img/Pasted%20image%2020240904141011.png)
+![](../../../../img/Pasted%20image%2020240904141011.png)
 
 ### From a second machine:
 
@@ -149,7 +149,7 @@ Or merge the current file with new file:
 From any machine, you can pull and apply changes from your repo:
 `chezmoi update -v`
 
-![](../../../img/Pasted%20image%2020240904141728.png)
+![](../../../../img/Pasted%20image%2020240904141728.png)
 
 Add the justfile:
 `chezmoi add .justfile`

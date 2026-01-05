@@ -254,7 +254,7 @@ Just add "nextcloud" as the name and "yourwebsite.com" as the content. This will
 
 Here's what my CloudFlare domain setup looks with this blog as the main site, and cloud.perfectdarkmode.com as the nextcloud site: 
 
-![](../../img/Pasted%20image%2020241229050325.png)
+![](../../../img/Pasted%20image%2020241229050325.png)
 
 Then you need to update trusted domains in /var/www/nextcloud/config/config.php:
 ```bash
@@ -297,11 +297,11 @@ sudo certbot -d {subdomain}.{domain}.com
 
 Now log into nextcloud with your admin account using the DNS name you set earlier:
 
-![](../../img/Pasted%20image%2020241229050541.png)
+![](../../../img/Pasted%20image%2020241229050541.png)
 
 I recommend setting up a normal user account instead of doing everything as "admin". Just hit the "A" icon at the top right and go to "Accounts". Then just select "New Account" and create a user account with whatever privileges you want. 
 
-![](../../img/Pasted%20image%2020241229051101.png)
+![](../../../img/Pasted%20image%2020241229051101.png)
 
 I may make a post about which Nextcloud apps I recommend and customize the setup a bit. Let me know if that's something you'd like to see. That's all for now. 
 

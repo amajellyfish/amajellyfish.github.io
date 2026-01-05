@@ -7,17 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 </copyright>
-    <lastBuildDate>Mon, 03 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://davidwrites.xyz/tech/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>RHCSA Cert Guide Notes</title>
-      <link>https://davidwrites.xyz/tech/linux/rhcsa-notes/</link>
-      <pubDate>Mon, 03 Mar 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidwrites.xyz/tech/linux/rhcsa-notes/</guid>
-      <description>My RHCSA Notes</description>
-      
-    </item>
+    <atom:link href="https://davidwrites.xyz/tech/linux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>

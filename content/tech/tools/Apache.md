@@ -16,16 +16,16 @@ httpd.conf
 
 Virtual host examples:
 
-![](../../img/Pasted%20image%2020240402045440.png)
+![](../../../img/Pasted%20image%2020240402045440.png)
 
-![](../../img/Pasted%20image%2020240402045454.png)
+![](../../../img/Pasted%20image%2020240402045454.png)
 
 Basic authentication in Apache is configured in Location or Directory blocks
 
 
 SSL might have changed its name to TLS
 
-![](../../img/Pasted%20image%2020240402045643.png)
+![](../../../img/Pasted%20image%2020240402045643.png)
 
 Here, the TLS certificate and key are located in Linux’s central system location, /etc/ssl. The public certificates can be readable by anyone, but the key should be accessible only to the Apache master-process user, typically root. We prefer to set permissions to 444 for the certificate and 400 for the key.
 

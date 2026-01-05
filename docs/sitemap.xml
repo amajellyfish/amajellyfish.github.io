@@ -4,25 +4,13 @@
 
   <url>
     <loc>https://davidwrites.xyz/</loc>
-    <lastmod>2026-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/tech/ansible/</loc>
-    <lastmod>2026-01-03T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/tech/ansible/rhce-notes/</loc>
-    <lastmod>2026-01-03T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/tech/</loc>
-    <lastmod>2026-01-03T00:00:00+00:00</lastmod>
+    <loc>https://davidwrites.xyz/now/</loc>
+    <lastmod>2026-01-05T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -39,32 +27,8 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/now/</loc>
-    <lastmod>2026-01-01T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/articles/caffeine-is-destroying-you/</loc>
     <lastmod>2025-12-30T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/tech/linux/</loc>
-    <lastmod>2025-03-03T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/tech/linux/rhcsa-notes/</loc>
-    <lastmod>2025-03-03T00:00:00+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/</loc>
-    <lastmod>2023-11-06T06:20:36-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -75,142 +39,8 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/linux/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/linux/containers/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/linux/desktop/silverblue-1/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/management/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/nat/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/qos/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/apache/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/calibre_server/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/desktop/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/distrobox/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/editing-foliate-highlights-with-vim/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/gitea-setup/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/gitguide/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/iphonemigrate/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/libvirt/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/migrate-nextcloud-to-podman/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/obsidian-hugo-github-website-stack-ohg/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/obsidian-site-setup/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/pandoc/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/projects/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/proxmox_setup/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/rsync/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/serial-in-on-linux/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/skaffold/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/tmuxbook/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/vagrant-what-is-it-for/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/vm-creation-using-ansible/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/vs_codium/</loc>
+    <loc>https://davidwrites.xyz/tech/</loc>
+    <lastmod>2023-11-06T06:20:36-07:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -231,6 +61,11 @@
   </url>
   <url>
     <loc>https://davidwrites.xyz/tech/desktop/silverblue-1/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://davidwrites.xyz/tech/linux/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -380,11 +215,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/ansible/archive/awx-rpm-install/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/ansible/archive/awx-rpm-install/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -395,12 +225,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/ansible/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/linux/containers/ansible-and-podman/</loc>
+    <loc>https://davidwrites.xyz/tech/ansible/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -420,17 +245,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/ansible/archive/ansible-builder/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/ansible/archive/ansible-builder/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ansiblepuppetchef/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -460,17 +275,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/ansible/building-an-ansible-lab-with-ansible/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/ansible/building-an-ansible-lab-with-ansible/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/calibre-web-with-docker-and-nginx/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -480,17 +285,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ciscoacls/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/ciscoacls/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ciscocli/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -500,17 +295,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/classfulipv4/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/classfulipv4/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/cloudarchitecture/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -520,17 +305,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/new-setup/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/tools/new-setup/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/consoling_in_to_mx80_from_linux/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -550,17 +325,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/controllerbasednetworking/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/controllerbasednetworking/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/linux/containers/convert-docker-compose-to-quadlets/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -580,17 +345,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/device-management-protocols/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/device-management-protocols/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/dhcp-config/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -600,17 +355,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/dhcp-snooping-and-arp-inspection/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/dhcp-snooping-and-arp-inspection/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ethernetlans/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -620,17 +365,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/ansible/archive/execution-environments/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/ansible/archive/execution-environments/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/extended-acls/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -640,17 +375,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/how-to-build-a-website-with-hugo/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/tools/how-to-build-a-website-with-hugo/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/process-bookfusion-highlights/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -660,17 +385,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/how-to-set-up-hugo-relearn-theme/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/tools/how-to-set-up-hugo-relearn-theme/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/how-to-study-for-the-ccna-exam/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -680,17 +395,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ip-services/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/ip-services/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ip-transport-and-applications/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -700,17 +405,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ipv6/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/ipv6/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ipv6addressingandsubnetting/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -720,17 +415,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ipv6configuration/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/ipv6configuration/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ipv6routing/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -740,17 +425,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/juniper_cli_basics/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/juniper_cli_basics/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/lan-architecture/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -760,17 +435,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/l2-etherchannel/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/l2-etherchannel/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/linux/desktop/learning-touch-typing/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -785,11 +450,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/linux/desktop/my-fedora-setup/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/desktop/my-fedora-setup/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -800,17 +460,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/nextcloud-on-rhel-based-systems/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/tools/nextcloud-on-rhel-based-systems/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/ansible/nfs-setup/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -820,17 +470,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ospf-concepts/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/ospf-concepts/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ospfconfiguration/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -840,17 +480,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ospfnetworktypesandneighbors/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/ospfnetworktypesandneighbors/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/linux/containers/podman-links/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -870,11 +500,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/linux/containers/podman-quadlets/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/containers/podman-quadlets/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
@@ -890,17 +515,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/resources-for-passing-ccna/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/resources-for-passing-ccna/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/restandjson/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -910,17 +525,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/ansible/rhce-practice-exam-lab/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/ansible/rhce-practice-exam-lab/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/linux/rhcsa-vagrant-lab-setup/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -930,17 +535,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/router_operation/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/router_operation/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/routeroperation/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -950,17 +545,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/lanrouting/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/lanrouting/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/rstpandetherchannel/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -970,17 +555,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/securing-network-devices/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/securing-network-devices/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/security-architectures/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -995,22 +570,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/setting-up-a-self-hosted-nextcloud-server/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/tools/setting-up-a-self-hosted-nextcloud-server/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://davidwrites.xyz/tech/bash/shell-scripting/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/linux/desktop/silverblue/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1025,17 +590,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/softwaredefinedaccess/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/softwaredefinedaccess/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/spanningtreeprotocol/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1045,17 +600,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/static-routing/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/static-routing/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/switchinterfaces/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1065,17 +610,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/switching/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/switching/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/switchport-security-config/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1086,11 +621,6 @@
   </url>
   <url>
     <loc>https://davidwrites.xyz/tech/boot/system-initialization-message-logging-and-system-tuning/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/tcpipbasic/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1110,17 +640,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/toggle_poe/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/toggle_poe/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/troubleshootingrouting/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1130,17 +650,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/using-vagrant-on-linux/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/tools/using-vagrant-on-linux/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/vimguide/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1150,17 +660,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/vlans/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/vlans/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wanarchitecture/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1170,17 +670,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wansandiprouting/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/wansandiprouting/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/what-to-learn-after-ccna/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1190,17 +680,7 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wirelessarchitectures/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/wirelessarchitectures/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wireless_lan/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1210,27 +690,12 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wirelessnetworking/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/wirelessnetworking/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wireless_security/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://davidwrites.xyz/tech/networking/ccna-notes/wireless_security/</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://davidwrites.xyz/articles/tech/tools/using-man-pages/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

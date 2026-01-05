@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ansible on </title>
-    <link>https://davidwrites.xyz/articles/tech/ansible/</link>
+    <link>http://localhost:1313/articles/tech/ansible/</link>
     <description>Recent content in Ansible on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 </copyright>
-    <atom:link href="https://davidwrites.xyz/articles/tech/ansible/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/articles/tech/ansible/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title> AWX RPM Install</title>
-      <link>https://davidwrites.xyz/articles/tech/ansible/archive/awx-rpm-install/</link>
+      <link>http://localhost:1313/articles/tech/ansible/archive/awx-rpm-install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/ansible/archive/awx-rpm-install/</guid>
+      <guid>http://localhost:1313/articles/tech/ansible/archive/awx-rpm-install/</guid>
       <description>&lt;p&gt;&lt;a
   href=&#34;https://awx.wiki/installation&#34;
     target=&#34;_blank&#34;
@@ -29,30 +29,30 @@
     
     <item>
       <title>Ansible Builder</title>
-      <link>https://davidwrites.xyz/articles/tech/ansible/archive/ansible-builder/</link>
+      <link>http://localhost:1313/articles/tech/ansible/archive/ansible-builder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/ansible/archive/ansible-builder/</guid>
+      <guid>http://localhost:1313/articles/tech/ansible/archive/ansible-builder/</guid>
       <description>Using Ansible Builder to build an Execution Environment</description>
       
     </item>
     
     <item>
       <title>Building an Ansible lab with Ansible</title>
-      <link>https://davidwrites.xyz/articles/tech/ansible/building-an-ansible-lab-with-ansible/</link>
+      <link>http://localhost:1313/articles/tech/ansible/building-an-ansible-lab-with-ansible/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/ansible/building-an-ansible-lab-with-ansible/</guid>
+      <guid>http://localhost:1313/articles/tech/ansible/building-an-ansible-lab-with-ansible/</guid>
       <description>&lt;p&gt;When I started studying for RHCE, the study guide had me manually set up virtual machines for the Ansible lab environment. I thought.. Why not start my automation journey right, and automate them using Vagrant.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Execution Environments</title>
-      <link>https://davidwrites.xyz/articles/tech/ansible/archive/execution-environments/</link>
+      <link>http://localhost:1313/articles/tech/ansible/archive/execution-environments/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/ansible/archive/execution-environments/</guid>
+      <guid>http://localhost:1313/articles/tech/ansible/archive/execution-environments/</guid>
       <description>&lt;p&gt;Why use EEs?&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Portable Ansible environments
@@ -71,10 +71,10 @@
     
     <item>
       <title>NFS Setup</title>
-      <link>https://davidwrites.xyz/articles/tech/ansible/nfs-setup/</link>
+      <link>http://localhost:1313/articles/tech/ansible/nfs-setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/ansible/nfs-setup/</guid>
+      <guid>http://localhost:1313/articles/tech/ansible/nfs-setup/</guid>
       <description>&lt;p&gt;Server hosting the storage:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nn&#34;&gt;---&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; 
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;Install Packages&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
@@ -141,10 +141,10 @@ nfs_exports:&lt;/p&gt;</description>
     
     <item>
       <title>RHCE Practice Exam Lab</title>
-      <link>https://davidwrites.xyz/articles/tech/ansible/rhce-practice-exam-lab/</link>
+      <link>http://localhost:1313/articles/tech/ansible/rhce-practice-exam-lab/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/ansible/rhce-practice-exam-lab/</guid>
+      <guid>http://localhost:1313/articles/tech/ansible/rhce-practice-exam-lab/</guid>
       <description>&lt;p&gt;Configure passwordless ssh access to all servers
 - write an adhoc script to copy keys to other servers&lt;/p&gt;
 &lt;ul&gt;

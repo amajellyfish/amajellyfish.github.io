@@ -198,7 +198,7 @@
     "name": "How to Process Bookfusion Highlights with Vim",
     "headline": "How to Process Bookfusion Highlights with Vim",
     "description": "Removing extra stuff from Bookfusion exported highlights",
-    "abstract": "\u003cp\u003eHere are my highlights pulled up in Vim:\u003c\/p\u003e\n\u003cfigure\u003e\u003cimg\n    class=\u0022my-0 rounded-md\u0022\n    loading=\u0022lazy\u0022\n    decoding=\u0022async\u0022\n    fetchpriority=\u0022low\u0022\n    alt=\u0022\u0022\n    src=\u0022..\/..\/img\/Pasted%20image%2020240414034031.png\u0022\n    \u003e\u003c\/figure\u003e\n\u003cp\u003eAs you can see, Bookfusion gives you a lot of extra information when you export highlights. First, let\u0026rsquo;s get rid of the lines that begin with \u003ccode\u003e##\u003c\/code\u003e\u003c\/p\u003e",
+    "abstract": "\u003cp\u003eHere are my highlights pulled up in Vim:\u003c\/p\u003e\n\u003cfigure\u003e\u003cimg\n    class=\u0022my-0 rounded-md\u0022\n    loading=\u0022lazy\u0022\n    decoding=\u0022async\u0022\n    fetchpriority=\u0022low\u0022\n    alt=\u0022\u0022\n    src=\u0022..\/..\/..\/img\/Pasted%20image%2020240414034031.png\u0022\n    \u003e\u003c\/figure\u003e\n\u003cp\u003eAs you can see, Bookfusion gives you a lot of extra information when you export highlights. First, let\u0026rsquo;s get rid of the lines that begin with \u003ccode\u003e##\u003c\/code\u003e\u003c\/p\u003e",
     "inLanguage": "en",
     "url" : "https://davidwrites.xyz/tech/tools/process-bookfusion-highlights/",
     "author" : {
@@ -873,7 +873,7 @@
     decoding="async"
     fetchpriority="low"
     alt=""
-    src="../../img/Pasted%20image%2020240414034031.png"
+    src="../../../img/Pasted%20image%2020240414034031.png"
     ></figure>
 <p>As you can see, Bookfusion gives you a lot of extra information when you export highlights. First, let&rsquo;s get rid of the lines that begin with <code>##</code></p>
 <p>Enter command mode in Vim by pressing <code>esc</code>. Then type <code>:g/^##/d</code> and press enter.</p>
@@ -884,7 +884,7 @@
     decoding="async"
     fetchpriority="low"
     alt=""
-    src="../../img/Pasted%20image%2020240414034407.png"
+    src="../../../img/Pasted%20image%2020240414034407.png"
     ></figure>
 <p>Now let&rsquo;s get rid of the color references:`</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">:g/^Color/d
@@ -894,7 +894,7 @@
     decoding="async"
     fetchpriority="low"
     alt=""
-    src="../../img/Pasted%20image%2020240414034652.png"
+    src="../../../img/Pasted%20image%2020240414034652.png"
     ></figure>
 <p>To get rid of the timestamps, we must find a different commonality between the lines. In this case, each line ends with &ldquo;UTC&rdquo;. Let&rsquo;s match that:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">:g/UTC$/d
@@ -905,7 +905,7 @@
     decoding="async"
     fetchpriority="low"
     alt=""
-    src="../../img/Pasted%20image%2020240414035013.png"
+    src="../../../img/Pasted%20image%2020240414035013.png"
     ></figure>
 <p>Now, I want to get rid of the <code>&gt; </code> on each line:
 <code>%s/&gt; //g</code></p>
@@ -915,7 +915,7 @@
     decoding="async"
     fetchpriority="low"
     alt=""
-    src="../../img/Pasted%20image%2020240414035218.png"
+    src="../../../img/Pasted%20image%2020240414035218.png"
     ></figure>
 <p>Almost there, you&rsquo;ll notice there are 6 empty lines in between each highlight. Let&rsquo;s shrink those down into one:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">:%s/<span class="se">\(\n\)\{</span>3,<span class="o">}</span>/<span class="se">\r\r</span>/g
@@ -925,7 +925,7 @@
     decoding="async"
     fetchpriority="low"
     alt=""
-    src="../../img/Pasted%20image%2020240414035716.png"
+    src="../../../img/Pasted%20image%2020240414035716.png"
     ></figure>
 <p>The command above matches newline character <code>n</code> 3 or more times and replaces them with two newline characters <code>/r/r</code>.</p>
 <p>As we scroll down, I see a few weird artifacts from the book conversion to markdown.</p>
@@ -935,7 +935,7 @@
     decoding="async"
     fetchpriority="low"
     alt=""
-    src="../../img/Pasted%20image%2020240414040052.png"
+    src="../../../img/Pasted%20image%2020240414040052.png"
     ></figure>
 <p>Now, I want to get rid of any carrot brackets in the file. Let&rsquo;s use the substitute command again here:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">%s/&lt;//g
@@ -945,7 +945,7 @@
     decoding="async"
     fetchpriority="low"
     alt=""
-    src="../../img/Pasted%20image%2020240414040338.png"
+    src="../../../img/Pasted%20image%2020240414040338.png"
     ></figure>
 <p>Depending on your book and formatting. You may have some other stuff to edit.</p>
 

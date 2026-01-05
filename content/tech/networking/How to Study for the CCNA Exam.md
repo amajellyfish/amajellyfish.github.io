@@ -3,7 +3,7 @@ title = 'How to Study for the CCNA Exam'
 description = 'Guide to how you should approach studying for the CCNA exam'
 +++
 
-![CCNA Study Calendar](../../img/CCNA.png)
+![CCNA Study Calendar](../../../img/CCNA.png)
 
 It took me a whopping 2 years to finish my CCNA! I kept giving up and quitting my studies for months at a time. Why? Because I couldn't remember the massive amount of content covered in the CCNA. It felt hopeless. I could have done it in 6 month (or faster) if I knew how to study.
 

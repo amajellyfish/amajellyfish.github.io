@@ -4,7 +4,7 @@ Also, by setting up your infrastructure as code, you get to set up machines quic
 
 I just spent a full hour setting up and Ansible lab by manually attaching an installation disk, configuring IPs, selectng software, setting up accounts, etc. 
 
-![](../../img/Pasted%20image%2020250401042551.png)
+![](../../../img/Pasted%20image%2020250401042551.png)
 
 Vagrant uses a configuration file called a *vagrantfile*. This file has all of the information needed to deploy a new virtual machine. Let's install Vagrant on Fedora:
 ```bash
@@ -21,7 +21,7 @@ vagrant plugin install vagrant-libvirt
 ```
 
 You will also need virt-manager, libvirt, and qemu for this tutorial. 
-![](../../img/Pasted%20image%2020250401043118.png)
+![](../../../img/Pasted%20image%2020250401043118.png)
 
 
 First, we need a plugin that will let Vagrant interact with our VM provider. Install libvirt plugin to do this:

@@ -11,17 +11,6 @@
     
     <item>
       <title>My Fedora Setup</title>
-      <link>https://davidwrites.xyz/articles/tech/linux/desktop/my-fedora-setup/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidwrites.xyz/articles/tech/linux/desktop/my-fedora-setup/</guid>
-      <description>&lt;p&gt;When you first download Fedora Workstation, it&amp;rsquo;s going to be a little hard to figure out how to make it usable. Especially if you&amp;rsquo;ve never tinkered with Linux before.&lt;/p&gt;
-&lt;p&gt;This is because Fedora with Gnome desktop is a blank canvas. The point is to let you customize it to your needs. When I first install Fedora, I pull my justfile to install most of the programs I use:&lt;/p&gt;</description>
-      
-    </item>
-    
-    <item>
-      <title>My Fedora Setup</title>
       <link>https://davidwrites.xyz/tech/desktop/my-fedora-setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

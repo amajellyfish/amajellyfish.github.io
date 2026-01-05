@@ -86,11 +86,11 @@ ip addr
 
 ### Classful Network Addressing
 
-See [classfulipv4](../../articles/tech/networking/CCNA%20Notes/classfulipv4.md)
+See [classfulipv4](../../tech/networking/CCNA%20Notes/classfulipv4.md)
 
 ### IPv6 Address
 
-See [ipv6](../../articles/tech/networking/CCNA%20Notes/ipv6.md)
+See [ipv6](../../tech/networking/CCNA%20Notes/ipv6.md)
 
 The `ip addr` command also shows IPv6 addresses for the interfaces:
 ```bash
@@ -121,7 +121,7 @@ Tools:
 `cat /etc/protocols`
 ### TCP and UDP Protocols
 
-See [IP Transport and Applications](../../articles/tech/networking/CCNA%20Notes/IP%20Transport%20and%20Applications.md) and [tcp_ip_basic](../networking/CCNA%20Notes/tcp_ip_basic.md)
+See [IP Transport and Applications](../../tech/networking/CCNA%20Notes/IP%20Transport%20and%20Applications.md) and [tcp_ip_basic](../networking/CCNA%20Notes/tcp_ip_basic.md)
 
 ### ICMP
 
@@ -258,7 +258,7 @@ Naming rules for devices are governed by udevd service based on:
 
 ## Understanding Hosts Table
 
-See [DNS](DNS.md)
+See [index](dns/index.md)
 
 */etc/hosts* file
 - Table used to maintain hostname to IP mapping for systems on the local network, allowing us to access a system by simply employing its hostname.

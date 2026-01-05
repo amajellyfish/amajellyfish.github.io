@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>https://davidwrites.xyz/articles/tech/networking/</link>
+    <link>http://localhost:1313/articles/tech/networking/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 </copyright>
-    <lastBuildDate>Mon, 06 Nov 2023 06:20:36 -0700</lastBuildDate><atom:link href="https://davidwrites.xyz/articles/tech/networking/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Nov 2023 06:20:36 -0700</lastBuildDate><atom:link href="http://localhost:1313/articles/tech/networking/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/management/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/management/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/management/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/management/</guid>
       <description>&lt;p&gt;Quick Commands&lt;/p&gt;
 
 &lt;h1 class=&#34;relative group&#34;&gt;Basic Device Management
@@ -85,10 +85,10 @@
     
     <item>
       <title></title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/nat/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/nat/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/nat/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/nat/</guid>
       <description>&lt;h2 class=&#34;relative group&#34;&gt;10 NAT
     &lt;div id=&#34;10-nat&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -107,10 +107,10 @@ IP addresses statically mapped to each other.&lt;/p&gt;</description>
     
     <item>
       <title></title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/qos/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/qos/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/qos/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/qos/</guid>
       <description>&lt;p&gt;Friday, October 8, 2021 11:48 AM&lt;/p&gt;
 &lt;p&gt;Quality of Experience (QoE) -users’ perception of their use of the application on the&lt;br&gt;
 network.&lt;br&gt;
@@ -129,10 +129,10 @@ Step 4. The phone sends the packet to the destination IP phone.&lt;/p&gt;</descr
     
     <item>
       <title>Ansible, Puppet, and Chef</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ansiblepuppetchef/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/ansiblepuppetchef/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ansiblepuppetchef/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/ansiblepuppetchef/</guid>
       <description>&lt;p&gt;6.0 Automation and Programmability
 6.6 Recognize the capabilities of configuration mechanisms Puppet, Chef, and Ansible&lt;/p&gt;
 &lt;p&gt;Configuration Drift&lt;/p&gt;
@@ -147,10 +147,10 @@ Centralized Configuration Files and Version Control&lt;/p&gt;</description>
     
     <item>
       <title>Cisco ACLs</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ciscoacls/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/ciscoacls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ciscoacls/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/ciscoacls/</guid>
       <description>&lt;p&gt;Can be used to match packets for applying Quality of Service (QoS) features.&lt;br&gt;
 ACL Location and Direction&lt;/p&gt;
 &lt;ul&gt;
@@ -168,10 +168,10 @@ ACL Location and Direction&lt;/p&gt;
     
     <item>
       <title>Cisco CLI</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ciscocli/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/ciscocli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ciscocli/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/ciscocli/</guid>
       <description>&lt;p&gt;Reload&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Tells the system to reboot IOS&lt;br&gt;
@@ -193,10 +193,10 @@ Right Arrow or Ctrl+F- Move cursor (forward)
     
     <item>
       <title>Classful IPv4</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/classfulipv4/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/classfulipv4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/classfulipv4/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/classfulipv4/</guid>
       <description>&lt;p&gt;IPv4 Address Classes Based on First Octet Values&lt;/p&gt;
 &lt;p&gt;Class      First Octet Values      Purpose&lt;/p&gt;
 &lt;p&gt;A            1–126                         Unicast (large networks)&lt;/p&gt;
@@ -208,10 +208,10 @@ Right Arrow or Ctrl+F- Move cursor (forward)
     
     <item>
       <title>Cloud Architecture</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/cloudarchitecture/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/cloudarchitecture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/cloudarchitecture/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/cloudarchitecture/</guid>
       <description>&lt;p&gt;1.0 Network Fundamentals
 1.1 Explain the role and function of network components
 1.1.g Servers
@@ -223,10 +223,10 @@ Right Arrow or Ctrl+F- Move cursor (forward)
     
     <item>
       <title>Consoling in to MX80 from linux</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/consoling_in_to_mx80_from_linux/</link>
+      <link>http://localhost:1313/articles/tech/networking/consoling_in_to_mx80_from_linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/consoling_in_to_mx80_from_linux/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/consoling_in_to_mx80_from_linux/</guid>
       <description>&lt;p&gt;Plug console cable in&lt;/p&gt;
 &lt;p&gt;find out what your serial line name is:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;$ dmesg &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep -i FTDI
@@ -237,10 +237,10 @@ Right Arrow or Ctrl+F- Move cursor (forward)
     
     <item>
       <title>Controller-Based Networking</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/controllerbasednetworking/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/controllerbasednetworking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/controllerbasednetworking/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/controllerbasednetworking/</guid>
       <description>&lt;p&gt;Friday, October 29, 2021 2:40 PM&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;○ Matching an Ethernet frame’s destination Media Access Control (MAC) address to the MAC address table (Layer 2 switches)
 Matching an IP packet’s destination IP address to the IP routing table (routers, Layer 3
@@ -278,10 +278,10 @@ adding to, removing, and changing entries to the tables used by the data plane&l
     
     <item>
       <title>Device Management Protocols</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/device-management-protocols/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/device-management-protocols/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/device-management-protocols/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/device-management-protocols/</guid>
       <description>&lt;p&gt;To configure a router or switch to logging host {address | hostname } send log messages to a syslog server global command.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;*Dec 18 17:10:15.079: %LINEPROTOchanged state to down - 5 - UPDOWN: Line protocol on Interface FastEthernet0/0,
 A timestamp: *Dec 18 17:10:15.
@@ -298,10 +298,10 @@ defaults by turning off timestamps and turning on sequence numbers.
     
     <item>
       <title>DHCP Configuration</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/dhcp-config/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/dhcp-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/dhcp-config/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/dhcp-config/</guid>
       <description>&lt;p&gt;Thursday, September 30, 2021 12:17 PM&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -316,10 +316,10 @@ defaults by turning off timestamps and turning on sequence numbers.
     
     <item>
       <title>DHCP Snooping and ARP Inspection</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/dhcp-snooping-and-arp-inspection/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/dhcp-snooping-and-arp-inspection/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/dhcp-snooping-and-arp-inspection/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/dhcp-snooping-and-arp-inspection/</guid>
       <description>&lt;p&gt;Attacker replies with false dhcp information by naming itself as the default gateway Pc1 send all messages to another network to attacker, becoming a man-in-the-middle&lt;br&gt;
 attack (pc2 could forward the messages to the actual default gateway&lt;/p&gt;</description>
       
@@ -327,10 +327,10 @@ attack (pc2 could forward the messages to the actual default gateway&lt;/p&gt;</
     
     <item>
       <title>Ethernet LANs</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ethernetlans/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/ethernetlans/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ethernetlans/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/ethernetlans/</guid>
       <description>&lt;p&gt;802.3 (Ethernet Standards&lt;br&gt;
 10BASE-T&lt;/p&gt;
 &lt;ul&gt;
@@ -386,10 +386,10 @@ attack (pc2 could forward the messages to the actual default gateway&lt;/p&gt;</
     
     <item>
       <title>Extended ACLs</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/extended-acls/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/extended-acls/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/extended-acls/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/extended-acls/</guid>
       <description>&lt;p&gt;IP and TCP Header&lt;br&gt;
 IP Header&lt;br&gt;
 Misc Header Fields▪ 9 bytes&lt;/p&gt;
@@ -414,10 +414,10 @@ Source Port- 2 bytes
     
     <item>
       <title>How to Study for the CCNA Exam</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/how-to-study-for-the-ccna-exam/</link>
+      <link>http://localhost:1313/articles/tech/networking/how-to-study-for-the-ccna-exam/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/how-to-study-for-the-ccna-exam/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/how-to-study-for-the-ccna-exam/</guid>
       <description>&lt;figure&gt;&lt;img
     class=&#34;my-0 rounded-md&#34;
     loading=&#34;lazy&#34;
@@ -432,10 +432,10 @@ Source Port- 2 bytes
     
     <item>
       <title>IP Services</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ip-services/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/ip-services/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ip-services/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/ip-services/</guid>
       <description>&lt;p&gt;All hosts act like they always have, with one default router setting that never has to change.&lt;br&gt;
 The default routers share a virtual IP address in the subnet, defined by the FHRP.&lt;br&gt;
 Hosts use the FHRP virtual IP address as their default router address.&lt;br&gt;
@@ -450,10 +450,10 @@ protocols that fill the same role&lt;/p&gt;</description>
     
     <item>
       <title>IP Transport and Applications</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ip-transport-and-applications/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/ip-transport-and-applications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ip-transport-and-applications/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/ip-transport-and-applications/</guid>
       <description>&lt;p&gt;example
 All open on one computer:
 Port 80 Web ServerPort 800 Ad Server
@@ -469,10 +469,10 @@ Socket&lt;/p&gt;
     
     <item>
       <title>IPv6</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ipv6/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/ipv6/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ipv6/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/ipv6/</guid>
       <description>&lt;p&gt;Endpackets if the host is in a different subnet.-user hosts need to know the IPv6 address of a default router, to which the host sends IPv6
 IPv6 routers de-encapsulate and re-encapsulate each IPv6 packet when routing the packet.
 IPv6 routers make routing decisions by comparing the IPv6 packet’s destination address to the router’s IPv6 routing table; the matched route lists directions of where to send the IPv6 packet
@@ -484,10 +484,10 @@ You could take the preceding list and replace every instance of IPv6 with IPv4, 
     
     <item>
       <title>IPv6 Addressing and Subnetting</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ipv6addressingandsubnetting/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/ipv6addressingandsubnetting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ipv6addressingandsubnetting/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/ipv6addressingandsubnetting/</guid>
       <description>&lt;p&gt;Friday, August 27, 2021 3:17 PM&lt;/p&gt;
 &lt;p&gt;IPv6 Subnetting Using Global Unicast Addresses&lt;br&gt;
 Most everyone uses the easiest possible IPv6 prefix length: /64.&lt;br&gt;
@@ -501,10 +501,10 @@ with the commonly used 64being the length of the global routing prefix.-bit inte
     
     <item>
       <title>IPv6 Configuration</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ipv6configuration/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/ipv6configuration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ipv6configuration/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/ipv6configuration/</guid>
       <description>&lt;p&gt;Monday, August 30, 2021 9:19 AM&lt;/p&gt;
 &lt;p&gt;both abbreviated and unabbreviated addresses, and both lowercase and uppercase hex digits,&lt;br&gt;
 showing that all are allowed.&lt;br&gt;
@@ -526,10 +526,10 @@ the IPv6 &lt;strong&gt;show interfaces&lt;/strong&gt;. So, to see IPv6 interfac
     
     <item>
       <title>IPv6 Routing</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ipv6routing/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/ipv6routing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ipv6routing/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/ipv6routing/</guid>
       <description>&lt;p&gt;Tuesday, August 31, 2021 2:58 PM&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;they re-add these routes when the interface is again in a working (up/up) state
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Examples of Local IPv6 Routes&lt;br&gt;
@@ -542,10 +542,10 @@ the &lt;strong&gt;ipv6 route&lt;/strong&gt; command begins with the prefix and
     
     <item>
       <title>Juniper CLI Basics</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/juniper_cli_basics/</link>
+      <link>http://localhost:1313/articles/tech/networking/juniper_cli_basics/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/juniper_cli_basics/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/juniper_cli_basics/</guid>
       <description>&lt;h2 class=&#34;relative group&#34;&gt;Connection Methods
     &lt;div id=&#34;connection-methods&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -572,10 +572,10 @@ No password&lt;/p&gt;</description>
     
     <item>
       <title>LAN Architecture</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/lan-architecture/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/lan-architecture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/lan-architecture/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/lan-architecture/</guid>
       <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Star: A design in which one central device connects to several others, so that if you
 drew the links out in all directions, the design would look like a star with light shining in all directions.
 &lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Topology Terminology Seen Within a Two-Tier Design
@@ -593,10 +593,10 @@ none of the access layer switches connect to each other.
     
     <item>
       <title>Layer 2 Etherchannel</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/l2-etherchannel/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/l2-etherchannel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/l2-etherchannel/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/l2-etherchannel/</guid>
       <description>&lt;h3 class=&#34;relative group&#34;&gt;Manual Layer 2 EtherChannel
     &lt;div id=&#34;manual-layer-2-etherchannel&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -621,10 +621,10 @@ none of the access layer switches connect to each other.
     
     <item>
       <title>OSPF Concepts</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ospf-concepts/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/ospf-concepts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ospf-concepts/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/ospf-concepts/</guid>
       <description>&lt;p&gt;Thursday, August 26, 2021 1:37 PM&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;metric.
 If the network topology changeshave failed and pick a new currently best route. (This process is called convergence.)—for example, a link fails—react by advertising that some routes
@@ -641,10 +641,10 @@ routing protocols designed to exchange routes between routers in different auton
     
     <item>
       <title>OSPF Configuration</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ospfconfiguration/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/ospfconfiguration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ospfconfiguration/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/ospfconfiguration/</guid>
       <description>&lt;p&gt;Thursday, August 26, 2021 2:45 PM&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;The information to match each of these three steps, respectively. show ip ospf neighbor, show ip ospf database, and show ip route commands display
 &lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;FULL/ use a DR/BDR.-: The neighbor state is full, with the “-“ instead of letters meaning that the link does not
@@ -664,10 +664,10 @@ on the correct interfaces or not based on the configuration.&lt;br&gt;
     
     <item>
       <title>OSPF Network Types and Neighbors</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ospfnetworktypesandneighbors/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/ospfnetworktypesandneighbors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/ospfnetworktypesandneighbors/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/ospfnetworktypesandneighbors/</guid>
       <description>&lt;p&gt;Friday, August 27, 2021 9:44 AM&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;To see the setting, use the show ip ospf interface command,as shown in Example 21-4. The first
 highlighted item identifies the network type
@@ -681,20 +681,20 @@ OSPF process is reset.&lt;/p&gt;</description>
     
     <item>
       <title>Resources for Passing CCNA</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/resources-for-passing-ccna/</link>
+      <link>http://localhost:1313/articles/tech/networking/resources-for-passing-ccna/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/resources-for-passing-ccna/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/resources-for-passing-ccna/</guid>
       <description>&lt;p&gt;There are a lot of great CCNA resources out there. This list does not include all of them. Only the ones that I personally used to pass the CCNA 200-301 exam.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>REST and JSON</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/restandjson/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/restandjson/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/restandjson/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/restandjson/</guid>
       <description>&lt;p&gt;6.0 Automation and Programmability&lt;br&gt;
 6.5 Describe characteristics of REST-based APIs (CRUD, HTTP verbs, and data encoding)&lt;br&gt;
 6.7 Interpret JSON encoded data&lt;/p&gt;
@@ -704,10 +704,10 @@ OSPF process is reset.&lt;/p&gt;</description>
     
     <item>
       <title>Router Operation</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/router_operation/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/router_operation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/router_operation/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/router_operation/</guid>
       <description>&lt;p&gt;The configuration of IP addresses differs in some ways, with switches using a VLAN interface and routers using an IP address configured on each working interface.&lt;/p&gt;
 &lt;p&gt;switches do not have auxiliary ports.&lt;/p&gt;</description>
       
@@ -715,10 +715,10 @@ OSPF process is reset.&lt;/p&gt;</description>
     
     <item>
       <title>ROuter Operation</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/routeroperation/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/routeroperation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/routeroperation/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/routeroperation/</guid>
       <description>&lt;p&gt;The configuration of IP addresses differs in some ways, with switches using a VLAN interface and routers using an IP address configured on each working interface.&lt;/p&gt;
 &lt;p&gt;switches do not have auxiliary ports.&lt;br&gt;
 Layer 2 switches support the &lt;strong&gt;show mac address-table&lt;/strong&gt; command, while Cisco routers do not.&lt;br&gt;
@@ -731,20 +731,20 @@ routers do not)&lt;br&gt;
     
     <item>
       <title>Routing in the LAN</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/lanrouting/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/lanrouting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/lanrouting/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/lanrouting/</guid>
       <description>&lt;p&gt;A. Use the sdm prefer lanbase-routing command (or similar) in global configuration mode to change the switch forwarding ASIC settings to make space for IPv4 routes at the next reload of the switch.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>RSTP and Etherchannel</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/rstpandetherchannel/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/rstpandetherchannel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/rstpandetherchannel/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/rstpandetherchannel/</guid>
       <description>&lt;p&gt;2.0 Network Access2.4 Configure and verify (Layer 2/Layer 3) EtherChannel (LACP)
 2.5 Describe the need for and basic operations of Rapid PVST+ Spanning Tree Protocol and identify basic operations2.5.a Root port, root bridge (primary/secondary), and other port names
 2.5.b Port states (forwarding/blocking)2.5.c PortFast benefits
@@ -757,10 +757,10 @@ and STPtheswitches do not support STP or RSTP with the single tree (CST)-based P
     
     <item>
       <title>Securing Network Devices</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/securing-network-devices/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/securing-network-devices/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/securing-network-devices/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/securing-network-devices/</guid>
       <description>&lt;p&gt;Thursday, September 23, 2021 10:32 AM&lt;/p&gt;
 
 &lt;h5 class=&#34;relative group&#34;&gt;- MD5
@@ -806,10 +806,10 @@ Username secret command Encoding&lt;br&gt;
     
     <item>
       <title>Security Architectures</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/security-architectures/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/security-architectures/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/security-architectures/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/security-architectures/</guid>
       <description>&lt;p&gt;This chapter covers the following exam topics:&lt;br&gt;
 5.0 Security Fundamentals&lt;br&gt;
 5.1 Define key security concepts (threats, vulnerabilities, exploits, and mitigation techniques)&lt;br&gt;
@@ -822,10 +822,10 @@ alternatives (multifactor authentication, certificates, and biometrics)&lt;br&gt
     
     <item>
       <title>Software-Defined Access (SDA)</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/softwaredefinedaccess/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/softwaredefinedaccess/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/softwaredefinedaccess/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/softwaredefinedaccess/</guid>
       <description>&lt;p&gt;1.0 Network Fundamentals&lt;br&gt;
 1.1 Explain the role and function of network components&lt;br&gt;
 1.1.e Controllers (Cisco DNA Center and WLC)&lt;br&gt;
@@ -842,10 +842,10 @@ management&lt;/p&gt;</description>
     
     <item>
       <title>Spanning Tree Protocol</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/spanningtreeprotocol/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/spanningtreeprotocol/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/spanningtreeprotocol/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/spanningtreeprotocol/</guid>
       <description>&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;2.0 Network Access
 2.4 Configure and verify (Layer 2/Layer 3) EtherChannel (LACP)2.5 Describe the need for and basic operations of Rapid PVST+ Spanning Tree Protocol and identify
 basic operations
@@ -896,20 +896,20 @@ three criteria to choose whether to put and interface in forwarding state:&lt;/l
     
     <item>
       <title>Static Routing</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/static-routing/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/static-routing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/static-routing/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/static-routing/</guid>
       <description>&lt;p&gt;Routers first learn connected routes, which are routes for subnets attached to a router interface. Routers can also use static routes, which are routes created through a configuration command (ip route) that tells the router what route to put in the IPv4 routing table. And routers can use a routing protocol, in which routers tell each other about all their known routes, so that all routers can learn and build routes to all networks and subnets.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Switch Interfaces</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/switchinterfaces/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/switchinterfaces/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/switchinterfaces/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/switchinterfaces/</guid>
       <description>&lt;p&gt;1.0 Network Fundamentals1.1 Explain the role and function of network components
 1.1.b L2 and L3 switches1.4 Describe switching concepts
 Configuring Speed, Duplex, and Description&lt;/p&gt;
@@ -925,10 +925,10 @@ Configuring Speed, Duplex, and Description&lt;/p&gt;
     
     <item>
       <title>Switching</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/switching/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/switching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/switching/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/switching/</guid>
       <description>&lt;p&gt;1.0 Network Fundamentals1.1 Explain the role and function of network components&lt;br&gt;
 1.1.b L2 and L3 Switches1.13 Describe switching concepts&lt;br&gt;
 1.13.a MAC learning and aging1.13.b Frame switching&lt;br&gt;
@@ -940,10 +940,10 @@ Overview of Switching Logic&lt;/p&gt;</description>
     
     <item>
       <title>Switchport Security Configuration</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/switchport-security-config/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/switchport-security-config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/switchport-security-config/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/switchport-security-config/</guid>
       <description>&lt;p&gt;Tuesday, September 28, 2021 2:44 PM&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;switchport port&lt;/strong&gt; - predefine any allowed source MAC addresses for this interface. &lt;strong&gt;- security mac-address&lt;/strong&gt; &lt;em&gt;mac-address&lt;/em&gt;&lt;/li&gt;
@@ -978,10 +978,10 @@ or for a PC connected to the phone)
     
     <item>
       <title>TCP/IP Basics</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/tcpipbasic/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/tcpipbasic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/tcpipbasic/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/tcpipbasic/</guid>
       <description>&lt;p&gt;ApplicationTransport
 NetworkData Link
 Physical&lt;br&gt;
@@ -998,10 +998,10 @@ Application Layer&lt;/p&gt;
     
     <item>
       <title>Toggle PoE on a Juniper Switch</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/toggle_poe/</link>
+      <link>http://localhost:1313/articles/tech/networking/toggle_poe/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/toggle_poe/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/toggle_poe/</guid>
       <description>&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Configure
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; poe interface ge-0/0/0 disable
@@ -1017,10 +1017,10 @@ Application Layer&lt;/p&gt;
     
     <item>
       <title>Troubleshooting Routing Issues</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/troubleshootingrouting/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/troubleshootingrouting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/troubleshootingrouting/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/troubleshootingrouting/</guid>
       <description>&lt;p&gt;Problem Isolation Using the ping Command&lt;/p&gt;
 &lt;p&gt;functions as part of Layer 3, as a control protocol to assist IP by helping manage the IP network functions.&lt;/p&gt;
 &lt;p&gt;Ping options&lt;/p&gt;
@@ -1030,10 +1030,10 @@ Application Layer&lt;/p&gt;
     
     <item>
       <title>VLANs</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/vlans/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/vlans/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/vlans/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/vlans/</guid>
       <description>&lt;h2 class=&#34;relative group&#34;&gt;Virtual LAN Concepts
     &lt;div id=&#34;virtual-lan-concepts&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -1094,10 +1094,10 @@ dynamic auto-passively waits to receive trunk negotiation messages
     
     <item>
       <title>WAN Architecture</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wanarchitecture/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/wanarchitecture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wanarchitecture/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/wanarchitecture/</guid>
       <description>&lt;p&gt;1.0 Network Fundamentals&lt;br&gt;
 1.2 Describe the characteristics of network topology architecture&lt;br&gt;
 1.2.d WAN&lt;br&gt;
@@ -1118,10 +1118,10 @@ dynamic auto-passively waits to receive trunk negotiation messages
     
     <item>
       <title>WANs and IP Routing</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wansandiprouting/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/wansandiprouting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wansandiprouting/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/wansandiprouting/</guid>
       <description>&lt;p&gt;Leased-Line WANs&lt;br&gt;
 Physical Details of Leased Lines&lt;/p&gt;
 &lt;ul&gt;
@@ -1161,10 +1161,10 @@ HDLC&lt;/li&gt;
     
     <item>
       <title>What to Learn After CCNA</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/what-to-learn-after-ccna/</link>
+      <link>http://localhost:1313/articles/tech/networking/what-to-learn-after-ccna/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/what-to-learn-after-ccna/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/what-to-learn-after-ccna/</guid>
       <description>&lt;p&gt;It&amp;rsquo;s easy to get overwhelmed with options after &lt;a
   href=&#34;Resources%20for%20Passing%20CCNA.md&#34;&gt;completing&lt;/a&gt; your CCNA. What do you learn next? If you are trying to get a job as a Network Engineer, you will want to check this out.&lt;/p&gt;</description>
       
@@ -1172,10 +1172,10 @@ HDLC&lt;/li&gt;
     
     <item>
       <title>Wireless Architectures</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wirelessarchitectures/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/wirelessarchitectures/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wirelessarchitectures/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/wirelessarchitectures/</guid>
       <description>&lt;p&gt;The data path from the wireless network to the wired network is very short; the autonomous AP links the two networks. Data to and from wireless clients does not have to travel up into the cloud and back; the cloud is used to bring management functions into the data plane.
 the network in Figure 27-3 consists of two distinct paths—one for data traffic and another for
 management traffic, corresponding to the following two functions:&lt;/p&gt;</description>
@@ -1184,10 +1184,10 @@ management traffic, corresponding to the following two functions:&lt;/p&gt;</des
     
     <item>
       <title>Wireless LAN</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wireless_lan/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/wireless_lan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wireless_lan/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/wireless_lan/</guid>
       <description>&lt;p&gt;multiple VLANs must be brought to it over a trunk link.&lt;/p&gt;
 &lt;p&gt;The wireless side of an AP inherently trunks 802.11 frames by marking them with the BSSID of the WLAN where they belong.&lt;/p&gt;</description>
       
@@ -1195,20 +1195,20 @@ management traffic, corresponding to the following two functions:&lt;/p&gt;</des
     
     <item>
       <title>Wireless Networking</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wirelessnetworking/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/wirelessnetworking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wirelessnetworking/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/wirelessnetworking/</guid>
       <description>&lt;p&gt;the operation of a BSS hinges on the AP, the BSS is bounded by usable. This is known as thebasic service area (BSA)or cell. the area where the AP’s signal is&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Wireless Security</title>
-      <link>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wireless_security/</link>
+      <link>http://localhost:1313/articles/tech/networking/ccna-notes/wireless_security/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/articles/tech/networking/ccna-notes/wireless_security/</guid>
+      <guid>http://localhost:1313/articles/tech/networking/ccna-notes/wireless_security/</guid>
       <description>&lt;p&gt;A comprehensive approach to wireless security focuses on the following areas:&lt;/p&gt;
 &lt;p&gt;Identifying the endpoints of a wireless connection&lt;/p&gt;
 &lt;p&gt;Identifying the end user (authentication)&lt;/p&gt;
