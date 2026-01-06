@@ -9,7 +9,7 @@ What I am up to [Now](https://nownownow.com/about).
 When I'm not working or spending time with the family, I am practicing drum rudiments, fiddling with a Rubix cube, or playing Starcraft 2. Also focused on eating healthy, running daily, and doing mobility work. 
 
 ## Today
-[x] 315mg caffeine
+- [x] 315mg caffeine
 
 ## This week
 -30mg daily caffeine to go from 345 > 165mg
