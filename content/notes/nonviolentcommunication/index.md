@@ -1,9 +1,9 @@
 ---
-title: 'Nonviolent Communication'
+title: 'Nonviolent Communication Summary and Notes'
 date: 2025-08-15
-description: "Nonviolent Communication"
+description: "Nonviolent Communication Summary and Notes"
 tags: ['Non-Fiction']
-summary: "My notes from Nonviolent Communication 8/10"
+summary: "Nonviolent Communication Summary and Notes"
 type: 'Non-Fiction'
 featureimage: nonviolentcommunication.png
 ---

@@ -1,8 +1,8 @@
 ---
-title: 'The Easy Way to Quit Caffeine'
+title: 'The Easy Way to Quit Caffeine Summary and Notes'
 date: 2025-12-30
-description: "The Easy Way to Quit Caffeine"
-summary: "My notes from The Easy Way to Quit Caffeine"
+description: "The Easy Way to Quit Caffeine Summary and Notes"
+summary: "The Easy Way to Quit Caffeine Summary and Notes"
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="easywaytoquitcaffeine.png" style="width:25%; height:auto;" />

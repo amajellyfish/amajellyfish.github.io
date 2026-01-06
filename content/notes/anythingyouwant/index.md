@@ -1,8 +1,8 @@
 ---
-title: 'Anything You Want'
+title: 'Anything You Want Summary and Notes'
 date: 2025-05-05
-description: "Anything You Want 8/10"
-summary: "My notes from Anything You Want"
+description: "Anything You Want Summary and Notes"
+summary: "Anything You Want Summary and Notes"
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="anythingyouwant.png" style="width:25%; height:auto;" />

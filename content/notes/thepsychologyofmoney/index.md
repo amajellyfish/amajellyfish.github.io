@@ -1,9 +1,9 @@
 ---
-title: 'The Psychology of Money'
+title: 'The Psychology of Money Summary and Notes'
 date: 2022-06-01
-description: "The Psychology of Money"
+description: "The Psychology of Money Summary and Notes"
 tags: ['Non-Fiction']
-summary: "My notes from The Psychology of Money 9/10"
+summary: "The Psychology of Money Summary and Notes"
 type: 'Non-Fiction'
 featureimage: psychologyofmoney.png
 ---

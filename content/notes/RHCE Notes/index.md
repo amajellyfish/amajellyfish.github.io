@@ -1,8 +1,8 @@
 ---
 title: 'My RHCE Notes'
 date: 2026-01-03
-description: "Red Hat RHCE 8 Cert Guide notes"
-summary: "Red Hat RHCE 8 Cert Guide notes"
+description: "Red Hat RHCE 8 Cert Guide RHCE notes"
+summary: "Red Hat RHCE 8 Cert Guide RHCE notes"
 cascade:
   showDate: false
 ---
@@ -21,29 +21,29 @@ cascade:
 </div>
 
 ### My Notes
-- [ad hoc commands](ad%20hoc%20commands.md)
-- [ansible.cfg](ansible.cfg.md)
-- [boot process](boot%20process.md)
-- [deploying files](deploying%20files.md)
-- [handlers](handlers.md)
-- [host name patterns](host%20name%20patterns.md)
-- [including and importing files](including%20and%20importing%20files.md)
-- [inventory](inventory.md)
-- [jinja2 templates](jinja2%20templates.md)
-- [loops and items](loops%20and%20items.md)
-- [optimizing ansible processing](optimizing%20ansible%20processing.md)
-- [packages repositories and subscriptions](packages%20repositories%20and%20subscriptions.md)
-- [partitions and lvm](partitions%20and%20lvm.md)
-- [playbooks](playbooks.md)
-- [roles](roles.md)
-- [selinux](selinux.md)
-- [services](services.md)
-- [tags](tags.md)
-- [troubleshooting](troubleshooting.md)
-- [users and groups](users%20and%20groups.md)
-- [using when to run tasks conditionally](using%20when%20to%20run%20tasks%20conditionally.md)
-- [variables](variables.md)
-- [vault](vault.md)
+- [index](adhoccommands/index.md)
+- [index](ansibleconfig/index.md)
+- [index](bootprocess/index.md)
+- [index](deployingfiles/index.md)
+- [index](handlers/index.md)
+- [index](hostnamepatterns/index.md)
+- [index](includingandimportingfiles/index.md)
+- [index](inventory/index.md)
+- [index](jinja2templates/index.md)
+- [index](loopsanditems/index.md)
+- [index](optimizingansibleprocessing/index.md)
+- [index](packagesrepositoriesandsubscriptions/index.md)
+- [storage partitions and lvm](storagepartitionsandlvm/storage%20partitions%20and%20lvm.md)
+- [index](playbooks/index.md)
+- [index](roles/index.md)
+- [index](selinux/index.md)
+- [index](services/index.md)
+- [tags](tags/tags.md)
+- [troubleshooting](troubleshooting/troubleshooting.md)
+- [users and groups](usersandgroups/users%20and%20groups.md)
+- [using when to run tasks conditionally](when/using%20when%20to%20run%20tasks%20conditionally.md)
+- [variables](variables/variables.md)
+- [index](ansiblevault/index.md)
 
 #### Labs
 - [lab configure playbook with custom facts](lab%20configure%20playbook%20with%20custom%20facts.md)
@@ -54,5 +54,5 @@ cascade:
 - [lab managing users](lab%20managing%20users.md)
 
 ### Other stuff
-- [Ansible Documentation](Ansible%20Documentation.md)
+- [index](ansibledocumentation/index.md)
 

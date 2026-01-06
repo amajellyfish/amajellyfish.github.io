@@ -1,8 +1,8 @@
 ---
-title: 'Good Inside'
+title: 'Good Inside Summary and Notes'
 date: 2025-02-22
-description: "Good Inside Book Notes"
-summary: "My notes from Good Inside"
+description: "Good Inside Summary and Notes"
+summary: "Good Inside Summary and Notes"
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="goodinside.png" style="width:25%; height:auto;" />

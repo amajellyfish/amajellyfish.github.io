@@ -1,8 +1,8 @@
 ---
-title: 'Dopamine Nation'
+title: 'Dopamine Nation Summary and Notes'
 date: 2025-02-22
-description: "Dopamine Nation Book Notes"
-summary: "My notes from Dopamine Nation"
+description: "Dopamine Nation Summary and Notes"
+summary: "Dopamine Nation Summary and Notes"
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="dopaminenation.png" style="width:25%; height:auto;" />
@@ -153,7 +153,7 @@ Track your usage to become more aware. Overall awareness will help mitigate cons
 
 Delay discounting is when high dopamine messes with our ability to delay gratification. "Temporal horizons" shrink when we are under the spell of a drug. You become governed by the pleasure-pain balance, instead of by reason. You can no longer objectively evaluate immediate rewards vs their long term counterparts. 
 
-If you don't take control now, you may be doing this forever. 
+**If you don't take control now, you may be doing this forever.** 
 
 The opposite is also true, immediate rewards activate emotion and reward parts of the brain. When you delay rewards, you activate the prefrontal cortex. Which is involved in planning and abstract thinking. 
 
@@ -169,7 +169,7 @@ Rather than feeling restrained by this new way of living, you will feel liberate
 
 Intimacy from drugs doesn't last.
 
-There are drugs may help with addictions, but have the potential to become addictive themselves. Prescription stimulants like Adderall are the molecular equivalent to meth. They cause huge spikes of dopamine and have high high potential for abuse. 
+There are drugs may help with addictions, but have the potential to become addictive themselves. Prescription stimulants like Adderall are the molecular equivalent to meth. They cause huge spikes of dopamine and have high potential for abuse. 
 
 These drugs could also potentially make things worse in the long run and have unintended consequences. 
 
@@ -189,7 +189,7 @@ When you are numb to everything, you lose your hunger for anything. Medications 
 
 We feel great after a cold shower. The first seconds are painful, tell yourself this is temporary. 
 
-James bond shower: Start with a normal shower, then end it cold for at least a minute.
+**James bond shower:** Start with a normal shower, then end it cold for at least a minute. 
 
 Dopamine and norepinephrine levels rise 250 and 530% above baseline respectively. And remain elevated hours after. And have been shown to raise serotonin and neuronal growth. 
 

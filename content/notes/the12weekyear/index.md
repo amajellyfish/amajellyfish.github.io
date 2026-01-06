@@ -1,8 +1,8 @@
 ---
-title: 'The 12 Week Year'
+title: 'The 12 Week Year Summary and Notes'
 date: 2024-03-12
-description: "The 12 Week Year Book Summary"
-summary: "My notes from The 12 Week Year 8/10"
+description: "The 12 Week Year Summary and Notes"
+summary: "The 12 Week Year Summary and Notes"
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="the12weekyear.png" style="width:25%; height:auto;" />

@@ -1,5 +1,5 @@
 ---
-title: 'RHCSA Cert Guide Notes'
+title: 'My RHCSA Notes'
 date: 2025-03-03
 description: "My RHCSA Notes"
 summary: "My RHCSA Notes"

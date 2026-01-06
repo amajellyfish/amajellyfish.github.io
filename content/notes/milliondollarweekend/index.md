@@ -1,9 +1,9 @@
 ---
-title: 'Million Dollar Weekend'
+title: 'Million Dollar Weekend Summary and Notes'
 date: 2025-08-02
-description: "Million Dollar Weekend"
+description: "Million Dollar Weekend Summary and Notes"
 tags: ['Non-Fiction']
-summary: "My notes from Million Dollar Weekend"
+summary: "Million Dollar Weekend Summary and Notes"
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="milliondollarweekend.png" style="width:25%; height:auto;" />

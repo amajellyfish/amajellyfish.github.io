@@ -1,8 +1,8 @@
 ---
-title: 'Tribes'
+title: 'Tribes Summary and Notes'
 date: 2025-12-28
-description: "Tribes Book Notes"
-summary: "My notes from Tribes"
+description: "Tribes Summary and Notes"
+summary: "Tribes Summary and Notes"
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="tribes.png" style="width:25%; height:auto;" />

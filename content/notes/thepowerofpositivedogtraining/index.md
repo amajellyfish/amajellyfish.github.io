@@ -1,8 +1,8 @@
 ---
-title: 'The Power of Positive Dog Training'
+title: 'The Power of Positive Dog Training Summary and Notes'
 date: 2022-06-01
-description: "The Power of Positive Dog Training"
-summary: "My notes from The Power of Positive Dog Training"
+description: "The Power of Positive Dog Training Summary and Notes"
+summary: "The Power of Positive Dog Training Summary and Notes"
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="positivedogtraining.png" style="width:25%; height:auto;" />

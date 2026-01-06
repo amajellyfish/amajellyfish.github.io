@@ -1,8 +1,8 @@
 ---
-title: '1-2-3 Magic'
+title: '123 Magic Summary and Notes'
 date: 2022-05-16
-description: "123 Magic Book Notes 4/10"
-summary: "My notes from 123 Magic"
+description: "123 Magic Summary and Notes"
+summary: "123 Magic Summary and Notes"
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="123magic.png" style="width:25%; height:auto;" />

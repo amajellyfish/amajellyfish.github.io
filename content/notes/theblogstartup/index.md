@@ -1,8 +1,8 @@
 ---
-title: 'The Blog Startup'
+title: 'The Blog Startup Summary and Notes'
 date: 2024-03-12
-description: "The Blog Startup"
-summary: "My notes from The Blog Startup 8/10"
+description: "The Blog Startup Summary and Notes"
+summary: "The Blog Startup Summary and Notes"
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="blogstartup.png" style="width:25%; height:auto;" />

@@ -1,8 +1,8 @@
 ---
-title: 'The Relationship Handbook'
+title: 'The Relationship Handbook Summary and Notes'
 date: 2025-02-01
-description: "The Relationship Handbook"
-summary: "My notes from The Relationship Handbook 10/10"
+description: "The Relationship Handbook Summary and Notes"
+summary: "The Relationship Handbook Summary and Notes"
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="therelationshiphandbook.png" style="width:25%; height:auto;" />

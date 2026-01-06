@@ -1,8 +1,8 @@
 ---
-title: 'Meditations'
+title: 'Meditations Summary and Notes'
 date: 2025-07-17
-description: "Meditations Notes"
-summary: "My notes from Meditations 9/10"
+description: "Meditations Summary and Notes"
+summary: "Meditations Summary and Notes"
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="meditations.png" style="width:25%; height:auto;" />

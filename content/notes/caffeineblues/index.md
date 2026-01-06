@@ -1,8 +1,8 @@
 ---
-title: 'Caffeine Blues'
+title: 'Caffeine Blues Summary and Notes'
 date: 2025-10-07
-description: "Caffeine Blues Book Notes"
-summary: "My notes from Caffeine Blues"
+description: "Caffeine Blues Summary and Notes"
+summary: "Caffeine Blues Summary and Notes"
 ---
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="caffeineblues.png" style="width:25%; height:auto;" />
