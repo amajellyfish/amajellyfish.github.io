@@ -195,10 +195,10 @@ These are the summaries and notes of books I have read.
 </div>
 
 <div style="display:flex; gap:1rem; align-items:flex-start;">
-  <img src="rhcsacertguide/rhcsaguide.png" style="width:19%; height:auto;" />
+  <img src="rhcsa-notes/rhcsaguide.png" style="width:19%; height:auto;" />
   <div>
     <h3 class="mb-1">
-    <a href="/notes/rhcsacertguide" class="hover:underline">
+    <a href="/notes/rhcsa-notes" class="hover:underline">
     RHCSA Red Hat Enterprise Linux 9: Training and Exam Preparation Guide (EX200)
     </a>
     </h3>
@@ -207,6 +207,23 @@ These are the summaries and notes of books I have read.
     </div>
     <p>
     Great resource for passing the RHCSA exam. I passed first try using this and man pages alone. 
+    </p>
+  </div>
+</div>
+
+<div style="display:flex; gap:1rem; align-items:flex-start;">
+  <img src="rhce-notes/rhceexamguide.png" style="width:19%; height:auto;" />
+  <div>
+    <h3 class="mb-1">
+    <a href="/notes/rhce-notes" class="hover:underline">
+    RedHat RHCE 8 Cert Guide (EX294)
+    </a>
+    </h3>
+    <div class="text-lg">
+    ★★★★☆
+    </div>
+    <p>
+    Very clear and concise. Definitely enough to hit the ground running with Ansible. I've configured a dozen servers at work with Ansible now and saved a ton of time. No more repetitive tasks. 
     </p>
   </div>
 </div>
