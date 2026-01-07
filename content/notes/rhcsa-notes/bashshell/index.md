@@ -3,6 +3,7 @@ title: 'Bash'
 description: 'Bash variables, redirections, history substitution, metacharacters, startup files, etc. '
 showDate: false
 ---
+
 ## My name is Marcel and I'm partially a shell..
 
 ![](../../../img/Pasted%20image%2020250316051144.png)
@@ -19,7 +20,7 @@ You can see a list of more shells and a comparison of their features on this [Wi
 
 I meant Terminal Emulators! Silly me.. 
 
- The **Current shell** 
+ The **Current shell**  
 - Where a program is executed.
 
 **Sub-shell (child shell)**

@@ -3,7 +3,8 @@ title: "DNS"
 description: "DNS Stuff"
 showDate: false
 ---
-## DNS and Name Resolution 
+
+## DNS and Name Resolution   
 
 - DNS is also referred to as BIND (Berkeley Internet Name Domain)
 	- An implementation of DNS,

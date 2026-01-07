@@ -3,9 +3,10 @@ title: 'Local File Systems and Swap'
 description: 'Local file systems and swap'
 showDate: false
 ---
+
 ## File Systems and File System Types 
 
-**File systems** 
+**File systems**  
 - Can be optimized, resized, mounted, and unmounted independently.
 - Must be connected to the directory hierarchy in order to be accessed by users and applications. 
 - Mounting may be accomplished automatically at system boot or manually as required.

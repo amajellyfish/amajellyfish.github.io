@@ -1,9 +1,14 @@
 ---
 title: Book Graveyard
 draft: false
+showDate: false
 ---
 
-I started keeping a list of all of the books I did not finish. These aren't necessarily bad books. A lot of them I've read 3/4 of the way through and just never finished because other priorities got in the way. Some of them I probably won't pick up again. And some were just plain awful. 
+I started keeping a list of all of the books I did not finish. If a book is on this list, I don't necessarily think they are bad books. A lot of them I've read 3/4 of the way through and just never finished because other priorities got in the way. 
+
+Some of them I probably won't pick up again. 
+
+And some were just plain awful.  
 
 - Antifragile
 - 12 Rules for Life: An Antidote to Chaos
@@ -77,3 +82,5 @@ I started keeping a list of all of the books I did not finish. These aren't nece
 - The 80/20 Principle: The Secret to Achieving More with Less
 - The Rape Of Nanking: The Forgotten Holocaust Of World War II
 - Gravity's Rainbow
+- Letters from a Stoic
+- Slaughterhouse five

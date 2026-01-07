@@ -3,6 +3,7 @@ title: 'Remove a filesystem from a partition'
 description: 'Remove a filesystem from a partition.'
 showDate: false
 ---
+
 ## Remove a filesystem from a partition
 
 To delete a filesystem, partition, raid and disk labels from the disk. Use `wipefs -a /dev/sdb1` May also use `wipefs -a /dev/sdb?` to delete sub partitions? (I need to verify this)

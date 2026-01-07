@@ -1,9 +1,10 @@
 ---
 title: Master Reading List
 draft: false
+showDate: false
 ---
 These are all the books I have read from start to finish.
-### Health and Fitness
+### Health and Fitness  
 - The Obesity Code: Unlocking the Secrets of Weight Loss (Why Intermittent Fasting Is the Key to Controlling Your Weight
 - The Little Book of Quitting Caffeine: Freedom From Addiction
 - Meat Is for Pussies: A How-To Guide for Dudes Who Want to Get Fit, Kick Ass, and Take Names

@@ -4,6 +4,7 @@ description: 'VDO'
 showDate: false
 ---
 
+## What is VDO?  
 - Used for storage optimization
 - Device driver layer that sits between the Linux kernel and the physical storage devices.
 - Conserve disk space, improve data throughput, and save on storage cost.

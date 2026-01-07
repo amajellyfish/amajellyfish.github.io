@@ -3,8 +3,9 @@ title: 'Security Enhanced Linux'
 description: 'The confusing world of SELinux'
 showDate: false
 ---
-## SELinux Terminology 
 
+
+## SELinux Terminology   
 - Implementation of the Mandatory Access Control (MAC) architecture
 	- developed by the U.S. National Security Agency (NSA)
 	- flexible, enriched, and granular security controls in Linux. 

@@ -4,8 +4,7 @@ description: 'Hostname, IP addressing, network protocols, network manager, tools
 showDate: false
 ---
 
-## Hostname
-
+## Hostname  
 - "-", "_ ", and ". " characters are allowed.
 - Up to 253 characters.
 - Stored in */etc/hostname*.

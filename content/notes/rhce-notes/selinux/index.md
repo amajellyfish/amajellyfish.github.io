@@ -4,7 +4,7 @@ description: 'How to manage SeLinux File Properties with Ansible'
 showDate: false
 ---
 
-### Managing SELinux Properties
+## Managing SELinux Properties
 
 - SELinux can be used on files to manage file context
 - context can be set on ports

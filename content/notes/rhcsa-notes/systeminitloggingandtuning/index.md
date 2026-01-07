@@ -3,9 +3,10 @@ title: 'System Initialization, Message Logging, and System Tuning'
 description: 'System initialization, service management, tuning, and logging'
 showDate: false
 ---
+
 ## System Initialization and Service Management
 
-**systemd** (system daemon)
+**systemd** (system daemon)  
 - System initialization and service management mechanism.
 - Units and targets for initialization, service administration, and state changes
 - Has fast-tracked system initialization and state transitioning by introducing:

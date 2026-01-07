@@ -5,7 +5,7 @@ showDate: falsevvv
 ---
 
 ## Package Groups
-### package group
+### package group  
 - Group of packages that serve a common purpose. 
 - Can query, install, and delete as a single unit rather than dealing with packages individually.
 - Two types of package groups: _environment groups_ and _package groups_. 

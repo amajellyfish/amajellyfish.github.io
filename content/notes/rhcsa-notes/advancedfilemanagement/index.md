@@ -3,23 +3,24 @@ title: 'Advanced File Management'
 description: 'File permissions, ACLs, and finding things'
 showDate: false
 ---
+
 ## Permission Classes and Types
 
-**Permission classes**
+**Permission classes**  
 - user (u)
 - group (g)
 - other (o) (public)
 - all (a) <- all combined
 
-**Permission types**
+**Permission types**  
 - r,w,x
 - works differently on files and directories
 - hyphen (-) represents no permissions set
 
-### ls results permissions groupings 
+### ls results permissions groupings  
 - - rwx rw- r--
 	- user (owner), group, and other (public)
-### ls results first character meaning
+### ls results first character meaning  
 - regular file
 d directory
 l symbolic link
@@ -31,14 +32,14 @@ s socket
 
 ### Modifying Access Permission Bits
 
-### `chmod`  command 
+### `chmod`  command   
 - Modify permissions using symbolic or octal notation.
 - Used by root or the file owner.
 
 Flags
 chmod -v ::: Verbose.
 
-### Symbolic notation 
+### Symbolic notation  
 - Letters (ugo/rwx) and symbols (+, -, =) used to add, revoke, or assign permission bits.
 
 ### Octal Notation 
@@ -52,10 +53,10 @@ Three-digit numbering system ranging from 0 to 7.
 	6 rw-
 	7 rwx
 
-### Default Permissions
+### Default Permissions  
 - Calculated based on the umask (user mask) value subtracted from the initial permissions value.
 
-#### umask 
+#### umask   
 - Three-digit value (octal or symbolic) that refers to read, write, and execute permissions for owner, group, and public.
 - Default umask value is 0022 for the root user and 0002 normal users.
 - The left-most 0 has no significance.
@@ -64,16 +65,16 @@ Three-digit numbering system ranging from 0 to 7.
 - Any new files or directories created after changing the umask will have the new default permissions set. 
 - umask settings are lost when you log off. Add it to the appropriate startup file to make it permanent.
 
-Defaults
+Defaults  
 - files 666 rw-rw-rw-
 - directories 777 rwxrwxrwx
 
 ### umask command
 
-Options
+Options  
 - -S symbolic form 
 
-### Special Permission Bits
+### Special Permission Bits  
 ---
 - 3 types of special permission bits for executable files or directories for non root users
 	- setuid
@@ -98,7 +99,7 @@ Options
 	- Letter "t" in other permission feild	
 	- If the directory already has the “x” bit set for public, the long listing will show a lowercase “t”, otherwise it will list it with an uppercase “T”.
 
-## Access Control Lists (ACLs)
+## Access Control Lists (ACLs)  
 
 - Setting a default ACL on a directory allows content sharing among user's without having to modify access on each new file and subdirectory.
 - Extra permissions that can be set on files and directories.
@@ -120,7 +121,7 @@ Options
 	- -rw-rw-r--+
 
 ### ACL Commands
-`getfacl`
+`getfacl`  
 - Display ACL settings
 	- Displays:
 	- name of file
@@ -132,22 +133,22 @@ Options
 			- the named user with UID 1000, who is neither the file owner nor a member of the owning group, is allowed read-only access to this file.
 		- Example: group:dba:rw- 
 			- give the named group (dba) read and write access to the file.
-`setfacl`
+`setfacl`  
 	- set, modify, substitute, or delete ACL settings
 	- If you want to give read and write permissions to a specific user (user1) and change the mask to read-only at the same time, the setfacl command will allocate the permissions as mentioned; however, the effective permissions for the named user will only be read-only.
 
-u:UID:perms
+u:UID:perms  
 - named user must exist in /etc/passwd
 - if no user specified, permissions are given to the owner of the file/directory
 
-g:GID:perms
+g:GID:perms  
 - Named group must exist in /etc/group
 - If no group specified, permissions are given to the owning group of the file/directory
 
-o:perms
+o:perms  
 - Neither owner or owning group
 
-m:perms
+m:perms  
 - Maximum permissions for named user or named group
 
 Switches
@@ -163,14 +164,14 @@ Switches
 | -x     | Remove Access ACL               |
 | -c     | Display output without header   |
 
-### Mask Value
+### Mask Value  
 
 - Determine maximum allowable permissions for named user or named group
 - Mask value displayed on separate line in getfacl output
 - Mask is recalculated every time an ACL is modified unless value is manually entered.
 - Overrides the set ACL value.
 
-## Find Command
+## Find Command  
 
 - Search files and display the full path.
 - Execute command on search results.

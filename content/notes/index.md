@@ -1,11 +1,10 @@
 ---
 title: "Book Notes & Reviews"
 description: "Book Notes and Reviews"
-cascade:
-  showDate: false
+showDate: false
 ---
 
-These are the summaries and notes of books I have read. 
+These are the summaries and notes of books I have read. I also keep a [Master Reading list](masterlist) of all of the books I have read. And a [Book Graveyard](bookgraveyard/) for books that I did not finish.
 
 <div style="display:flex; gap:1rem; align-items:flex-start;">
   <img src="thewillpowerinstinct/willpowerinstinct.png" style="width:19%; height:auto;" />

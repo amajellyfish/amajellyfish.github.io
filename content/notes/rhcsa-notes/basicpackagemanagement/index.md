@@ -4,7 +4,7 @@ description: 'RPM and package integrity and credibility'
 showDate: false
 ---
 
-## RPM (Redhat Package Manager)
+## RPM (Redhat Package Manager)  
 - Specially formatted File(s) packaged together with the .rpm extension. 
 - Packages included or available for RHEL are in rpm format.
 - Metadata info gets updated whenever a package is updated.

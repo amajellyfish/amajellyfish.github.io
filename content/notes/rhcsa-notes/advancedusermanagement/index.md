@@ -4,7 +4,7 @@ description: 'Password aging, group and user manament'
 showDate: false
 ---
 
-## Local User Authentication Files
+## Local User Authentication Files  
 - Three supported account types: root, normal, service
 - root 
 	- has full access to all services and administrative functions on the system.

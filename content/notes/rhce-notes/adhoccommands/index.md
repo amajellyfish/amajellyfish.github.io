@@ -3,6 +3,7 @@ title: 'Ad Hoc Ansible Commands'
 summary: 'How to use Ad-Hoc Ansible Commands'
 showDate: false
 ---
+
  Ad hoc commands are ansible tasks you can run against managed hosts without the need of a playbook or script. These are used for bringing nodes to their desired states, verifying playbook results, and verifying nodes meet any needed criteria/pre-requisites. These must be ran as the ansible user (whatever your remote_user directive is set to under \[defaults\] in ansible.cfg)
 
 Run the user module with the argument name=lisa on all hosts to make sure the user "lisa" exists. If the user doesn't exist, it will be created on the remote system:

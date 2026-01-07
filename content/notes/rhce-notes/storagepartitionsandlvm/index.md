@@ -4,7 +4,7 @@ description: 'Managing Partitions and LVM'
 showDate: false
 ---
 
-# Discovering storage related facts
+## Discovering storage related facts
 
 **Table 15-2** Modules for Managing Storage
 
@@ -93,7 +93,7 @@ Storing the Detected Disk Device Name in a Variable
       msg: "{{ disk2name }} was found. Moving forward."
 ~                                                      
 ```
-# Managing Partitions and LVM
+## Managing Partitions and LVM
 
 After detecting the disk device that needs to be used, you can move on and start creating partitions and logical volumes. 
 

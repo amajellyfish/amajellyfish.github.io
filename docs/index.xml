@@ -7,18 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 </copyright>
-    <lastBuildDate>Tue, 06 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://davidwrites.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://davidwrites.xyz/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Now</title>
       <link>https://davidwrites.xyz/now/</link>
-      <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
       
       <guid>https://davidwrites.xyz/now/</guid>
       <description>&lt;p&gt;What I am up to &lt;a
   href=&#34;https://nownownow.com/about&#34;
     target=&#34;_blank&#34;
   &gt;Now&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I am currently studying to get RHCE certified. I plan to pass the exam before April.&lt;/p&gt;
 &lt;p&gt;When I&amp;rsquo;m not working or spending time with the family, I am practicing drum rudiments, fiddling with a Rubix cube, or playing Starcraft 2. Also focused on eating healthy, running daily, and doing mobility work.&lt;/p&gt;</description>
       
     </item>
@@ -1060,21 +1061,9 @@ Centralized Configuration Files and Version Control&lt;/p&gt;</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://davidwrites.xyz/notes/</guid>
-      <description>&lt;p&gt;These are the summaries and notes of books I have read.&lt;/p&gt;
-&lt;div style=&#34;display:flex; gap:1rem; align-items:flex-start;&#34;&gt;
-  &lt;img src=&#34;thewillpowerinstinct/willpowerinstinct.png&#34; style=&#34;width:19%; height:auto;&#34; /&gt;
-  &lt;div&gt;
-    &lt;h3 class=&#34;mb-1&#34;&gt;
-    &lt;a href=&#34;thewillpowerinstinct&#34; class=&#34;hover:underline&#34;&gt;
-     The Willpower Instinct
-    &lt;/a&gt;
-    &lt;/h3&gt;
-    &lt;div class=&#34;text-lg&#34;&gt;
-    ★★★★★
-    &lt;/div&gt;
-    &lt;p&gt;
-    I picked up a bunch of new habits in the past couple months since reading this. Positive habits are self-perpetuating. So are negative ones.
-    &lt;/p&gt;</description>
+      <description>&lt;p&gt;These are the summaries and notes of books I have read. I also keep a &lt;a
+  href=&#34;masterlist&#34;&gt;Master Reading list&lt;/a&gt; of all of the books I have read. And a &lt;a
+  href=&#34;bookgraveyard/&#34;&gt;Book Graveyard&lt;/a&gt; for books that I did not finish.&lt;/p&gt;</description>
       
     </item>
     

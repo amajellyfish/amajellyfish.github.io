@@ -198,7 +198,7 @@
     "name": "Managing Services with Ansible",
     "headline": "Managing Services with Ansible",
     "description": "How to Manage Services with Ansible",
-    "abstract": "\u003ch3 class=\u0022relative group\u0022\u003eManaging Services\n    \u003cdiv id=\u0022managing-services\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#managing-services\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h3\u003e\n\u003cp\u003eServices can be managed in many ways. You can manage systemd services,\nbut Ansible also allows for management of tasks using Linux cron and at.\nApart from that, you can use Ansible to manage the desired systemd\ntarget that a managed system should be started in, and it can reboot\nrunning machines. \u003ca\n  href=\u0022#ch14.xhtml#tab14_2\u0022\u003eTable 14-2\u003c\/a\u003e gives an overview of\nthe most significant modules for managing services.\u003c\/p\u003e",
+    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003eManaging Services\n    \u003cdiv id=\u0022managing-services\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#managing-services\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h2\u003e\n\u003cp\u003eServices can be managed in many ways. You can manage systemd services,\nbut Ansible also allows for management of tasks using Linux cron and at.\nApart from that, you can use Ansible to manage the desired systemd\ntarget that a managed system should be started in, and it can reboot\nrunning machines. \u003ca\n  href=\u0022#ch14.xhtml#tab14_2\u0022\u003eTable 14-2\u003c\/a\u003e gives an overview of\nthe most significant modules for managing services.\u003c\/p\u003e",
     "inLanguage": "en",
     "url" : "http://localhost:1313/notes/rhce-notes/services/",
     "author" : {
@@ -685,8 +685,6 @@
   
 
   
-    
-  
 
   
 
@@ -714,7 +712,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time><span class="px-2 text-primary-500">&middot;</span><span>
+      <span>
   
   
     
@@ -847,9 +845,9 @@
     class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#managing-services">Managing Services</a>
       <ul>
-        <li><a href="#managing-services">Managing Services</a>
+        <li>
           <ul>
             <li><a href="#managing-systemd-services">Managing Systemd Services</a></li>
             <li><a href="#managing-cron-jobs">Managing cron Jobs</a></li>
@@ -872,9 +870,9 @@
     class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#managing-services">Managing Services</a>
       <ul>
-        <li><a href="#managing-services">Managing Services</a>
+        <li>
           <ul>
             <li><a href="#managing-systemd-services">Managing Systemd Services</a></li>
             <li><a href="#managing-cron-jobs">Managing cron Jobs</a></li>
@@ -1002,7 +1000,7 @@
 
         <div class="article-content max-w-prose mb-20">
           
-<h3 class="relative group">Managing Services
+<h2 class="relative group">Managing Services
     <div id="managing-services" class="anchor"></div>
     
     <span
@@ -1010,7 +1008,7 @@
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#managing-services" aria-label="Anchor">#</a>
     </span>
     
-</h3>
+</h2>
 <p>Services can be managed in many ways. You can manage systemd services,
 but Ansible also allows for management of tasks using Linux cron and at.
 Apart from that, you can use Ansible to manage the desired systemd

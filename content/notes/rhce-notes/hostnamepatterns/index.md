@@ -4,10 +4,7 @@ description: 'Working with host name patterns'
 showDate: false
 ---
 
-Working with host name patterns
-
-
-#### Working with Host Name Patterns
+## Working with Host Name Patterns
 
 - If you want to use an IP address in a playbook, the IP address must be specified as such in the inventory. 
 - You cannot use IP addresses that are based only on DNS name resolving. 

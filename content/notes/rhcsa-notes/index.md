@@ -18,7 +18,7 @@ summary: "My RHCSA Notes"
   </div>
 </div>
 
-## My RHCSA Notes
+## My Notes
 - [Advanced File Management](advancedfilemanagement/)
 - [Advanced Package Management](advancedpackagemanagement/)
 - [Advanced User Management](advancedusermanagement/)

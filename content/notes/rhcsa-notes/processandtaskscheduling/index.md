@@ -5,7 +5,7 @@ showDate: false
 ---
 
 ## Processes and Priorities
-Process
+Process  
 - a unit for provisioning system resources. 
 - any program, application, or command that runs on the system.
 - created in memory when a program, application, or command is initiated.

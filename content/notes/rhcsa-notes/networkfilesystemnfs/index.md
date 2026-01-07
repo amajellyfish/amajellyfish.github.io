@@ -6,7 +6,7 @@ showDate: false
 
 ## NFS Basics and Configuration
 
-Same tools for mounting and unmounting a filesystem.
+Same tools for mounting and unmounting a filesystem.  
 - Mounted and accessed the same way as local filesystems.
 - Network protocol that allows file sharing over the network.
 - Multi-platform

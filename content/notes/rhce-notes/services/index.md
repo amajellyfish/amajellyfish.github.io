@@ -4,7 +4,7 @@ description: 'How to Manage Services with Ansible'
 showDate: false
 ---
 
-### Managing Services
+## Managing Services
 
 Services can be managed in many ways. You can manage systemd services,
 but Ansible also allows for management of tasks using Linux cron and at.

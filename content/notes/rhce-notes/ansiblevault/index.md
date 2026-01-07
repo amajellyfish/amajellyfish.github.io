@@ -3,6 +3,7 @@ title: 'Ansible Vault'
 description: 'Ansible Vault'
 showDate: false
 ---
+
 ### Ansible Vault
 
 - For webkeys, passwords, and other types of sensitive data that you really shouldn't store as plain text in a playbook. 

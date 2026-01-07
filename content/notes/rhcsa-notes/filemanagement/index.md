@@ -3,7 +3,8 @@ title: 'Basic File Managment'
 description: 'File types, linking, viewing, and archiving files.'
 showDate: false
 ---
-## 7 File types 
+
+## 7 File types  
 1.  regular
 2.  directory
 3.  block special device

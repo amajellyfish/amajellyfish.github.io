@@ -3,6 +3,7 @@ title: 'Basic User Management'
 description: 'Manage users and groups'
 showDate: false
 ---
+
 ## Listing Logged-In Users
 
 A list of the users who have successfully signed on to the system with valid credentials can be printed using `who` and `w`

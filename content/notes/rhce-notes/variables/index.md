@@ -4,8 +4,8 @@ description: 'How to Use Variables In Ansible'
 showDate: false
 ---
 
-Using and working with variables
-- Capture command output using register
+Using and working with variables   
+- Capture command output using register  
 
 ## Variables
 

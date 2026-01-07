@@ -4,6 +4,7 @@ description: 'Ansible Galaxy Roles, RHEL System Roles, and Role Structure'
 showDate: false
 ---
 
+
 Ansible roles are fully-featured solutions to accomplish a task. Roles can be downloaded from Ansible Galaxy, built from scratch, or vendor created like RHEL System Roles. 
 
 Roles provide a reusable way to build a webserver, a database server, and more. That way you can have a role handle tasks the same way on all of your server.

@@ -3,8 +3,8 @@ title: 'Shell Scripting'
 description: 'Shell scripting and logical constructs'
 showDate: false
 ---
-## Shell Scripts 
 
+## Shell Scripts  
 - A group of Linux commands along with control structures and optional comments stored in a text file. 
 - Can be executed directly at the Linux command prompt. 
 - Do not need to be compiled as they are interpreted by the shell line by line.

@@ -4,9 +4,7 @@ description: 'Partitions and their management.'
 showDate: false
 ---
 
-## Partition Information (MBR and GPT)
-
-
+## Partition Information (MBR and GPT)  
 - Partition information is stored on the disk in a small region.
 - Read by the operating system at boot time. 
 - Master Boot Record (MBR) on the BIOS-based systems

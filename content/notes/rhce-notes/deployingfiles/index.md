@@ -4,13 +4,12 @@ description: 'Manipulating files, SELinux, and Jinja2 templates'
 showDate: false
 ---
 
-This chapter covers the following subjects:
+This chapter covers the following subjects:  
+• Using Modules to Manipulate Files  
+• Managing SELinux Properties  
+• Using Jinja2 Templates  
 
-• Using Modules to Manipulate Files
-• Managing SELinux Properties
-• Using Jinja2 Templates
-
-### RHCE exam topics
+## RHCE exam topics
 
 • Use Ansible modules for system administration tasks that work with:
 • File contents

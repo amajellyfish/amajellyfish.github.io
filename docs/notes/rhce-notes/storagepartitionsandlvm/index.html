@@ -198,7 +198,7 @@
     "name": "Managing Partitions and LVM",
     "headline": "Managing Partitions and LVM",
     "description": "Managing Partitions and LVM",
-    "abstract": "\u003ch1 class=\u0022relative group\u0022\u003eDiscovering storage related facts\n    \u003cdiv id=\u0022discovering-storage-related-facts\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#discovering-storage-related-facts\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h1\u003e\n\u003cp\u003e\u003cstrong\u003eTable 15-2\u003c\/strong\u003e Modules for Managing Storage\u003c\/p\u003e\n\u003cfigure\u003e\u003cimg\n    class=\u0022my-0 rounded-md\u0022\n    loading=\u0022lazy\u0022\n    decoding=\u0022async\u0022\n    fetchpriority=\u0022low\u0022\n    alt=\u0022Image\u0022\n    src=\u0022..\/..\/..\/img\/15tab02.jpg\u0022\n    \u003e\u003c\/figure\u003e\n\u003cp\u003eTo make sure that your playbook is applied to the right devices, you first need to find which devices are available on your managed system.\u003c\/p\u003e",
+    "abstract": "\u003ch2 class=\u0022relative group\u0022\u003eDiscovering storage related facts\n    \u003cdiv id=\u0022discovering-storage-related-facts\u0022 class=\u0022anchor\u0022\u003e\u003c\/div\u003e\n    \n    \u003cspan\n        class=\u0022absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none\u0022\u003e\n        \u003ca class=\u0022text-primary-300 dark:text-neutral-700 !no-underline\u0022 href=\u0022#discovering-storage-related-facts\u0022 aria-label=\u0022Anchor\u0022\u003e#\u003c\/a\u003e\n    \u003c\/span\u003e\n    \n\u003c\/h2\u003e\n\u003cp\u003e\u003cstrong\u003eTable 15-2\u003c\/strong\u003e Modules for Managing Storage\u003c\/p\u003e\n\u003cfigure\u003e\u003cimg\n    class=\u0022my-0 rounded-md\u0022\n    loading=\u0022lazy\u0022\n    decoding=\u0022async\u0022\n    fetchpriority=\u0022low\u0022\n    alt=\u0022Image\u0022\n    src=\u0022..\/..\/..\/img\/15tab02.jpg\u0022\n    \u003e\u003c\/figure\u003e\n\u003cp\u003eTo make sure that your playbook is applied to the right devices, you first need to find which devices are available on your managed system.\u003c\/p\u003e",
     "inLanguage": "en",
     "url" : "http://localhost:1313/notes/rhce-notes/storagepartitionsandlvm/",
     "author" : {
@@ -685,8 +685,6 @@
   
 
   
-    
-  
 
   
 
@@ -714,7 +712,7 @@
   <div class="flex flex-row flex-wrap items-center">
     
     
-      <time datetime="0001-01-01T00:00:00&#43;00:00">1 January 0001</time><span class="px-2 text-primary-500">&middot;</span><span>
+      <span>
   
   
     
@@ -847,7 +845,7 @@
     class="min-w-[220px] py-2 border-dotted border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#discovering-storage-related-facts">Discovering storage related facts</a>
       <ul>
         <li>
           <ul>
@@ -857,10 +855,7 @@
         </li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#managing-partitions-and-lvm">Managing Partitions and LVM</a>
       <ul>
         <li>
           <ul>
@@ -890,7 +885,7 @@
     class="py-2 border-dotted border-neutral-300 border-s-1 -ms-5 ps-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#discovering-storage-related-facts">Discovering storage related facts</a>
       <ul>
         <li>
           <ul>
@@ -900,10 +895,7 @@
         </li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#managing-partitions-and-lvm">Managing Partitions and LVM</a>
       <ul>
         <li>
           <ul>
@@ -1038,7 +1030,7 @@
 
         <div class="article-content max-w-prose mb-20">
           
-<h1 class="relative group">Discovering storage related facts
+<h2 class="relative group">Discovering storage related facts
     <div id="discovering-storage-related-facts" class="anchor"></div>
     
     <span
@@ -1046,7 +1038,7 @@
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#discovering-storage-related-facts" aria-label="Anchor">#</a>
     </span>
     
-</h1>
+</h2>
 <p><strong>Table 15-2</strong> Modules for Managing Storage</p>
 <figure><img
     class="my-0 rounded-md"
@@ -1145,7 +1137,7 @@ ansible_mounts</li>
 </span></span></span><span class="line"><span class="cl"><span class="w">      </span><span class="nt">msg</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;{{ disk2name }} was found. Moving forward.&#34;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">~                                                      </span><span class="w">
 </span></span></span></code></pre></div>
-<h1 class="relative group">Managing Partitions and LVM
+<h2 class="relative group">Managing Partitions and LVM
     <div id="managing-partitions-and-lvm" class="anchor"></div>
     
     <span
@@ -1153,7 +1145,7 @@ ansible_mounts</li>
         <a class="text-primary-300 dark:text-neutral-700 !no-underline" href="#managing-partitions-and-lvm" aria-label="Anchor">#</a>
     </span>
     
-</h1>
+</h2>
 <p>After detecting the disk device that needs to be used, you can move on and start creating partitions and logical volumes.</p>
 <ul>
 <li>partition a disk using the parted module,</li>

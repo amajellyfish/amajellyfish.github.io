@@ -4,8 +4,7 @@ description: "NTP, Chrony, etc. "
 showDate: false
 ---
 
-### Network Time Protocol (NTP)
-
+## Network Time Protocol (NTP)  
 - Networking protocol for synchronizing the system clock with remote time servers for accuracy and reliability.
 - Having steady and exact time on networked systems allows time-sensitive applications, such as authentication and email applications, backup and scheduling tools, financial and billing systems, logging and monitoring software, and file and storage sharing protocols, to function with precision.
 - Sends a stream of messages to configured time servers and binds itself to the one with least amount of delay in its responses, the most accurate, and may or may not be the closest distance-wise. 

@@ -3,8 +3,8 @@ title: 'Thin Provisioning and LVM'
 description: 'Thin provisioning and LVM'
 showDate: false
 ---
-# Thin Provisioning
 
+## Thin Provisioning  
 - Allows for an economical allocation and utilization of storage space by moving arbitrary data blocks to contiguous locations, which results in empty block elimination. 
 - Can create a thin pool of storage space and assign volumes much larger storage space than the physical capacity of the pool. 
 - Workloads begin consuming the actual allocated space for data writing. 

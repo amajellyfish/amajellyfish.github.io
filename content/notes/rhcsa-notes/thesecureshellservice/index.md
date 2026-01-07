@@ -3,9 +3,10 @@ title: 'The Secure Shell Service'
 description: 'OpenSSH, system access, file transfer'
 showDate: false
 ---
+
 ## The OpenSSH Service 
 
-**Secure Shell (SSH)** 
+**Secure Shell (SSH)**  
 - Delivers a secure mechanism for data transmission between source and destination systems over IP networks. 
 - Designed to replace the old remote login programs that transmitted user passwords in clear text and data unencrypted. 
 - Employs digital signatures for user authentication with encryption to secure a communication channel. 

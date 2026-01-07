@@ -3,7 +3,8 @@ title: 'AutoFS'
 description: 'Managing AutoFS'
 showDate: false
 ---
-## AutoFS
+
+## AutoFS  
 
 - Automatically mount and unmount on clients during runtime and system reboots.
 - Triggers mount or unmount action based on mount point activity.

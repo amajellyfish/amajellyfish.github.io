@@ -3,6 +3,7 @@ title: 'Boot Process'
 description: 'Managing Boot Process with Ansible'
 showDate: false
 ---
+
 ### Managing the Boot Process
 
 No modules for managing boot process.

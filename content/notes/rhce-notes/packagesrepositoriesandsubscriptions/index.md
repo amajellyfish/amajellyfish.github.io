@@ -6,8 +6,8 @@ showDate: false
 
 ## Using Modules to Manage Packages
 
-Modules used to manage packages:
-![Image](../../../img/12tab02.jpg)
+Modules used to manage packages:  
+![Image](img/12tab02.jpg)
 
 #### Configuring Repository Access
 

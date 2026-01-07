@@ -3,7 +3,8 @@ title: 'Containers'
 description: 'Podman Podman Podman'
 showDate: false
 ---
-# Introduction to Containers 
+ 
+## Introduction to Containers 
 
 - Take advantage of the native virtualization features available in the Linux kernel. 
 - Each container typically encapsulates one self-contained application that includes all dependencies such as library files, configuration files, software binaries, and services.

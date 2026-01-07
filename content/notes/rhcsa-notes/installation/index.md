@@ -3,10 +3,8 @@ title: 'Installing RHEL Linux'
 description: 'Installation Logs and Cockpit'
 showDate: false
 ---
-# Chapter 1 RHCSA Notes - Installation
 
-
-## About RHEL9
+## About RHEL9  
 
 - Kernel 5.14
 - Released May 2019
