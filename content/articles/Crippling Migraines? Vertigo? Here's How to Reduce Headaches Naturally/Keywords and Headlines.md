@@ -1,21 +1,21 @@
 ---
 draft: true
 ---
-| Possible Keyword                 | Targeted? | KW Volume | Competition |
-| -------------------------------- | --------- | --------- | ----------- |
-| self massage for migranes        |           |           |             |
-| migraine trigger point therapy   |           |           |             |
-| instant migraine relief at home  |           | 1-10K     | High        |
-| ocular migraine treatment        |           | 1-10k     | low         |
-| migraine triggers                |           | 1-10k     | low         |
-| migraines at night               |           | 100-1k    | low         |
-| how to reduce headache naturally |           | 10-100    | low         |
-| dizziness after a massage        |           | 100-1k    | low         |
-| vertigo after a massage          |           | 100-1k    | low         |
-| massage for vertigo              |           | 100-1k    | low         |
-| massage therapy for vertigo      |           | 100-1k    | low         |
-| self massage for vertigo         |           | 100-1k    | low         |
-| migraine therapy massage         |           | 100-1k    |             |
+| Possible Keyword                 | Use? | KW Volume | Competition |
+| -------------------------------- | ---- | --------- | ----------- |
+| self massage for migranes        |      |           |             |
+| migraine trigger point therapy   |      |           |             |
+| instant migraine relief at home  |      | 1-10K     | High        |
+| ocular migraine treatment        |      | 1-10k     | low         |
+| migraine triggers                |      | 1-10k     | low         |
+| migraines at night               |      | 100-1k    | low         |
+| how to reduce headache naturally | x    | 10-100    | low         |
+| dizziness after a massage        |      | 100-1k    | low         |
+| vertigo after a massage          |      | 100-1k    | low         |
+| massage for vertigo              |      | 100-1k    | low         |
+| massage therapy for vertigo      |      | 100-1k    | low         |
+| self massage for vertigo         |      | 100-1k    | low         |
+| migraine therapy massage         |      | 100-1k    |             |
 
 Are people searching for this keyword?
 If no, make up a term to describe what you are looking for:

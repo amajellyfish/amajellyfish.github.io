@@ -2,10 +2,9 @@
 draft: false
 date: 2025-12-30
 categories: "health"
-title: Caffeine is Destroying You
-description: "How Caffeine is destroying you"
+title: "The Negative Effects of Caffeine Addiction are Worse Than You Think"
 tags: ["articles"]
-summary: "How caffeine is destroying you."
+summary: "These are the negative effects of caffeine addiction. A look into the most overlooked drug addiction on the planet."
 ---
 
 Look at this bird.

@@ -1,21 +1,21 @@
 ---
 draft: true
 ---
-| Possible Keyword | Broadness | KW Volume | Competition |
-| ---------------- | --------- | --------- | ----------- |
-|                  |           |           |             |
-|                  |           |           |             |
-|                  |           |           |             |
-|                  |           |           |             |
-|                  |           |           |             |
-|                  |           |           |             |
-|                  |           |           |             |
-|                  |           |           |             |
-|                  |           |           |             |
-|                  |           |           |             |
-|                  |           |           |             |
-|                  |           |           |             |
-|                  |           |           |             |
+| Possible Keyword | Use? | KW Volume | Competition |
+| ---------------- | ---- | --------- | ----------- |
+|                  |      |           |             |
+|                  |      |           |             |
+|                  |      |           |             |
+|                  |      |           |             |
+|                  |      |           |             |
+|                  |      |           |             |
+|                  |      |           |             |
+|                  |      |           |             |
+|                  |      |           |             |
+|                  |      |           |             |
+|                  |      |           |             |
+|                  |      |           |             |
+|                  |      |           |             |
 
 Are people searching for this keyword?
 If no, make up a term to describe what you are looking for:
