@@ -2,32 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on </title>
-    <link>https://davidwrites.xyz/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <copyright>© 2026 </copyright>
-    <lastBuildDate>Tue, 30 Dec 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://davidwrites.xyz/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Health</title>
-      <link>https://davidwrites.xyz/categories/health/</link>
-      <pubDate>Tue, 30 Dec 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidwrites.xyz/categories/health/</guid>
-      <description></description>
-      
-    </item>
-    
-    <item>
-      <title>Explanation</title>
-      <link>https://davidwrites.xyz/categories/explanation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://davidwrites.xyz/categories/explanation/</guid>
-      <description></description>
-      
-    </item>
+    <copyright>© 2026 Amanda Thomas</copyright>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>

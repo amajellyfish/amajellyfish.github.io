@@ -1,0 +1,212 @@
+{
+  "main": {
+    "id": "e67131e28f5d280c",
+    "type": "split",
+    "children": [
+      {
+        "id": "3ef7bced3473a30c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "468aa5a85d471e59",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/_index.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "_index"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "54bbf4b64194166f",
+    "type": "split",
+    "children": [
+      {
+        "id": "2d7cbd6ad3c30196",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7b2b83a26607c83d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "df3779296c999576",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "57f20a77f85ce358",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b98fce817525f1b3",
+    "type": "split",
+    "children": [
+      {
+        "id": "a010561c9a500553",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "57553806e1dfe629",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/_index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for _index"
+            }
+          },
+          {
+            "id": "9cdfe93ec81a9779",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "content/_index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from _index"
+            }
+          },
+          {
+            "id": "498a286abec0bf91",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "3b13af9761c6a942",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "cf252b3e759920dd",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "content/_index.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of _index"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "468aa5a85d471e59",
+  "lastOpenFiles": [
+    "content/about/index.md",
+    "content/contact/index.md",
+    "content/_index.md",
+    "docs/js/appearance.min.9c83307582bbb35951a77e595355f504f0c8a499a7feae72adf28cefa64e4d260d6e7437cc71e077902a83e1c987c4b31edb919a87890ce33fe19f4fd956abd2.js",
+    "docs/img/amandathomas-dark.png",
+    "config/_default/params.toml~",
+    "assets/img/amandathomas-dark.png",
+    "config/_default/languages.en.toml~",
+    "docs/img/amandathomas.png",
+    "assets/img/amandathomas.png",
+    "docs/js/main.bundle.min.35f47889fc6a3c1a4a61584d7a5ced5dba0a4fc9af07b15bb6e660134b25ad0d6eee516605924230e64d184bfcc4f417ef710cc4eecf4cda2c6a944f4312f7d6.js",
+    "config/_default/menus.en.toml~",
+    "docs/contact/index.xml",
+    "docs/contact/page/1/index.html",
+    "docs/contact/page/1",
+    "docs/contact/page",
+    "docs/contact/untitled/index.html",
+    "docs/img/amanda_hu_83aece8d0c3503dd.jpg",
+    "resources/_gen/images/img/amanda_hu_83aece8d0c3503dd.jpg",
+    "docs/img/amanda_hu_7aefbe02af7f4ef2.jpg",
+    "docs/img/amanda_hu_42a342dc207d636.jpg",
+    "resources/_gen/images/img/amanda_hu_42a342dc207d636.jpg",
+    "resources/_gen/images/img/amanda_hu_7aefbe02af7f4ef2.jpg"
+  ]
+}

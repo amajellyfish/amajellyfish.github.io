@@ -9,10 +9,10 @@ displayName = "EN"
 isoCode = "en"
 rtl = false
 dateFormat = "2 January 2006"
-logo = "/img/logo-dark.png"
+logo = "img/amandathomas.png"
 
-#["params.author"]
-#name = "David Thomas"
-#image = "img/david.png"
-#headline = "Stuff about tech, escaping tech, mind control, and other random stuff."
-#bio = "I'm a tech tinkerer who likes the smell of paperback books. It doesn't matter where you are as long as you have a mindset for growth. "
+["params.author"]
+name = "Amanda Thomas"
+image = "img/amanda.jpg"
+headline = "I'm Amanda and I love my awesome husband and my kids are okay too. Don't get me started on the fluffer nutter Lucas Dubois"
+bio = "Some words here "

@@ -1,8 +1,8 @@
-colorScheme = "github"
-defaultAppearance = "dark"
+colorScheme = "avocado"
+defaultAppearance = "light"
 autoSwitchAppearance = false
 enableA11y = false
-enableSearch = true
+enableSearch = false
 enableCodeCopy = true
 enableStructuredBreadcrumbs = false
 replyByEmail = false
@@ -13,21 +13,21 @@ hotlinkFeatureImage = false
 fingerprintAlgorithm = "sha512"
 giteaDefaultServer = "https://git.fsfe.org"
 forgejoDefaultServer = "https://v11.next.forgejo.org"
-firebase = { enable = true, apiKey = "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc", authDomain = "davidwrites-89dd7.firebaseapp.com", projectId = "davidwrites-89dd7", storageBucket = "davidwrites-89dd7.firebasestorage.app", messagingSenderId = "433139099634", appId = "1:433139099634:web:c14275555bd7171e6c6d6b", measurementId = "G-XX5507B82W" }
+#firebase = { enable = true, apiKey = "AIzaSyApsKLCbGb5fkkrzxABOtl3-OUuBcRPVsc", authDomain = "davidwrites-89dd7.firebaseapp.com", projectId = "davidwrites-89dd7", storageBucket = "davidwrites-89dd7.firebasestorage.app", messagingSenderId = "433139099634", appId = "1:433139099634:web:c14275555bd7171e6c6d6b", measurementId = "G-XX5507B82W" }
 fathomAnalytics = { }
-umamiAnalytics = { websiteid = "60fe8af1-376f-4be3-8f62-d4f24d00a756" }
+#umamiAnalytics = { websiteid = "60fe8af1-376f-4be3-8f62-d4f24d00a756" }
 selineAnalytics = { }
 buymeacoffee = { }
 verification = { }
 rssnext = { }
 advertisement = { }
-defaultFeaturedImage = "/img/sunny_mountain.jpg"
-defaultBackgroundImage = "/img/sunny_mountain.jpg"
+defaultFeaturedImage = "img/amanda.jpg"
+defaultBackgroundImage = "img/amanda.jpg"
 smartTOC = true
 highlightCurrentMenuArea = true
-mainSections = ["articles"]
+mainSections = [""]
 smartTOCHideUnfocusedChildren = true
-secondaryLogo = "/img/logo.png"
+secondaryLogo = "img/amandathomas-dark.png"
 
 [header]
 layout = "basic"
@@ -40,21 +40,21 @@ showAppearanceSwitcher = true
 showScrollToTop = true
 
 [homepage]
-layout = "page"
-showRecent = true
+layout = "profile"
+showRecent = false
 showRecentItems = 5
-showMoreLink = true
+showMoreLink = false
 showMoreLinkDest = "/articles"
 cardView = true
 cardViewScreenWidth = false
 layoutBackgroundBlur = false
 disableHeroImageFilter = false
-homepageImage = "/img/davidsquare.png"
+homepageImage = "img/amanda.jpg"
 
 [article]
-showDate = true
-showViews = true
-showLikes = true
+showDate = false
+showViews = false
+showLikes = false
 showDateOnlyInArticle = false
 showDateUpdated = false
 showHero = false
