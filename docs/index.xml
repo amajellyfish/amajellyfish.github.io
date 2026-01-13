@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>https://davidwrites.xyz/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Amanda Thomas</copyright>
-    <atom:link href="https://davidwrites.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About</title>
-      <link>https://davidwrites.xyz/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;h2 class=&#34;relative group&#34;&gt;I&amp;rsquo;m so cool yo
     &lt;div id=&#34;im-so-cool-yo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -29,20 +29,46 @@
     
     <item>
       <title>Contact</title>
-      <link>https://davidwrites.xyz/contact/</link>
+      <link>http://localhost:1313/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://davidwrites.xyz/contact/</guid>
-      <description>&lt;h2 class=&#34;relative group&#34;&gt;Feel free to reach out
-    &lt;div id=&#34;feel-free-to-reach-out&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
-    
-    &lt;span
-        class=&#34;absolute top-0 w-6 transition-opacity opacity-0 -start-6 not-prose group-hover:opacity-100 select-none&#34;&gt;
-        &lt;a class=&#34;text-primary-300 dark:text-neutral-700 !no-underline&#34; href=&#34;#feel-free-to-reach-out&#34; aria-label=&#34;Anchor&#34;&gt;#&lt;/a&gt;
-    &lt;/span&gt;
-    
-&lt;/h2&gt;
-&lt;insert contact form here&gt;</description>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>&lt;section class=&#34;contact-section&#34;&gt;
+  &lt;div class=&#34;contact-intro&#34;&gt;
+    &lt;h2 class=&#34;contact-title&#34;&gt;Get in Touch&lt;/h2&gt;
+    &lt;p class=&#34;contact-description&#34;&gt;
+      Fill out the form below and we&#39;ll get back to you as soon as possible.
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;form class=&#34;contact-form&#34; action=&#34;https://api.web3forms.com/submit&#34; method=&#34;POST&#34;&gt;
+
+    &lt;input type=&#34;hidden&#34; name=&#34;access_key&#34; value=&#34;6cd8982c-cb99-4481-969a-40739c715390&#34; /&gt;
+    &lt;input type=&#34;hidden&#34; name=&#34;subject&#34; value=&#34;New Contact Form Submission from Web3Forms&#34; /&gt;
+    &lt;input type=&#34;hidden&#34; name=&#34;from_name&#34; value=&#34;My Website&#34; /&gt;
+    &lt;!-- More custom ization options available in the docs: https://docs.web3forms.com --&gt;
+
+    &lt;div class=&#34;form-group-container&#34;&gt;
+      &lt;div class=&#34;form-group&#34;&gt;
+        &lt;label for=&#34;name&#34; class=&#34;form-label&#34;&gt;Name&lt;/label&gt;
+        &lt;input id=&#34;name&#34; name=&#34;name&#34; class=&#34;form-input&#34; placeholder=&#34;Your name&#34; type=&#34;text&#34; /&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;form-group&#34;&gt;
+        &lt;label for=&#34;email&#34; class=&#34;form-label&#34;&gt;Email&lt;/label&gt;
+        &lt;input id=&#34;email&#34; name=&#34;email&#34; class=&#34;form-input&#34; placeholder=&#34;Your email&#34; type=&#34;email&#34; /&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;form-group&#34;&gt;
+        &lt;label for=&#34;phone&#34; class=&#34;form-label&#34;&gt;Phone&lt;/label&gt;
+        &lt;input id=&#34;phone&#34; name=&#34;phone&#34; class=&#34;form-input&#34; placeholder=&#34;+1 (234) 56789&#34; type=&#34;text&#34; /&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;form-group&#34;&gt;
+        &lt;label for=&#34;message&#34; class=&#34;form-label&#34;&gt;Message&lt;/label&gt;
+        &lt;textarea class=&#34;form-textarea&#34; id=&#34;message&#34; name=&#34;message&#34; placeholder=&#34;Your message&#34;&gt;&lt;/textarea&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class=&#34;form-submit&#34; type=&#34;submit&#34;&gt;Send Message&lt;/button&gt;
+  &lt;/form&gt;
+
+&lt;/section&gt;</description>
       
     </item>
     
