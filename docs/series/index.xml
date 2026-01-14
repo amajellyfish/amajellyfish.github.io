@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on </title>
-    <link>https://davidwrites.xyz/series/</link>
+    <link>http://localhost:37365/series/</link>
     <description>Recent content in Series on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Amanda Thomas</copyright>
-    <atom:link href="https://davidwrites.xyz/series/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:37365/series/index.xml" rel="self" type="application/rss+xml" />
     
   </channel>
 </rss>
