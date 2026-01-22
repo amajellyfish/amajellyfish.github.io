@@ -183,8 +183,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "7b2b83a26607c83d",
+  "active": "468aa5a85d471e59",
   "lastOpenFiles": [
+    "config/_default/menus.en.toml~",
+    "config/_default/languages.en.toml~",
     "content/contact/index.md~",
     "docs/css/main.bundle.min.13c6dbe079d22b24fca30babbf1826fe361759eea1d66dd1490da8a255059d5fbb082043313720b14c4bf60969a8a9cf98bebd14afdc7d7d3de46c8dfe1b950a.css",
     "assets/css/custom.css~",
@@ -199,11 +201,9 @@
     "docs/js/appearance.min.9c83307582bbb35951a77e595355f504f0c8a499a7feae72adf28cefa64e4d260d6e7437cc71e077902a83e1c987c4b31edb919a87890ce33fe19f4fd956abd2.js",
     "docs/img/amandathomas-dark.png",
     "assets/img/amandathomas-dark.png",
-    "config/_default/languages.en.toml~",
     "docs/img/amandathomas.png",
     "assets/img/amandathomas.png",
     "docs/js/main.bundle.min.35f47889fc6a3c1a4a61584d7a5ced5dba0a4fc9af07b15bb6e660134b25ad0d6eee516605924230e64d184bfcc4f417ef710cc4eecf4cda2c6a944f4312f7d6.js",
-    "config/_default/menus.en.toml~",
     "docs/img/amanda_hu_83aece8d0c3503dd.jpg",
     "resources/_gen/images/img/amanda_hu_83aece8d0c3503dd.jpg",
     "docs/img/amanda_hu_7aefbe02af7f4ef2.jpg",

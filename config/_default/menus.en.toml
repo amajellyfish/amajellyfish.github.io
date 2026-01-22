@@ -2,11 +2,6 @@
 none = "none"
 
 [[main]]
-  name = "About"
-  pageRef = "about"
-  weight = 10
-
-[[main]]
   name = "Contact"
   pageRef = "contact"
   weight = 20

@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://localhost:37365/</link>
+    <link>http://localhost:41317/</link>
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>© 2026 Amanda Thomas</copyright>
-    <atom:link href="http://localhost:37365/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:41317/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>About</title>
-      <link>http://localhost:37365/about/</link>
+      <link>http://localhost:41317/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:37365/about/</guid>
+      <guid>http://localhost:41317/about/</guid>
       <description>&lt;h2 class=&#34;relative group&#34;&gt;I&amp;rsquo;m so cool yo
     &lt;div id=&#34;im-so-cool-yo&#34; class=&#34;anchor&#34;&gt;&lt;/div&gt;
     
@@ -29,15 +29,14 @@
     
     <item>
       <title>Contact</title>
-      <link>http://localhost:37365/contact/</link>
+      <link>http://localhost:41317/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://localhost:37365/contact/</guid>
+      <guid>http://localhost:41317/contact/</guid>
       <description>&lt;section class=&#34;contact-section&#34;&gt;
   &lt;div class=&#34;contact-intro&#34;&gt;
-    &lt;h2 class=&#34;contact-title&#34;&gt;Get in Touch&lt;/h2&gt;
+    &lt;h2 class=&#34;contact-title&#34;&gt;Take the first step:&lt;/h2&gt;
     &lt;p class=&#34;contact-description&#34;&gt;
-      Fill out the form below and we&#39;ll get back to you as soon as possible.
     &lt;/p&gt;
   &lt;/div&gt;
   &lt;form class=&#34;contact-form&#34; action=&#34;https://api.web3forms.com/submit&#34; method=&#34;POST&#34;&gt;
