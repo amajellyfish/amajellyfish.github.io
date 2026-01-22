@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>http://localhost:41317/</loc>
+    <loc>https://davidwrites.xyz/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:41317/about/</loc>
+    <loc>https://davidwrites.xyz/about/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://localhost:41317/contact/</loc>
+    <loc>https://davidwrites.xyz/contact/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
