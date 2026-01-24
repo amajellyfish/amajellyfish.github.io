@@ -2,12 +2,7 @@
 html {
   font-size: 15pt;
 }
-.max-w-\[5rem\] {
-    max-width: 17rem;
-}
-.max-h-\[5rem\] {
-    max-height: 17rem;
-}
+/* Contact Form */
 .contact-section {
   width: 100%;
   max-width: 40rem;
@@ -79,5 +74,10 @@ html {
   color: #fff;
   padding: 13px 5px;
   border-radius: 0.375rem;
+}
+/* Change max logo size */
+img.logo {
+  max-height: none !important;
+  max-width: none !important;
 }
 
